@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import SettingsPanel from './SettingsPanel';
+import '../i18n/config';
 
 const App: React.FC = () => {
     const [showSettings, setShowSettings] = useState(false);
@@ -17,7 +18,7 @@ const App: React.FC = () => {
 
     return (
         <div className="App">
-            {showSettings && <SettingsPanel onClose={() => setShowSettings(false)} />}
+            {showSettings && <SettingsPanel onClose={() => setShowSettings(false)}/>}
         </div>
     );
 };

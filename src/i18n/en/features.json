@@ -1,0 +1,26 @@
+{
+  "disableTitleChange": {
+    "label": "Disable Title Hijacking",
+    "description": "Prevent websites from including baiting text through the title to grab the user's attention when switching to other tabs."
+  },
+  "removeBackgroundEffects": {
+    "label": "Remove Background Effects",
+    "description": "Disables animated backgrounds, such as falling petals, snowflakes, or other canvas-based effects."
+  },
+  "removeMusicPlayer": {
+    "label": "Remove Music Player",
+    "description": "Hides the auto-playing background music player often found on personal blogs."
+  },
+  "removeCustomCursor": {
+    "label": "Remove Custom Cursor",
+    "description": "Restores the default system mouse pointer, disabling any custom cursors or pointer trail effects."
+  },
+  "removeLive2D": {
+    "label": "Remove Live2D Widget",
+    "description": "Hides the animated character widget, usually located in the corner of the screen."
+  },
+  "removeClickEffects": {
+    "label": "Remove Click Effects",
+    "description": "Disables colorful words, sparkles, or other effects that appear when you click the mouse."
+  }
+}

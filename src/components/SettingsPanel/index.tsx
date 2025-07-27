@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {getConfigForCurrentSite, saveConfigForCurrentSite} from "../../services/configService";
-import {featureOptions} from '../../config/features';
+import {featureKeys} from '../../config/features';
+import {useTranslation} from 'react-i18next';
 
 interface SettingsPanelProps {
     onClose?: () => void;
@@ -8,6 +9,7 @@ interface SettingsPanelProps {
 
 const SettingsPanel: React.FC<SettingsPanelProps> = ({onClose}) => {
     const [config, setConfig] = useState<any>({});
+    const {t} = useTranslation();
 
     useEffect(() => {
         setConfig(getConfigForCurrentSite());
@@ -41,16 +43,16 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({onClose}) => {
                 fontFamily: 'sans-serif',
                 position: 'relative'
             }}>
-                <h2 style={{marginBottom: 16, textAlign: 'center'}}>网站净化设置</h2>
-                {featureOptions.map(opt => (
-                    <div key={opt.key} style={{marginBottom: 12}}>
+                <h2 style={{marginBottom: 16, textAlign: 'center'}}>{t('panelTitle')}</h2>
+                {featureKeys.map(key => (
+                    <div key={key} style={{marginBottom: 12}}>
                         <label>
                             <input
                                 type="checkbox"
-                                checked={!!config[opt.key]}
-                                onChange={handleChange(opt.key)}
+                                checked={!!config[key]}
+                                onChange={handleChange(key)}
                             />
-                            {" "}{opt.label}
+                            {" "}{t(`features:${key}.label`)}
                         </label>
                     </div>
                 ))}
@@ -67,7 +69,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({onClose}) => {
                             color: '#999'
                         }}
                         onClick={onClose}
-                        title="关闭"
+                        title={t('closeTitle')}
                     >
                         ×
                     </button>
