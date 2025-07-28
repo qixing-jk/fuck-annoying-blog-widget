@@ -1,10 +1,12 @@
 import {FeatureFunction, SiteConfig} from '../types';
 import {EventInterceptor, registerInterceptor} from '../services/eventInterceptorService';
+import {PropertyInterceptorPayload, registerPropertyInterceptor} from '../services/propertyInterceptorService';
 
 // 定义功能模块应该导出的完整结构
 interface FeatureModule {
     default: FeatureFunction;
     interceptor?: EventInterceptor; // 拦截器是可选的
+    propertyInterceptors?: PropertyInterceptorPayload[];
 }
 
 
@@ -36,6 +38,18 @@ for (const path in modules) {
                 featureName: featureName,
                 interceptor: module.interceptor
             });
+        }
+
+        if (module.propertyInterceptors) {
+            console.log(`[Feature Loader] Found property interceptors for feature: ${featureName}`);
+            // 遍历模块提供的所有拦截器载荷
+            for (const payload of module.propertyInterceptors) {
+                // 代表模块进行注册，并附加上 featureName
+                registerPropertyInterceptor({
+                    featureName: featureName,
+                    ...payload
+                });
+            }
         }
     }
 }

@@ -8,13 +8,15 @@ import {getConfigForCurrentSite} from './services/configService';
 import {featureRegistry} from './features'; // 直接导入注册表
 import {SiteConfig} from './types';
 import {ROOT_ELEMENT_ID} from "./constants.ts";
-import {installEventInterceptor} from "./services/eventInterceptorService.ts";
+import {installEventInterceptor} from "./services/eventInterceptorService";
+import {installPropertyInterceptor} from "./services/propertyInterceptorService";
 
 // 核心净化逻辑
 
 // 获取当前网站的激活配置
 const activeConfig = getConfigForCurrentSite();
 installEventInterceptor(activeConfig);
+installPropertyInterceptor(activeConfig);
 // 遍历激活的配置项
 for (const key in activeConfig) {
     const featureName = key as keyof SiteConfig;
