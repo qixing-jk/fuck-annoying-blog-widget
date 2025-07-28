@@ -1,4 +1,5 @@
 import { SiteConfig } from '../types'
+import { isElementInBlacklist } from '../utils'
 
 /**
  * 定义一个拦截器的函数签名，保持不变。
@@ -55,7 +56,11 @@ export function installEventInterceptor(activeConfig: Partial<SiteConfig>) {
       // 核心检查：只有当这条规则所属的功能在配置中被启用
       if (activeConfig[reg.featureName]) {
         // 才去执行它的拦截函数。
-        if (reg.eventInterceptor && reg.eventInterceptor(type, listener, options)) {
+        if (
+          reg.eventInterceptor &&
+          isElementInBlacklist(this, reg.eventInterceptorTargetList) &&
+          reg.eventInterceptor(type, listener, options)
+        ) {
           // 如果拦截函数决定阻止，则立即返回。
           return
         }
