@@ -3,7 +3,7 @@ import { PropertyInterceptorPayload } from '../services/propertyInterceptorServi
 
 export const propertyInterceptors: PropertyInterceptorPayload[] = [
   {
-    target: document,
+    targetList: document,
     propertyName: 'onvisibilitychange',
     setter: () => true, // 直接返回 true 来阻止任何赋值
     getter: () => undefined, // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
