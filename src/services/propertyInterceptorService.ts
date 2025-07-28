@@ -20,6 +20,9 @@ export interface PropertyInterceptorRegistration extends PropertyInterceptorPayl
 const registrations: PropertyInterceptorRegistration[] = [];
 let isInstalled = false;
 
+// 记录已拦截过的属性，防止重复 defineProperty
+const interceptedProperties = new WeakMap<object, Set<string>>();
+
 /**
  * 注册一个新的属性拦截器规则。
  */
@@ -52,9 +55,23 @@ export function installPropertyInterceptor(activeConfig: Partial<SiteConfig>) {
     // 遍历分组，对每个属性只进行一次 defineProperty
     for (const [target, propertyMap] of groupedRegistrations.entries()) {
         for (const [propertyName, ruleList] of propertyMap.entries()) {
+            // 检查是否已拦截
+            let interceptedSet = interceptedProperties.get(target);
+            if (!interceptedSet) {
+                interceptedSet = new Set();
+                interceptedProperties.set(target, interceptedSet);
+            }
+            if (interceptedSet.has(propertyName)) {
+                // 已拦截，跳过
+                continue;
+            }
 
             // 关键：在修补前，保存原始的属性描述符
             const originalDescriptor = Object.getOwnPropertyDescriptor(target, propertyName);
+            // 如果属性已存在且不可配置，则跳过
+            if (originalDescriptor && originalDescriptor.configurable === false) {
+                continue;
+            }
 
             Object.defineProperty(target, propertyName, {
                 configurable: false,
@@ -92,6 +109,8 @@ export function installPropertyInterceptor(activeConfig: Partial<SiteConfig>) {
                     return originalDescriptor?.get?.call(this);
                 }
             });
+            // 标记为已拦截
+            interceptedSet.add(propertyName);
         }
     }
 
