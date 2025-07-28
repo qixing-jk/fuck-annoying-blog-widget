@@ -18,7 +18,14 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      {showSettings && <SettingsPanel onClose={() => setShowSettings(false)} />}
+      {showSettings && (
+        <SettingsPanel
+          onClose={() => {
+            setShowSettings(false)
+            window.location.reload()
+          }}
+        />
+      )}
     </div>
   )
 }
