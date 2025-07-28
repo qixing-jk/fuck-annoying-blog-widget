@@ -11,9 +11,9 @@ export const propertyInterceptors: PropertyInterceptorPayload[] = [
 ]
 
 function removeSakuraEffect() {
-  const BLOCK_ID = 'canvas_sakura'
-  watchAndDestroy(`#${BLOCK_ID}`, () => {
-    const canvas = document.getElementById(BLOCK_ID)
+  const ELEMENT_ID = 'canvas_sakura'
+  watchAndDestroy(`#${ELEMENT_ID}`, () => {
+    const canvas = document.getElementById(ELEMENT_ID)
     if (canvas) {
       canvas.remove()
       console.log('[Sakura Blocker] canvas removed.')
