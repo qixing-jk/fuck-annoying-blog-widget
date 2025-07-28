@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import {deepmerge} from 'deepmerge-ts';
-import {DEFAULT_NS} from "../constants.ts";
+import {DEFAULT_NS} from "../constants";
 
 // 动态扫描所有 .json 翻译文件
 const localeModules = import.meta.glob<true, string, any>('./**/*.json', {eager: true});

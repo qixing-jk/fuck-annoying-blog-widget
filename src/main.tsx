@@ -7,7 +7,7 @@ import {GM_registerMenuCommand} from '$';
 import {getConfigForCurrentSite} from './services/configService';
 import {featureRegistry} from './features'; // 直接导入注册表
 import {SiteConfig} from './types';
-import {ROOT_ELEMENT_ID} from "./constants.ts";
+import {ROOT_ELEMENT_ID} from "./constants";
 import {installEventInterceptor} from "./services/eventInterceptorService";
 import {installPropertyInterceptor} from "./services/propertyInterceptorService";
 

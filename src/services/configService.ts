@@ -1,7 +1,7 @@
 import {AllConfigs, SiteConfig} from '../types';
 import {defaultConfigs} from '../config'; // ❗ 导入我们动态生成的默认配置
 import {GM_getValue, GM_setValue} from '$';
-import {STORAGE_KEY} from "../constants.ts";
+import {STORAGE_KEY} from "../constants";
 
 // 获取所有配置
 export function getAllConfigs(): AllConfigs {

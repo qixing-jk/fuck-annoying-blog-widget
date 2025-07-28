@@ -1,4 +1,4 @@
-import {EventInterceptor} from "../services/eventInterceptorService.ts";
+import {EventInterceptor} from "../services/eventInterceptorService";
 
 export const eventInterceptor: EventInterceptor = (type) => {
   if (type === 'visibilitychange') {
