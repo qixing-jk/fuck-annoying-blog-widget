@@ -14,20 +14,20 @@ export type EventInterceptor = (
  * 定义拦截器注册对象的结构。
  * 它将功能名 (key) 和拦截器函数绑定在一起。
  */
-export interface InterceptorRegistration {
+export interface EventInterceptorRegistration {
     featureName: keyof SiteConfig; // 使用 keyof SiteConfig 确保类型安全
-    interceptor: EventInterceptor;
+    eventInterceptor: EventInterceptor;
 }
 
 // 存储所有注册的拦截器对象
-const registrations: InterceptorRegistration[] = [];
+const registrations: EventInterceptorRegistration[] = [];
 let isInstalled = false;
 
 /**
  * 注册一个新的事件拦截器。
  * @param registration 包含功能名和拦截函数的注册对象。
  */
-export function registerInterceptor(registration: InterceptorRegistration) {
+export function registerEventInterceptor(registration: EventInterceptorRegistration) {
     registrations.push(registration);
 }
 
@@ -50,7 +50,7 @@ export function installEventInterceptor(activeConfig: Partial<SiteConfig>) {
             // 核心检查：只有当这条规则所属的功能在配置中被启用
             if (activeConfig[reg.featureName]) {
                 // 才去执行它的拦截函数。
-                if (reg.interceptor(type, listener, options)) {
+                if (reg.eventInterceptor && reg.eventInterceptor(type, listener, options)) {
                     // 如果拦截函数决定阻止，则立即返回。
                     return;
                 }
