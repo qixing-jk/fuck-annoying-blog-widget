@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,md}\"",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
