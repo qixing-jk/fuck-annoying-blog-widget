@@ -22,5 +22,9 @@
   "removeClickEffects": {
     "label": "Remove Click Effects",
     "description": "Disables colorful words, sparkles, or other effects that appear when you click the mouse."
+  },
+  "removeCustomContextMenu": {
+    "label": "Remove Custom Context Menu",
+    "description": "Removes site-specific right-click menus, restoring the browser default menu."
   }
 }

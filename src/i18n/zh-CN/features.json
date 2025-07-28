@@ -22,5 +22,9 @@
   "removeClickEffects": {
     "label": "移除点击特效",
     "description": "禁用鼠标点击时出现的彩色文字、爱心、烟花或其他浮夸的点击反馈效果。"
+  },
+  "removeCustomContextMenu": {
+    "label": "移除自定义右键菜单",
+    "description": "移除网站自定义的右键菜单，还原浏览器默认菜单。"
   }
 }
