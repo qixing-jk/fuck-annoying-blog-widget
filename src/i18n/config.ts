@@ -4,11 +4,11 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import {deepmerge} from 'deepmerge-ts';
 import {DEFAULT_NS} from "../constants.ts";
 
-// 1. 动态扫描所有 .json 翻译文件
+// 动态扫描所有 .json 翻译文件
 const localeModules = import.meta.glob<true, string, any>('./**/*.json', {eager: true});
 const namespaceSet: Set<string> = new Set();
 
-// 2. 自动构建 i18next 需要的 resources 对象
+// 自动构建 i18next 需要的 resources 对象
 const resources: Record<string, any> = {};
 for (const path in localeModules) {
     const content = localeModules[path].default;

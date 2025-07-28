@@ -7,13 +7,13 @@ import {FeatureFunction} from '../types'; // 引入我们将要定义的函数�
  */
 export const featureRegistry: Record<string, FeatureFunction> = {};
 
-// 1. 使用 Vite 的 import.meta.glob 动态导入
+// 使用 Vite 的 import.meta.glob 动态导入
 //    - './*.ts': 匹配当前目录下所有 .ts 文件
 //    - { eager: true }: 立即加载这些模块，而不是返回一个动态 import 函数
 const featureModules = import.meta.glob<true, string, { default: FeatureFunction }>('./*.ts', {eager: true});
 
 
-// 2. 遍历导入的模块并填充注册表
+// 遍历导入的模块并填充注册表
 for (const path in featureModules) {
     // 从路径中提取文件名作为功能名
     // e.g., from "./removeLive2D.ts" to "removeLive2D"
@@ -24,7 +24,7 @@ for (const path in featureModules) {
 
         // 排除掉 index 文件自身，避免无限循环或逻辑错误
         if (featureName !== 'index') {
-            // 3. 将 "功能名" 和模块的 "default导出" 关联起来
+            // 将 "功能名" 和模块的 "default导出" 关联起来
             featureRegistry[featureName] = featureModules[path].default;
         }
     }
