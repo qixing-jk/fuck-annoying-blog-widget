@@ -1,11 +1,24 @@
+import {EventInterceptor} from '../services/eventInterceptorService';
+
+export const interceptor: EventInterceptor = (type) => {
+    if (type === 'visibilitychange') {
+        console.log('Interceptor is active and blocked a "visibilitychange" listener.');
+        return true;
+    }
+    return false;
+};
+
 
 export default function disableTitleChange() {
-  console.log('[Tampermonkey] Disabling title change...');
-  // Approximate implementation: disables the ability to change the document title
-  if (typeof document !== 'undefined') {
-    Object.defineProperty(document, 'title', {
-      set: () => {},
-      configurable: false
+    console.log('Disabling title change...');
+    // 拦截 document.onvisibilitychange 的赋值
+    Object.defineProperty(document, 'onvisibilitychange', {
+        set: function () {
+            console.log('Blocked assignment to onvisibilitychange');
+        },
+        get: function () {
+            return undefined;
+        },
+        configurable: false
     });
-  }
 }
