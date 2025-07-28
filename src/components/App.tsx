@@ -1,26 +1,26 @@
-import React, {useEffect, useState} from 'react';
-import './App.css';
-import SettingsPanel from './SettingsPanel';
-import '../i18n/config';
+import React, { useEffect, useState } from 'react'
+import './App.css'
+import SettingsPanel from './SettingsPanel'
+import '../i18n/config'
 
 const App: React.FC = () => {
-    const [showSettings, setShowSettings] = useState(false);
+  const [showSettings, setShowSettings] = useState(false)
 
-    useEffect(() => {
-        // 让油猴菜单能通过window方法控制面板显示
-        window.toggleSettingsPanel = (flag?: boolean) => {
-            setShowSettings(prev => typeof flag === 'boolean' ? flag : !prev);
-        };
-        return () => {
-            delete window.toggleSettingsPanel;
-        };
-    }, []);
+  useEffect(() => {
+    // 让油猴菜单能通过window方法控制面板显示
+    window.toggleSettingsPanel = (flag?: boolean) => {
+      setShowSettings((prev) => (typeof flag === 'boolean' ? flag : !prev))
+    }
+    return () => {
+      delete window.toggleSettingsPanel
+    }
+  }, [])
 
-    return (
-        <div className="App">
-            {showSettings && <SettingsPanel onClose={() => setShowSettings(false)}/>}
-        </div>
-    );
-};
+  return (
+    <div className="App">
+      {showSettings && <SettingsPanel onClose={() => setShowSettings(false)} />}
+    </div>
+  )
+}
 
-export default App;
+export default App
