@@ -82,7 +82,7 @@ function createInterceptorSetter(
     for (const rule of ruleList) {
       if (activeConfig[rule.featureName] && rule.setter) {
         // 如果 setter 返回 true，则表示拦截成功并阻止后续操作
-        if (rule.setter.call(this, value) === true) {
+        if (rule.setter.call(this, value)) {
           console.log(
             `[Purify] Setter for "${propertyName}" blocked by feature "${rule.featureName}".`
           )
