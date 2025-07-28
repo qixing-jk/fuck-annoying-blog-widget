@@ -13,11 +13,16 @@ export function isElementInBlacklist(
  * @param selector 要查找的元素的 CSS 选择器。
  * @param onFound (可选) 找到并移除元素后要执行的回调函数。
  * @param targetNode (可选) 监视的根节点，默认为 document.body。
+ * @param options (可选) MutationObserver 的配置对象。
  */
 export function watchAndDestroy(
   selector: string,
   onFound?: (node: Element) => void,
-  targetNode: Node = document.body
+  targetNode: Node = document.body,
+  options: MutationObserverInit = {
+    childList: true,
+    subtree: true,
+  }
 ) {
   // 1. 尝试立即执行，处理非延迟加载的情况
   const element = document.querySelector(selector)
@@ -61,8 +66,5 @@ export function watchAndDestroy(
     }
   })
 
-  observer.observe(targetNode, {
-    childList: true,
-    subtree: true,
-  })
+  observer.observe(targetNode, options)
 }
