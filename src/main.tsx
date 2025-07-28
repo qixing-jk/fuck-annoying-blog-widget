@@ -36,9 +36,15 @@ for (const key in activeConfig) {
 ReactDOM.createRoot(
     (() => {
         const app = document.createElement('div');
-        app.id = ROOT_ELEMENT_ID
+        app.id = ROOT_ELEMENT_ID;
+        // 创建 ShadowRoot
+        const shadowRoot = app.attachShadow({mode: 'open'});
         document.body.append(app);
-        return app;
+        // 创建 shadow 下的挂载点
+        const shadowApp = document.createElement('div');
+        shadowApp.id = 'shadow-app-root';
+        shadowRoot.appendChild(shadowApp);
+        return shadowApp;
     })(),
 ).render(
     <React.StrictMode>
