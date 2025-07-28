@@ -10,13 +10,18 @@ export type EventInterceptor = (
   options?: AddEventListenerOptions | boolean
 ) => boolean
 
+// 定义一个功能模块需要提供的拦截器载荷
+export interface EventInterceptorPayload {
+  eventInterceptorTargetList?: EventTarget[]
+  eventInterceptor: EventInterceptor
+}
+
 /**
  * 定义拦截器注册对象的结构。
  * 它将功能名 (key) 和拦截器函数绑定在一起。
  */
-export interface EventInterceptorRegistration {
-  featureName: keyof SiteConfig // 使用 keyof SiteConfig 确保类型安全
-  eventInterceptor: EventInterceptor
+export interface EventInterceptorRegistration extends EventInterceptorPayload {
+  featureName: keyof SiteConfig
 }
 
 // 存储所有注册的拦截器对象

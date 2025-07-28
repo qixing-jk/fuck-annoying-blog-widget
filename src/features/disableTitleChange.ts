@@ -1,4 +1,4 @@
-import { EventInterceptor } from '../services/eventInterceptorService'
+import { EventInterceptor, EventInterceptorPayload } from '../services/eventInterceptorService'
 import { PropertyInterceptorPayload } from '../services/propertyInterceptorService'
 
 export const propertyInterceptors: PropertyInterceptorPayload[] = [
@@ -9,10 +9,14 @@ export const propertyInterceptors: PropertyInterceptorPayload[] = [
     getter: () => undefined, // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
   },
 ]
-export const eventInterceptor: EventInterceptor = (type) => {
+const eventInterceptor: EventInterceptor = (type) => {
   if (type === 'visibilitychange') {
     console.log('Event Interceptor is active and blocked a "visibilitychange" listener.')
     return true
   }
   return false
+}
+
+export const eventInterceptorPayload: EventInterceptorPayload = {
+  eventInterceptor,
 }
