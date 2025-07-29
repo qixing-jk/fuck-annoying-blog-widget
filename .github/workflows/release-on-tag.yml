@@ -1,0 +1,24 @@
+name: release-on-tag.yml
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Upload prebuilt files to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*.user.js
+            README.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
