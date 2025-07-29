@@ -2,7 +2,7 @@
 // @name               Personal Blog Annoying Features and Pendant Purification
 // @name:zh-CN         个人博客恼人功能和挂件净化
 // @namespace          https://github.com/qixing-jk/fuck-annoying-blog-widget
-// @version            1.0.0
+// @version            1.0.1
 // @description        purify personal blogs by removing or disabling common annoying widgets and effects.
 // @description:zh-CN  净化个人博客，自动移除或禁用常见的烦人挂件和特效。
 // @icon               https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/refs/heads/main/src/assets/logo.jpg
@@ -12096,15 +12096,11 @@
   function isElementInBlacklist(target, customBlacklist = COMMON_DOM_TARGETS) {
     return customBlacklist.includes(target);
   }
-  function watchAndDestroy(selector, onFound, targetNode = document.body, options2 = {
-    childList: true,
-    subtree: true
-  }) {
+  function watchAndDestroy(selector, options2 = {}, targetNode = document.body, observerOptions = { childList: true, subtree: true }) {
     const element = document.querySelector(selector);
     if (element) {
-      console.log(`[Watcher] 目标 "${selector}" 被立即发现并移除。`);
-      element.remove();
-      onFound?.(element);
+      console.log(`[Watcher] 目标 "${selector}" 被立即发现。`);
+      handleFoundElement(element);
       return;
     }
     console.log(`[Watcher] 未发现 "${selector}"，启动监视器...`);
@@ -12117,8 +12113,7 @@
             const targetElement = elementNode.matches(selector) ? elementNode : elementNode.querySelector(selector);
             if (targetElement) {
               console.log(`[Watcher] 检测到延迟加载的目标 "${selector}"，正在移除...`);
-              targetElement.remove();
-              onFound?.(targetElement);
+              handleFoundElement(targetElement);
               obs.disconnect();
               console.log(`[Watcher] 任务完成，针对 "${selector}" 的监视器已自动停止。`);
               return;
@@ -12127,7 +12122,19 @@
         }
       }
     });
-    observer.observe(targetNode, options2);
+    observer.observe(targetNode, observerOptions);
+    function handleFoundElement(element2) {
+      options2.beforeFound?.(element2);
+      if (!options2.keep) element2.remove();
+      options2.afterFound?.(element2);
+    }
+  }
+  function onDOMReady(callback) {
+    if (document.readyState === "interactive" || document.readyState === "complete") {
+      window.requestAnimationFrame(callback);
+    } else {
+      document.addEventListener("DOMContentLoaded", callback, { once: true });
+    }
   }
   const propertyInterceptors$2 = [
     {
@@ -12141,10 +12148,8 @@
   ];
   function removeSakuraEffect() {
     const ELEMENT_ID = "canvas_sakura";
-    watchAndDestroy(`#${ELEMENT_ID}`, () => {
-      const canvas = document.getElementById(ELEMENT_ID);
-      if (canvas) {
-        canvas.remove();
+    watchAndDestroy(`#${ELEMENT_ID}`, {
+      afterFound: () => {
         console.log("[Sakura Blocker] canvas removed.");
       }
     });
@@ -12217,10 +12222,8 @@
   function removeCustomCursor$2() {
     console.log("remove custom cursor");
     const ELEMENT_ID = "cursor";
-    watchAndDestroy(`#${ELEMENT_ID}`, () => {
-      const cursor = document.getElementById(ELEMENT_ID);
-      if (cursor) {
-        cursor.remove();
+    watchAndDestroy(`#${ELEMENT_ID}`, {
+      afterFound: () => {
         console.log("[Cursor Blocker] cursor removed.");
       }
     });
@@ -12239,10 +12242,8 @@
   function removeLive2D$2() {
     console.log("remove Live2D");
     const ELEMENT_ID = "live2d-widget";
-    watchAndDestroy(`#${ELEMENT_ID}`, () => {
-      const canvas = document.getElementById(ELEMENT_ID);
-      if (canvas) {
-        canvas.remove();
+    watchAndDestroy(`#${ELEMENT_ID}`, {
+      afterFound: () => {
         console.log("[Sakura Blocker] canvas removed.");
       }
     });
@@ -12251,21 +12252,23 @@
     __proto__: null,
     default: removeLive2D$2
   }, Symbol.toStringTag, { value: "Module" }));
-  function pauseMetingMusicPlayer() {
-    const metingPlayerPauseButton = document.querySelector(".aplayer-pause");
+  function pauseMetingMusicPlayer(element) {
+    const metingPlayerPauseButton = element || document.querySelector(".aplayer-pause");
+    console.log("[Meting Player Blocker] metingPlayerPauseButton", metingPlayerPauseButton);
     if (metingPlayerPauseButton) {
-      metingPlayerPauseButton.click();
+      console.log("[Meting Player Blocker] meting player paused.");
+      metingPlayerPauseButton?.click();
     }
   }
   function removeMetingMusicPlayer() {
-    const ELEMENT_TAG = "meting-js";
-    pauseMetingMusicPlayer();
-    watchAndDestroy(`${ELEMENT_TAG}`, () => {
-      const metingPlayers = document.getElementsByTagName(ELEMENT_TAG);
-      for (const metingPlayer of metingPlayers) {
-        metingPlayer.remove();
-        console.log("[Meting Player Blocker] meting player removed.");
-      }
+    const ELEMENT_TAG = "meting-js .aplayer-pause";
+    onDOMReady(() => {
+      watchAndDestroy(`${ELEMENT_TAG}`, {
+        beforeFound: (element) => {
+          pauseMetingMusicPlayer(element);
+        },
+        keep: true
+      });
     });
   }
   function removeMusicPlayer$2() {
