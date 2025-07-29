@@ -77,7 +77,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
           <div className={styles.featureList}>
             {featureKeys.map((key) => (
               <div key={key} className={styles.featureItem}>
-                <label>
+                <label title={t(`features:${key}.description`, '')}>
                   <input
                     type="checkbox"
                     checked={tab === 'site' ? !!siteConfig[key] : !!globalConfig[key]}
