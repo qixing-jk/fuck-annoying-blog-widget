@@ -68,3 +68,14 @@ export function watchAndDestroy(
     options.afterFound?.(element)
   }
 }
+
+/**
+ * 在 DOM 加载完成后安全地执行一个函数。
+ */
+export function onDOMReady(callback: () => void) {
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    window.requestAnimationFrame(callback)
+  } else {
+    document.addEventListener('DOMContentLoaded', callback, { once: true })
+  }
+}
