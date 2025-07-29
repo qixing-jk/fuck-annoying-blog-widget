@@ -10,6 +10,7 @@ import { SiteConfig } from './types'
 import { ROOT_ELEMENT_ID } from './constants'
 import { installEventInterceptor } from './services/eventInterceptorService'
 import { installPropertyInterceptor } from './services/propertyInterceptorService'
+import i18n from 'i18next'
 
 // 核心净化逻辑
 
@@ -51,8 +52,7 @@ ReactDOM.createRoot(
     <App />
   </React.StrictMode>
 )
-
-GM_registerMenuCommand('网站净化设置', () => {
+GM_registerMenuCommand(i18n.t('panelTitle'), () => {
   if (typeof window.toggleSettingsPanel === 'function') {
     window.toggleSettingsPanel()
   }
