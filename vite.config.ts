@@ -14,6 +14,10 @@ export default defineConfig({
     monkey({
       entry: 'src/main.tsx',
       userscript: {
+        name: {
+          '': 'Personal Blog Annoying Features and Pendant Purification',
+          'zh-CN': '个人博客恼人功能和挂件净化',
+        },
         version: pkg.version,
         description: {
           '': 'purify personal blogs by removing or disabling common annoying widgets and effects.',

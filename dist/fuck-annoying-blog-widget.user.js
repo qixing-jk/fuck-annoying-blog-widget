@@ -1,5 +1,6 @@
 // ==UserScript==
-// @name               fuck-annoying-blog-widget
+// @name               Personal Blog Annoying Features and Pendant Purification
+// @name:zh-CN         个人博客恼人功能和挂件净化
 // @namespace          https://github.com/qixing-jk/fuck-annoying-blog-widget
 // @version            1.0.0
 // @description        purify personal blogs by removing or disabling common annoying widgets and effects.
