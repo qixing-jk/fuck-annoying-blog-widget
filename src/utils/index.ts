@@ -8,32 +8,31 @@ export function isElementInBlacklist(
   return customBlacklist.includes(target)
 }
 
+export interface WatchAndDestroyOptions {
+  beforeFound?: (el: Element) => void
+  afterFound?: (el: Element) => void
+  keep?: boolean // true 表示不删除，默认 false
+}
+
 /**
- * 一个健壮的、可复用的函数，用于监视并移除动态添加的元素。
- * @param selector 要查找的元素的 CSS 选择器。
- * @param onFound (可选) 找到并移除元素后要执行的回调函数。
- * @param targetNode (可选) 监视的根节点，默认为 document.body。
- * @param options (可选) MutationObserver 的配置对象。
+ * 监视并移除动态添加的元素，支持前后回调和可选保留元素。
  */
 export function watchAndDestroy(
   selector: string,
-  onFound?: (node: Element) => void,
+  options: WatchAndDestroyOptions = {},
   targetNode: Node = document.body,
-  options: MutationObserverInit = {
-    childList: true,
-    subtree: true,
-  }
+  observerOptions: MutationObserverInit = { childList: true, subtree: true }
 ) {
-  // 1. 尝试立即执行，处理非延迟加载的情况
+  // 立即查找
   const element = document.querySelector(selector)
+
   if (element) {
-    console.log(`[Watcher] 目标 "${selector}" 被立即发现并移除。`)
-    element.remove()
-    onFound?.(element)
-    return // 任务完成
+    console.log(`[Watcher] 目标 "${selector}" 被立即发现。`)
+    handleFoundElement(element)
+    return
   }
 
-  // 2. 如果没找到，启动监视器
+  // 如果没找到，启动监视器
   console.log(`[Watcher] 未发现 "${selector}"，启动监视器...`)
 
   const observer = new MutationObserver((mutationsList, obs) => {
@@ -51,20 +50,21 @@ export function watchAndDestroy(
 
           if (targetElement) {
             console.log(`[Watcher] 检测到延迟加载的目标 "${selector}"，正在移除...`)
-            targetElement.remove()
-
-            // 执行回调
-            onFound?.(targetElement)
-
-            // 关键：完成任务后，立即断开观察者！
+            handleFoundElement(targetElement)
             obs.disconnect()
             console.log(`[Watcher] 任务完成，针对 "${selector}" 的监视器已自动停止。`)
-            return // 退出所有循环
+            return
           }
         }
       }
     }
   })
 
-  observer.observe(targetNode, options)
+  observer.observe(targetNode, observerOptions)
+
+  function handleFoundElement(element: Element) {
+    options.beforeFound?.(element)
+    if (!options.keep) element.remove()
+    options.afterFound?.(element)
+  }
 }
