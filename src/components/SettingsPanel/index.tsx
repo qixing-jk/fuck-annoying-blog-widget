@@ -7,6 +7,8 @@ import {
 } from '../../services/configService'
 import { featureKeys } from '../../config/features'
 import { useTranslation } from 'react-i18next'
+import styles from './SettingsPanel.module.css'
+import styleText from './SettingsPanel.module.css?inline'
 
 interface SettingsPanelProps {
   onClose?: () => void
@@ -45,122 +47,58 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
   }
 
   return (
-    <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: 'rgba(0,0,0,0.15)',
-        zIndex: 9999,
-      }}
-    >
-      <div
-        style={{
-          background: '#fff',
-          padding: 24,
-          borderRadius: 8,
-          width: 360,
-          boxShadow: '0 2px 16px rgba(0,0,0,0.18)',
-          fontFamily: 'sans-serif',
-          position: 'relative',
-        }}
-      >
-        <h2 style={{ marginBottom: 16, textAlign: 'center' }}>{t('panelTitle')}</h2>
-        <div style={{ display: 'flex', marginBottom: 20 }}>
-          <button
-            style={{
-              flex: 1,
-              padding: 8,
-              borderBottom: tab === 'site' ? '2px solid #1677ff' : '2px solid #eee',
-              background: 'none',
-              fontWeight: tab === 'site' ? 'bold' : 'normal',
-              color: tab === 'site' ? '#1677ff' : '#333',
-              cursor: 'pointer',
-              borderTopLeftRadius: 6,
-              borderTopRightRadius: 0,
-              border: 'none',
-              outline: 'none',
-            }}
-            onClick={() => setTab('site')}
-          >
-            {t('currentSiteConfigTab', '当前站点配置')}
+    <>
+      <style>{styleText}</style>
+      <div className={styles.mask}>
+        <div className={styles.panel}>
+          <h2 className={styles.title}>{t('panelTitle')}</h2>
+          <div className={styles.tabs}>
+            <button
+              className={[
+                styles.tabBtn,
+                styles.tabBtnLeft,
+                tab === 'site' ? styles.tabBtnActive : '',
+              ].join(' ')}
+              onClick={() => setTab('site')}
+            >
+              {t('currentSiteConfigTab', '当前站点配置')}
+            </button>
+            <button
+              className={[
+                styles.tabBtn,
+                styles.tabBtnRight,
+                tab === 'global' ? styles.tabBtnActive : '',
+              ].join(' ')}
+              onClick={() => setTab('global')}
+            >
+              {t('globalConfigTab', '全局配置')}
+            </button>
+          </div>
+          <div className={styles.featureList}>
+            {featureKeys.map((key) => (
+              <div key={key} className={styles.featureItem}>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={tab === 'site' ? !!siteConfig[key] : !!globalConfig[key]}
+                    onChange={handleChange(key, tab)}
+                  />{' '}
+                  {t(`features:${key}.label`)}
+                </label>
+              </div>
+            ))}
+          </div>
+          <button className={styles.saveBtn} onClick={handleSave}>
+            {t('save', '保存')}
           </button>
-          <button
-            style={{
-              flex: 1,
-              padding: 8,
-              borderBottom: tab === 'global' ? '2px solid #1677ff' : '2px solid #eee',
-              background: 'none',
-              fontWeight: tab === 'global' ? 'bold' : 'normal',
-              color: tab === 'global' ? '#1677ff' : '#333',
-              cursor: 'pointer',
-              borderTopLeftRadius: 0,
-              borderTopRightRadius: 6,
-              border: 'none',
-              outline: 'none',
-            }}
-            onClick={() => setTab('global')}
-          >
-            {t('globalConfigTab', '全局配置')}
-          </button>
+          {onClose && (
+            <button className={styles.closeBtn} onClick={onClose} title={t('closeTitle')}>
+              ×
+            </button>
+          )}
         </div>
-        <div style={{ minHeight: 220 }}>
-          {featureKeys.map((key) => (
-            <div key={key} style={{ marginBottom: 12 }}>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={tab === 'site' ? !!siteConfig[key] : !!globalConfig[key]}
-                  onChange={handleChange(key, tab)}
-                />{' '}
-                {t(`features:${key}.label`)}
-              </label>
-            </div>
-          ))}
-        </div>
-        <button
-          style={{
-            width: '100%',
-            padding: '10px 0',
-            background: '#1677ff',
-            color: '#fff',
-            border: 'none',
-            borderRadius: 4,
-            fontWeight: 'bold',
-            fontSize: 16,
-            marginTop: 16,
-            cursor: 'pointer',
-            letterSpacing: 1,
-          }}
-          onClick={handleSave}
-        >
-          {t('save', '保存')}
-        </button>
-        {onClose && (
-          <button
-            style={{
-              position: 'absolute',
-              top: 12,
-              right: 16,
-              background: 'transparent',
-              border: 'none',
-              fontSize: 22,
-              cursor: 'pointer',
-              color: '#999',
-            }}
-            onClick={onClose}
-            title={t('closeTitle')}
-          >
-            ×
-          </button>
-        )}
       </div>
-    </div>
+    </>
   )
 }
 

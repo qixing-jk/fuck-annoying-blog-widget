@@ -1,0 +1,94 @@
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+}
+
+.panel {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    width: 360px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+    font-family: sans-serif;
+    position: relative;
+}
+
+.title {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tabBtn {
+    flex: 1;
+    padding: 8px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-bottom: 2px solid #eee;
+    font-weight: normal;
+    color: #333;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+
+.tabBtnActive {
+    color: #1677ff;
+    font-weight: bold;
+    border-bottom: 2px solid #1677ff;
+}
+
+.tabBtnLeft {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 0;
+}
+
+.tabBtnRight {
+    border-top-left-radius: 0;
+    border-top-right-radius: 6px;
+}
+
+.featureList {
+    min-height: 220px;
+}
+
+.featureItem {
+    margin-bottom: 12px;
+}
+
+.saveBtn {
+    width: 100%;
+    padding: 10px 0;
+    background: #1677ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 16px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+}

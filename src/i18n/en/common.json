@@ -1,5 +1,8 @@
 {
   "panelTitle": "Website Purifier Settings",
   "closeTitle": "Close",
-  "refreshButton": "Refresh to Apply"
+  "refreshButton": "Refresh to Apply",
+  "currentSiteConfigTab": "Current Site",
+  "globalConfigTab": "Global",
+  "save": "Save"
 }

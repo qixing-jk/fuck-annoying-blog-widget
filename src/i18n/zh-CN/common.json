@@ -1,5 +1,8 @@
 {
   "panelTitle": "网站净化设置",
   "closeTitle": "关闭",
-  "refreshButton": "刷新页面生效"
+  "refreshButton": "刷新页面生效",
+  "currentSiteConfigTab": "当前站点",
+  "globalConfigTab": "全局",
+  "save": "保存"
 }
