@@ -28,3 +28,13 @@ export function saveConfigForCurrentSite(newConfig: Partial<SiteConfig>) {
   }
   GM_setValue(STORAGE_KEY, allStoredConfigs)
 }
+
+// 保存全局配置
+export function saveGlobalConfig(newConfig: Partial<SiteConfig>) {
+  const allStoredConfigs = getAllConfigs()
+  allStoredConfigs['global'] = {
+    ...allStoredConfigs['global'],
+    ...newConfig,
+  }
+  GM_setValue(STORAGE_KEY, allStoredConfigs)
+}
