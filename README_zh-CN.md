@@ -5,13 +5,13 @@
 ------
 
 [GitHub](https://github.com/qixing-jk/fuck-annoying-blog-widget) |
-[Greasyfork](https://greasyfork.org/scripts/543963) |
+[Greasyfork](https://greasyfork.org/scripts/543963)
 
 ![Greasy Fork Version](https://img.shields.io/greasyfork/v/543963)
 ![Greasy Fork Downloads](https://img.shields.io/greasyfork/dt/543963)
 
 一个用于净化个人博客的浏览器油猴脚本项目，自动移除或禁用常见的烦人挂件和特效。基于 React + Vite
-开发，支持站点和全局配置，内置可视化设置面板。默认语言为英文，中文说明见本节。
+开发，支持站点和全局配置，内置可视化设置面板。
 
 ## 功能特性
 

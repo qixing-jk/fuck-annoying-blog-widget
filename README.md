@@ -5,14 +5,14 @@
 ------
 
 [GitHub](https://github.com/qixing-jk/fuck-annoying-blog-widget) |
-[Greasyfork](https://greasyfork.org/scripts/543963) |
+[Greasyfork](https://greasyfork.org/scripts/543963)
 
 ![Greasy Fork Version](https://img.shields.io/greasyfork/v/543963)
 ![Greasy Fork Downloads](https://img.shields.io/greasyfork/dt/543963)
 
 A browser userscript (Tampermonkey) project to purify personal blogs by removing or disabling common annoying widgets
 and effects. Built with React + Vite, supports per-site and global configuration, and includes an in-page settings
-panel. English is the default language; see below for the Chinese section.
+panel.
 
 ## Features
 
