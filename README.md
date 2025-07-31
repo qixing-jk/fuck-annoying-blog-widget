@@ -28,14 +28,16 @@ panel.
 
 ## Quick Start
 
-1. Clone this repo and run `pnpm install`
-2. `pnpm dev` for development, `pnpm build` for production
-
-## Usage
-
 - Install the generated userscript in your browser
 - Click the Tampermonkey menu to open the settings panel
-- Configure features per site or globally
+- Configure features per site or globally (By default, no features are enabled, and they only take effect when enabled
+  in the settings panel.)
+
+## Local Development
+
+1. Clone this repo
+2. run `pnpm install`
+3. run`pnpm dev` for development, `pnpm build` for production
 
 ## Tech Stack
 
