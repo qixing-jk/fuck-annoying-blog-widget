@@ -26,5 +26,9 @@
   "removeCustomContextMenu": {
     "label": "Remove Custom Context Menu",
     "description": "Removes site-specific right-click menus, restoring the browser default menu."
+  },
+  "autoExpandCodeBlocks": {
+    "label": "Auto Expand Code Blocks",
+    "description": "Automatically clicks and expands all collapsed code block areas, supporting common blogs, forums, and more."
   }
 }
