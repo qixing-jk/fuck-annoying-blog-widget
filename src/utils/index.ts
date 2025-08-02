@@ -71,11 +71,21 @@ export function watchAndDestroy(
 
 /**
  * 在 DOM 加载完成后安全地执行一个函数。
+ * @param callback 回调函数
+ * @param delay 可选延迟毫秒数，默认 0（立即执行）
  */
-export function onDOMReady(callback: () => void) {
+export function onDOMReady(callback: () => void, delay = 0) {
+  const run = () => {
+    if (delay > 0) {
+      setTimeout(callback, delay)
+    } else {
+      callback()
+    }
+  }
+
   if (document.readyState === 'interactive' || document.readyState === 'complete') {
-    window.requestAnimationFrame(callback)
+    run()
   } else {
-    document.addEventListener('DOMContentLoaded', callback, { once: true })
+    document.addEventListener('DOMContentLoaded', run, { once: true })
   }
 }
