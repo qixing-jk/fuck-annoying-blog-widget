@@ -12064,31 +12064,6 @@
   }
   var clientExports = requireClient();
   const ReactDOM = /* @__PURE__ */ getDefaultExportFromCjs(clientExports);
-  const propertyInterceptors$3 = [
-    {
-      targetList: document,
-      propertyName: "onvisibilitychange",
-      setter: () => true,
-      // 直接返回 true 来阻止任何赋值
-      getter: () => void 0
-      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
-    }
-  ];
-  const eventInterceptor$1 = (type) => {
-    if (type === "visibilitychange") {
-      console.log('Event Interceptor is active and blocked a "visibilitychange" listener.');
-      return true;
-    }
-    return false;
-  };
-  const eventInterceptorPayload$1 = {
-    eventInterceptor: eventInterceptor$1
-  };
-  const __vite_glob_0_0$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    eventInterceptorPayload: eventInterceptorPayload$1,
-    propertyInterceptors: propertyInterceptors$3
-  }, Symbol.toStringTag, { value: "Module" }));
   const STORAGE_KEY = "site_configs";
   const ROOT_ELEMENT_ID = "fuck-annoying-blog-widget-script-root";
   const DEFAULT_NS = "common";
@@ -12129,13 +12104,69 @@
       options2.afterFound?.(element2);
     }
   }
-  function onDOMReady(callback) {
+  function onDOMReady(callback, delay = 0) {
+    const run = () => {
+      if (delay > 0) {
+        setTimeout(callback, delay);
+      } else {
+        callback();
+      }
+    };
     if (document.readyState === "interactive" || document.readyState === "complete") {
-      window.requestAnimationFrame(callback);
+      run();
     } else {
-      document.addEventListener("DOMContentLoaded", callback, { once: true });
+      document.addEventListener("DOMContentLoaded", run, { once: true });
     }
   }
+  const BUTTON_SELECTORS = [".show-btn"];
+  function internalAutoExpandCodeBlocks() {
+    for (const sel of BUTTON_SELECTORS) {
+      const elementNodeList = document.querySelectorAll(sel);
+      if (elementNodeList) {
+        console.log("自动展开代码块");
+        elementNodeList.forEach((btn) => {
+          if (btn instanceof HTMLElement) {
+            btn.click();
+          }
+        });
+        break;
+      }
+    }
+  }
+  function autoExpandCodeBlocks$2() {
+    onDOMReady(() => {
+      internalAutoExpandCodeBlocks();
+    }, 3e3);
+  }
+  const __vite_glob_0_0$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: autoExpandCodeBlocks$2
+  }, Symbol.toStringTag, { value: "Module" }));
+  const propertyInterceptors$3 = [
+    {
+      targetList: document,
+      propertyName: "onvisibilitychange",
+      setter: () => true,
+      // 直接返回 true 来阻止任何赋值
+      getter: () => void 0
+      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
+    }
+  ];
+  const eventInterceptor$1 = (type) => {
+    if (type === "visibilitychange") {
+      console.log('Event Interceptor is active and blocked a "visibilitychange" listener.');
+      return true;
+    }
+    return false;
+  };
+  const eventInterceptorPayload$1 = {
+    eventInterceptor: eventInterceptor$1
+  };
+  const __vite_glob_0_1$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    eventInterceptorPayload: eventInterceptorPayload$1,
+    propertyInterceptors: propertyInterceptors$3
+  }, Symbol.toStringTag, { value: "Module" }));
   const propertyInterceptors$2 = [
     {
       targetList: window,
@@ -12158,7 +12189,7 @@
     console.log("remove background effects");
     removeSakuraEffect();
   }
-  const __vite_glob_0_2$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_3$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: removeBackgroundEffects$2,
     propertyInterceptors: propertyInterceptors$2
@@ -12187,7 +12218,7 @@
   function removeClickEffects$2() {
     console.log("remove click effects");
   }
-  const __vite_glob_0_3$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: removeClickEffects$2,
     eventInterceptorPayload,
@@ -12214,7 +12245,7 @@
   function removeCustomContextMenu$2() {
     console.log("Removing custom context menu...");
   }
-  const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: removeCustomContextMenu$2,
     propertyInterceptors
@@ -12235,7 +12266,7 @@
     `;
     document.documentElement.appendChild(style);
   }
-  const __vite_glob_0_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: removeCustomCursor$2
   }, Symbol.toStringTag, { value: "Module" }));
@@ -12248,7 +12279,7 @@
       }
     });
   }
-  const __vite_glob_0_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: removeLive2D$2
   }, Symbol.toStringTag, { value: "Module" }));
@@ -12275,19 +12306,20 @@
     console.log("remove music player");
     removeMetingMusicPlayer();
   }
-  const __vite_glob_0_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: removeMusicPlayer$2
   }, Symbol.toStringTag, { value: "Module" }));
   const featureRegistry = {};
   const featureModules$1 = /* @__PURE__ */ Object.assign({
-    "./disableTitleChange.ts": __vite_glob_0_0$1,
-    "./removeBackgroundEffects.ts": __vite_glob_0_2$1,
-    "./removeClickEffects.ts": __vite_glob_0_3$1,
-    "./removeCustomContextMenu.ts": __vite_glob_0_4,
-    "./removeCustomCursor.ts": __vite_glob_0_5,
-    "./removeLive2D.ts": __vite_glob_0_6,
-    "./removeMusicPlayer.ts": __vite_glob_0_7
+    "./autoExpandCodeBlocks.ts": __vite_glob_0_0$1,
+    "./disableTitleChange.ts": __vite_glob_0_1$1,
+    "./removeBackgroundEffects.ts": __vite_glob_0_3$1,
+    "./removeClickEffects.ts": __vite_glob_0_4,
+    "./removeCustomContextMenu.ts": __vite_glob_0_5,
+    "./removeCustomCursor.ts": __vite_glob_0_6,
+    "./removeLive2D.ts": __vite_glob_0_7,
+    "./removeMusicPlayer.ts": __vite_glob_0_8
   });
   for (const path2 in featureModules$1) {
     const match = path2.match(/\/(\w+)\.ts$/);
@@ -12299,19 +12331,20 @@
     }
   }
   console.log("[Purify] Feature registry loaded:", Object.keys(featureRegistry));
-  const __vite_glob_0_1$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_2$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     featureRegistry
   }, Symbol.toStringTag, { value: "Module" }));
   const featureModules = /* @__PURE__ */ Object.assign({
-    "../features/disableTitleChange.ts": __vite_glob_0_0$1,
-    "../features/index.ts": __vite_glob_0_1$1,
-    "../features/removeBackgroundEffects.ts": __vite_glob_0_2$1,
-    "../features/removeClickEffects.ts": __vite_glob_0_3$1,
-    "../features/removeCustomContextMenu.ts": __vite_glob_0_4,
-    "../features/removeCustomCursor.ts": __vite_glob_0_5,
-    "../features/removeLive2D.ts": __vite_glob_0_6,
-    "../features/removeMusicPlayer.ts": __vite_glob_0_7
+    "../features/autoExpandCodeBlocks.ts": __vite_glob_0_0$1,
+    "../features/disableTitleChange.ts": __vite_glob_0_1$1,
+    "../features/index.ts": __vite_glob_0_2$1,
+    "../features/removeBackgroundEffects.ts": __vite_glob_0_3$1,
+    "../features/removeClickEffects.ts": __vite_glob_0_4,
+    "../features/removeCustomContextMenu.ts": __vite_glob_0_5,
+    "../features/removeCustomCursor.ts": __vite_glob_0_6,
+    "../features/removeLive2D.ts": __vite_glob_0_7,
+    "../features/removeMusicPlayer.ts": __vite_glob_0_8
   });
   const defaultGlobalConfig = {};
   for (const path2 in featureModules) {
@@ -12478,7 +12511,7 @@
     console.log("[Purify] Property Interceptor Service installed successfully.");
   }
   const featureKeys = [];
-  const modules = /* @__PURE__ */ Object.assign({ "../features/disableTitleChange.ts": __vite_glob_0_0$1, "../features/index.ts": __vite_glob_0_1$1, "../features/removeBackgroundEffects.ts": __vite_glob_0_2$1, "../features/removeClickEffects.ts": __vite_glob_0_3$1, "../features/removeCustomContextMenu.ts": __vite_glob_0_4, "../features/removeCustomCursor.ts": __vite_glob_0_5, "../features/removeLive2D.ts": __vite_glob_0_6, "../features/removeMusicPlayer.ts": __vite_glob_0_7 });
+  const modules = /* @__PURE__ */ Object.assign({ "../features/autoExpandCodeBlocks.ts": __vite_glob_0_0$1, "../features/disableTitleChange.ts": __vite_glob_0_1$1, "../features/index.ts": __vite_glob_0_2$1, "../features/removeBackgroundEffects.ts": __vite_glob_0_3$1, "../features/removeClickEffects.ts": __vite_glob_0_4, "../features/removeCustomContextMenu.ts": __vite_glob_0_5, "../features/removeCustomCursor.ts": __vite_glob_0_6, "../features/removeLive2D.ts": __vite_glob_0_7, "../features/removeMusicPlayer.ts": __vite_glob_0_8 });
   for (const path2 in modules) {
     const module = modules[path2];
     const keyMatch = path2.match(/\/(\w+)\.ts$/);
@@ -12868,6 +12901,7 @@
   const removeLive2D$1 = { "label": "Remove Live2D Widget", "description": "Hides the animated character widget, usually located in the corner of the screen." };
   const removeClickEffects$1 = { "label": "Remove Click Effects", "description": "Disables colorful words, sparkles, or other effects that appear when you click the mouse." };
   const removeCustomContextMenu$1 = { "label": "Remove Custom Context Menu", "description": "Removes site-specific right-click menus, restoring the browser default menu." };
+  const autoExpandCodeBlocks$1 = { "label": "Auto Expand Code Blocks", "description": "Automatically clicks and expands all collapsed code block areas, supporting common blogs, forums, and more." };
   const features$1 = {
     disableTitleChange: disableTitleChange$1,
     removeBackgroundEffects: removeBackgroundEffects$1,
@@ -12875,10 +12909,12 @@
     removeCustomCursor: removeCustomCursor$1,
     removeLive2D: removeLive2D$1,
     removeClickEffects: removeClickEffects$1,
-    removeCustomContextMenu: removeCustomContextMenu$1
+    removeCustomContextMenu: removeCustomContextMenu$1,
+    autoExpandCodeBlocks: autoExpandCodeBlocks$1
   };
   const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
+    autoExpandCodeBlocks: autoExpandCodeBlocks$1,
     default: features$1,
     disableTitleChange: disableTitleChange$1,
     removeBackgroundEffects: removeBackgroundEffects$1,
@@ -12919,6 +12955,7 @@
   const removeLive2D = { "label": "移除Live2D看板娘", "description": "隐藏通常位于屏幕角落的动态卡通人物（看板娘）挂件。" };
   const removeClickEffects = { "label": "移除点击特效", "description": "禁用鼠标点击时出现的彩色文字、爱心、烟花或其他浮夸的点击反馈效果。" };
   const removeCustomContextMenu = { "label": "移除自定义右键菜单", "description": "移除网站自定义的右键菜单，还原浏览器默认菜单。" };
+  const autoExpandCodeBlocks = { "label": "自动展开代码块", "description": "自动点击并展开所有折叠的代码块区域，支持常见博客、论坛等页面。" };
   const features = {
     disableTitleChange,
     removeBackgroundEffects,
@@ -12926,10 +12963,12 @@
     removeCustomCursor,
     removeLive2D,
     removeClickEffects,
-    removeCustomContextMenu
+    removeCustomContextMenu,
+    autoExpandCodeBlocks
   };
   const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
+    autoExpandCodeBlocks,
     default: features,
     disableTitleChange,
     removeBackgroundEffects,
