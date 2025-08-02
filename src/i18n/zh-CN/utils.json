@@ -1,0 +1,10 @@
+{
+  "watchAndDestroy": {
+    "startFind": "开始查找符合{{selector}}选择器的元素",
+    "nowFound": "立即找到符合{{selector}}选择器的元素",
+    "delayFound": "延迟找到符合{{selector}}选择器的元素",
+    "destroy": "移除符合{{selector}}选择器的元素",
+    "startObserver": "开始监视符合{{selector}}选择器的元素",
+    "stopObserver": "停止监视符合{{selector}}选择器的元素"
+  }
+}

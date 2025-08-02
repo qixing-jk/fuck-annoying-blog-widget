@@ -1,0 +1,10 @@
+{
+  "watchAndDestroy": {
+    "startFind": "Start searching for elements matching the {{selector}} selector",
+    "nowFound": "Immediately found elements matching the {{selector}} selector",
+    "delayFound": "Delayed finding elements matching the {{selector}} selector",
+    "destroy": "Remove elements matching the {{selector}} selector",
+    "startObserver": "Start observing elements matching the {{selector}} selector",
+    "stopObserver": "Stop observing elements matching the {{selector}} selector"
+  }
+}

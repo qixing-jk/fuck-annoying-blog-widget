@@ -1,4 +1,13 @@
 {
+  "loadFeatures": {
+    "eventInterceptorFound": "已为功能 {{featureName}} 发现事件拦截器",
+    "propertyInterceptorsFound": "已为功能 {{featureName}} 发现属性拦截器"
+  },
+  "executeFeatures": {
+    "error": "执行功能失败：{{featureName}}",
+    "start": "开始执行功能：{{featureName}}",
+    "end": "执行功能结束：{{featureName}}"
+  },
   "disableTitleChange": {
     "label": "禁止标题变更",
     "description": "防止网站在切换到其他标签页时通过标题加入诱导性文本来吸引用户的注意力。"
@@ -29,6 +38,7 @@
   },
   "autoExpandCodeBlocks": {
     "label": "自动展开代码块",
-    "description": "自动点击并展开所有折叠的代码块区域，支持常见博客、论坛等页面。"
+    "description": "自动点击并展开所有折叠的代码块区域，支持常见博客、论坛等页面。",
+    "expandCodeBlocks": "执行自动展开代码块"
   }
 }

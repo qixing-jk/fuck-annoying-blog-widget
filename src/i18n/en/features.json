@@ -1,4 +1,13 @@
 {
+  "loadFeatures": {
+    "eventInterceptorFound": "Event Found interceptor for feature: {{featureName}}",
+    "propertyInterceptorsFound": "Found property interceptors for feature: {{featureName}}"
+  },
+  "executeFeatures": {
+    "error": "Failed to execute feature: {{featureName}}",
+    "start": "Starting to execute feature: {{featureName}}",
+    "end": "Finished executing feature: {{featureName}}"
+  },
   "disableTitleChange": {
     "label": "Disable Title Hijacking",
     "description": "Prevent websites from including baiting text through the title to grab the user's attention when switching to other tabs."
@@ -29,6 +38,7 @@
   },
   "autoExpandCodeBlocks": {
     "label": "Auto Expand Code Blocks",
-    "description": "Automatically clicks and expands all collapsed code block areas, supporting common blogs, forums, and more."
+    "description": "Automatically clicks and expands all collapsed code block areas, supporting common blogs, forums, and more.",
+    "expandCodeBlocks": "Expand code blocks automatically"
   }
 }

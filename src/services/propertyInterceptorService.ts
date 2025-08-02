@@ -1,4 +1,6 @@
 import { SiteConfig } from '../types'
+import { createLogger } from '../utils/logger'
+import i18n from 'i18next'
 
 // 定义各种拦截器的函数签名
 export type PropertySetterInterceptor = (value: any) => boolean // 返回 true 表示成功拦截并阻止后续
@@ -22,6 +24,8 @@ let isInstalled = false
 
 // 记录已拦截过的属性，防止重复 defineProperty
 const interceptedProperties = new WeakMap<object, Set<string>>()
+
+const logger = createLogger('propertyInterceptorService')
 
 /**
  * 注册一个新的属性拦截器规则。
@@ -83,8 +87,11 @@ function createInterceptorSetter(
       if (activeConfig[rule.featureName] && rule.setter) {
         // 如果 setter 返回 true，则表示拦截成功并阻止后续操作
         if (rule.setter.call(this, value)) {
-          console.log(
-            `[Purify] Setter for "${propertyName}" blocked by feature "${rule.featureName}".`
+          logger.info(
+            i18n.t('services:propertyInterceptor.blocked', {
+              propertyName: propertyName,
+              featureName: rule.featureName,
+            })
           )
           return // 成功拦截，直接返回
         }
@@ -116,8 +123,11 @@ function createInterceptorGetter(
       if (activeConfig[rule.featureName] && rule.getter) {
         const result = rule.getter.call(this)
         if (result !== undefined) {
-          console.log(
-            `[Purify] Getter for "${propertyName}" intercepted by feature "${rule.featureName}".`
+          logger.info(
+            i18n.t('services:propertyInterceptor.getter.blocked', {
+              propertyName: propertyName,
+              featureName: rule.featureName,
+            })
           )
           return result // 成功拦截，返回值
         }
@@ -131,7 +141,7 @@ function createInterceptorGetter(
 
 export function installPropertyInterceptor(activeConfig: Partial<SiteConfig>) {
   if (isInstalled) return
-  console.log('[Purify] Installing Property Interceptor Service...')
+  logger.info(i18n.t('services:propertyInterceptor.install'))
 
   const groupedRegistrations = groupRegistrations(registrations)
 
@@ -147,10 +157,11 @@ export function installPropertyInterceptor(activeConfig: Partial<SiteConfig>) {
 
       const originalDescriptor = Object.getOwnPropertyDescriptor(target, propertyName)
       if (originalDescriptor?.configurable === false) {
-        console.warn(
-          `[Purify] Property "${propertyName}" on`,
-          target,
-          `is not configurable and cannot be intercepted.`
+        logger.warn(
+          i18n.t('services:propertyInterceptor.notConfigurable', {
+            propertyName: propertyName,
+            targetObject: target,
+          })
         )
         continue
       }
@@ -166,5 +177,5 @@ export function installPropertyInterceptor(activeConfig: Partial<SiteConfig>) {
   }
 
   isInstalled = true
-  console.log('[Purify] Property Interceptor Service installed successfully.')
+  logger.info(i18n.t('services:propertyInterceptor.installSuccess'))
 }

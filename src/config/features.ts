@@ -7,6 +7,8 @@ import {
   PropertyInterceptorPayload,
   registerPropertyInterceptor,
 } from '../services/propertyInterceptorService'
+import { createLogger } from '../utils/logger'
+import i18n from 'i18next'
 
 // 定义功能模块应该导出的完整结构
 interface FeatureModule {
@@ -18,6 +20,8 @@ interface FeatureModule {
 export const featureKeys: string[] = []
 export const featureRegistry: Record<string, FeatureFunction> = {}
 export const defaultGlobalConfig: Record<string, boolean> = {}
+
+const logger = createLogger('features')
 
 // 扫描所有功能模块
 const modules = import.meta.glob<true, string, FeatureModule>('../features/*.ts', { eager: true })
@@ -37,7 +41,9 @@ for (const path in modules) {
 
     if (module.eventInterceptorPayload) {
       // 检查模块是否导出了一个 'interceptor'
-      console.log(`[Feature Loader] Event Found interceptor for feature: ${featureName}`)
+      logger.info(
+        i18n.t('features:loadFeatures.eventInterceptorFound', { featureName: featureName })
+      )
       // 代表该模块，使用自动获取的 featureName 进行注册
       registerEventInterceptor({
         featureName: featureName,
@@ -46,7 +52,9 @@ for (const path in modules) {
     }
 
     if (module.propertyInterceptors) {
-      console.log(`[Feature Loader] Found property interceptors for feature: ${featureName}`)
+      logger.info(
+        i18n.t('features:loadFeatures.propertyInterceptorsFound', { featureName: featureName })
+      )
       // 遍历模块提供的所有拦截器载荷
       for (const payload of module.propertyInterceptors) {
         // 代表模块进行注册，并附加上 featureName

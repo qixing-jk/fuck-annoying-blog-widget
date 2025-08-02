@@ -1,5 +1,7 @@
 // 黑名单判断函数
 import { COMMON_DOM_TARGETS } from '../constants'
+import { createLogger } from './logger'
+import i18n from 'i18next'
 
 export function isElementInBlacklist(
   target: EventTarget,
@@ -23,18 +25,19 @@ export function watchAndDestroy(
   targetNode: Node = document.body,
   observerOptions: MutationObserverInit = { childList: true, subtree: true }
 ) {
+  const logger = createLogger('watchAndDestroy')
+  logger.info(i18n.t('utils:watchAndDestroy.startFind', { selector }))
   // 立即查找
   const element = document.querySelector(selector)
 
   if (element) {
-    console.log(`[Watcher] 目标 "${selector}" 被立即发现。`)
+    logger.info(i18n.t('utils:watchAndDestroy.nowFound', { selector }))
     handleFoundElement(element)
     return
   }
 
   // 如果没找到，启动监视器
-  console.log(`[Watcher] 未发现 "${selector}"，启动监视器...`)
-
+  logger.info(i18n.t('utils:watchAndDestroy.startObserver', { selector }))
   const observer = new MutationObserver((mutationsList, obs) => {
     for (const mutation of mutationsList) {
       // 只关心节点添加事件
@@ -49,10 +52,10 @@ export function watchAndDestroy(
             : elementNode.querySelector(selector)
 
           if (targetElement) {
-            console.log(`[Watcher] 检测到延迟加载的目标 "${selector}"，正在移除...`)
+            logger.info(i18n.t('utils:watchAndDestroy.delayFound', { selector }))
             handleFoundElement(targetElement)
             obs.disconnect()
-            console.log(`[Watcher] 任务完成，针对 "${selector}" 的监视器已自动停止。`)
+            logger.info(i18n.t('utils:watchAndDestroy.stopObserver', { selector }))
             return
           }
         }
@@ -64,7 +67,10 @@ export function watchAndDestroy(
 
   function handleFoundElement(element: Element) {
     options.beforeFound?.(element)
-    if (!options.keep) element.remove()
+    if (!options.keep) {
+      logger.info(i18n.t('utils:watchAndDestroy.destroy', { selector }))
+      element.remove()
+    }
     options.afterFound?.(element)
   }
 }

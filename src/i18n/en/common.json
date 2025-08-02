@@ -4,5 +4,7 @@
   "refreshButton": "Refresh to Apply",
   "currentSiteConfigTab": "Current Site",
   "globalConfigTab": "Global",
-  "save": "Save"
+  "save": "Save",
+  "startExecution": "Start Execution",
+  "endExecution": "End Execution"
 }

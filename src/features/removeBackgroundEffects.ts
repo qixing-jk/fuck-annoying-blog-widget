@@ -12,14 +12,9 @@ export const propertyInterceptors: PropertyInterceptorPayload[] = [
 
 function removeSakuraEffect() {
   const ELEMENT_ID = 'canvas_sakura'
-  watchAndDestroy(`#${ELEMENT_ID}`, {
-    afterFound: () => {
-      console.log('[Sakura Blocker] canvas removed.')
-    },
-  })
+  watchAndDestroy(`#${ELEMENT_ID}`)
 }
 
 export default function removeBackgroundEffects() {
-  console.log('remove background effects')
   removeSakuraEffect()
 }

@@ -1,5 +1,7 @@
 import { SiteConfig } from '../types'
 import { isElementInBlacklist } from '../utils'
+import { createLogger } from '../utils/logger'
+import i18n from 'i18next'
 
 /**
  * 定义一个拦截器的函数签名，保持不变。
@@ -29,6 +31,8 @@ export interface EventInterceptorRegistration extends EventInterceptorPayload {
 const registrations: EventInterceptorRegistration[] = []
 let isInstalled = false
 
+const logger = createLogger('eventInterceptorService')
+
 /**
  * 注册一个新的事件拦截器。
  * @param registration 包含功能名和拦截函数的注册对象。
@@ -45,8 +49,7 @@ export function installEventInterceptor(activeConfig: Partial<SiteConfig>) {
   if (isInstalled) {
     return
   }
-
-  console.log('[Purify] Installing Event Interceptor Service with config:', activeConfig)
+  logger.info(i18n.t('services:eventInterceptor.install'), activeConfig)
 
   const originalAddEventListener = EventTarget.prototype.addEventListener
 
@@ -72,5 +75,5 @@ export function installEventInterceptor(activeConfig: Partial<SiteConfig>) {
   }
 
   isInstalled = true
-  console.log('[Purify] Event Interceptor Service installed successfully.')
+  logger.info(i18n.t('services:eventInterceptor.installSuccess'))
 }

@@ -1,4 +1,6 @@
-import { FeatureFunction } from '../types' // 引入我们将要定义的函数类型
+import { FeatureFunction } from '../types'
+import { createLogger } from '../utils/logger'
+import i18n from 'i18next' // 引入我们将要定义的函数类型
 
 /**
  * 功能注册表
@@ -32,4 +34,5 @@ for (const path in featureModules) {
 }
 
 // 打印一下，方便调试，看看注册了哪些功能
-console.log('[Purify] Feature registry loaded:', Object.keys(featureRegistry))
+const logger = createLogger('featureRegistry')
+logger.info(i18n.t('services:featureRegistry.load'), Object.keys(featureRegistry))

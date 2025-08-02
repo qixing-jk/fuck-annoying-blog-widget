@@ -11,7 +11,9 @@ import { ROOT_ELEMENT_ID } from './constants'
 import { installEventInterceptor } from './services/eventInterceptorService'
 import { installPropertyInterceptor } from './services/propertyInterceptorService'
 import i18n from 'i18next'
+import { createLogger } from './utils/logger'
 
+const logger = createLogger('main')
 // 核心净化逻辑
 
 // 获取当前网站的激活配置
@@ -27,9 +29,11 @@ for (const key in activeConfig) {
   if (isEnabled && featureRegistry[featureName]) {
     try {
       // 动态调用执行函数
+      logger.info(i18n.t('features:executeFeatures.start', { featureName: featureName }))
       featureRegistry[featureName]()
+      logger.info(i18n.t('features:executeFeatures.end', { featureName: featureName }))
     } catch (error) {
-      console.error(`[Purify] Error executing feature: ${featureName}`, error)
+      logger.error(i18n.t('features:executeFeatures.error'), error)
     }
   }
 }
@@ -52,7 +56,7 @@ ReactDOM.createRoot(
     <App />
   </React.StrictMode>
 )
-GM_registerMenuCommand(i18n.t('panelTitle'), () => {
+GM_registerMenuCommand(i18n.t('common:panelTitle'), () => {
   if (typeof window.toggleSettingsPanel === 'function') {
     window.toggleSettingsPanel()
   }

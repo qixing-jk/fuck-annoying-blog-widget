@@ -1,11 +1,14 @@
 import { onDOMReady, watchAndDestroy } from '../utils'
+import { createLogger } from '../utils/logger'
+
+const logger = createLogger('removeMusicPlayer')
 
 function pauseMetingMusicPlayer(element?: Element) {
   const metingPlayerPauseButton = (element ||
     document.querySelector('.aplayer-pause')) as HTMLButtonElement
-  console.log('[Meting Player Blocker] metingPlayerPauseButton', metingPlayerPauseButton)
+  logger.info('features:removeMusicPlayer.pauseBtn', { btn: !!metingPlayerPauseButton })
   if (metingPlayerPauseButton) {
-    console.log('[Meting Player Blocker] meting player paused.')
+    logger.info('features:removeMusicPlayer.paused')
     metingPlayerPauseButton?.click()
   }
 }
@@ -23,6 +26,5 @@ function removeMetingMusicPlayer() {
 }
 
 export default function removeMusicPlayer() {
-  console.log('remove music player')
   removeMetingMusicPlayer()
 }

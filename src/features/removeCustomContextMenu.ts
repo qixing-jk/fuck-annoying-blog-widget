@@ -15,6 +15,4 @@ export const propertyInterceptors: PropertyInterceptorPayload[] = [
   },
 ]
 
-export default function removeCustomContextMenu() {
-  console.log('Removing custom context menu...')
-}
+export default function removeCustomContextMenu() {}

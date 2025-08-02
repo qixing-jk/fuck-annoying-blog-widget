@@ -1,5 +1,9 @@
 import { EventInterceptor, EventInterceptorPayload } from '../services/eventInterceptorService'
 import { PropertyInterceptorPayload } from '../services/propertyInterceptorService'
+import { createLogger } from '../utils/logger'
+import i18n from 'i18next'
+
+const logger = createLogger('disableTitleChange')
 
 export const propertyInterceptors: PropertyInterceptorPayload[] = [
   {
@@ -10,8 +14,9 @@ export const propertyInterceptors: PropertyInterceptorPayload[] = [
   },
 ]
 const eventInterceptor: EventInterceptor = (type) => {
-  if (type === 'visibilitychange') {
-    console.log('Event Interceptor is active and blocked a "visibilitychange" listener.')
+  const blockedEventType = 'visibilitychange'
+  if (type === blockedEventType) {
+    logger.info(i18n.t('services:eventInterceptor.blocked', blockedEventType))
     return true
   }
   return false

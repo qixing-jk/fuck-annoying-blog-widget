@@ -1,4 +1,6 @@
 import { AllConfigs, FeatureFunction, SiteConfig } from '../types'
+import i18n from 'i18next'
+import { createLogger } from '../utils/logger'
 
 // 自动生成全局默认配置 (默认所有功能都关闭)
 const featureModules = import.meta.glob<true, string, { default: FeatureFunction }>(
@@ -38,5 +40,6 @@ export const defaultConfigs: AllConfigs = {
   ...siteSpecificDefaults,
 }
 
+const logger = createLogger('config')
 // 打印日志，方便在开发时确认默认配置是否正确生成
-console.log('[Purify] Default configurations generated:', defaultConfigs)
+logger.info(i18n.t('config:defaultConfigs'), defaultConfigs)

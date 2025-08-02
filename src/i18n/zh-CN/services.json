@@ -1,0 +1,19 @@
+{
+  "featureRegistry": {
+    "load": "加载功能注册表"
+  },
+  "eventInterceptor": {
+    "install": "正在安装事件拦截服务",
+    "installSuccess": "事件拦截服务安装成功。",
+    "blocked": "事件拦截服务已成功拦截{{blockedEventType}}事件，事件已被阻止。"
+  },
+  "propertyInterceptor": {
+    "install": "正在安装属性拦截服务",
+    "installSuccess": "属性拦截服务安装成功。",
+    "blocked": "{{featureName}}的属性拦截器已成功拦截{{propertyName}}属性，属性已被阻止。",
+    "getter": {
+      "blocked": "{{featureName}}的属性拦截器已成功拦截{{propertyName}}属性的getter，getter已被阻止。"
+    },
+    "notConfigurable": "属性拦截器拦截{{targetObject}}的{{propertyName}}属性失败，该属性不可配置。"
+  }
+}

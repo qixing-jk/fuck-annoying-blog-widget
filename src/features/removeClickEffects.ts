@@ -1,10 +1,15 @@
 import { EventInterceptor, EventInterceptorPayload } from '../services/eventInterceptorService'
 import { COMMON_DOM_TARGETS } from '../constants'
 import { PropertyInterceptorPayload } from '../services/propertyInterceptorService'
+import { createLogger } from '../utils/logger'
+import i18n from 'i18next'
+
+const logger = createLogger('removeClickEffects')
 
 const eventInterceptor: EventInterceptor = (type) => {
-  if (type === 'click') {
-    console.log('Interceptor is active and blocked a "click" listener.')
+  const blockedEventType = 'click'
+  if (type === blockedEventType) {
+    logger.info(i18n.t('services:eventInterceptor.blocked', blockedEventType))
     return true
   }
   return false
@@ -24,6 +29,4 @@ export const eventInterceptorPayload: EventInterceptorPayload = {
   eventInterceptor,
 }
 
-export default function removeClickEffects() {
-  console.log('remove click effects')
-}
+export default function removeClickEffects() {}

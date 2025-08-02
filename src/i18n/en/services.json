@@ -1,0 +1,19 @@
+{
+  "featureRegistry": {
+    "load": "Load feature registry"
+  },
+  "eventInterceptor": {
+    "install": "Installing Event Interceptor Service",
+    "installSuccess": "Event Interceptor Service installed successfully.",
+    "blocked": "Event Interceptor successfully intercepted the {{blockedEventType}} event, the event has been blocked."
+  },
+  "propertyInterceptor": {
+    "install": "installing Property Interceptor Service",
+    "installSuccess": "Property Interceptor Service installed successfully.",
+    "blocked": "Property Interceptor of {{featureName}} successfully intercepted the {{propertyName}} property, the property has been blocked.",
+    "getter": {
+      "blocked": "Property Interceptor of {{featureName}} successfully intercepted the {{propertyName}} property getter, the getter has been blocked."
+    },
+    "notConfigurable": "Property Interceptor failed to intercept the {{propertyName}} property of {{targetObject}}, the property is not configurable."
+  }
+}
