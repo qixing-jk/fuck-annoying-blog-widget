@@ -19,6 +19,3 @@ jobs:
           files: |
             dist/*.user.js
             README.md
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
