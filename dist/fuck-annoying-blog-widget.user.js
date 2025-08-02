@@ -2,7 +2,7 @@
 // @name               Personal Blog Annoying Features and Pendant Purification
 // @name:zh-CN         个人博客恼人功能和挂件净化
 // @namespace          https://github.com/qixing-jk/fuck-annoying-blog-widget
-// @version            1.1.0
+// @version            1.2.0
 // @description        purify personal blogs by removing or disabling common annoying widgets and effects.
 // @description:zh-CN  净化个人博客，自动移除或禁用常见的烦人挂件和特效。
 // @icon               https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/refs/heads/main/src/assets/logo.jpg
@@ -38,21 +38,21 @@
     if (hasRequiredReactJsxRuntime_production) return reactJsxRuntime_production;
     hasRequiredReactJsxRuntime_production = 1;
     var REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
-    function jsxProd(type, config, maybeKey) {
+    function jsxProd(type, config2, maybeKey) {
       var key = null;
       void 0 !== maybeKey && (key = "" + maybeKey);
-      void 0 !== config.key && (key = "" + config.key);
-      if ("key" in config) {
+      void 0 !== config2.key && (key = "" + config2.key);
+      if ("key" in config2) {
         maybeKey = {};
-        for (var propName in config)
-          "key" !== propName && (maybeKey[propName] = config[propName]);
-      } else maybeKey = config;
-      config = maybeKey.ref;
+        for (var propName in config2)
+          "key" !== propName && (maybeKey[propName] = config2[propName]);
+      } else maybeKey = config2;
+      config2 = maybeKey.ref;
       return {
         $$typeof: REACT_ELEMENT_TYPE,
         type,
         key,
-        ref: void 0 !== config ? config : null,
+        ref: void 0 !== config2 ? config2 : null,
         props: maybeKey
       };
     }
@@ -71,6 +71,2358 @@
     return jsxRuntime.exports;
   }
   var jsxRuntimeExports = requireJsxRuntime();
+  const panelTitle$1 = "Website Purifier Settings";
+  const closeTitle$1 = "Close";
+  const refreshButton$1 = "Refresh to Apply";
+  const currentSiteConfigTab$1 = "Current Site";
+  const globalConfigTab$1 = "Global";
+  const save$1 = "Save";
+  const startExecution$1 = "Start Execution";
+  const endExecution$1 = "End Execution";
+  const common$1 = {
+    panelTitle: panelTitle$1,
+    closeTitle: closeTitle$1,
+    refreshButton: refreshButton$1,
+    currentSiteConfigTab: currentSiteConfigTab$1,
+    globalConfigTab: globalConfigTab$1,
+    save: save$1,
+    startExecution: startExecution$1,
+    endExecution: endExecution$1
+  };
+  const __vite_glob_0_0$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    closeTitle: closeTitle$1,
+    currentSiteConfigTab: currentSiteConfigTab$1,
+    default: common$1,
+    endExecution: endExecution$1,
+    globalConfigTab: globalConfigTab$1,
+    panelTitle: panelTitle$1,
+    refreshButton: refreshButton$1,
+    save: save$1,
+    startExecution: startExecution$1
+  }, Symbol.toStringTag, { value: "Module" }));
+  const defaultConfigs$2 = "Default configurations";
+  const config$1 = {
+    defaultConfigs: defaultConfigs$2
+  };
+  const __vite_glob_0_1$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: config$1,
+    defaultConfigs: defaultConfigs$2
+  }, Symbol.toStringTag, { value: "Module" }));
+  const loadFeatures$1 = { "eventInterceptorFound": "Event Found interceptor for feature: {{featureName}}", "propertyInterceptorsFound": "Found property interceptors for feature: {{featureName}}" };
+  const executeFeatures$1 = { "error": "Failed to execute feature: {{featureName}}", "start": "Starting to execute feature: {{featureName}}", "end": "Finished executing feature: {{featureName}}" };
+  const disableTitleChange$1 = { "label": "Disable Title Hijacking", "description": "Prevent websites from including baiting text through the title to grab the user's attention when switching to other tabs." };
+  const removeBackgroundEffects$2 = { "label": "Remove Background Effects", "description": "Disables animated backgrounds, such as falling petals, snowflakes, or other canvas-based effects." };
+  const removeMusicPlayer$2 = { "label": "Remove Music Player", "description": "Hides the auto-playing background music player often found on personal blogs." };
+  const removeCustomCursor$2 = { "label": "Remove Custom Cursor", "description": "Restores the default system mouse pointer, disabling any custom cursors or pointer trail effects." };
+  const removeLive2D$2 = { "label": "Remove Live2D Widget", "description": "Hides the animated character widget, usually located in the corner of the screen." };
+  const removeClickEffects$2 = { "label": "Remove Click Effects", "description": "Disables colorful words, sparkles, or other effects that appear when you click the mouse." };
+  const removeCustomContextMenu$2 = { "label": "Remove Custom Context Menu", "description": "Removes site-specific right-click menus, restoring the browser default menu." };
+  const autoExpandCodeBlocks$2 = { "label": "Auto Expand Code Blocks", "description": "Automatically clicks and expands all collapsed code block areas, supporting common blogs, forums, and more.", "expandCodeBlocks": "Expand code blocks automatically" };
+  const features$1 = {
+    loadFeatures: loadFeatures$1,
+    executeFeatures: executeFeatures$1,
+    disableTitleChange: disableTitleChange$1,
+    removeBackgroundEffects: removeBackgroundEffects$2,
+    removeMusicPlayer: removeMusicPlayer$2,
+    removeCustomCursor: removeCustomCursor$2,
+    removeLive2D: removeLive2D$2,
+    removeClickEffects: removeClickEffects$2,
+    removeCustomContextMenu: removeCustomContextMenu$2,
+    autoExpandCodeBlocks: autoExpandCodeBlocks$2
+  };
+  const __vite_glob_0_2$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    autoExpandCodeBlocks: autoExpandCodeBlocks$2,
+    default: features$1,
+    disableTitleChange: disableTitleChange$1,
+    executeFeatures: executeFeatures$1,
+    loadFeatures: loadFeatures$1,
+    removeBackgroundEffects: removeBackgroundEffects$2,
+    removeClickEffects: removeClickEffects$2,
+    removeCustomContextMenu: removeCustomContextMenu$2,
+    removeCustomCursor: removeCustomCursor$2,
+    removeLive2D: removeLive2D$2,
+    removeMusicPlayer: removeMusicPlayer$2
+  }, Symbol.toStringTag, { value: "Module" }));
+  const featureRegistry$2 = { "load": "Load feature registry" };
+  const eventInterceptor$3 = { "install": "Installing Event Interceptor Service", "installSuccess": "Event Interceptor Service installed successfully.", "blocked": "Event Interceptor successfully intercepted the {{blockedEventType}} event, the event has been blocked." };
+  const propertyInterceptor$1 = { "install": "installing Property Interceptor Service", "installSuccess": "Property Interceptor Service installed successfully.", "blocked": "Property Interceptor of {{featureName}} successfully intercepted the {{propertyName}} property, the property has been blocked.", "getter": { "blocked": "Property Interceptor of {{featureName}} successfully intercepted the {{propertyName}} property getter, the getter has been blocked." }, "notConfigurable": "Property Interceptor failed to intercept the {{propertyName}} property of {{targetObject}}, the property is not configurable." };
+  const services$1 = {
+    featureRegistry: featureRegistry$2,
+    eventInterceptor: eventInterceptor$3,
+    propertyInterceptor: propertyInterceptor$1
+  };
+  const __vite_glob_0_3$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: services$1,
+    eventInterceptor: eventInterceptor$3,
+    featureRegistry: featureRegistry$2,
+    propertyInterceptor: propertyInterceptor$1
+  }, Symbol.toStringTag, { value: "Module" }));
+  const watchAndDestroy$2 = { "startFind": "Start searching for elements matching the {{selector}} selector", "nowFound": "Immediately found elements matching the {{selector}} selector", "delayFound": "Delayed finding elements matching the {{selector}} selector", "destroy": "Remove elements matching the {{selector}} selector", "startObserver": "Start observing elements matching the {{selector}} selector", "stopObserver": "Stop observing elements matching the {{selector}} selector" };
+  const utils$1 = {
+    watchAndDestroy: watchAndDestroy$2
+  };
+  const __vite_glob_0_4$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: utils$1,
+    watchAndDestroy: watchAndDestroy$2
+  }, Symbol.toStringTag, { value: "Module" }));
+  const panelTitle = "网站净化设置";
+  const closeTitle = "关闭";
+  const refreshButton = "刷新页面生效";
+  const currentSiteConfigTab = "当前站点";
+  const globalConfigTab = "全局";
+  const save = "保存";
+  const startExecution = "开始执行";
+  const endExecution = "执行结束";
+  const common = {
+    panelTitle,
+    closeTitle,
+    refreshButton,
+    currentSiteConfigTab,
+    globalConfigTab,
+    save,
+    startExecution,
+    endExecution
+  };
+  const __vite_glob_0_5$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    closeTitle,
+    currentSiteConfigTab,
+    default: common,
+    endExecution,
+    globalConfigTab,
+    panelTitle,
+    refreshButton,
+    save,
+    startExecution
+  }, Symbol.toStringTag, { value: "Module" }));
+  const defaultConfigs$1 = "默认配置";
+  const config = {
+    defaultConfigs: defaultConfigs$1
+  };
+  const __vite_glob_0_6$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: config,
+    defaultConfigs: defaultConfigs$1
+  }, Symbol.toStringTag, { value: "Module" }));
+  const loadFeatures = { "eventInterceptorFound": "已为功能 {{featureName}} 发现事件拦截器", "propertyInterceptorsFound": "已为功能 {{featureName}} 发现属性拦截器" };
+  const executeFeatures = { "error": "执行功能失败：{{featureName}}", "start": "开始执行功能：{{featureName}}", "end": "执行功能结束：{{featureName}}" };
+  const disableTitleChange = { "label": "禁止标题变更", "description": "防止网站在切换到其他标签页时通过标题加入诱导性文本来吸引用户的注意力。" };
+  const removeBackgroundEffects$1 = { "label": "移除背景特效", "description": "禁用动态的背景效果，例如背景飘花、雪花、彩带或其他基于Canvas的动画。" };
+  const removeMusicPlayer$1 = { "label": "移除音乐播放器", "description": "隐藏在部分个人博客上会自动播放的背景音乐播放器。" };
+  const removeCustomCursor$1 = { "label": "移除自定义鼠标指针", "description": "恢复系统默认的鼠标指针样式，禁用网站设置的特殊图标指针或鼠标拖尾特效。" };
+  const removeLive2D$1 = { "label": "移除Live2D看板娘", "description": "隐藏通常位于屏幕角落的动态卡通人物（看板娘）挂件。" };
+  const removeClickEffects$1 = { "label": "移除点击特效", "description": "禁用鼠标点击时出现的彩色文字、爱心、烟花或其他浮夸的点击反馈效果。" };
+  const removeCustomContextMenu$1 = { "label": "移除自定义右键菜单", "description": "移除网站自定义的右键菜单，还原浏览器默认菜单。" };
+  const autoExpandCodeBlocks$1 = { "label": "自动展开代码块", "description": "自动点击并展开所有折叠的代码块区域，支持常见博客、论坛等页面。", "expandCodeBlocks": "执行自动展开代码块" };
+  const features = {
+    loadFeatures,
+    executeFeatures,
+    disableTitleChange,
+    removeBackgroundEffects: removeBackgroundEffects$1,
+    removeMusicPlayer: removeMusicPlayer$1,
+    removeCustomCursor: removeCustomCursor$1,
+    removeLive2D: removeLive2D$1,
+    removeClickEffects: removeClickEffects$1,
+    removeCustomContextMenu: removeCustomContextMenu$1,
+    autoExpandCodeBlocks: autoExpandCodeBlocks$1
+  };
+  const __vite_glob_0_7$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    autoExpandCodeBlocks: autoExpandCodeBlocks$1,
+    default: features,
+    disableTitleChange,
+    executeFeatures,
+    loadFeatures,
+    removeBackgroundEffects: removeBackgroundEffects$1,
+    removeClickEffects: removeClickEffects$1,
+    removeCustomContextMenu: removeCustomContextMenu$1,
+    removeCustomCursor: removeCustomCursor$1,
+    removeLive2D: removeLive2D$1,
+    removeMusicPlayer: removeMusicPlayer$1
+  }, Symbol.toStringTag, { value: "Module" }));
+  const featureRegistry$1 = { "load": "加载功能注册表" };
+  const eventInterceptor$2 = { "install": "正在安装事件拦截服务", "installSuccess": "事件拦截服务安装成功。", "blocked": "事件拦截服务已成功拦截{{blockedEventType}}事件，事件已被阻止。" };
+  const propertyInterceptor = { "install": "正在安装属性拦截服务", "installSuccess": "属性拦截服务安装成功。", "blocked": "{{featureName}}的属性拦截器已成功拦截{{propertyName}}属性，属性已被阻止。", "getter": { "blocked": "{{featureName}}的属性拦截器已成功拦截{{propertyName}}属性的getter，getter已被阻止。" }, "notConfigurable": "属性拦截器拦截{{targetObject}}的{{propertyName}}属性失败，该属性不可配置。" };
+  const services = {
+    featureRegistry: featureRegistry$1,
+    eventInterceptor: eventInterceptor$2,
+    propertyInterceptor
+  };
+  const __vite_glob_0_8$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: services,
+    eventInterceptor: eventInterceptor$2,
+    featureRegistry: featureRegistry$1,
+    propertyInterceptor
+  }, Symbol.toStringTag, { value: "Module" }));
+  const watchAndDestroy$1 = { "startFind": "开始查找符合{{selector}}选择器的元素", "nowFound": "立即找到符合{{selector}}选择器的元素", "delayFound": "延迟找到符合{{selector}}选择器的元素", "destroy": "移除符合{{selector}}选择器的元素", "startObserver": "开始监视符合{{selector}}选择器的元素", "stopObserver": "停止监视符合{{selector}}选择器的元素" };
+  const utils = {
+    watchAndDestroy: watchAndDestroy$1
+  };
+  const __vite_glob_0_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: utils,
+    watchAndDestroy: watchAndDestroy$1
+  }, Symbol.toStringTag, { value: "Module" }));
+  const isString$1 = (obj) => typeof obj === "string";
+  const defer = () => {
+    let res;
+    let rej;
+    const promise = new Promise((resolve, reject) => {
+      res = resolve;
+      rej = reject;
+    });
+    promise.resolve = res;
+    promise.reject = rej;
+    return promise;
+  };
+  const makeString = (object) => {
+    if (object == null) return "";
+    return "" + object;
+  };
+  const copy = (a, s, t) => {
+    a.forEach((m) => {
+      if (s[m]) t[m] = s[m];
+    });
+  };
+  const lastOfPathSeparatorRegExp = /###/g;
+  const cleanKey = (key) => key && key.indexOf("###") > -1 ? key.replace(lastOfPathSeparatorRegExp, ".") : key;
+  const canNotTraverseDeeper = (object) => !object || isString$1(object);
+  const getLastOfPath = (object, path2, Empty) => {
+    const stack = !isString$1(path2) ? path2 : path2.split(".");
+    let stackIndex = 0;
+    while (stackIndex < stack.length - 1) {
+      if (canNotTraverseDeeper(object)) return {};
+      const key = cleanKey(stack[stackIndex]);
+      if (!object[key] && Empty) object[key] = new Empty();
+      if (Object.prototype.hasOwnProperty.call(object, key)) {
+        object = object[key];
+      } else {
+        object = {};
+      }
+      ++stackIndex;
+    }
+    if (canNotTraverseDeeper(object)) return {};
+    return {
+      obj: object,
+      k: cleanKey(stack[stackIndex])
+    };
+  };
+  const setPath = (object, path2, newValue) => {
+    const {
+      obj,
+      k
+    } = getLastOfPath(object, path2, Object);
+    if (obj !== void 0 || path2.length === 1) {
+      obj[k] = newValue;
+      return;
+    }
+    let e = path2[path2.length - 1];
+    let p = path2.slice(0, path2.length - 1);
+    let last = getLastOfPath(object, p, Object);
+    while (last.obj === void 0 && p.length) {
+      e = `${p[p.length - 1]}.${e}`;
+      p = p.slice(0, p.length - 1);
+      last = getLastOfPath(object, p, Object);
+      if (last?.obj && typeof last.obj[`${last.k}.${e}`] !== "undefined") {
+        last.obj = void 0;
+      }
+    }
+    last.obj[`${last.k}.${e}`] = newValue;
+  };
+  const pushPath = (object, path2, newValue, concat) => {
+    const {
+      obj,
+      k
+    } = getLastOfPath(object, path2, Object);
+    obj[k] = obj[k] || [];
+    obj[k].push(newValue);
+  };
+  const getPath = (object, path2) => {
+    const {
+      obj,
+      k
+    } = getLastOfPath(object, path2);
+    if (!obj) return void 0;
+    if (!Object.prototype.hasOwnProperty.call(obj, k)) return void 0;
+    return obj[k];
+  };
+  const getPathWithDefaults = (data, defaultData, key) => {
+    const value = getPath(data, key);
+    if (value !== void 0) {
+      return value;
+    }
+    return getPath(defaultData, key);
+  };
+  const deepExtend = (target, source, overwrite) => {
+    for (const prop in source) {
+      if (prop !== "__proto__" && prop !== "constructor") {
+        if (prop in target) {
+          if (isString$1(target[prop]) || target[prop] instanceof String || isString$1(source[prop]) || source[prop] instanceof String) {
+            if (overwrite) target[prop] = source[prop];
+          } else {
+            deepExtend(target[prop], source[prop], overwrite);
+          }
+        } else {
+          target[prop] = source[prop];
+        }
+      }
+    }
+    return target;
+  };
+  const regexEscape = (str) => str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+  var _entityMap = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+    "/": "&#x2F;"
+  };
+  const escape = (data) => {
+    if (isString$1(data)) {
+      return data.replace(/[&<>"'\/]/g, (s) => _entityMap[s]);
+    }
+    return data;
+  };
+  class RegExpCache {
+    constructor(capacity) {
+      this.capacity = capacity;
+      this.regExpMap = /* @__PURE__ */ new Map();
+      this.regExpQueue = [];
+    }
+    getRegExp(pattern) {
+      const regExpFromCache = this.regExpMap.get(pattern);
+      if (regExpFromCache !== void 0) {
+        return regExpFromCache;
+      }
+      const regExpNew = new RegExp(pattern);
+      if (this.regExpQueue.length === this.capacity) {
+        this.regExpMap.delete(this.regExpQueue.shift());
+      }
+      this.regExpMap.set(pattern, regExpNew);
+      this.regExpQueue.push(pattern);
+      return regExpNew;
+    }
+  }
+  const chars = [" ", ",", "?", "!", ";"];
+  const looksLikeObjectPathRegExpCache = new RegExpCache(20);
+  const looksLikeObjectPath = (key, nsSeparator, keySeparator) => {
+    nsSeparator = nsSeparator || "";
+    keySeparator = keySeparator || "";
+    const possibleChars = chars.filter((c) => nsSeparator.indexOf(c) < 0 && keySeparator.indexOf(c) < 0);
+    if (possibleChars.length === 0) return true;
+    const r = looksLikeObjectPathRegExpCache.getRegExp(`(${possibleChars.map((c) => c === "?" ? "\\?" : c).join("|")})`);
+    let matched = !r.test(key);
+    if (!matched) {
+      const ki = key.indexOf(keySeparator);
+      if (ki > 0 && !r.test(key.substring(0, ki))) {
+        matched = true;
+      }
+    }
+    return matched;
+  };
+  const deepFind = (obj, path2, keySeparator = ".") => {
+    if (!obj) return void 0;
+    if (obj[path2]) {
+      if (!Object.prototype.hasOwnProperty.call(obj, path2)) return void 0;
+      return obj[path2];
+    }
+    const tokens = path2.split(keySeparator);
+    let current = obj;
+    for (let i = 0; i < tokens.length; ) {
+      if (!current || typeof current !== "object") {
+        return void 0;
+      }
+      let next;
+      let nextPath = "";
+      for (let j = i; j < tokens.length; ++j) {
+        if (j !== i) {
+          nextPath += keySeparator;
+        }
+        nextPath += tokens[j];
+        next = current[nextPath];
+        if (next !== void 0) {
+          if (["string", "number", "boolean"].indexOf(typeof next) > -1 && j < tokens.length - 1) {
+            continue;
+          }
+          i += j - i + 1;
+          break;
+        }
+      }
+      current = next;
+    }
+    return current;
+  };
+  const getCleanedCode = (code) => code?.replace("_", "-");
+  const consoleLogger = {
+    type: "logger",
+    log(args) {
+      this.output("log", args);
+    },
+    warn(args) {
+      this.output("warn", args);
+    },
+    error(args) {
+      this.output("error", args);
+    },
+    output(type, args) {
+      console?.[type]?.apply?.(console, args);
+    }
+  };
+  let Logger$1 = class Logger {
+    constructor(concreteLogger, options2 = {}) {
+      this.init(concreteLogger, options2);
+    }
+    init(concreteLogger, options2 = {}) {
+      this.prefix = options2.prefix || "i18next:";
+      this.logger = concreteLogger || consoleLogger;
+      this.options = options2;
+      this.debug = options2.debug;
+    }
+    log(...args) {
+      return this.forward(args, "log", "", true);
+    }
+    warn(...args) {
+      return this.forward(args, "warn", "", true);
+    }
+    error(...args) {
+      return this.forward(args, "error", "");
+    }
+    deprecate(...args) {
+      return this.forward(args, "warn", "WARNING DEPRECATED: ", true);
+    }
+    forward(args, lvl, prefix, debugOnly) {
+      if (debugOnly && !this.debug) return null;
+      if (isString$1(args[0])) args[0] = `${prefix}${this.prefix} ${args[0]}`;
+      return this.logger[lvl](args);
+    }
+    create(moduleName) {
+      return new Logger(this.logger, {
+        ...{
+          prefix: `${this.prefix}:${moduleName}:`
+        },
+        ...this.options
+      });
+    }
+    clone(options2) {
+      options2 = options2 || this.options;
+      options2.prefix = options2.prefix || this.prefix;
+      return new Logger(this.logger, options2);
+    }
+  };
+  var baseLogger = new Logger$1();
+  class EventEmitter {
+    constructor() {
+      this.observers = {};
+    }
+    on(events, listener) {
+      events.split(" ").forEach((event) => {
+        if (!this.observers[event]) this.observers[event] = /* @__PURE__ */ new Map();
+        const numListeners = this.observers[event].get(listener) || 0;
+        this.observers[event].set(listener, numListeners + 1);
+      });
+      return this;
+    }
+    off(event, listener) {
+      if (!this.observers[event]) return;
+      if (!listener) {
+        delete this.observers[event];
+        return;
+      }
+      this.observers[event].delete(listener);
+    }
+    emit(event, ...args) {
+      if (this.observers[event]) {
+        const cloned = Array.from(this.observers[event].entries());
+        cloned.forEach(([observer, numTimesAdded]) => {
+          for (let i = 0; i < numTimesAdded; i++) {
+            observer(...args);
+          }
+        });
+      }
+      if (this.observers["*"]) {
+        const cloned = Array.from(this.observers["*"].entries());
+        cloned.forEach(([observer, numTimesAdded]) => {
+          for (let i = 0; i < numTimesAdded; i++) {
+            observer.apply(observer, [event, ...args]);
+          }
+        });
+      }
+    }
+  }
+  class ResourceStore extends EventEmitter {
+    constructor(data, options2 = {
+      ns: ["translation"],
+      defaultNS: "translation"
+    }) {
+      super();
+      this.data = data || {};
+      this.options = options2;
+      if (this.options.keySeparator === void 0) {
+        this.options.keySeparator = ".";
+      }
+      if (this.options.ignoreJSONStructure === void 0) {
+        this.options.ignoreJSONStructure = true;
+      }
+    }
+    addNamespaces(ns) {
+      if (this.options.ns.indexOf(ns) < 0) {
+        this.options.ns.push(ns);
+      }
+    }
+    removeNamespaces(ns) {
+      const index = this.options.ns.indexOf(ns);
+      if (index > -1) {
+        this.options.ns.splice(index, 1);
+      }
+    }
+    getResource(lng, ns, key, options2 = {}) {
+      const keySeparator = options2.keySeparator !== void 0 ? options2.keySeparator : this.options.keySeparator;
+      const ignoreJSONStructure = options2.ignoreJSONStructure !== void 0 ? options2.ignoreJSONStructure : this.options.ignoreJSONStructure;
+      let path2;
+      if (lng.indexOf(".") > -1) {
+        path2 = lng.split(".");
+      } else {
+        path2 = [lng, ns];
+        if (key) {
+          if (Array.isArray(key)) {
+            path2.push(...key);
+          } else if (isString$1(key) && keySeparator) {
+            path2.push(...key.split(keySeparator));
+          } else {
+            path2.push(key);
+          }
+        }
+      }
+      const result = getPath(this.data, path2);
+      if (!result && !ns && !key && lng.indexOf(".") > -1) {
+        lng = path2[0];
+        ns = path2[1];
+        key = path2.slice(2).join(".");
+      }
+      if (result || !ignoreJSONStructure || !isString$1(key)) return result;
+      return deepFind(this.data?.[lng]?.[ns], key, keySeparator);
+    }
+    addResource(lng, ns, key, value, options2 = {
+      silent: false
+    }) {
+      const keySeparator = options2.keySeparator !== void 0 ? options2.keySeparator : this.options.keySeparator;
+      let path2 = [lng, ns];
+      if (key) path2 = path2.concat(keySeparator ? key.split(keySeparator) : key);
+      if (lng.indexOf(".") > -1) {
+        path2 = lng.split(".");
+        value = ns;
+        ns = path2[1];
+      }
+      this.addNamespaces(ns);
+      setPath(this.data, path2, value);
+      if (!options2.silent) this.emit("added", lng, ns, key, value);
+    }
+    addResources(lng, ns, resources2, options2 = {
+      silent: false
+    }) {
+      for (const m in resources2) {
+        if (isString$1(resources2[m]) || Array.isArray(resources2[m])) this.addResource(lng, ns, m, resources2[m], {
+          silent: true
+        });
+      }
+      if (!options2.silent) this.emit("added", lng, ns, resources2);
+    }
+    addResourceBundle(lng, ns, resources2, deep, overwrite, options2 = {
+      silent: false,
+      skipCopy: false
+    }) {
+      let path2 = [lng, ns];
+      if (lng.indexOf(".") > -1) {
+        path2 = lng.split(".");
+        deep = resources2;
+        resources2 = ns;
+        ns = path2[1];
+      }
+      this.addNamespaces(ns);
+      let pack = getPath(this.data, path2) || {};
+      if (!options2.skipCopy) resources2 = JSON.parse(JSON.stringify(resources2));
+      if (deep) {
+        deepExtend(pack, resources2, overwrite);
+      } else {
+        pack = {
+          ...pack,
+          ...resources2
+        };
+      }
+      setPath(this.data, path2, pack);
+      if (!options2.silent) this.emit("added", lng, ns, resources2);
+    }
+    removeResourceBundle(lng, ns) {
+      if (this.hasResourceBundle(lng, ns)) {
+        delete this.data[lng][ns];
+      }
+      this.removeNamespaces(ns);
+      this.emit("removed", lng, ns);
+    }
+    hasResourceBundle(lng, ns) {
+      return this.getResource(lng, ns) !== void 0;
+    }
+    getResourceBundle(lng, ns) {
+      if (!ns) ns = this.options.defaultNS;
+      return this.getResource(lng, ns);
+    }
+    getDataByLanguage(lng) {
+      return this.data[lng];
+    }
+    hasLanguageSomeTranslations(lng) {
+      const data = this.getDataByLanguage(lng);
+      const n = data && Object.keys(data) || [];
+      return !!n.find((v) => data[v] && Object.keys(data[v]).length > 0);
+    }
+    toJSON() {
+      return this.data;
+    }
+  }
+  var postProcessor = {
+    processors: {},
+    addPostProcessor(module) {
+      this.processors[module.name] = module;
+    },
+    handle(processors, value, key, options2, translator) {
+      processors.forEach((processor) => {
+        value = this.processors[processor]?.process(value, key, options2, translator) ?? value;
+      });
+      return value;
+    }
+  };
+  const checkedLoadedFor = {};
+  const shouldHandleAsObject = (res) => !isString$1(res) && typeof res !== "boolean" && typeof res !== "number";
+  class Translator extends EventEmitter {
+    constructor(services2, options2 = {}) {
+      super();
+      copy(["resourceStore", "languageUtils", "pluralResolver", "interpolator", "backendConnector", "i18nFormat", "utils"], services2, this);
+      this.options = options2;
+      if (this.options.keySeparator === void 0) {
+        this.options.keySeparator = ".";
+      }
+      this.logger = baseLogger.create("translator");
+    }
+    changeLanguage(lng) {
+      if (lng) this.language = lng;
+    }
+    exists(key, o = {
+      interpolation: {}
+    }) {
+      const opt = {
+        ...o
+      };
+      if (key == null) return false;
+      const resolved = this.resolve(key, opt);
+      return resolved?.res !== void 0;
+    }
+    extractFromKey(key, opt) {
+      let nsSeparator = opt.nsSeparator !== void 0 ? opt.nsSeparator : this.options.nsSeparator;
+      if (nsSeparator === void 0) nsSeparator = ":";
+      const keySeparator = opt.keySeparator !== void 0 ? opt.keySeparator : this.options.keySeparator;
+      let namespaces = opt.ns || this.options.defaultNS || [];
+      const wouldCheckForNsInKey = nsSeparator && key.indexOf(nsSeparator) > -1;
+      const seemsNaturalLanguage = !this.options.userDefinedKeySeparator && !opt.keySeparator && !this.options.userDefinedNsSeparator && !opt.nsSeparator && !looksLikeObjectPath(key, nsSeparator, keySeparator);
+      if (wouldCheckForNsInKey && !seemsNaturalLanguage) {
+        const m = key.match(this.interpolator.nestingRegexp);
+        if (m && m.length > 0) {
+          return {
+            key,
+            namespaces: isString$1(namespaces) ? [namespaces] : namespaces
+          };
+        }
+        const parts = key.split(nsSeparator);
+        if (nsSeparator !== keySeparator || nsSeparator === keySeparator && this.options.ns.indexOf(parts[0]) > -1) namespaces = parts.shift();
+        key = parts.join(keySeparator);
+      }
+      return {
+        key,
+        namespaces: isString$1(namespaces) ? [namespaces] : namespaces
+      };
+    }
+    translate(keys, o, lastKey) {
+      let opt = typeof o === "object" ? {
+        ...o
+      } : o;
+      if (typeof opt !== "object" && this.options.overloadTranslationOptionHandler) {
+        opt = this.options.overloadTranslationOptionHandler(arguments);
+      }
+      if (typeof options === "object") opt = {
+        ...opt
+      };
+      if (!opt) opt = {};
+      if (keys == null) return "";
+      if (!Array.isArray(keys)) keys = [String(keys)];
+      const returnDetails = opt.returnDetails !== void 0 ? opt.returnDetails : this.options.returnDetails;
+      const keySeparator = opt.keySeparator !== void 0 ? opt.keySeparator : this.options.keySeparator;
+      const {
+        key,
+        namespaces
+      } = this.extractFromKey(keys[keys.length - 1], opt);
+      const namespace = namespaces[namespaces.length - 1];
+      let nsSeparator = opt.nsSeparator !== void 0 ? opt.nsSeparator : this.options.nsSeparator;
+      if (nsSeparator === void 0) nsSeparator = ":";
+      const lng = opt.lng || this.language;
+      const appendNamespaceToCIMode = opt.appendNamespaceToCIMode || this.options.appendNamespaceToCIMode;
+      if (lng?.toLowerCase() === "cimode") {
+        if (appendNamespaceToCIMode) {
+          if (returnDetails) {
+            return {
+              res: `${namespace}${nsSeparator}${key}`,
+              usedKey: key,
+              exactUsedKey: key,
+              usedLng: lng,
+              usedNS: namespace,
+              usedParams: this.getUsedParamsDetails(opt)
+            };
+          }
+          return `${namespace}${nsSeparator}${key}`;
+        }
+        if (returnDetails) {
+          return {
+            res: key,
+            usedKey: key,
+            exactUsedKey: key,
+            usedLng: lng,
+            usedNS: namespace,
+            usedParams: this.getUsedParamsDetails(opt)
+          };
+        }
+        return key;
+      }
+      const resolved = this.resolve(keys, opt);
+      let res = resolved?.res;
+      const resUsedKey = resolved?.usedKey || key;
+      const resExactUsedKey = resolved?.exactUsedKey || key;
+      const noObject = ["[object Number]", "[object Function]", "[object RegExp]"];
+      const joinArrays = opt.joinArrays !== void 0 ? opt.joinArrays : this.options.joinArrays;
+      const handleAsObjectInI18nFormat = !this.i18nFormat || this.i18nFormat.handleAsObject;
+      const needsPluralHandling = opt.count !== void 0 && !isString$1(opt.count);
+      const hasDefaultValue = Translator.hasDefaultValue(opt);
+      const defaultValueSuffix = needsPluralHandling ? this.pluralResolver.getSuffix(lng, opt.count, opt) : "";
+      const defaultValueSuffixOrdinalFallback = opt.ordinal && needsPluralHandling ? this.pluralResolver.getSuffix(lng, opt.count, {
+        ordinal: false
+      }) : "";
+      const needsZeroSuffixLookup = needsPluralHandling && !opt.ordinal && opt.count === 0;
+      const defaultValue = needsZeroSuffixLookup && opt[`defaultValue${this.options.pluralSeparator}zero`] || opt[`defaultValue${defaultValueSuffix}`] || opt[`defaultValue${defaultValueSuffixOrdinalFallback}`] || opt.defaultValue;
+      let resForObjHndl = res;
+      if (handleAsObjectInI18nFormat && !res && hasDefaultValue) {
+        resForObjHndl = defaultValue;
+      }
+      const handleAsObject = shouldHandleAsObject(resForObjHndl);
+      const resType = Object.prototype.toString.apply(resForObjHndl);
+      if (handleAsObjectInI18nFormat && resForObjHndl && handleAsObject && noObject.indexOf(resType) < 0 && !(isString$1(joinArrays) && Array.isArray(resForObjHndl))) {
+        if (!opt.returnObjects && !this.options.returnObjects) {
+          if (!this.options.returnedObjectHandler) {
+            this.logger.warn("accessing an object - but returnObjects options is not enabled!");
+          }
+          const r = this.options.returnedObjectHandler ? this.options.returnedObjectHandler(resUsedKey, resForObjHndl, {
+            ...opt,
+            ns: namespaces
+          }) : `key '${key} (${this.language})' returned an object instead of string.`;
+          if (returnDetails) {
+            resolved.res = r;
+            resolved.usedParams = this.getUsedParamsDetails(opt);
+            return resolved;
+          }
+          return r;
+        }
+        if (keySeparator) {
+          const resTypeIsArray = Array.isArray(resForObjHndl);
+          const copy2 = resTypeIsArray ? [] : {};
+          const newKeyToUse = resTypeIsArray ? resExactUsedKey : resUsedKey;
+          for (const m in resForObjHndl) {
+            if (Object.prototype.hasOwnProperty.call(resForObjHndl, m)) {
+              const deepKey = `${newKeyToUse}${keySeparator}${m}`;
+              if (hasDefaultValue && !res) {
+                copy2[m] = this.translate(deepKey, {
+                  ...opt,
+                  defaultValue: shouldHandleAsObject(defaultValue) ? defaultValue[m] : void 0,
+                  ...{
+                    joinArrays: false,
+                    ns: namespaces
+                  }
+                });
+              } else {
+                copy2[m] = this.translate(deepKey, {
+                  ...opt,
+                  ...{
+                    joinArrays: false,
+                    ns: namespaces
+                  }
+                });
+              }
+              if (copy2[m] === deepKey) copy2[m] = resForObjHndl[m];
+            }
+          }
+          res = copy2;
+        }
+      } else if (handleAsObjectInI18nFormat && isString$1(joinArrays) && Array.isArray(res)) {
+        res = res.join(joinArrays);
+        if (res) res = this.extendTranslation(res, keys, opt, lastKey);
+      } else {
+        let usedDefault = false;
+        let usedKey = false;
+        if (!this.isValidLookup(res) && hasDefaultValue) {
+          usedDefault = true;
+          res = defaultValue;
+        }
+        if (!this.isValidLookup(res)) {
+          usedKey = true;
+          res = key;
+        }
+        const missingKeyNoValueFallbackToKey = opt.missingKeyNoValueFallbackToKey || this.options.missingKeyNoValueFallbackToKey;
+        const resForMissing = missingKeyNoValueFallbackToKey && usedKey ? void 0 : res;
+        const updateMissing = hasDefaultValue && defaultValue !== res && this.options.updateMissing;
+        if (usedKey || usedDefault || updateMissing) {
+          this.logger.log(updateMissing ? "updateKey" : "missingKey", lng, namespace, key, updateMissing ? defaultValue : res);
+          if (keySeparator) {
+            const fk = this.resolve(key, {
+              ...opt,
+              keySeparator: false
+            });
+            if (fk && fk.res) this.logger.warn("Seems the loaded translations were in flat JSON format instead of nested. Either set keySeparator: false on init or make sure your translations are published in nested format.");
+          }
+          let lngs = [];
+          const fallbackLngs = this.languageUtils.getFallbackCodes(this.options.fallbackLng, opt.lng || this.language);
+          if (this.options.saveMissingTo === "fallback" && fallbackLngs && fallbackLngs[0]) {
+            for (let i = 0; i < fallbackLngs.length; i++) {
+              lngs.push(fallbackLngs[i]);
+            }
+          } else if (this.options.saveMissingTo === "all") {
+            lngs = this.languageUtils.toResolveHierarchy(opt.lng || this.language);
+          } else {
+            lngs.push(opt.lng || this.language);
+          }
+          const send = (l, k, specificDefaultValue) => {
+            const defaultForMissing = hasDefaultValue && specificDefaultValue !== res ? specificDefaultValue : resForMissing;
+            if (this.options.missingKeyHandler) {
+              this.options.missingKeyHandler(l, namespace, k, defaultForMissing, updateMissing, opt);
+            } else if (this.backendConnector?.saveMissing) {
+              this.backendConnector.saveMissing(l, namespace, k, defaultForMissing, updateMissing, opt);
+            }
+            this.emit("missingKey", l, namespace, k, res);
+          };
+          if (this.options.saveMissing) {
+            if (this.options.saveMissingPlurals && needsPluralHandling) {
+              lngs.forEach((language) => {
+                const suffixes = this.pluralResolver.getSuffixes(language, opt);
+                if (needsZeroSuffixLookup && opt[`defaultValue${this.options.pluralSeparator}zero`] && suffixes.indexOf(`${this.options.pluralSeparator}zero`) < 0) {
+                  suffixes.push(`${this.options.pluralSeparator}zero`);
+                }
+                suffixes.forEach((suffix) => {
+                  send([language], key + suffix, opt[`defaultValue${suffix}`] || defaultValue);
+                });
+              });
+            } else {
+              send(lngs, key, defaultValue);
+            }
+          }
+        }
+        res = this.extendTranslation(res, keys, opt, resolved, lastKey);
+        if (usedKey && res === key && this.options.appendNamespaceToMissingKey) {
+          res = `${namespace}${nsSeparator}${key}`;
+        }
+        if ((usedKey || usedDefault) && this.options.parseMissingKeyHandler) {
+          res = this.options.parseMissingKeyHandler(this.options.appendNamespaceToMissingKey ? `${namespace}${nsSeparator}${key}` : key, usedDefault ? res : void 0, opt);
+        }
+      }
+      if (returnDetails) {
+        resolved.res = res;
+        resolved.usedParams = this.getUsedParamsDetails(opt);
+        return resolved;
+      }
+      return res;
+    }
+    extendTranslation(res, key, opt, resolved, lastKey) {
+      if (this.i18nFormat?.parse) {
+        res = this.i18nFormat.parse(res, {
+          ...this.options.interpolation.defaultVariables,
+          ...opt
+        }, opt.lng || this.language || resolved.usedLng, resolved.usedNS, resolved.usedKey, {
+          resolved
+        });
+      } else if (!opt.skipInterpolation) {
+        if (opt.interpolation) this.interpolator.init({
+          ...opt,
+          ...{
+            interpolation: {
+              ...this.options.interpolation,
+              ...opt.interpolation
+            }
+          }
+        });
+        const skipOnVariables = isString$1(res) && (opt?.interpolation?.skipOnVariables !== void 0 ? opt.interpolation.skipOnVariables : this.options.interpolation.skipOnVariables);
+        let nestBef;
+        if (skipOnVariables) {
+          const nb = res.match(this.interpolator.nestingRegexp);
+          nestBef = nb && nb.length;
+        }
+        let data = opt.replace && !isString$1(opt.replace) ? opt.replace : opt;
+        if (this.options.interpolation.defaultVariables) data = {
+          ...this.options.interpolation.defaultVariables,
+          ...data
+        };
+        res = this.interpolator.interpolate(res, data, opt.lng || this.language || resolved.usedLng, opt);
+        if (skipOnVariables) {
+          const na = res.match(this.interpolator.nestingRegexp);
+          const nestAft = na && na.length;
+          if (nestBef < nestAft) opt.nest = false;
+        }
+        if (!opt.lng && resolved && resolved.res) opt.lng = this.language || resolved.usedLng;
+        if (opt.nest !== false) res = this.interpolator.nest(res, (...args) => {
+          if (lastKey?.[0] === args[0] && !opt.context) {
+            this.logger.warn(`It seems you are nesting recursively key: ${args[0]} in key: ${key[0]}`);
+            return null;
+          }
+          return this.translate(...args, key);
+        }, opt);
+        if (opt.interpolation) this.interpolator.reset();
+      }
+      const postProcess = opt.postProcess || this.options.postProcess;
+      const postProcessorNames = isString$1(postProcess) ? [postProcess] : postProcess;
+      if (res != null && postProcessorNames?.length && opt.applyPostProcessor !== false) {
+        res = postProcessor.handle(postProcessorNames, res, key, this.options && this.options.postProcessPassResolved ? {
+          i18nResolved: {
+            ...resolved,
+            usedParams: this.getUsedParamsDetails(opt)
+          },
+          ...opt
+        } : opt, this);
+      }
+      return res;
+    }
+    resolve(keys, opt = {}) {
+      let found;
+      let usedKey;
+      let exactUsedKey;
+      let usedLng;
+      let usedNS;
+      if (isString$1(keys)) keys = [keys];
+      keys.forEach((k) => {
+        if (this.isValidLookup(found)) return;
+        const extracted = this.extractFromKey(k, opt);
+        const key = extracted.key;
+        usedKey = key;
+        let namespaces = extracted.namespaces;
+        if (this.options.fallbackNS) namespaces = namespaces.concat(this.options.fallbackNS);
+        const needsPluralHandling = opt.count !== void 0 && !isString$1(opt.count);
+        const needsZeroSuffixLookup = needsPluralHandling && !opt.ordinal && opt.count === 0;
+        const needsContextHandling = opt.context !== void 0 && (isString$1(opt.context) || typeof opt.context === "number") && opt.context !== "";
+        const codes = opt.lngs ? opt.lngs : this.languageUtils.toResolveHierarchy(opt.lng || this.language, opt.fallbackLng);
+        namespaces.forEach((ns) => {
+          if (this.isValidLookup(found)) return;
+          usedNS = ns;
+          if (!checkedLoadedFor[`${codes[0]}-${ns}`] && this.utils?.hasLoadedNamespace && !this.utils?.hasLoadedNamespace(usedNS)) {
+            checkedLoadedFor[`${codes[0]}-${ns}`] = true;
+            this.logger.warn(`key "${usedKey}" for languages "${codes.join(", ")}" won't get resolved as namespace "${usedNS}" was not yet loaded`, "This means something IS WRONG in your setup. You access the t function before i18next.init / i18next.loadNamespace / i18next.changeLanguage was done. Wait for the callback or Promise to resolve before accessing it!!!");
+          }
+          codes.forEach((code) => {
+            if (this.isValidLookup(found)) return;
+            usedLng = code;
+            const finalKeys = [key];
+            if (this.i18nFormat?.addLookupKeys) {
+              this.i18nFormat.addLookupKeys(finalKeys, key, code, ns, opt);
+            } else {
+              let pluralSuffix;
+              if (needsPluralHandling) pluralSuffix = this.pluralResolver.getSuffix(code, opt.count, opt);
+              const zeroSuffix = `${this.options.pluralSeparator}zero`;
+              const ordinalPrefix = `${this.options.pluralSeparator}ordinal${this.options.pluralSeparator}`;
+              if (needsPluralHandling) {
+                finalKeys.push(key + pluralSuffix);
+                if (opt.ordinal && pluralSuffix.indexOf(ordinalPrefix) === 0) {
+                  finalKeys.push(key + pluralSuffix.replace(ordinalPrefix, this.options.pluralSeparator));
+                }
+                if (needsZeroSuffixLookup) {
+                  finalKeys.push(key + zeroSuffix);
+                }
+              }
+              if (needsContextHandling) {
+                const contextKey = `${key}${this.options.contextSeparator}${opt.context}`;
+                finalKeys.push(contextKey);
+                if (needsPluralHandling) {
+                  finalKeys.push(contextKey + pluralSuffix);
+                  if (opt.ordinal && pluralSuffix.indexOf(ordinalPrefix) === 0) {
+                    finalKeys.push(contextKey + pluralSuffix.replace(ordinalPrefix, this.options.pluralSeparator));
+                  }
+                  if (needsZeroSuffixLookup) {
+                    finalKeys.push(contextKey + zeroSuffix);
+                  }
+                }
+              }
+            }
+            let possibleKey;
+            while (possibleKey = finalKeys.pop()) {
+              if (!this.isValidLookup(found)) {
+                exactUsedKey = possibleKey;
+                found = this.getResource(code, ns, possibleKey, opt);
+              }
+            }
+          });
+        });
+      });
+      return {
+        res: found,
+        usedKey,
+        exactUsedKey,
+        usedLng,
+        usedNS
+      };
+    }
+    isValidLookup(res) {
+      return res !== void 0 && !(!this.options.returnNull && res === null) && !(!this.options.returnEmptyString && res === "");
+    }
+    getResource(code, ns, key, options2 = {}) {
+      if (this.i18nFormat?.getResource) return this.i18nFormat.getResource(code, ns, key, options2);
+      return this.resourceStore.getResource(code, ns, key, options2);
+    }
+    getUsedParamsDetails(options2 = {}) {
+      const optionsKeys = ["defaultValue", "ordinal", "context", "replace", "lng", "lngs", "fallbackLng", "ns", "keySeparator", "nsSeparator", "returnObjects", "returnDetails", "joinArrays", "postProcess", "interpolation"];
+      const useOptionsReplaceForData = options2.replace && !isString$1(options2.replace);
+      let data = useOptionsReplaceForData ? options2.replace : options2;
+      if (useOptionsReplaceForData && typeof options2.count !== "undefined") {
+        data.count = options2.count;
+      }
+      if (this.options.interpolation.defaultVariables) {
+        data = {
+          ...this.options.interpolation.defaultVariables,
+          ...data
+        };
+      }
+      if (!useOptionsReplaceForData) {
+        data = {
+          ...data
+        };
+        for (const key of optionsKeys) {
+          delete data[key];
+        }
+      }
+      return data;
+    }
+    static hasDefaultValue(options2) {
+      const prefix = "defaultValue";
+      for (const option in options2) {
+        if (Object.prototype.hasOwnProperty.call(options2, option) && prefix === option.substring(0, prefix.length) && void 0 !== options2[option]) {
+          return true;
+        }
+      }
+      return false;
+    }
+  }
+  class LanguageUtil {
+    constructor(options2) {
+      this.options = options2;
+      this.supportedLngs = this.options.supportedLngs || false;
+      this.logger = baseLogger.create("languageUtils");
+    }
+    getScriptPartFromCode(code) {
+      code = getCleanedCode(code);
+      if (!code || code.indexOf("-") < 0) return null;
+      const p = code.split("-");
+      if (p.length === 2) return null;
+      p.pop();
+      if (p[p.length - 1].toLowerCase() === "x") return null;
+      return this.formatLanguageCode(p.join("-"));
+    }
+    getLanguagePartFromCode(code) {
+      code = getCleanedCode(code);
+      if (!code || code.indexOf("-") < 0) return code;
+      const p = code.split("-");
+      return this.formatLanguageCode(p[0]);
+    }
+    formatLanguageCode(code) {
+      if (isString$1(code) && code.indexOf("-") > -1) {
+        let formattedCode;
+        try {
+          formattedCode = Intl.getCanonicalLocales(code)[0];
+        } catch (e) {
+        }
+        if (formattedCode && this.options.lowerCaseLng) {
+          formattedCode = formattedCode.toLowerCase();
+        }
+        if (formattedCode) return formattedCode;
+        if (this.options.lowerCaseLng) {
+          return code.toLowerCase();
+        }
+        return code;
+      }
+      return this.options.cleanCode || this.options.lowerCaseLng ? code.toLowerCase() : code;
+    }
+    isSupportedCode(code) {
+      if (this.options.load === "languageOnly" || this.options.nonExplicitSupportedLngs) {
+        code = this.getLanguagePartFromCode(code);
+      }
+      return !this.supportedLngs || !this.supportedLngs.length || this.supportedLngs.indexOf(code) > -1;
+    }
+    getBestMatchFromCodes(codes) {
+      if (!codes) return null;
+      let found;
+      codes.forEach((code) => {
+        if (found) return;
+        const cleanedLng = this.formatLanguageCode(code);
+        if (!this.options.supportedLngs || this.isSupportedCode(cleanedLng)) found = cleanedLng;
+      });
+      if (!found && this.options.supportedLngs) {
+        codes.forEach((code) => {
+          if (found) return;
+          const lngScOnly = this.getScriptPartFromCode(code);
+          if (this.isSupportedCode(lngScOnly)) return found = lngScOnly;
+          const lngOnly = this.getLanguagePartFromCode(code);
+          if (this.isSupportedCode(lngOnly)) return found = lngOnly;
+          found = this.options.supportedLngs.find((supportedLng) => {
+            if (supportedLng === lngOnly) return supportedLng;
+            if (supportedLng.indexOf("-") < 0 && lngOnly.indexOf("-") < 0) return;
+            if (supportedLng.indexOf("-") > 0 && lngOnly.indexOf("-") < 0 && supportedLng.substring(0, supportedLng.indexOf("-")) === lngOnly) return supportedLng;
+            if (supportedLng.indexOf(lngOnly) === 0 && lngOnly.length > 1) return supportedLng;
+          });
+        });
+      }
+      if (!found) found = this.getFallbackCodes(this.options.fallbackLng)[0];
+      return found;
+    }
+    getFallbackCodes(fallbacks, code) {
+      if (!fallbacks) return [];
+      if (typeof fallbacks === "function") fallbacks = fallbacks(code);
+      if (isString$1(fallbacks)) fallbacks = [fallbacks];
+      if (Array.isArray(fallbacks)) return fallbacks;
+      if (!code) return fallbacks.default || [];
+      let found = fallbacks[code];
+      if (!found) found = fallbacks[this.getScriptPartFromCode(code)];
+      if (!found) found = fallbacks[this.formatLanguageCode(code)];
+      if (!found) found = fallbacks[this.getLanguagePartFromCode(code)];
+      if (!found) found = fallbacks.default;
+      return found || [];
+    }
+    toResolveHierarchy(code, fallbackCode) {
+      const fallbackCodes = this.getFallbackCodes((fallbackCode === false ? [] : fallbackCode) || this.options.fallbackLng || [], code);
+      const codes = [];
+      const addCode = (c) => {
+        if (!c) return;
+        if (this.isSupportedCode(c)) {
+          codes.push(c);
+        } else {
+          this.logger.warn(`rejecting language code not found in supportedLngs: ${c}`);
+        }
+      };
+      if (isString$1(code) && (code.indexOf("-") > -1 || code.indexOf("_") > -1)) {
+        if (this.options.load !== "languageOnly") addCode(this.formatLanguageCode(code));
+        if (this.options.load !== "languageOnly" && this.options.load !== "currentOnly") addCode(this.getScriptPartFromCode(code));
+        if (this.options.load !== "currentOnly") addCode(this.getLanguagePartFromCode(code));
+      } else if (isString$1(code)) {
+        addCode(this.formatLanguageCode(code));
+      }
+      fallbackCodes.forEach((fc) => {
+        if (codes.indexOf(fc) < 0) addCode(this.formatLanguageCode(fc));
+      });
+      return codes;
+    }
+  }
+  const suffixesOrder = {
+    zero: 0,
+    one: 1,
+    two: 2,
+    few: 3,
+    many: 4,
+    other: 5
+  };
+  const dummyRule = {
+    select: (count) => count === 1 ? "one" : "other",
+    resolvedOptions: () => ({
+      pluralCategories: ["one", "other"]
+    })
+  };
+  class PluralResolver {
+    constructor(languageUtils, options2 = {}) {
+      this.languageUtils = languageUtils;
+      this.options = options2;
+      this.logger = baseLogger.create("pluralResolver");
+      this.pluralRulesCache = {};
+    }
+    addRule(lng, obj) {
+      this.rules[lng] = obj;
+    }
+    clearCache() {
+      this.pluralRulesCache = {};
+    }
+    getRule(code, options2 = {}) {
+      const cleanedCode = getCleanedCode(code === "dev" ? "en" : code);
+      const type = options2.ordinal ? "ordinal" : "cardinal";
+      const cacheKey = JSON.stringify({
+        cleanedCode,
+        type
+      });
+      if (cacheKey in this.pluralRulesCache) {
+        return this.pluralRulesCache[cacheKey];
+      }
+      let rule;
+      try {
+        rule = new Intl.PluralRules(cleanedCode, {
+          type
+        });
+      } catch (err) {
+        if (!Intl) {
+          this.logger.error("No Intl support, please use an Intl polyfill!");
+          return dummyRule;
+        }
+        if (!code.match(/-|_/)) return dummyRule;
+        const lngPart = this.languageUtils.getLanguagePartFromCode(code);
+        rule = this.getRule(lngPart, options2);
+      }
+      this.pluralRulesCache[cacheKey] = rule;
+      return rule;
+    }
+    needsPlural(code, options2 = {}) {
+      let rule = this.getRule(code, options2);
+      if (!rule) rule = this.getRule("dev", options2);
+      return rule?.resolvedOptions().pluralCategories.length > 1;
+    }
+    getPluralFormsOfKey(code, key, options2 = {}) {
+      return this.getSuffixes(code, options2).map((suffix) => `${key}${suffix}`);
+    }
+    getSuffixes(code, options2 = {}) {
+      let rule = this.getRule(code, options2);
+      if (!rule) rule = this.getRule("dev", options2);
+      if (!rule) return [];
+      return rule.resolvedOptions().pluralCategories.sort((pluralCategory1, pluralCategory2) => suffixesOrder[pluralCategory1] - suffixesOrder[pluralCategory2]).map((pluralCategory) => `${this.options.prepend}${options2.ordinal ? `ordinal${this.options.prepend}` : ""}${pluralCategory}`);
+    }
+    getSuffix(code, count, options2 = {}) {
+      const rule = this.getRule(code, options2);
+      if (rule) {
+        return `${this.options.prepend}${options2.ordinal ? `ordinal${this.options.prepend}` : ""}${rule.select(count)}`;
+      }
+      this.logger.warn(`no plural rule found for: ${code}`);
+      return this.getSuffix("dev", count, options2);
+    }
+  }
+  const deepFindWithDefaults = (data, defaultData, key, keySeparator = ".", ignoreJSONStructure = true) => {
+    let path2 = getPathWithDefaults(data, defaultData, key);
+    if (!path2 && ignoreJSONStructure && isString$1(key)) {
+      path2 = deepFind(data, key, keySeparator);
+      if (path2 === void 0) path2 = deepFind(defaultData, key, keySeparator);
+    }
+    return path2;
+  };
+  const regexSafe = (val) => val.replace(/\$/g, "$$$$");
+  class Interpolator {
+    constructor(options2 = {}) {
+      this.logger = baseLogger.create("interpolator");
+      this.options = options2;
+      this.format = options2?.interpolation?.format || ((value) => value);
+      this.init(options2);
+    }
+    init(options2 = {}) {
+      if (!options2.interpolation) options2.interpolation = {
+        escapeValue: true
+      };
+      const {
+        escape: escape$1,
+        escapeValue,
+        useRawValueToEscape,
+        prefix,
+        prefixEscaped,
+        suffix,
+        suffixEscaped,
+        formatSeparator,
+        unescapeSuffix,
+        unescapePrefix,
+        nestingPrefix,
+        nestingPrefixEscaped,
+        nestingSuffix,
+        nestingSuffixEscaped,
+        nestingOptionsSeparator,
+        maxReplaces,
+        alwaysFormat
+      } = options2.interpolation;
+      this.escape = escape$1 !== void 0 ? escape$1 : escape;
+      this.escapeValue = escapeValue !== void 0 ? escapeValue : true;
+      this.useRawValueToEscape = useRawValueToEscape !== void 0 ? useRawValueToEscape : false;
+      this.prefix = prefix ? regexEscape(prefix) : prefixEscaped || "{{";
+      this.suffix = suffix ? regexEscape(suffix) : suffixEscaped || "}}";
+      this.formatSeparator = formatSeparator || ",";
+      this.unescapePrefix = unescapeSuffix ? "" : unescapePrefix || "-";
+      this.unescapeSuffix = this.unescapePrefix ? "" : unescapeSuffix || "";
+      this.nestingPrefix = nestingPrefix ? regexEscape(nestingPrefix) : nestingPrefixEscaped || regexEscape("$t(");
+      this.nestingSuffix = nestingSuffix ? regexEscape(nestingSuffix) : nestingSuffixEscaped || regexEscape(")");
+      this.nestingOptionsSeparator = nestingOptionsSeparator || ",";
+      this.maxReplaces = maxReplaces || 1e3;
+      this.alwaysFormat = alwaysFormat !== void 0 ? alwaysFormat : false;
+      this.resetRegExp();
+    }
+    reset() {
+      if (this.options) this.init(this.options);
+    }
+    resetRegExp() {
+      const getOrResetRegExp = (existingRegExp, pattern) => {
+        if (existingRegExp?.source === pattern) {
+          existingRegExp.lastIndex = 0;
+          return existingRegExp;
+        }
+        return new RegExp(pattern, "g");
+      };
+      this.regexp = getOrResetRegExp(this.regexp, `${this.prefix}(.+?)${this.suffix}`);
+      this.regexpUnescape = getOrResetRegExp(this.regexpUnescape, `${this.prefix}${this.unescapePrefix}(.+?)${this.unescapeSuffix}${this.suffix}`);
+      this.nestingRegexp = getOrResetRegExp(this.nestingRegexp, `${this.nestingPrefix}(.+?)${this.nestingSuffix}`);
+    }
+    interpolate(str, data, lng, options2) {
+      let match;
+      let value;
+      let replaces;
+      const defaultData = this.options && this.options.interpolation && this.options.interpolation.defaultVariables || {};
+      const handleFormat = (key) => {
+        if (key.indexOf(this.formatSeparator) < 0) {
+          const path2 = deepFindWithDefaults(data, defaultData, key, this.options.keySeparator, this.options.ignoreJSONStructure);
+          return this.alwaysFormat ? this.format(path2, void 0, lng, {
+            ...options2,
+            ...data,
+            interpolationkey: key
+          }) : path2;
+        }
+        const p = key.split(this.formatSeparator);
+        const k = p.shift().trim();
+        const f = p.join(this.formatSeparator).trim();
+        return this.format(deepFindWithDefaults(data, defaultData, k, this.options.keySeparator, this.options.ignoreJSONStructure), f, lng, {
+          ...options2,
+          ...data,
+          interpolationkey: k
+        });
+      };
+      this.resetRegExp();
+      const missingInterpolationHandler = options2?.missingInterpolationHandler || this.options.missingInterpolationHandler;
+      const skipOnVariables = options2?.interpolation?.skipOnVariables !== void 0 ? options2.interpolation.skipOnVariables : this.options.interpolation.skipOnVariables;
+      const todos = [{
+        regex: this.regexpUnescape,
+        safeValue: (val) => regexSafe(val)
+      }, {
+        regex: this.regexp,
+        safeValue: (val) => this.escapeValue ? regexSafe(this.escape(val)) : regexSafe(val)
+      }];
+      todos.forEach((todo) => {
+        replaces = 0;
+        while (match = todo.regex.exec(str)) {
+          const matchedVar = match[1].trim();
+          value = handleFormat(matchedVar);
+          if (value === void 0) {
+            if (typeof missingInterpolationHandler === "function") {
+              const temp = missingInterpolationHandler(str, match, options2);
+              value = isString$1(temp) ? temp : "";
+            } else if (options2 && Object.prototype.hasOwnProperty.call(options2, matchedVar)) {
+              value = "";
+            } else if (skipOnVariables) {
+              value = match[0];
+              continue;
+            } else {
+              this.logger.warn(`missed to pass in variable ${matchedVar} for interpolating ${str}`);
+              value = "";
+            }
+          } else if (!isString$1(value) && !this.useRawValueToEscape) {
+            value = makeString(value);
+          }
+          const safeValue = todo.safeValue(value);
+          str = str.replace(match[0], safeValue);
+          if (skipOnVariables) {
+            todo.regex.lastIndex += value.length;
+            todo.regex.lastIndex -= match[0].length;
+          } else {
+            todo.regex.lastIndex = 0;
+          }
+          replaces++;
+          if (replaces >= this.maxReplaces) {
+            break;
+          }
+        }
+      });
+      return str;
+    }
+    nest(str, fc, options2 = {}) {
+      let match;
+      let value;
+      let clonedOptions;
+      const handleHasOptions = (key, inheritedOptions) => {
+        const sep = this.nestingOptionsSeparator;
+        if (key.indexOf(sep) < 0) return key;
+        const c = key.split(new RegExp(`${sep}[ ]*{`));
+        let optionsString = `{${c[1]}`;
+        key = c[0];
+        optionsString = this.interpolate(optionsString, clonedOptions);
+        const matchedSingleQuotes = optionsString.match(/'/g);
+        const matchedDoubleQuotes = optionsString.match(/"/g);
+        if ((matchedSingleQuotes?.length ?? 0) % 2 === 0 && !matchedDoubleQuotes || matchedDoubleQuotes.length % 2 !== 0) {
+          optionsString = optionsString.replace(/'/g, '"');
+        }
+        try {
+          clonedOptions = JSON.parse(optionsString);
+          if (inheritedOptions) clonedOptions = {
+            ...inheritedOptions,
+            ...clonedOptions
+          };
+        } catch (e) {
+          this.logger.warn(`failed parsing options string in nesting for key ${key}`, e);
+          return `${key}${sep}${optionsString}`;
+        }
+        if (clonedOptions.defaultValue && clonedOptions.defaultValue.indexOf(this.prefix) > -1) delete clonedOptions.defaultValue;
+        return key;
+      };
+      while (match = this.nestingRegexp.exec(str)) {
+        let formatters = [];
+        clonedOptions = {
+          ...options2
+        };
+        clonedOptions = clonedOptions.replace && !isString$1(clonedOptions.replace) ? clonedOptions.replace : clonedOptions;
+        clonedOptions.applyPostProcessor = false;
+        delete clonedOptions.defaultValue;
+        const keyEndIndex = /{.*}/.test(match[1]) ? match[1].lastIndexOf("}") + 1 : match[1].indexOf(this.formatSeparator);
+        if (keyEndIndex !== -1) {
+          formatters = match[1].slice(keyEndIndex).split(this.formatSeparator).map((elem) => elem.trim()).filter(Boolean);
+          match[1] = match[1].slice(0, keyEndIndex);
+        }
+        value = fc(handleHasOptions.call(this, match[1].trim(), clonedOptions), clonedOptions);
+        if (value && match[0] === str && !isString$1(value)) return value;
+        if (!isString$1(value)) value = makeString(value);
+        if (!value) {
+          this.logger.warn(`missed to resolve ${match[1]} for nesting ${str}`);
+          value = "";
+        }
+        if (formatters.length) {
+          value = formatters.reduce((v, f) => this.format(v, f, options2.lng, {
+            ...options2,
+            interpolationkey: match[1].trim()
+          }), value.trim());
+        }
+        str = str.replace(match[0], value);
+        this.regexp.lastIndex = 0;
+      }
+      return str;
+    }
+  }
+  const parseFormatStr = (formatStr) => {
+    let formatName = formatStr.toLowerCase().trim();
+    const formatOptions = {};
+    if (formatStr.indexOf("(") > -1) {
+      const p = formatStr.split("(");
+      formatName = p[0].toLowerCase().trim();
+      const optStr = p[1].substring(0, p[1].length - 1);
+      if (formatName === "currency" && optStr.indexOf(":") < 0) {
+        if (!formatOptions.currency) formatOptions.currency = optStr.trim();
+      } else if (formatName === "relativetime" && optStr.indexOf(":") < 0) {
+        if (!formatOptions.range) formatOptions.range = optStr.trim();
+      } else {
+        const opts = optStr.split(";");
+        opts.forEach((opt) => {
+          if (opt) {
+            const [key, ...rest] = opt.split(":");
+            const val = rest.join(":").trim().replace(/^'+|'+$/g, "");
+            const trimmedKey = key.trim();
+            if (!formatOptions[trimmedKey]) formatOptions[trimmedKey] = val;
+            if (val === "false") formatOptions[trimmedKey] = false;
+            if (val === "true") formatOptions[trimmedKey] = true;
+            if (!isNaN(val)) formatOptions[trimmedKey] = parseInt(val, 10);
+          }
+        });
+      }
+    }
+    return {
+      formatName,
+      formatOptions
+    };
+  };
+  const createCachedFormatter = (fn) => {
+    const cache = {};
+    return (v, l, o) => {
+      let optForCache = o;
+      if (o && o.interpolationkey && o.formatParams && o.formatParams[o.interpolationkey] && o[o.interpolationkey]) {
+        optForCache = {
+          ...optForCache,
+          [o.interpolationkey]: void 0
+        };
+      }
+      const key = l + JSON.stringify(optForCache);
+      let frm = cache[key];
+      if (!frm) {
+        frm = fn(getCleanedCode(l), o);
+        cache[key] = frm;
+      }
+      return frm(v);
+    };
+  };
+  const createNonCachedFormatter = (fn) => (v, l, o) => fn(getCleanedCode(l), o)(v);
+  class Formatter {
+    constructor(options2 = {}) {
+      this.logger = baseLogger.create("formatter");
+      this.options = options2;
+      this.init(options2);
+    }
+    init(services2, options2 = {
+      interpolation: {}
+    }) {
+      this.formatSeparator = options2.interpolation.formatSeparator || ",";
+      const cf = options2.cacheInBuiltFormats ? createCachedFormatter : createNonCachedFormatter;
+      this.formats = {
+        number: cf((lng, opt) => {
+          const formatter = new Intl.NumberFormat(lng, {
+            ...opt
+          });
+          return (val) => formatter.format(val);
+        }),
+        currency: cf((lng, opt) => {
+          const formatter = new Intl.NumberFormat(lng, {
+            ...opt,
+            style: "currency"
+          });
+          return (val) => formatter.format(val);
+        }),
+        datetime: cf((lng, opt) => {
+          const formatter = new Intl.DateTimeFormat(lng, {
+            ...opt
+          });
+          return (val) => formatter.format(val);
+        }),
+        relativetime: cf((lng, opt) => {
+          const formatter = new Intl.RelativeTimeFormat(lng, {
+            ...opt
+          });
+          return (val) => formatter.format(val, opt.range || "day");
+        }),
+        list: cf((lng, opt) => {
+          const formatter = new Intl.ListFormat(lng, {
+            ...opt
+          });
+          return (val) => formatter.format(val);
+        })
+      };
+    }
+    add(name2, fc) {
+      this.formats[name2.toLowerCase().trim()] = fc;
+    }
+    addCached(name2, fc) {
+      this.formats[name2.toLowerCase().trim()] = createCachedFormatter(fc);
+    }
+    format(value, format, lng, options2 = {}) {
+      const formats = format.split(this.formatSeparator);
+      if (formats.length > 1 && formats[0].indexOf("(") > 1 && formats[0].indexOf(")") < 0 && formats.find((f) => f.indexOf(")") > -1)) {
+        const lastIndex = formats.findIndex((f) => f.indexOf(")") > -1);
+        formats[0] = [formats[0], ...formats.splice(1, lastIndex)].join(this.formatSeparator);
+      }
+      const result = formats.reduce((mem, f) => {
+        const {
+          formatName,
+          formatOptions
+        } = parseFormatStr(f);
+        if (this.formats[formatName]) {
+          let formatted = mem;
+          try {
+            const valOptions = options2?.formatParams?.[options2.interpolationkey] || {};
+            const l = valOptions.locale || valOptions.lng || options2.locale || options2.lng || lng;
+            formatted = this.formats[formatName](mem, l, {
+              ...formatOptions,
+              ...options2,
+              ...valOptions
+            });
+          } catch (error) {
+            this.logger.warn(error);
+          }
+          return formatted;
+        } else {
+          this.logger.warn(`there was no format function for ${formatName}`);
+        }
+        return mem;
+      }, value);
+      return result;
+    }
+  }
+  const removePending = (q, name2) => {
+    if (q.pending[name2] !== void 0) {
+      delete q.pending[name2];
+      q.pendingCount--;
+    }
+  };
+  class Connector extends EventEmitter {
+    constructor(backend, store, services2, options2 = {}) {
+      super();
+      this.backend = backend;
+      this.store = store;
+      this.services = services2;
+      this.languageUtils = services2.languageUtils;
+      this.options = options2;
+      this.logger = baseLogger.create("backendConnector");
+      this.waitingReads = [];
+      this.maxParallelReads = options2.maxParallelReads || 10;
+      this.readingCalls = 0;
+      this.maxRetries = options2.maxRetries >= 0 ? options2.maxRetries : 5;
+      this.retryTimeout = options2.retryTimeout >= 1 ? options2.retryTimeout : 350;
+      this.state = {};
+      this.queue = [];
+      this.backend?.init?.(services2, options2.backend, options2);
+    }
+    queueLoad(languages, namespaces, options2, callback) {
+      const toLoad = {};
+      const pending = {};
+      const toLoadLanguages = {};
+      const toLoadNamespaces = {};
+      languages.forEach((lng) => {
+        let hasAllNamespaces = true;
+        namespaces.forEach((ns) => {
+          const name2 = `${lng}|${ns}`;
+          if (!options2.reload && this.store.hasResourceBundle(lng, ns)) {
+            this.state[name2] = 2;
+          } else if (this.state[name2] < 0) ;
+          else if (this.state[name2] === 1) {
+            if (pending[name2] === void 0) pending[name2] = true;
+          } else {
+            this.state[name2] = 1;
+            hasAllNamespaces = false;
+            if (pending[name2] === void 0) pending[name2] = true;
+            if (toLoad[name2] === void 0) toLoad[name2] = true;
+            if (toLoadNamespaces[ns] === void 0) toLoadNamespaces[ns] = true;
+          }
+        });
+        if (!hasAllNamespaces) toLoadLanguages[lng] = true;
+      });
+      if (Object.keys(toLoad).length || Object.keys(pending).length) {
+        this.queue.push({
+          pending,
+          pendingCount: Object.keys(pending).length,
+          loaded: {},
+          errors: [],
+          callback
+        });
+      }
+      return {
+        toLoad: Object.keys(toLoad),
+        pending: Object.keys(pending),
+        toLoadLanguages: Object.keys(toLoadLanguages),
+        toLoadNamespaces: Object.keys(toLoadNamespaces)
+      };
+    }
+    loaded(name2, err, data) {
+      const s = name2.split("|");
+      const lng = s[0];
+      const ns = s[1];
+      if (err) this.emit("failedLoading", lng, ns, err);
+      if (!err && data) {
+        this.store.addResourceBundle(lng, ns, data, void 0, void 0, {
+          skipCopy: true
+        });
+      }
+      this.state[name2] = err ? -1 : 2;
+      if (err && data) this.state[name2] = 0;
+      const loaded = {};
+      this.queue.forEach((q) => {
+        pushPath(q.loaded, [lng], ns);
+        removePending(q, name2);
+        if (err) q.errors.push(err);
+        if (q.pendingCount === 0 && !q.done) {
+          Object.keys(q.loaded).forEach((l) => {
+            if (!loaded[l]) loaded[l] = {};
+            const loadedKeys = q.loaded[l];
+            if (loadedKeys.length) {
+              loadedKeys.forEach((n) => {
+                if (loaded[l][n] === void 0) loaded[l][n] = true;
+              });
+            }
+          });
+          q.done = true;
+          if (q.errors.length) {
+            q.callback(q.errors);
+          } else {
+            q.callback();
+          }
+        }
+      });
+      this.emit("loaded", loaded);
+      this.queue = this.queue.filter((q) => !q.done);
+    }
+    read(lng, ns, fcName, tried = 0, wait = this.retryTimeout, callback) {
+      if (!lng.length) return callback(null, {});
+      if (this.readingCalls >= this.maxParallelReads) {
+        this.waitingReads.push({
+          lng,
+          ns,
+          fcName,
+          tried,
+          wait,
+          callback
+        });
+        return;
+      }
+      this.readingCalls++;
+      const resolver = (err, data) => {
+        this.readingCalls--;
+        if (this.waitingReads.length > 0) {
+          const next = this.waitingReads.shift();
+          this.read(next.lng, next.ns, next.fcName, next.tried, next.wait, next.callback);
+        }
+        if (err && data && tried < this.maxRetries) {
+          setTimeout(() => {
+            this.read.call(this, lng, ns, fcName, tried + 1, wait * 2, callback);
+          }, wait);
+          return;
+        }
+        callback(err, data);
+      };
+      const fc = this.backend[fcName].bind(this.backend);
+      if (fc.length === 2) {
+        try {
+          const r = fc(lng, ns);
+          if (r && typeof r.then === "function") {
+            r.then((data) => resolver(null, data)).catch(resolver);
+          } else {
+            resolver(null, r);
+          }
+        } catch (err) {
+          resolver(err);
+        }
+        return;
+      }
+      return fc(lng, ns, resolver);
+    }
+    prepareLoading(languages, namespaces, options2 = {}, callback) {
+      if (!this.backend) {
+        this.logger.warn("No backend was added via i18next.use. Will not load resources.");
+        return callback && callback();
+      }
+      if (isString$1(languages)) languages = this.languageUtils.toResolveHierarchy(languages);
+      if (isString$1(namespaces)) namespaces = [namespaces];
+      const toLoad = this.queueLoad(languages, namespaces, options2, callback);
+      if (!toLoad.toLoad.length) {
+        if (!toLoad.pending.length) callback();
+        return null;
+      }
+      toLoad.toLoad.forEach((name2) => {
+        this.loadOne(name2);
+      });
+    }
+    load(languages, namespaces, callback) {
+      this.prepareLoading(languages, namespaces, {}, callback);
+    }
+    reload(languages, namespaces, callback) {
+      this.prepareLoading(languages, namespaces, {
+        reload: true
+      }, callback);
+    }
+    loadOne(name2, prefix = "") {
+      const s = name2.split("|");
+      const lng = s[0];
+      const ns = s[1];
+      this.read(lng, ns, "read", void 0, void 0, (err, data) => {
+        if (err) this.logger.warn(`${prefix}loading namespace ${ns} for language ${lng} failed`, err);
+        if (!err && data) this.logger.log(`${prefix}loaded namespace ${ns} for language ${lng}`, data);
+        this.loaded(name2, err, data);
+      });
+    }
+    saveMissing(languages, namespace, key, fallbackValue, isUpdate, options2 = {}, clb = () => {
+    }) {
+      if (this.services?.utils?.hasLoadedNamespace && !this.services?.utils?.hasLoadedNamespace(namespace)) {
+        this.logger.warn(`did not save key "${key}" as the namespace "${namespace}" was not yet loaded`, "This means something IS WRONG in your setup. You access the t function before i18next.init / i18next.loadNamespace / i18next.changeLanguage was done. Wait for the callback or Promise to resolve before accessing it!!!");
+        return;
+      }
+      if (key === void 0 || key === null || key === "") return;
+      if (this.backend?.create) {
+        const opts = {
+          ...options2,
+          isUpdate
+        };
+        const fc = this.backend.create.bind(this.backend);
+        if (fc.length < 6) {
+          try {
+            let r;
+            if (fc.length === 5) {
+              r = fc(languages, namespace, key, fallbackValue, opts);
+            } else {
+              r = fc(languages, namespace, key, fallbackValue);
+            }
+            if (r && typeof r.then === "function") {
+              r.then((data) => clb(null, data)).catch(clb);
+            } else {
+              clb(null, r);
+            }
+          } catch (err) {
+            clb(err);
+          }
+        } else {
+          fc(languages, namespace, key, fallbackValue, clb, opts);
+        }
+      }
+      if (!languages || !languages[0]) return;
+      this.store.addResource(languages[0], namespace, key, fallbackValue);
+    }
+  }
+  const get = () => ({
+    debug: false,
+    initAsync: true,
+    ns: ["translation"],
+    defaultNS: ["translation"],
+    fallbackLng: ["dev"],
+    fallbackNS: false,
+    supportedLngs: false,
+    nonExplicitSupportedLngs: false,
+    load: "all",
+    preload: false,
+    simplifyPluralSuffix: true,
+    keySeparator: ".",
+    nsSeparator: ":",
+    pluralSeparator: "_",
+    contextSeparator: "_",
+    partialBundledLanguages: false,
+    saveMissing: false,
+    updateMissing: false,
+    saveMissingTo: "fallback",
+    saveMissingPlurals: true,
+    missingKeyHandler: false,
+    missingInterpolationHandler: false,
+    postProcess: false,
+    postProcessPassResolved: false,
+    returnNull: false,
+    returnEmptyString: true,
+    returnObjects: false,
+    joinArrays: false,
+    returnedObjectHandler: false,
+    parseMissingKeyHandler: false,
+    appendNamespaceToMissingKey: false,
+    appendNamespaceToCIMode: false,
+    overloadTranslationOptionHandler: (args) => {
+      let ret = {};
+      if (typeof args[1] === "object") ret = args[1];
+      if (isString$1(args[1])) ret.defaultValue = args[1];
+      if (isString$1(args[2])) ret.tDescription = args[2];
+      if (typeof args[2] === "object" || typeof args[3] === "object") {
+        const options2 = args[3] || args[2];
+        Object.keys(options2).forEach((key) => {
+          ret[key] = options2[key];
+        });
+      }
+      return ret;
+    },
+    interpolation: {
+      escapeValue: true,
+      format: (value) => value,
+      prefix: "{{",
+      suffix: "}}",
+      formatSeparator: ",",
+      unescapePrefix: "-",
+      nestingPrefix: "$t(",
+      nestingSuffix: ")",
+      nestingOptionsSeparator: ",",
+      maxReplaces: 1e3,
+      skipOnVariables: true
+    },
+    cacheInBuiltFormats: true
+  });
+  const transformOptions = (options2) => {
+    if (isString$1(options2.ns)) options2.ns = [options2.ns];
+    if (isString$1(options2.fallbackLng)) options2.fallbackLng = [options2.fallbackLng];
+    if (isString$1(options2.fallbackNS)) options2.fallbackNS = [options2.fallbackNS];
+    if (options2.supportedLngs?.indexOf?.("cimode") < 0) {
+      options2.supportedLngs = options2.supportedLngs.concat(["cimode"]);
+    }
+    if (typeof options2.initImmediate === "boolean") options2.initAsync = options2.initImmediate;
+    return options2;
+  };
+  const noop = () => {
+  };
+  const bindMemberFunctions = (inst) => {
+    const mems = Object.getOwnPropertyNames(Object.getPrototypeOf(inst));
+    mems.forEach((mem) => {
+      if (typeof inst[mem] === "function") {
+        inst[mem] = inst[mem].bind(inst);
+      }
+    });
+  };
+  class I18n extends EventEmitter {
+    constructor(options2 = {}, callback) {
+      super();
+      this.options = transformOptions(options2);
+      this.services = {};
+      this.logger = baseLogger;
+      this.modules = {
+        external: []
+      };
+      bindMemberFunctions(this);
+      if (callback && !this.isInitialized && !options2.isClone) {
+        if (!this.options.initAsync) {
+          this.init(options2, callback);
+          return this;
+        }
+        setTimeout(() => {
+          this.init(options2, callback);
+        }, 0);
+      }
+    }
+    init(options2 = {}, callback) {
+      this.isInitializing = true;
+      if (typeof options2 === "function") {
+        callback = options2;
+        options2 = {};
+      }
+      if (options2.defaultNS == null && options2.ns) {
+        if (isString$1(options2.ns)) {
+          options2.defaultNS = options2.ns;
+        } else if (options2.ns.indexOf("translation") < 0) {
+          options2.defaultNS = options2.ns[0];
+        }
+      }
+      const defOpts = get();
+      this.options = {
+        ...defOpts,
+        ...this.options,
+        ...transformOptions(options2)
+      };
+      this.options.interpolation = {
+        ...defOpts.interpolation,
+        ...this.options.interpolation
+      };
+      if (options2.keySeparator !== void 0) {
+        this.options.userDefinedKeySeparator = options2.keySeparator;
+      }
+      if (options2.nsSeparator !== void 0) {
+        this.options.userDefinedNsSeparator = options2.nsSeparator;
+      }
+      const createClassOnDemand = (ClassOrObject) => {
+        if (!ClassOrObject) return null;
+        if (typeof ClassOrObject === "function") return new ClassOrObject();
+        return ClassOrObject;
+      };
+      if (!this.options.isClone) {
+        if (this.modules.logger) {
+          baseLogger.init(createClassOnDemand(this.modules.logger), this.options);
+        } else {
+          baseLogger.init(null, this.options);
+        }
+        let formatter;
+        if (this.modules.formatter) {
+          formatter = this.modules.formatter;
+        } else {
+          formatter = Formatter;
+        }
+        const lu = new LanguageUtil(this.options);
+        this.store = new ResourceStore(this.options.resources, this.options);
+        const s = this.services;
+        s.logger = baseLogger;
+        s.resourceStore = this.store;
+        s.languageUtils = lu;
+        s.pluralResolver = new PluralResolver(lu, {
+          prepend: this.options.pluralSeparator,
+          simplifyPluralSuffix: this.options.simplifyPluralSuffix
+        });
+        const usingLegacyFormatFunction = this.options.interpolation.format && this.options.interpolation.format !== defOpts.interpolation.format;
+        if (usingLegacyFormatFunction) {
+          this.logger.warn(`init: you are still using the legacy format function, please use the new approach: https://www.i18next.com/translation-function/formatting`);
+        }
+        if (formatter && (!this.options.interpolation.format || this.options.interpolation.format === defOpts.interpolation.format)) {
+          s.formatter = createClassOnDemand(formatter);
+          if (s.formatter.init) s.formatter.init(s, this.options);
+          this.options.interpolation.format = s.formatter.format.bind(s.formatter);
+        }
+        s.interpolator = new Interpolator(this.options);
+        s.utils = {
+          hasLoadedNamespace: this.hasLoadedNamespace.bind(this)
+        };
+        s.backendConnector = new Connector(createClassOnDemand(this.modules.backend), s.resourceStore, s, this.options);
+        s.backendConnector.on("*", (event, ...args) => {
+          this.emit(event, ...args);
+        });
+        if (this.modules.languageDetector) {
+          s.languageDetector = createClassOnDemand(this.modules.languageDetector);
+          if (s.languageDetector.init) s.languageDetector.init(s, this.options.detection, this.options);
+        }
+        if (this.modules.i18nFormat) {
+          s.i18nFormat = createClassOnDemand(this.modules.i18nFormat);
+          if (s.i18nFormat.init) s.i18nFormat.init(this);
+        }
+        this.translator = new Translator(this.services, this.options);
+        this.translator.on("*", (event, ...args) => {
+          this.emit(event, ...args);
+        });
+        this.modules.external.forEach((m) => {
+          if (m.init) m.init(this);
+        });
+      }
+      this.format = this.options.interpolation.format;
+      if (!callback) callback = noop;
+      if (this.options.fallbackLng && !this.services.languageDetector && !this.options.lng) {
+        const codes = this.services.languageUtils.getFallbackCodes(this.options.fallbackLng);
+        if (codes.length > 0 && codes[0] !== "dev") this.options.lng = codes[0];
+      }
+      if (!this.services.languageDetector && !this.options.lng) {
+        this.logger.warn("init: no languageDetector is used and no lng is defined");
+      }
+      const storeApi = ["getResource", "hasResourceBundle", "getResourceBundle", "getDataByLanguage"];
+      storeApi.forEach((fcName) => {
+        this[fcName] = (...args) => this.store[fcName](...args);
+      });
+      const storeApiChained = ["addResource", "addResources", "addResourceBundle", "removeResourceBundle"];
+      storeApiChained.forEach((fcName) => {
+        this[fcName] = (...args) => {
+          this.store[fcName](...args);
+          return this;
+        };
+      });
+      const deferred = defer();
+      const load = () => {
+        const finish = (err, t) => {
+          this.isInitializing = false;
+          if (this.isInitialized && !this.initializedStoreOnce) this.logger.warn("init: i18next is already initialized. You should call init just once!");
+          this.isInitialized = true;
+          if (!this.options.isClone) this.logger.log("initialized", this.options);
+          this.emit("initialized", this.options);
+          deferred.resolve(t);
+          callback(err, t);
+        };
+        if (this.languages && !this.isInitialized) return finish(null, this.t.bind(this));
+        this.changeLanguage(this.options.lng, finish);
+      };
+      if (this.options.resources || !this.options.initAsync) {
+        load();
+      } else {
+        setTimeout(load, 0);
+      }
+      return deferred;
+    }
+    loadResources(language, callback = noop) {
+      let usedCallback = callback;
+      const usedLng = isString$1(language) ? language : this.language;
+      if (typeof language === "function") usedCallback = language;
+      if (!this.options.resources || this.options.partialBundledLanguages) {
+        if (usedLng?.toLowerCase() === "cimode" && (!this.options.preload || this.options.preload.length === 0)) return usedCallback();
+        const toLoad = [];
+        const append = (lng) => {
+          if (!lng) return;
+          if (lng === "cimode") return;
+          const lngs = this.services.languageUtils.toResolveHierarchy(lng);
+          lngs.forEach((l) => {
+            if (l === "cimode") return;
+            if (toLoad.indexOf(l) < 0) toLoad.push(l);
+          });
+        };
+        if (!usedLng) {
+          const fallbacks = this.services.languageUtils.getFallbackCodes(this.options.fallbackLng);
+          fallbacks.forEach((l) => append(l));
+        } else {
+          append(usedLng);
+        }
+        this.options.preload?.forEach?.((l) => append(l));
+        this.services.backendConnector.load(toLoad, this.options.ns, (e) => {
+          if (!e && !this.resolvedLanguage && this.language) this.setResolvedLanguage(this.language);
+          usedCallback(e);
+        });
+      } else {
+        usedCallback(null);
+      }
+    }
+    reloadResources(lngs, ns, callback) {
+      const deferred = defer();
+      if (typeof lngs === "function") {
+        callback = lngs;
+        lngs = void 0;
+      }
+      if (typeof ns === "function") {
+        callback = ns;
+        ns = void 0;
+      }
+      if (!lngs) lngs = this.languages;
+      if (!ns) ns = this.options.ns;
+      if (!callback) callback = noop;
+      this.services.backendConnector.reload(lngs, ns, (err) => {
+        deferred.resolve();
+        callback(err);
+      });
+      return deferred;
+    }
+    use(module) {
+      if (!module) throw new Error("You are passing an undefined module! Please check the object you are passing to i18next.use()");
+      if (!module.type) throw new Error("You are passing a wrong module! Please check the object you are passing to i18next.use()");
+      if (module.type === "backend") {
+        this.modules.backend = module;
+      }
+      if (module.type === "logger" || module.log && module.warn && module.error) {
+        this.modules.logger = module;
+      }
+      if (module.type === "languageDetector") {
+        this.modules.languageDetector = module;
+      }
+      if (module.type === "i18nFormat") {
+        this.modules.i18nFormat = module;
+      }
+      if (module.type === "postProcessor") {
+        postProcessor.addPostProcessor(module);
+      }
+      if (module.type === "formatter") {
+        this.modules.formatter = module;
+      }
+      if (module.type === "3rdParty") {
+        this.modules.external.push(module);
+      }
+      return this;
+    }
+    setResolvedLanguage(l) {
+      if (!l || !this.languages) return;
+      if (["cimode", "dev"].indexOf(l) > -1) return;
+      for (let li = 0; li < this.languages.length; li++) {
+        const lngInLngs = this.languages[li];
+        if (["cimode", "dev"].indexOf(lngInLngs) > -1) continue;
+        if (this.store.hasLanguageSomeTranslations(lngInLngs)) {
+          this.resolvedLanguage = lngInLngs;
+          break;
+        }
+      }
+      if (!this.resolvedLanguage && this.languages.indexOf(l) < 0 && this.store.hasLanguageSomeTranslations(l)) {
+        this.resolvedLanguage = l;
+        this.languages.unshift(l);
+      }
+    }
+    changeLanguage(lng, callback) {
+      this.isLanguageChangingTo = lng;
+      const deferred = defer();
+      this.emit("languageChanging", lng);
+      const setLngProps = (l) => {
+        this.language = l;
+        this.languages = this.services.languageUtils.toResolveHierarchy(l);
+        this.resolvedLanguage = void 0;
+        this.setResolvedLanguage(l);
+      };
+      const done = (err, l) => {
+        if (l) {
+          if (this.isLanguageChangingTo === lng) {
+            setLngProps(l);
+            this.translator.changeLanguage(l);
+            this.isLanguageChangingTo = void 0;
+            this.emit("languageChanged", l);
+            this.logger.log("languageChanged", l);
+          }
+        } else {
+          this.isLanguageChangingTo = void 0;
+        }
+        deferred.resolve((...args) => this.t(...args));
+        if (callback) callback(err, (...args) => this.t(...args));
+      };
+      const setLng = (lngs) => {
+        if (!lng && !lngs && this.services.languageDetector) lngs = [];
+        const fl = isString$1(lngs) ? lngs : lngs && lngs[0];
+        const l = this.store.hasLanguageSomeTranslations(fl) ? fl : this.services.languageUtils.getBestMatchFromCodes(isString$1(lngs) ? [lngs] : lngs);
+        if (l) {
+          if (!this.language) {
+            setLngProps(l);
+          }
+          if (!this.translator.language) this.translator.changeLanguage(l);
+          this.services.languageDetector?.cacheUserLanguage?.(l);
+        }
+        this.loadResources(l, (err) => {
+          done(err, l);
+        });
+      };
+      if (!lng && this.services.languageDetector && !this.services.languageDetector.async) {
+        setLng(this.services.languageDetector.detect());
+      } else if (!lng && this.services.languageDetector && this.services.languageDetector.async) {
+        if (this.services.languageDetector.detect.length === 0) {
+          this.services.languageDetector.detect().then(setLng);
+        } else {
+          this.services.languageDetector.detect(setLng);
+        }
+      } else {
+        setLng(lng);
+      }
+      return deferred;
+    }
+    getFixedT(lng, ns, keyPrefix) {
+      const fixedT = (key, opts, ...rest) => {
+        let o;
+        if (typeof opts !== "object") {
+          o = this.options.overloadTranslationOptionHandler([key, opts].concat(rest));
+        } else {
+          o = {
+            ...opts
+          };
+        }
+        o.lng = o.lng || fixedT.lng;
+        o.lngs = o.lngs || fixedT.lngs;
+        o.ns = o.ns || fixedT.ns;
+        if (o.keyPrefix !== "") o.keyPrefix = o.keyPrefix || keyPrefix || fixedT.keyPrefix;
+        const keySeparator = this.options.keySeparator || ".";
+        let resultKey;
+        if (o.keyPrefix && Array.isArray(key)) {
+          resultKey = key.map((k) => `${o.keyPrefix}${keySeparator}${k}`);
+        } else {
+          resultKey = o.keyPrefix ? `${o.keyPrefix}${keySeparator}${key}` : key;
+        }
+        return this.t(resultKey, o);
+      };
+      if (isString$1(lng)) {
+        fixedT.lng = lng;
+      } else {
+        fixedT.lngs = lng;
+      }
+      fixedT.ns = ns;
+      fixedT.keyPrefix = keyPrefix;
+      return fixedT;
+    }
+    t(...args) {
+      return this.translator?.translate(...args);
+    }
+    exists(...args) {
+      return this.translator?.exists(...args);
+    }
+    setDefaultNamespace(ns) {
+      this.options.defaultNS = ns;
+    }
+    hasLoadedNamespace(ns, options2 = {}) {
+      if (!this.isInitialized) {
+        this.logger.warn("hasLoadedNamespace: i18next was not initialized", this.languages);
+        return false;
+      }
+      if (!this.languages || !this.languages.length) {
+        this.logger.warn("hasLoadedNamespace: i18n.languages were undefined or empty", this.languages);
+        return false;
+      }
+      const lng = options2.lng || this.resolvedLanguage || this.languages[0];
+      const fallbackLng = this.options ? this.options.fallbackLng : false;
+      const lastLng = this.languages[this.languages.length - 1];
+      if (lng.toLowerCase() === "cimode") return true;
+      const loadNotPending = (l, n) => {
+        const loadState = this.services.backendConnector.state[`${l}|${n}`];
+        return loadState === -1 || loadState === 0 || loadState === 2;
+      };
+      if (options2.precheck) {
+        const preResult = options2.precheck(this, loadNotPending);
+        if (preResult !== void 0) return preResult;
+      }
+      if (this.hasResourceBundle(lng, ns)) return true;
+      if (!this.services.backendConnector.backend || this.options.resources && !this.options.partialBundledLanguages) return true;
+      if (loadNotPending(lng, ns) && (!fallbackLng || loadNotPending(lastLng, ns))) return true;
+      return false;
+    }
+    loadNamespaces(ns, callback) {
+      const deferred = defer();
+      if (!this.options.ns) {
+        if (callback) callback();
+        return Promise.resolve();
+      }
+      if (isString$1(ns)) ns = [ns];
+      ns.forEach((n) => {
+        if (this.options.ns.indexOf(n) < 0) this.options.ns.push(n);
+      });
+      this.loadResources((err) => {
+        deferred.resolve();
+        if (callback) callback(err);
+      });
+      return deferred;
+    }
+    loadLanguages(lngs, callback) {
+      const deferred = defer();
+      if (isString$1(lngs)) lngs = [lngs];
+      const preloaded = this.options.preload || [];
+      const newLngs = lngs.filter((lng) => preloaded.indexOf(lng) < 0 && this.services.languageUtils.isSupportedCode(lng));
+      if (!newLngs.length) {
+        if (callback) callback();
+        return Promise.resolve();
+      }
+      this.options.preload = preloaded.concat(newLngs);
+      this.loadResources((err) => {
+        deferred.resolve();
+        if (callback) callback(err);
+      });
+      return deferred;
+    }
+    dir(lng) {
+      if (!lng) lng = this.resolvedLanguage || (this.languages?.length > 0 ? this.languages[0] : this.language);
+      if (!lng) return "rtl";
+      try {
+        const l = new Intl.Locale(lng);
+        if (l && l.getTextInfo) {
+          const ti = l.getTextInfo();
+          if (ti && ti.direction) return ti.direction;
+        }
+      } catch (e) {
+      }
+      const rtlLngs = ["ar", "shu", "sqr", "ssh", "xaa", "yhd", "yud", "aao", "abh", "abv", "acm", "acq", "acw", "acx", "acy", "adf", "ads", "aeb", "aec", "afb", "ajp", "apc", "apd", "arb", "arq", "ars", "ary", "arz", "auz", "avl", "ayh", "ayl", "ayn", "ayp", "bbz", "pga", "he", "iw", "ps", "pbt", "pbu", "pst", "prp", "prd", "ug", "ur", "ydd", "yds", "yih", "ji", "yi", "hbo", "men", "xmn", "fa", "jpr", "peo", "pes", "prs", "dv", "sam", "ckb"];
+      const languageUtils = this.services?.languageUtils || new LanguageUtil(get());
+      if (lng.toLowerCase().indexOf("-latn") > 1) return "ltr";
+      return rtlLngs.indexOf(languageUtils.getLanguagePartFromCode(lng)) > -1 || lng.toLowerCase().indexOf("-arab") > 1 ? "rtl" : "ltr";
+    }
+    static createInstance(options2 = {}, callback) {
+      return new I18n(options2, callback);
+    }
+    cloneInstance(options2 = {}, callback = noop) {
+      const forkResourceStore = options2.forkResourceStore;
+      if (forkResourceStore) delete options2.forkResourceStore;
+      const mergedOptions = {
+        ...this.options,
+        ...options2,
+        ...{
+          isClone: true
+        }
+      };
+      const clone = new I18n(mergedOptions);
+      if (options2.debug !== void 0 || options2.prefix !== void 0) {
+        clone.logger = clone.logger.clone(options2);
+      }
+      const membersToCopy = ["store", "services", "language"];
+      membersToCopy.forEach((m) => {
+        clone[m] = this[m];
+      });
+      clone.services = {
+        ...this.services
+      };
+      clone.services.utils = {
+        hasLoadedNamespace: clone.hasLoadedNamespace.bind(clone)
+      };
+      if (forkResourceStore) {
+        const clonedData = Object.keys(this.store.data).reduce((prev, l) => {
+          prev[l] = {
+            ...this.store.data[l]
+          };
+          prev[l] = Object.keys(prev[l]).reduce((acc, n) => {
+            acc[n] = {
+              ...prev[l][n]
+            };
+            return acc;
+          }, prev[l]);
+          return prev;
+        }, {});
+        clone.store = new ResourceStore(clonedData, mergedOptions);
+        clone.services.resourceStore = clone.store;
+      }
+      clone.translator = new Translator(clone.services, mergedOptions);
+      clone.translator.on("*", (event, ...args) => {
+        clone.emit(event, ...args);
+      });
+      clone.init(mergedOptions, callback);
+      clone.translator.options = mergedOptions;
+      clone.translator.backendConnector.services.utils = {
+        hasLoadedNamespace: clone.hasLoadedNamespace.bind(clone)
+      };
+      return clone;
+    }
+    toJSON() {
+      return {
+        options: this.options,
+        store: this.store,
+        language: this.language,
+        languages: this.languages,
+        resolvedLanguage: this.resolvedLanguage
+      };
+    }
+  }
+  const instance = I18n.createInstance();
+  instance.createInstance = I18n.createInstance;
+  instance.createInstance;
+  instance.dir;
+  instance.init;
+  instance.loadResources;
+  instance.reloadResources;
+  instance.use;
+  instance.changeLanguage;
+  instance.getFixedT;
+  instance.t;
+  instance.exists;
+  instance.setDefaultNamespace;
+  instance.hasLoadedNamespace;
+  instance.loadNamespaces;
+  instance.loadLanguages;
   var react = { exports: {} };
   var react_production = {};
   /**
@@ -359,15 +2711,15 @@
         return fn.apply(null, arguments);
       };
     };
-    react_production.cloneElement = function(element, config, children) {
+    react_production.cloneElement = function(element, config2, children) {
       if (null === element || void 0 === element)
         throw Error(
           "The argument must be a React element, but you passed " + element + "."
         );
       var props = assign({}, element.props), key = element.key, owner = void 0;
-      if (null != config)
-        for (propName in void 0 !== config.ref && (owner = void 0), void 0 !== config.key && (key = "" + config.key), config)
-          !hasOwnProperty.call(config, propName) || "key" === propName || "__self" === propName || "__source" === propName || "ref" === propName && void 0 === config.ref || (props[propName] = config[propName]);
+      if (null != config2)
+        for (propName in void 0 !== config2.ref && (owner = void 0), void 0 !== config2.key && (key = "" + config2.key), config2)
+          !hasOwnProperty.call(config2, propName) || "key" === propName || "__self" === propName || "__source" === propName || "ref" === propName && void 0 === config2.ref || (props[propName] = config2[propName]);
       var propName = arguments.length - 2;
       if (1 === propName) props.children = children;
       else if (1 < propName) {
@@ -393,11 +2745,11 @@
       };
       return defaultValue;
     };
-    react_production.createElement = function(type, config, children) {
+    react_production.createElement = function(type, config2, children) {
       var propName, props = {}, key = null;
-      if (null != config)
-        for (propName in void 0 !== config.key && (key = "" + config.key), config)
-          hasOwnProperty.call(config, propName) && "key" !== propName && "__self" !== propName && "__source" !== propName && (props[propName] = config[propName]);
+      if (null != config2)
+        for (propName in void 0 !== config2.key && (key = "" + config2.key), config2)
+          hasOwnProperty.call(config2, propName) && "key" !== propName && "__self" !== propName && "__source" !== propName && (props[propName] = config2[propName]);
       var childrenLength = arguments.length - 2;
       if (1 === childrenLength) props.children = children;
       else if (1 < childrenLength) {
@@ -523,6 +2875,929 @@
   }
   var reactExports = requireReact();
   const React = /* @__PURE__ */ getDefaultExportFromCjs(reactExports);
+  const warn = (i18n, code, msg, rest) => {
+    const args = [msg, {
+      code,
+      ...rest || {}
+    }];
+    if (i18n?.services?.logger?.forward) {
+      return i18n.services.logger.forward(args, "warn", "react-i18next::", true);
+    }
+    if (isString(args[0])) args[0] = `react-i18next:: ${args[0]}`;
+    if (i18n?.services?.logger?.warn) {
+      i18n.services.logger.warn(...args);
+    } else if (console?.warn) {
+      console.warn(...args);
+    }
+  };
+  const alreadyWarned = {};
+  const warnOnce = (i18n, code, msg, rest) => {
+    if (isString(msg) && alreadyWarned[msg]) return;
+    if (isString(msg)) alreadyWarned[msg] = /* @__PURE__ */ new Date();
+    warn(i18n, code, msg, rest);
+  };
+  const loadedClb = (i18n, cb) => () => {
+    if (i18n.isInitialized) {
+      cb();
+    } else {
+      const initialized = () => {
+        setTimeout(() => {
+          i18n.off("initialized", initialized);
+        }, 0);
+        cb();
+      };
+      i18n.on("initialized", initialized);
+    }
+  };
+  const loadNamespaces = (i18n, ns, cb) => {
+    i18n.loadNamespaces(ns, loadedClb(i18n, cb));
+  };
+  const loadLanguages = (i18n, lng, ns, cb) => {
+    if (isString(ns)) ns = [ns];
+    if (i18n.options.preload && i18n.options.preload.indexOf(lng) > -1) return loadNamespaces(i18n, ns, cb);
+    ns.forEach((n) => {
+      if (i18n.options.ns.indexOf(n) < 0) i18n.options.ns.push(n);
+    });
+    i18n.loadLanguages(lng, loadedClb(i18n, cb));
+  };
+  const hasLoadedNamespace = (ns, i18n, options2 = {}) => {
+    if (!i18n.languages || !i18n.languages.length) {
+      warnOnce(i18n, "NO_LANGUAGES", "i18n.languages were undefined or empty", {
+        languages: i18n.languages
+      });
+      return true;
+    }
+    return i18n.hasLoadedNamespace(ns, {
+      lng: options2.lng,
+      precheck: (i18nInstance2, loadNotPending) => {
+        if (options2.bindI18n && options2.bindI18n.indexOf("languageChanging") > -1 && i18nInstance2.services.backendConnector.backend && i18nInstance2.isLanguageChangingTo && !loadNotPending(i18nInstance2.isLanguageChangingTo, ns)) return false;
+      }
+    });
+  };
+  const isString = (obj) => typeof obj === "string";
+  const isObject = (obj) => typeof obj === "object" && obj !== null;
+  const matchHtmlEntity = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34|nbsp|#160|copy|#169|reg|#174|hellip|#8230|#x2F|#47);/g;
+  const htmlEntities = {
+    "&amp;": "&",
+    "&#38;": "&",
+    "&lt;": "<",
+    "&#60;": "<",
+    "&gt;": ">",
+    "&#62;": ">",
+    "&apos;": "'",
+    "&#39;": "'",
+    "&quot;": '"',
+    "&#34;": '"',
+    "&nbsp;": " ",
+    "&#160;": " ",
+    "&copy;": "©",
+    "&#169;": "©",
+    "&reg;": "®",
+    "&#174;": "®",
+    "&hellip;": "…",
+    "&#8230;": "…",
+    "&#x2F;": "/",
+    "&#47;": "/"
+  };
+  const unescapeHtmlEntity = (m) => htmlEntities[m];
+  const unescape = (text) => text.replace(matchHtmlEntity, unescapeHtmlEntity);
+  let defaultOptions = {
+    bindI18n: "languageChanged",
+    bindI18nStore: "",
+    transEmptyNodeValue: "",
+    transSupportBasicHtmlNodes: true,
+    transWrapTextNodes: "",
+    transKeepBasicHtmlNodesFor: ["br", "strong", "i", "p"],
+    useSuspense: true,
+    unescape
+  };
+  const setDefaults = (options2 = {}) => {
+    defaultOptions = {
+      ...defaultOptions,
+      ...options2
+    };
+  };
+  const getDefaults$1 = () => defaultOptions;
+  let i18nInstance;
+  const setI18n = (instance2) => {
+    i18nInstance = instance2;
+  };
+  const getI18n = () => i18nInstance;
+  const initReactI18next = {
+    type: "3rdParty",
+    init(instance2) {
+      setDefaults(instance2.options.react);
+      setI18n(instance2);
+    }
+  };
+  const I18nContext = reactExports.createContext();
+  class ReportNamespaces {
+    constructor() {
+      this.usedNamespaces = {};
+    }
+    addUsedNamespaces(namespaces) {
+      namespaces.forEach((ns) => {
+        if (!this.usedNamespaces[ns]) this.usedNamespaces[ns] = true;
+      });
+    }
+    getUsedNamespaces() {
+      return Object.keys(this.usedNamespaces);
+    }
+  }
+  const usePrevious = (value, ignore) => {
+    const ref = reactExports.useRef();
+    reactExports.useEffect(() => {
+      ref.current = value;
+    }, [value, ignore]);
+    return ref.current;
+  };
+  const alwaysNewT = (i18n, language, namespace, keyPrefix) => i18n.getFixedT(language, namespace, keyPrefix);
+  const useMemoizedT = (i18n, language, namespace, keyPrefix) => reactExports.useCallback(alwaysNewT(i18n, language, namespace, keyPrefix), [i18n, language, namespace, keyPrefix]);
+  const useTranslation = (ns, props = {}) => {
+    const {
+      i18n: i18nFromProps
+    } = props;
+    const {
+      i18n: i18nFromContext,
+      defaultNS: defaultNSFromContext
+    } = reactExports.useContext(I18nContext) || {};
+    const i18n = i18nFromProps || i18nFromContext || getI18n();
+    if (i18n && !i18n.reportNamespaces) i18n.reportNamespaces = new ReportNamespaces();
+    if (!i18n) {
+      warnOnce(i18n, "NO_I18NEXT_INSTANCE", "useTranslation: You will need to pass in an i18next instance by using initReactI18next");
+      const notReadyT = (k, optsOrDefaultValue) => {
+        if (isString(optsOrDefaultValue)) return optsOrDefaultValue;
+        if (isObject(optsOrDefaultValue) && isString(optsOrDefaultValue.defaultValue)) return optsOrDefaultValue.defaultValue;
+        return Array.isArray(k) ? k[k.length - 1] : k;
+      };
+      const retNotReady = [notReadyT, {}, false];
+      retNotReady.t = notReadyT;
+      retNotReady.i18n = {};
+      retNotReady.ready = false;
+      return retNotReady;
+    }
+    if (i18n.options.react?.wait) warnOnce(i18n, "DEPRECATED_OPTION", "useTranslation: It seems you are still using the old wait option, you may migrate to the new useSuspense behaviour.");
+    const i18nOptions = {
+      ...getDefaults$1(),
+      ...i18n.options.react,
+      ...props
+    };
+    const {
+      useSuspense,
+      keyPrefix
+    } = i18nOptions;
+    let namespaces = defaultNSFromContext || i18n.options?.defaultNS;
+    namespaces = isString(namespaces) ? [namespaces] : namespaces || ["translation"];
+    i18n.reportNamespaces.addUsedNamespaces?.(namespaces);
+    const ready = (i18n.isInitialized || i18n.initializedStoreOnce) && namespaces.every((n) => hasLoadedNamespace(n, i18n, i18nOptions));
+    const memoGetT = useMemoizedT(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
+    const getT = () => memoGetT;
+    const getNewT = () => alwaysNewT(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
+    const [t, setT] = reactExports.useState(getT);
+    let joinedNS = namespaces.join();
+    if (props.lng) joinedNS = `${props.lng}${joinedNS}`;
+    const previousJoinedNS = usePrevious(joinedNS);
+    const isMounted = reactExports.useRef(true);
+    reactExports.useEffect(() => {
+      const {
+        bindI18n,
+        bindI18nStore
+      } = i18nOptions;
+      isMounted.current = true;
+      if (!ready && !useSuspense) {
+        if (props.lng) {
+          loadLanguages(i18n, props.lng, namespaces, () => {
+            if (isMounted.current) setT(getNewT);
+          });
+        } else {
+          loadNamespaces(i18n, namespaces, () => {
+            if (isMounted.current) setT(getNewT);
+          });
+        }
+      }
+      if (ready && previousJoinedNS && previousJoinedNS !== joinedNS && isMounted.current) {
+        setT(getNewT);
+      }
+      const boundReset = () => {
+        if (isMounted.current) setT(getNewT);
+      };
+      if (bindI18n) i18n?.on(bindI18n, boundReset);
+      if (bindI18nStore) i18n?.store.on(bindI18nStore, boundReset);
+      return () => {
+        isMounted.current = false;
+        if (i18n && bindI18n) bindI18n?.split(" ").forEach((e) => i18n.off(e, boundReset));
+        if (bindI18nStore && i18n) bindI18nStore.split(" ").forEach((e) => i18n.store.off(e, boundReset));
+      };
+    }, [i18n, joinedNS]);
+    reactExports.useEffect(() => {
+      if (isMounted.current && ready) {
+        setT(getT);
+      }
+    }, [i18n, keyPrefix, ready]);
+    const ret = [t, i18n, ready];
+    ret.t = t;
+    ret.i18n = i18n;
+    ret.ready = ready;
+    if (ready) return ret;
+    if (!ready && !useSuspense) return ret;
+    throw new Promise((resolve) => {
+      if (props.lng) {
+        loadLanguages(i18n, props.lng, namespaces, () => resolve());
+      } else {
+        loadNamespaces(i18n, namespaces, () => resolve());
+      }
+    });
+  };
+  const {
+    slice,
+    forEach
+  } = [];
+  function defaults(obj) {
+    forEach.call(slice.call(arguments, 1), (source) => {
+      if (source) {
+        for (const prop in source) {
+          if (obj[prop] === void 0) obj[prop] = source[prop];
+        }
+      }
+    });
+    return obj;
+  }
+  function hasXSS(input) {
+    if (typeof input !== "string") return false;
+    const xssPatterns = [/<\s*script.*?>/i, /<\s*\/\s*script\s*>/i, /<\s*img.*?on\w+\s*=/i, /<\s*\w+\s*on\w+\s*=.*?>/i, /javascript\s*:/i, /vbscript\s*:/i, /expression\s*\(/i, /eval\s*\(/i, /alert\s*\(/i, /document\.cookie/i, /document\.write\s*\(/i, /window\.location/i, /innerHTML/i];
+    return xssPatterns.some((pattern) => pattern.test(input));
+  }
+  const fieldContentRegExp = /^[\u0009\u0020-\u007e\u0080-\u00ff]+$/;
+  const serializeCookie = function(name2, val) {
+    let options2 = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {
+      path: "/"
+    };
+    const opt = options2;
+    const value = encodeURIComponent(val);
+    let str = `${name2}=${value}`;
+    if (opt.maxAge > 0) {
+      const maxAge = opt.maxAge - 0;
+      if (Number.isNaN(maxAge)) throw new Error("maxAge should be a Number");
+      str += `; Max-Age=${Math.floor(maxAge)}`;
+    }
+    if (opt.domain) {
+      if (!fieldContentRegExp.test(opt.domain)) {
+        throw new TypeError("option domain is invalid");
+      }
+      str += `; Domain=${opt.domain}`;
+    }
+    if (opt.path) {
+      if (!fieldContentRegExp.test(opt.path)) {
+        throw new TypeError("option path is invalid");
+      }
+      str += `; Path=${opt.path}`;
+    }
+    if (opt.expires) {
+      if (typeof opt.expires.toUTCString !== "function") {
+        throw new TypeError("option expires is invalid");
+      }
+      str += `; Expires=${opt.expires.toUTCString()}`;
+    }
+    if (opt.httpOnly) str += "; HttpOnly";
+    if (opt.secure) str += "; Secure";
+    if (opt.sameSite) {
+      const sameSite = typeof opt.sameSite === "string" ? opt.sameSite.toLowerCase() : opt.sameSite;
+      switch (sameSite) {
+        case true:
+          str += "; SameSite=Strict";
+          break;
+        case "lax":
+          str += "; SameSite=Lax";
+          break;
+        case "strict":
+          str += "; SameSite=Strict";
+          break;
+        case "none":
+          str += "; SameSite=None";
+          break;
+        default:
+          throw new TypeError("option sameSite is invalid");
+      }
+    }
+    if (opt.partitioned) str += "; Partitioned";
+    return str;
+  };
+  const cookie = {
+    create(name2, value, minutes, domain) {
+      let cookieOptions = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : {
+        path: "/",
+        sameSite: "strict"
+      };
+      if (minutes) {
+        cookieOptions.expires = /* @__PURE__ */ new Date();
+        cookieOptions.expires.setTime(cookieOptions.expires.getTime() + minutes * 60 * 1e3);
+      }
+      if (domain) cookieOptions.domain = domain;
+      document.cookie = serializeCookie(name2, value, cookieOptions);
+    },
+    read(name2) {
+      const nameEQ = `${name2}=`;
+      const ca = document.cookie.split(";");
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === " ") c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    },
+    remove(name2, domain) {
+      this.create(name2, "", -1, domain);
+    }
+  };
+  var cookie$1 = {
+    name: "cookie",
+    // Deconstruct the options object and extract the lookupCookie property
+    lookup(_ref) {
+      let {
+        lookupCookie
+      } = _ref;
+      if (lookupCookie && typeof document !== "undefined") {
+        return cookie.read(lookupCookie) || void 0;
+      }
+      return void 0;
+    },
+    // Deconstruct the options object and extract the lookupCookie, cookieMinutes, cookieDomain, and cookieOptions properties
+    cacheUserLanguage(lng, _ref2) {
+      let {
+        lookupCookie,
+        cookieMinutes,
+        cookieDomain,
+        cookieOptions
+      } = _ref2;
+      if (lookupCookie && typeof document !== "undefined") {
+        cookie.create(lookupCookie, lng, cookieMinutes, cookieDomain, cookieOptions);
+      }
+    }
+  };
+  var querystring = {
+    name: "querystring",
+    // Deconstruct the options object and extract the lookupQuerystring property
+    lookup(_ref) {
+      let {
+        lookupQuerystring
+      } = _ref;
+      let found;
+      if (typeof window !== "undefined") {
+        let {
+          search
+        } = window.location;
+        if (!window.location.search && window.location.hash?.indexOf("?") > -1) {
+          search = window.location.hash.substring(window.location.hash.indexOf("?"));
+        }
+        const query = search.substring(1);
+        const params = query.split("&");
+        for (let i = 0; i < params.length; i++) {
+          const pos = params[i].indexOf("=");
+          if (pos > 0) {
+            const key = params[i].substring(0, pos);
+            if (key === lookupQuerystring) {
+              found = params[i].substring(pos + 1);
+            }
+          }
+        }
+      }
+      return found;
+    }
+  };
+  var hash = {
+    name: "hash",
+    // Deconstruct the options object and extract the lookupHash property and the lookupFromHashIndex property
+    lookup(_ref) {
+      let {
+        lookupHash,
+        lookupFromHashIndex
+      } = _ref;
+      let found;
+      if (typeof window !== "undefined") {
+        const {
+          hash: hash2
+        } = window.location;
+        if (hash2 && hash2.length > 2) {
+          const query = hash2.substring(1);
+          if (lookupHash) {
+            const params = query.split("&");
+            for (let i = 0; i < params.length; i++) {
+              const pos = params[i].indexOf("=");
+              if (pos > 0) {
+                const key = params[i].substring(0, pos);
+                if (key === lookupHash) {
+                  found = params[i].substring(pos + 1);
+                }
+              }
+            }
+          }
+          if (found) return found;
+          if (!found && lookupFromHashIndex > -1) {
+            const language = hash2.match(/\/([a-zA-Z-]*)/g);
+            if (!Array.isArray(language)) return void 0;
+            const index = typeof lookupFromHashIndex === "number" ? lookupFromHashIndex : 0;
+            return language[index]?.replace("/", "");
+          }
+        }
+      }
+      return found;
+    }
+  };
+  let hasLocalStorageSupport = null;
+  const localStorageAvailable = () => {
+    if (hasLocalStorageSupport !== null) return hasLocalStorageSupport;
+    try {
+      hasLocalStorageSupport = typeof window !== "undefined" && window.localStorage !== null;
+      if (!hasLocalStorageSupport) {
+        return false;
+      }
+      const testKey = "i18next.translate.boo";
+      window.localStorage.setItem(testKey, "foo");
+      window.localStorage.removeItem(testKey);
+    } catch (e) {
+      hasLocalStorageSupport = false;
+    }
+    return hasLocalStorageSupport;
+  };
+  var localStorage = {
+    name: "localStorage",
+    // Deconstruct the options object and extract the lookupLocalStorage property
+    lookup(_ref) {
+      let {
+        lookupLocalStorage
+      } = _ref;
+      if (lookupLocalStorage && localStorageAvailable()) {
+        return window.localStorage.getItem(lookupLocalStorage) || void 0;
+      }
+      return void 0;
+    },
+    // Deconstruct the options object and extract the lookupLocalStorage property
+    cacheUserLanguage(lng, _ref2) {
+      let {
+        lookupLocalStorage
+      } = _ref2;
+      if (lookupLocalStorage && localStorageAvailable()) {
+        window.localStorage.setItem(lookupLocalStorage, lng);
+      }
+    }
+  };
+  let hasSessionStorageSupport = null;
+  const sessionStorageAvailable = () => {
+    if (hasSessionStorageSupport !== null) return hasSessionStorageSupport;
+    try {
+      hasSessionStorageSupport = typeof window !== "undefined" && window.sessionStorage !== null;
+      if (!hasSessionStorageSupport) {
+        return false;
+      }
+      const testKey = "i18next.translate.boo";
+      window.sessionStorage.setItem(testKey, "foo");
+      window.sessionStorage.removeItem(testKey);
+    } catch (e) {
+      hasSessionStorageSupport = false;
+    }
+    return hasSessionStorageSupport;
+  };
+  var sessionStorage = {
+    name: "sessionStorage",
+    lookup(_ref) {
+      let {
+        lookupSessionStorage
+      } = _ref;
+      if (lookupSessionStorage && sessionStorageAvailable()) {
+        return window.sessionStorage.getItem(lookupSessionStorage) || void 0;
+      }
+      return void 0;
+    },
+    cacheUserLanguage(lng, _ref2) {
+      let {
+        lookupSessionStorage
+      } = _ref2;
+      if (lookupSessionStorage && sessionStorageAvailable()) {
+        window.sessionStorage.setItem(lookupSessionStorage, lng);
+      }
+    }
+  };
+  var navigator$1 = {
+    name: "navigator",
+    lookup(options2) {
+      const found = [];
+      if (typeof navigator !== "undefined") {
+        const {
+          languages,
+          userLanguage,
+          language
+        } = navigator;
+        if (languages) {
+          for (let i = 0; i < languages.length; i++) {
+            found.push(languages[i]);
+          }
+        }
+        if (userLanguage) {
+          found.push(userLanguage);
+        }
+        if (language) {
+          found.push(language);
+        }
+      }
+      return found.length > 0 ? found : void 0;
+    }
+  };
+  var htmlTag = {
+    name: "htmlTag",
+    // Deconstruct the options object and extract the htmlTag property
+    lookup(_ref) {
+      let {
+        htmlTag: htmlTag2
+      } = _ref;
+      let found;
+      const internalHtmlTag = htmlTag2 || (typeof document !== "undefined" ? document.documentElement : null);
+      if (internalHtmlTag && typeof internalHtmlTag.getAttribute === "function") {
+        found = internalHtmlTag.getAttribute("lang");
+      }
+      return found;
+    }
+  };
+  var path = {
+    name: "path",
+    // Deconstruct the options object and extract the lookupFromPathIndex property
+    lookup(_ref) {
+      let {
+        lookupFromPathIndex
+      } = _ref;
+      if (typeof window === "undefined") return void 0;
+      const language = window.location.pathname.match(/\/([a-zA-Z-]*)/g);
+      if (!Array.isArray(language)) return void 0;
+      const index = typeof lookupFromPathIndex === "number" ? lookupFromPathIndex : 0;
+      return language[index]?.replace("/", "");
+    }
+  };
+  var subdomain = {
+    name: "subdomain",
+    lookup(_ref) {
+      let {
+        lookupFromSubdomainIndex
+      } = _ref;
+      const internalLookupFromSubdomainIndex = typeof lookupFromSubdomainIndex === "number" ? lookupFromSubdomainIndex + 1 : 1;
+      const language = typeof window !== "undefined" && window.location?.hostname?.match(/^(\w{2,5})\.(([a-z0-9-]{1,63}\.[a-z]{2,6})|localhost)/i);
+      if (!language) return void 0;
+      return language[internalLookupFromSubdomainIndex];
+    }
+  };
+  let canCookies = false;
+  try {
+    document.cookie;
+    canCookies = true;
+  } catch (e) {
+  }
+  const order = ["querystring", "cookie", "localStorage", "sessionStorage", "navigator", "htmlTag"];
+  if (!canCookies) order.splice(1, 1);
+  const getDefaults = () => ({
+    order,
+    lookupQuerystring: "lng",
+    lookupCookie: "i18next",
+    lookupLocalStorage: "i18nextLng",
+    lookupSessionStorage: "i18nextLng",
+    // cache user language
+    caches: ["localStorage"],
+    excludeCacheFor: ["cimode"],
+    // cookieMinutes: 10,
+    // cookieDomain: 'myDomain'
+    convertDetectedLanguage: (l) => l
+  });
+  class Browser {
+    constructor(services2) {
+      let options2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+      this.type = "languageDetector";
+      this.detectors = {};
+      this.init(services2, options2);
+    }
+    init() {
+      let services2 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {
+        languageUtils: {}
+      };
+      let options2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+      let i18nOptions = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+      this.services = services2;
+      this.options = defaults(options2, this.options || {}, getDefaults());
+      if (typeof this.options.convertDetectedLanguage === "string" && this.options.convertDetectedLanguage.indexOf("15897") > -1) {
+        this.options.convertDetectedLanguage = (l) => l.replace("-", "_");
+      }
+      if (this.options.lookupFromUrlIndex) this.options.lookupFromPathIndex = this.options.lookupFromUrlIndex;
+      this.i18nOptions = i18nOptions;
+      this.addDetector(cookie$1);
+      this.addDetector(querystring);
+      this.addDetector(localStorage);
+      this.addDetector(sessionStorage);
+      this.addDetector(navigator$1);
+      this.addDetector(htmlTag);
+      this.addDetector(path);
+      this.addDetector(subdomain);
+      this.addDetector(hash);
+    }
+    addDetector(detector) {
+      this.detectors[detector.name] = detector;
+      return this;
+    }
+    detect() {
+      let detectionOrder = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : this.options.order;
+      let detected = [];
+      detectionOrder.forEach((detectorName) => {
+        if (this.detectors[detectorName]) {
+          let lookup = this.detectors[detectorName].lookup(this.options);
+          if (lookup && typeof lookup === "string") lookup = [lookup];
+          if (lookup) detected = detected.concat(lookup);
+        }
+      });
+      detected = detected.filter((d) => d !== void 0 && d !== null && !hasXSS(d)).map((d) => this.options.convertDetectedLanguage(d));
+      if (this.services && this.services.languageUtils && this.services.languageUtils.getBestMatchFromCodes) return detected;
+      return detected.length > 0 ? detected[0] : null;
+    }
+    cacheUserLanguage(lng) {
+      let caches = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : this.options.caches;
+      if (!caches) return;
+      if (this.options.excludeCacheFor && this.options.excludeCacheFor.indexOf(lng) > -1) return;
+      caches.forEach((cacheName) => {
+        if (this.detectors[cacheName]) this.detectors[cacheName].cacheUserLanguage(lng, this.options);
+      });
+    }
+  }
+  Browser.type = "languageDetector";
+  const actions = {
+    defaultMerge: Symbol("deepmerge-ts: default merge"),
+    skip: Symbol("deepmerge-ts: skip")
+  };
+  ({
+    defaultMerge: actions.defaultMerge
+  });
+  function defaultMetaDataUpdater(previousMeta, metaMeta) {
+    return metaMeta;
+  }
+  function defaultFilterValues(values, meta) {
+    return values.filter((value) => value !== void 0);
+  }
+  var ObjectType;
+  (function(ObjectType2) {
+    ObjectType2[ObjectType2["NOT"] = 0] = "NOT";
+    ObjectType2[ObjectType2["RECORD"] = 1] = "RECORD";
+    ObjectType2[ObjectType2["ARRAY"] = 2] = "ARRAY";
+    ObjectType2[ObjectType2["SET"] = 3] = "SET";
+    ObjectType2[ObjectType2["MAP"] = 4] = "MAP";
+    ObjectType2[ObjectType2["OTHER"] = 5] = "OTHER";
+  })(ObjectType || (ObjectType = {}));
+  function getObjectType(object) {
+    if (typeof object !== "object" || object === null) {
+      return 0;
+    }
+    if (Array.isArray(object)) {
+      return 2;
+    }
+    if (isRecord(object)) {
+      return 1;
+    }
+    if (object instanceof Set) {
+      return 3;
+    }
+    if (object instanceof Map) {
+      return 4;
+    }
+    return 5;
+  }
+  function getKeys(objects) {
+    const keys = /* @__PURE__ */ new Set();
+    for (const object of objects) {
+      for (const key of [...Object.keys(object), ...Object.getOwnPropertySymbols(object)]) {
+        keys.add(key);
+      }
+    }
+    return keys;
+  }
+  function objectHasProperty(object, property) {
+    return typeof object === "object" && Object.prototype.propertyIsEnumerable.call(object, property);
+  }
+  function getIterableOfIterables(iterables) {
+    let mut_iterablesIndex = 0;
+    let mut_iterator = iterables[0]?.[Symbol.iterator]();
+    return {
+      [Symbol.iterator]() {
+        return {
+          next() {
+            do {
+              if (mut_iterator === void 0) {
+                return { done: true, value: void 0 };
+              }
+              const result = mut_iterator.next();
+              if (result.done === true) {
+                mut_iterablesIndex += 1;
+                mut_iterator = iterables[mut_iterablesIndex]?.[Symbol.iterator]();
+                continue;
+              }
+              return {
+                done: false,
+                value: result.value
+              };
+            } while (true);
+          }
+        };
+      }
+    };
+  }
+  const validRecordToStringValues = ["[object Object]", "[object Module]"];
+  function isRecord(value) {
+    if (!validRecordToStringValues.includes(Object.prototype.toString.call(value))) {
+      return false;
+    }
+    const { constructor } = value;
+    if (constructor === void 0) {
+      return true;
+    }
+    const prototype = constructor.prototype;
+    if (prototype === null || typeof prototype !== "object" || !validRecordToStringValues.includes(Object.prototype.toString.call(prototype))) {
+      return false;
+    }
+    if (!prototype.hasOwnProperty("isPrototypeOf")) {
+      return false;
+    }
+    return true;
+  }
+  function mergeRecords$1(values, utils2, meta) {
+    const result = {};
+    for (const key of getKeys(values)) {
+      const propValues = [];
+      for (const value of values) {
+        if (objectHasProperty(value, key)) {
+          propValues.push(value[key]);
+        }
+      }
+      if (propValues.length === 0) {
+        continue;
+      }
+      const updatedMeta = utils2.metaDataUpdater(meta, {
+        key,
+        parents: values
+      });
+      const propertyResult = mergeUnknowns(propValues, utils2, updatedMeta);
+      if (propertyResult === actions.skip) {
+        continue;
+      }
+      if (key === "__proto__") {
+        Object.defineProperty(result, key, {
+          value: propertyResult,
+          configurable: true,
+          enumerable: true,
+          writable: true
+        });
+      } else {
+        result[key] = propertyResult;
+      }
+    }
+    return result;
+  }
+  function mergeArrays$1(values) {
+    return values.flat();
+  }
+  function mergeSets$1(values) {
+    return new Set(getIterableOfIterables(values));
+  }
+  function mergeMaps$1(values) {
+    return new Map(getIterableOfIterables(values));
+  }
+  function mergeOthers$1(values) {
+    return values.at(-1);
+  }
+  const mergeFunctions = {
+    mergeRecords: mergeRecords$1,
+    mergeArrays: mergeArrays$1,
+    mergeSets: mergeSets$1,
+    mergeMaps: mergeMaps$1,
+    mergeOthers: mergeOthers$1
+  };
+  function deepmerge(...objects) {
+    return deepmergeCustom({})(...objects);
+  }
+  function deepmergeCustom(options2, rootMetaData) {
+    const utils2 = getUtils(options2, customizedDeepmerge);
+    function customizedDeepmerge(...objects) {
+      return mergeUnknowns(objects, utils2, rootMetaData);
+    }
+    return customizedDeepmerge;
+  }
+  function getUtils(options2, customizedDeepmerge) {
+    return {
+      defaultMergeFunctions: mergeFunctions,
+      mergeFunctions: {
+        ...mergeFunctions,
+        ...Object.fromEntries(Object.entries(options2).filter(([key, option]) => Object.hasOwn(mergeFunctions, key)).map(([key, option]) => option === false ? [key, mergeFunctions.mergeOthers] : [key, option]))
+      },
+      metaDataUpdater: options2.metaDataUpdater ?? defaultMetaDataUpdater,
+      deepmerge: customizedDeepmerge,
+      useImplicitDefaultMerging: options2.enableImplicitDefaultMerging ?? false,
+      filterValues: options2.filterValues === false ? void 0 : options2.filterValues ?? defaultFilterValues,
+      actions
+    };
+  }
+  function mergeUnknowns(values, utils2, meta) {
+    const filteredValues = utils2.filterValues?.(values, meta) ?? values;
+    if (filteredValues.length === 0) {
+      return void 0;
+    }
+    if (filteredValues.length === 1) {
+      return mergeOthers(filteredValues, utils2, meta);
+    }
+    const type = getObjectType(filteredValues[0]);
+    if (type !== 0 && type !== 5) {
+      for (let mut_index = 1; mut_index < filteredValues.length; mut_index++) {
+        if (getObjectType(filteredValues[mut_index]) === type) {
+          continue;
+        }
+        return mergeOthers(filteredValues, utils2, meta);
+      }
+    }
+    switch (type) {
+      case 1: {
+        return mergeRecords(filteredValues, utils2, meta);
+      }
+      case 2: {
+        return mergeArrays(filteredValues, utils2, meta);
+      }
+      case 3: {
+        return mergeSets(filteredValues, utils2, meta);
+      }
+      case 4: {
+        return mergeMaps(filteredValues, utils2, meta);
+      }
+      default: {
+        return mergeOthers(filteredValues, utils2, meta);
+      }
+    }
+  }
+  function mergeRecords(values, utils2, meta) {
+    const result = utils2.mergeFunctions.mergeRecords(values, utils2, meta);
+    if (result === actions.defaultMerge || utils2.useImplicitDefaultMerging && result === void 0 && utils2.mergeFunctions.mergeRecords !== utils2.defaultMergeFunctions.mergeRecords) {
+      return utils2.defaultMergeFunctions.mergeRecords(values, utils2, meta);
+    }
+    return result;
+  }
+  function mergeArrays(values, utils2, meta) {
+    const result = utils2.mergeFunctions.mergeArrays(values, utils2, meta);
+    if (result === actions.defaultMerge || utils2.useImplicitDefaultMerging && result === void 0 && utils2.mergeFunctions.mergeArrays !== utils2.defaultMergeFunctions.mergeArrays) {
+      return utils2.defaultMergeFunctions.mergeArrays(values);
+    }
+    return result;
+  }
+  function mergeSets(values, utils2, meta) {
+    const result = utils2.mergeFunctions.mergeSets(values, utils2, meta);
+    if (result === actions.defaultMerge || utils2.useImplicitDefaultMerging && result === void 0 && utils2.mergeFunctions.mergeSets !== utils2.defaultMergeFunctions.mergeSets) {
+      return utils2.defaultMergeFunctions.mergeSets(values);
+    }
+    return result;
+  }
+  function mergeMaps(values, utils2, meta) {
+    const result = utils2.mergeFunctions.mergeMaps(values, utils2, meta);
+    if (result === actions.defaultMerge || utils2.useImplicitDefaultMerging && result === void 0 && utils2.mergeFunctions.mergeMaps !== utils2.defaultMergeFunctions.mergeMaps) {
+      return utils2.defaultMergeFunctions.mergeMaps(values);
+    }
+    return result;
+  }
+  function mergeOthers(values, utils2, meta) {
+    const result = utils2.mergeFunctions.mergeOthers(values, utils2, meta);
+    if (result === actions.defaultMerge || utils2.useImplicitDefaultMerging && result === void 0 && utils2.mergeFunctions.mergeOthers !== utils2.defaultMergeFunctions.mergeOthers) {
+      return utils2.defaultMergeFunctions.mergeOthers(values);
+    }
+    return result;
+  }
+  const STORAGE_KEY = "site_configs";
+  const ROOT_ELEMENT_ID = "fuck-annoying-blog-widget-script-root";
+  const DEFAULT_NS = "common";
+  const COMMON_DOM_TARGETS = [window, document, document.body];
+  const localeModules = /* @__PURE__ */ Object.assign({ "./en/common.json": __vite_glob_0_0$1, "./en/config.json": __vite_glob_0_1$1, "./en/features.json": __vite_glob_0_2$1, "./en/services.json": __vite_glob_0_3$1, "./en/utils.json": __vite_glob_0_4$1, "./zh-CN/common.json": __vite_glob_0_5$1, "./zh-CN/config.json": __vite_glob_0_6$1, "./zh-CN/features.json": __vite_glob_0_7$1, "./zh-CN/services.json": __vite_glob_0_8$1, "./zh-CN/utils.json": __vite_glob_0_9 });
+  const namespaceSet = /* @__PURE__ */ new Set();
+  const resources = {};
+  for (const path2 in localeModules) {
+    const content = localeModules[path2].default;
+    const pathParts = path2.replace("./", "").replace(".json", "").split("/");
+    const lang = pathParts[0];
+    const namespace = pathParts[1];
+    namespaceSet.add(namespace);
+    if (lang && namespace) {
+      resources[lang] = deepmerge(resources[lang] || {}, { [namespace]: content });
+    }
+  }
+  const NS = [...namespaceSet];
+  console.log("i18n resources loaded automatically:", NS, resources);
+  instance.use(Browser).use(initReactI18next).init({
+    // 明确定义我们拥有的命名空间
+    ns: NS,
+    defaultNS: DEFAULT_NS,
+    // 设置默认命名空间
+    fallbackLng: "en",
+    // 关键的后备语言
+    resources,
+    interpolation: {
+      escapeValue: false
+    },
+    debug: false
+    // 生产环境建议关闭
+  });
   var client = { exports: {} };
   var reactDomClient_production = {};
   var scheduler = { exports: {} };
@@ -1528,56 +4803,56 @@
       illegalAttributeNameCache[attributeName] = true;
       return false;
     }
-    function setValueForAttribute(node, name, value) {
-      if (isAttributeNameSafe(name))
-        if (null === value) node.removeAttribute(name);
+    function setValueForAttribute(node, name2, value) {
+      if (isAttributeNameSafe(name2))
+        if (null === value) node.removeAttribute(name2);
         else {
           switch (typeof value) {
             case "undefined":
             case "function":
             case "symbol":
-              node.removeAttribute(name);
+              node.removeAttribute(name2);
               return;
             case "boolean":
-              var prefix$8 = name.toLowerCase().slice(0, 5);
+              var prefix$8 = name2.toLowerCase().slice(0, 5);
               if ("data-" !== prefix$8 && "aria-" !== prefix$8) {
-                node.removeAttribute(name);
+                node.removeAttribute(name2);
                 return;
               }
           }
-          node.setAttribute(name, "" + value);
+          node.setAttribute(name2, "" + value);
         }
     }
-    function setValueForKnownAttribute(node, name, value) {
-      if (null === value) node.removeAttribute(name);
+    function setValueForKnownAttribute(node, name2, value) {
+      if (null === value) node.removeAttribute(name2);
       else {
         switch (typeof value) {
           case "undefined":
           case "function":
           case "symbol":
           case "boolean":
-            node.removeAttribute(name);
+            node.removeAttribute(name2);
             return;
         }
-        node.setAttribute(name, "" + value);
+        node.setAttribute(name2, "" + value);
       }
     }
-    function setValueForNamespacedAttribute(node, namespace, name, value) {
-      if (null === value) node.removeAttribute(name);
+    function setValueForNamespacedAttribute(node, namespace, name2, value) {
+      if (null === value) node.removeAttribute(name2);
       else {
         switch (typeof value) {
           case "undefined":
           case "function":
           case "symbol":
           case "boolean":
-            node.removeAttribute(name);
+            node.removeAttribute(name2);
             return;
         }
-        node.setAttributeNS(namespace, name, "" + value);
+        node.setAttributeNS(namespace, name2, "" + value);
       }
     }
     var prefix, suffix;
-    function describeBuiltInComponentFrame(name) {
+    function describeBuiltInComponentFrame(name2) {
       if (void 0 === prefix)
         try {
           throw Error();
@@ -1586,7 +4861,7 @@
           prefix = match && match[1] || "";
           suffix = -1 < x.stack.indexOf("\n    at") ? " (<anonymous>)" : -1 < x.stack.indexOf("@") ? "@unknown:0:0" : "";
         }
-      return "\n" + prefix + name + suffix;
+      return "\n" + prefix + name2 + suffix;
     }
     var reentry = false;
     function describeNativeComponentFrame(fn, construct) {
@@ -1798,7 +5073,7 @@
         }
       );
     }
-    function updateInput(element, value, defaultValue, lastDefaultValue, checked, defaultChecked, type, name) {
+    function updateInput(element, value, defaultValue, lastDefaultValue, checked, defaultChecked, type, name2) {
       element.name = "";
       null != type && "function" !== typeof type && "symbol" !== typeof type && "boolean" !== typeof type ? element.type = type : element.removeAttribute("type");
       if (null != value)
@@ -1812,9 +5087,9 @@
       null != value ? setDefaultValue(element, type, getToStringValue(value)) : null != defaultValue ? setDefaultValue(element, type, getToStringValue(defaultValue)) : null != lastDefaultValue && element.removeAttribute("value");
       null == checked && null != defaultChecked && (element.defaultChecked = !!defaultChecked);
       null != checked && (element.checked = checked && "function" !== typeof checked && "symbol" !== typeof checked);
-      null != name && "function" !== typeof name && "symbol" !== typeof name && "boolean" !== typeof name ? element.name = "" + getToStringValue(name) : element.removeAttribute("name");
+      null != name2 && "function" !== typeof name2 && "symbol" !== typeof name2 && "boolean" !== typeof name2 ? element.name = "" + getToStringValue(name2) : element.removeAttribute("name");
     }
-    function initInput(element, value, defaultValue, checked, defaultChecked, type, name, isHydrating2) {
+    function initInput(element, value, defaultValue, checked, defaultChecked, type, name2, isHydrating2) {
       null != type && "function" !== typeof type && "symbol" !== typeof type && "boolean" !== typeof type && (element.type = type);
       if (null != value || null != defaultValue) {
         if (!("submit" !== type && "reset" !== type || void 0 !== value && null !== value))
@@ -1828,7 +5103,7 @@
       checked = "function" !== typeof checked && "symbol" !== typeof checked && !!checked;
       element.checked = isHydrating2 ? element.checked : !!checked;
       element.defaultChecked = !!checked;
-      null != name && "function" !== typeof name && "symbol" !== typeof name && "boolean" !== typeof name && (element.name = name);
+      null != name2 && "function" !== typeof name2 && "symbol" !== typeof name2 && "boolean" !== typeof name2 && (element.name = name2);
     }
     function setDefaultValue(node, type, value) {
       "number" === type && getActiveElement(node.ownerDocument) === node || node.defaultValue === "" + value || (node.defaultValue = "" + value);
@@ -10424,7 +13699,7 @@
         case "li":
           break;
         case "input":
-          var name = null, type = null, value = null, defaultValue = null, lastDefaultValue = null, checked = null, defaultChecked = null;
+          var name2 = null, type = null, value = null, defaultValue = null, lastDefaultValue = null, checked = null, defaultChecked = null;
           for (propKey in lastProps) {
             var lastProp = lastProps[propKey];
             if (lastProps.hasOwnProperty(propKey) && null != lastProp)
@@ -10448,7 +13723,7 @@
                   type = propKey;
                   break;
                 case "name":
-                  name = propKey;
+                  name2 = propKey;
                   break;
                 case "checked":
                   checked = propKey;
@@ -10486,7 +13761,7 @@
             checked,
             defaultChecked,
             type,
-            name
+            name2
           );
           return;
         case "select":
@@ -10508,9 +13783,9 @@
                     lastDefaultValue
                   );
               }
-          for (name in nextProps)
-            if (type = nextProps[name], lastDefaultValue = lastProps[name], nextProps.hasOwnProperty(name) && (null != type || null != lastDefaultValue))
-              switch (name) {
+          for (name2 in nextProps)
+            if (type = nextProps[name2], lastDefaultValue = lastProps[name2], nextProps.hasOwnProperty(name2) && (null != type || null != lastDefaultValue))
+              switch (name2) {
                 case "value":
                   propKey$205 = type;
                   break;
@@ -10523,7 +13798,7 @@
                   type !== lastDefaultValue && setProp(
                     domElement,
                     tag,
-                    name,
+                    name2,
                     type,
                     nextProps,
                     lastDefaultValue
@@ -10537,31 +13812,31 @@
         case "textarea":
           propKey = propKey$205 = null;
           for (defaultValue in lastProps)
-            if (name = lastProps[defaultValue], lastProps.hasOwnProperty(defaultValue) && null != name && !nextProps.hasOwnProperty(defaultValue))
+            if (name2 = lastProps[defaultValue], lastProps.hasOwnProperty(defaultValue) && null != name2 && !nextProps.hasOwnProperty(defaultValue))
               switch (defaultValue) {
                 case "value":
                   break;
                 case "children":
                   break;
                 default:
-                  setProp(domElement, tag, defaultValue, null, nextProps, name);
+                  setProp(domElement, tag, defaultValue, null, nextProps, name2);
               }
           for (value in nextProps)
-            if (name = nextProps[value], type = lastProps[value], nextProps.hasOwnProperty(value) && (null != name || null != type))
+            if (name2 = nextProps[value], type = lastProps[value], nextProps.hasOwnProperty(value) && (null != name2 || null != type))
               switch (value) {
                 case "value":
-                  propKey$205 = name;
+                  propKey$205 = name2;
                   break;
                 case "defaultValue":
-                  propKey = name;
+                  propKey = name2;
                   break;
                 case "children":
                   break;
                 case "dangerouslySetInnerHTML":
-                  if (null != name) throw Error(formatProdErrorMessage(91));
+                  if (null != name2) throw Error(formatProdErrorMessage(91));
                   break;
                 default:
-                  name !== type && setProp(domElement, tag, value, name, nextProps, type);
+                  name2 !== type && setProp(domElement, tag, value, name2, nextProps, type);
               }
           updateTextarea(domElement, propKey$205, propKey);
           return;
@@ -10776,8 +14051,8 @@
             break;
         } else if (!inRootOrSingleton)
           if ("input" === type && "hidden" === instance2.type) {
-            var name = null == anyProps.name ? null : "" + anyProps.name;
-            if ("hidden" === anyProps.type && instance2.getAttribute("name") === name)
+            var name2 = null == anyProps.name ? null : "" + anyProps.name;
+            if ("hidden" === anyProps.type && instance2.getAttribute("name") === name2)
               return instance2;
           } else return instance2;
         else if (!instance2[internalHoistableMarker])
@@ -10786,18 +14061,18 @@
               if (!instance2.hasAttribute("itemprop")) break;
               return instance2;
             case "link":
-              name = instance2.getAttribute("rel");
-              if ("stylesheet" === name && instance2.hasAttribute("data-precedence"))
+              name2 = instance2.getAttribute("rel");
+              if ("stylesheet" === name2 && instance2.hasAttribute("data-precedence"))
                 break;
-              else if (name !== anyProps.rel || instance2.getAttribute("href") !== (null == anyProps.href || "" === anyProps.href ? null : anyProps.href) || instance2.getAttribute("crossorigin") !== (null == anyProps.crossOrigin ? null : anyProps.crossOrigin) || instance2.getAttribute("title") !== (null == anyProps.title ? null : anyProps.title))
+              else if (name2 !== anyProps.rel || instance2.getAttribute("href") !== (null == anyProps.href || "" === anyProps.href ? null : anyProps.href) || instance2.getAttribute("crossorigin") !== (null == anyProps.crossOrigin ? null : anyProps.crossOrigin) || instance2.getAttribute("title") !== (null == anyProps.title ? null : anyProps.title))
                 break;
               return instance2;
             case "style":
               if (instance2.hasAttribute("data-precedence")) break;
               return instance2;
             case "script":
-              name = instance2.getAttribute("src");
-              if ((name !== (null == anyProps.src ? null : anyProps.src) || instance2.getAttribute("type") !== (null == anyProps.type ? null : anyProps.type) || instance2.getAttribute("crossorigin") !== (null == anyProps.crossOrigin ? null : anyProps.crossOrigin)) && name && instance2.hasAttribute("async") && !instance2.hasAttribute("itemprop"))
+              name2 = instance2.getAttribute("src");
+              if ((name2 !== (null == anyProps.src ? null : anyProps.src) || instance2.getAttribute("type") !== (null == anyProps.type ? null : anyProps.type) || instance2.getAttribute("crossorigin") !== (null == anyProps.crossOrigin ? null : anyProps.crossOrigin)) && name2 && instance2.hasAttribute("async") && !instance2.hasAttribute("itemprop"))
                 break;
               return instance2;
             default:
@@ -12064,21 +15339,48 @@
   }
   var clientExports = requireClient();
   const ReactDOM = /* @__PURE__ */ getDefaultExportFromCjs(clientExports);
-  const STORAGE_KEY = "site_configs";
-  const ROOT_ELEMENT_ID = "fuck-annoying-blog-widget-script-root";
-  const DEFAULT_NS = "common";
-  const COMMON_DOM_TARGETS = [window, document, document.body];
+  const name = "fuck-annoying-blog-widget";
+  const pkg = {
+    name
+  };
+  class Logger2 {
+    module;
+    env;
+    constructor(options2) {
+      this.module = options2.module;
+      this.env = "production";
+    }
+    info(msg = "", ...args) {
+      if (this.env !== "production") {
+        console.info(this.formatMsg(msg), ...args);
+      }
+    }
+    warn(msg = "", ...args) {
+      console.warn(this.formatMsg(msg), ...args);
+    }
+    error(msg = "", ...args) {
+      console.error(this.formatMsg(msg), ...args);
+    }
+    formatMsg(msg) {
+      return `[${pkg.name}] [${this.module}] ${msg}`;
+    }
+  }
+  function createLogger(module) {
+    return new Logger2({ module });
+  }
   function isElementInBlacklist(target, customBlacklist = COMMON_DOM_TARGETS) {
     return customBlacklist.includes(target);
   }
   function watchAndDestroy(selector, options2 = {}, targetNode = document.body, observerOptions = { childList: true, subtree: true }) {
+    const logger2 = createLogger("watchAndDestroy");
+    logger2.info(instance.t("utils:watchAndDestroy.startFind", { selector }));
     const element = document.querySelector(selector);
     if (element) {
-      console.log(`[Watcher] 目标 "${selector}" 被立即发现。`);
+      logger2.info(instance.t("utils:watchAndDestroy.nowFound", { selector }));
       handleFoundElement(element);
       return;
     }
-    console.log(`[Watcher] 未发现 "${selector}"，启动监视器...`);
+    logger2.info(instance.t("utils:watchAndDestroy.startObserver", { selector }));
     const observer = new MutationObserver((mutationsList, obs) => {
       for (const mutation of mutationsList) {
         if (mutation.type !== "childList" || mutation.addedNodes.length === 0) continue;
@@ -12087,10 +15389,10 @@
             const elementNode = node;
             const targetElement = elementNode.matches(selector) ? elementNode : elementNode.querySelector(selector);
             if (targetElement) {
-              console.log(`[Watcher] 检测到延迟加载的目标 "${selector}"，正在移除...`);
+              logger2.info(instance.t("utils:watchAndDestroy.delayFound", { selector }));
               handleFoundElement(targetElement);
               obs.disconnect();
-              console.log(`[Watcher] 任务完成，针对 "${selector}" 的监视器已自动停止。`);
+              logger2.info(instance.t("utils:watchAndDestroy.stopObserver", { selector }));
               return;
             }
           }
@@ -12100,7 +15402,10 @@
     observer.observe(targetNode, observerOptions);
     function handleFoundElement(element2) {
       options2.beforeFound?.(element2);
-      if (!options2.keep) element2.remove();
+      if (!options2.keep) {
+        logger2.info(instance.t("utils:watchAndDestroy.destroy", { selector }));
+        element2.remove();
+      }
       options2.afterFound?.(element2);
     }
   }
@@ -12118,12 +15423,13 @@
       document.addEventListener("DOMContentLoaded", run, { once: true });
     }
   }
+  const logger$9 = createLogger("autoExpandCodeBlocks");
   const BUTTON_SELECTORS = [".show-btn"];
   function internalAutoExpandCodeBlocks() {
     for (const sel of BUTTON_SELECTORS) {
       const elementNodeList = document.querySelectorAll(sel);
       if (elementNodeList) {
-        console.log("自动展开代码块");
+        logger$9.info(instance.t("features:autoExpandCodeBlocks.expandCodeBlocks"), elementNodeList);
         elementNodeList.forEach((btn) => {
           if (btn instanceof HTMLElement) {
             btn.click();
@@ -12133,15 +15439,16 @@
       }
     }
   }
-  function autoExpandCodeBlocks$2() {
+  function autoExpandCodeBlocks() {
     onDOMReady(() => {
       internalAutoExpandCodeBlocks();
     }, 3e3);
   }
-  const __vite_glob_0_0$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    default: autoExpandCodeBlocks$2
+    default: autoExpandCodeBlocks
   }, Symbol.toStringTag, { value: "Module" }));
+  const logger$8 = createLogger("disableTitleChange");
   const propertyInterceptors$3 = [
     {
       targetList: document,
@@ -12153,8 +15460,9 @@
     }
   ];
   const eventInterceptor$1 = (type) => {
-    if (type === "visibilitychange") {
-      console.log('Event Interceptor is active and blocked a "visibilitychange" listener.');
+    const blockedEventType = "visibilitychange";
+    if (type === blockedEventType) {
+      logger$8.info(instance.t("services:eventInterceptor.blocked", blockedEventType));
       return true;
     }
     return false;
@@ -12162,7 +15470,7 @@
   const eventInterceptorPayload$1 = {
     eventInterceptor: eventInterceptor$1
   };
-  const __vite_glob_0_1$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     eventInterceptorPayload: eventInterceptorPayload$1,
     propertyInterceptors: propertyInterceptors$3
@@ -12179,24 +15487,21 @@
   ];
   function removeSakuraEffect() {
     const ELEMENT_ID = "canvas_sakura";
-    watchAndDestroy(`#${ELEMENT_ID}`, {
-      afterFound: () => {
-        console.log("[Sakura Blocker] canvas removed.");
-      }
-    });
+    watchAndDestroy(`#${ELEMENT_ID}`);
   }
-  function removeBackgroundEffects$2() {
-    console.log("remove background effects");
+  function removeBackgroundEffects() {
     removeSakuraEffect();
   }
-  const __vite_glob_0_3$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    default: removeBackgroundEffects$2,
+    default: removeBackgroundEffects,
     propertyInterceptors: propertyInterceptors$2
   }, Symbol.toStringTag, { value: "Module" }));
+  const logger$7 = createLogger("removeClickEffects");
   const eventInterceptor = (type) => {
-    if (type === "click") {
-      console.log('Interceptor is active and blocked a "click" listener.');
+    const blockedEventType = "click";
+    if (type === blockedEventType) {
+      logger$7.info(instance.t("services:eventInterceptor.blocked", blockedEventType));
       return true;
     }
     return false;
@@ -12215,12 +15520,11 @@
     eventInterceptorTargetList: COMMON_DOM_TARGETS,
     eventInterceptor
   };
-  function removeClickEffects$2() {
-    console.log("remove click effects");
+  function removeClickEffects() {
   }
   const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    default: removeClickEffects$2,
+    default: removeClickEffects,
     eventInterceptorPayload,
     propertyInterceptors: propertyInterceptors$1
   }, Symbol.toStringTag, { value: "Module" }));
@@ -12242,22 +15546,16 @@
       // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
     }
   ];
-  function removeCustomContextMenu$2() {
-    console.log("Removing custom context menu...");
+  function removeCustomContextMenu() {
   }
   const __vite_glob_0_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    default: removeCustomContextMenu$2,
+    default: removeCustomContextMenu,
     propertyInterceptors
   }, Symbol.toStringTag, { value: "Module" }));
-  function removeCustomCursor$2() {
-    console.log("remove custom cursor");
+  function removeCustomCursor() {
     const ELEMENT_ID = "cursor";
-    watchAndDestroy(`#${ELEMENT_ID}`, {
-      afterFound: () => {
-        console.log("[Cursor Blocker] cursor removed.");
-      }
-    });
+    watchAndDestroy(`#${ELEMENT_ID}`);
     const style = document.createElement("style");
     style.textContent = `
         * {
@@ -12268,26 +15566,22 @@
   }
   const __vite_glob_0_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    default: removeCustomCursor$2
+    default: removeCustomCursor
   }, Symbol.toStringTag, { value: "Module" }));
-  function removeLive2D$2() {
-    console.log("remove Live2D");
+  function removeLive2D() {
     const ELEMENT_ID = "live2d-widget";
-    watchAndDestroy(`#${ELEMENT_ID}`, {
-      afterFound: () => {
-        console.log("[Sakura Blocker] canvas removed.");
-      }
-    });
+    watchAndDestroy(`#${ELEMENT_ID}`);
   }
   const __vite_glob_0_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    default: removeLive2D$2
+    default: removeLive2D
   }, Symbol.toStringTag, { value: "Module" }));
+  const logger$6 = createLogger("removeMusicPlayer");
   function pauseMetingMusicPlayer(element) {
     const metingPlayerPauseButton = element || document.querySelector(".aplayer-pause");
-    console.log("[Meting Player Blocker] metingPlayerPauseButton", metingPlayerPauseButton);
+    logger$6.info("features:removeMusicPlayer.pauseBtn", { btn: !!metingPlayerPauseButton });
     if (metingPlayerPauseButton) {
-      console.log("[Meting Player Blocker] meting player paused.");
+      logger$6.info("features:removeMusicPlayer.paused");
       metingPlayerPauseButton?.click();
     }
   }
@@ -12302,19 +15596,18 @@
       });
     });
   }
-  function removeMusicPlayer$2() {
-    console.log("remove music player");
+  function removeMusicPlayer() {
     removeMetingMusicPlayer();
   }
   const __vite_glob_0_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    default: removeMusicPlayer$2
+    default: removeMusicPlayer
   }, Symbol.toStringTag, { value: "Module" }));
   const featureRegistry = {};
   const featureModules$1 = /* @__PURE__ */ Object.assign({
-    "./autoExpandCodeBlocks.ts": __vite_glob_0_0$1,
-    "./disableTitleChange.ts": __vite_glob_0_1$1,
-    "./removeBackgroundEffects.ts": __vite_glob_0_3$1,
+    "./autoExpandCodeBlocks.ts": __vite_glob_0_0,
+    "./disableTitleChange.ts": __vite_glob_0_1,
+    "./removeBackgroundEffects.ts": __vite_glob_0_3,
     "./removeClickEffects.ts": __vite_glob_0_4,
     "./removeCustomContextMenu.ts": __vite_glob_0_5,
     "./removeCustomCursor.ts": __vite_glob_0_6,
@@ -12330,16 +15623,17 @@
       }
     }
   }
-  console.log("[Purify] Feature registry loaded:", Object.keys(featureRegistry));
-  const __vite_glob_0_2$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const logger$5 = createLogger("featureRegistry");
+  logger$5.info(instance.t("services:featureRegistry.load"), Object.keys(featureRegistry));
+  const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     featureRegistry
   }, Symbol.toStringTag, { value: "Module" }));
   const featureModules = /* @__PURE__ */ Object.assign({
-    "../features/autoExpandCodeBlocks.ts": __vite_glob_0_0$1,
-    "../features/disableTitleChange.ts": __vite_glob_0_1$1,
-    "../features/index.ts": __vite_glob_0_2$1,
-    "../features/removeBackgroundEffects.ts": __vite_glob_0_3$1,
+    "../features/autoExpandCodeBlocks.ts": __vite_glob_0_0,
+    "../features/disableTitleChange.ts": __vite_glob_0_1,
+    "../features/index.ts": __vite_glob_0_2,
+    "../features/removeBackgroundEffects.ts": __vite_glob_0_3,
     "../features/removeClickEffects.ts": __vite_glob_0_4,
     "../features/removeCustomContextMenu.ts": __vite_glob_0_5,
     "../features/removeCustomCursor.ts": __vite_glob_0_6,
@@ -12371,7 +15665,8 @@
     global: defaultGlobalConfig,
     ...siteSpecificDefaults
   };
-  console.log("[Purify] Default configurations generated:", defaultConfigs);
+  const logger$4 = createLogger("config");
+  logger$4.info(instance.t("config:defaultConfigs"), defaultConfigs);
   var _GM_getValue = /* @__PURE__ */ (() => typeof GM_getValue != "undefined" ? GM_getValue : void 0)();
   var _GM_registerMenuCommand = /* @__PURE__ */ (() => typeof GM_registerMenuCommand != "undefined" ? GM_registerMenuCommand : void 0)();
   var _GM_setValue = /* @__PURE__ */ (() => typeof GM_setValue != "undefined" ? GM_setValue : void 0)();
@@ -12402,6 +15697,7 @@
   }
   const registrations$1 = [];
   let isInstalled$1 = false;
+  const logger$3 = createLogger("eventInterceptorService");
   function registerEventInterceptor(registration) {
     registrations$1.push(registration);
   }
@@ -12409,7 +15705,7 @@
     if (isInstalled$1) {
       return;
     }
-    console.log("[Purify] Installing Event Interceptor Service with config:", activeConfig2);
+    logger$3.info(instance.t("services:eventInterceptor.install"), activeConfig2);
     const originalAddEventListener = EventTarget.prototype.addEventListener;
     EventTarget.prototype.addEventListener = function(type, listener, options2) {
       for (const reg of registrations$1) {
@@ -12422,11 +15718,12 @@
       return originalAddEventListener.call(this, type, listener, options2);
     };
     isInstalled$1 = true;
-    console.log("[Purify] Event Interceptor Service installed successfully.");
+    logger$3.info(instance.t("services:eventInterceptor.installSuccess"));
   }
   const registrations = [];
   let isInstalled = false;
   const interceptedProperties = /* @__PURE__ */ new WeakMap();
+  const logger$2 = createLogger("propertyInterceptorService");
   function registerPropertyInterceptor(registration) {
     registrations.push(registration);
   }
@@ -12435,14 +15732,17 @@
     for (const reg of registrations2) {
       const targets = Array.isArray(reg.targetList) ? reg.targetList : [reg.targetList];
       for (const target of targets) {
-        if (!grouped.has(target)) {
-          grouped.set(target, /* @__PURE__ */ new Map());
+        let propertyMap = grouped.get(target);
+        if (!propertyMap) {
+          propertyMap = /* @__PURE__ */ new Map();
+          grouped.set(target, propertyMap);
         }
-        const propertyMap = grouped.get(target);
-        if (!propertyMap.has(reg.propertyName)) {
-          propertyMap.set(reg.propertyName, []);
+        let regs = propertyMap.get(reg.propertyName);
+        if (!regs) {
+          regs = [];
+          propertyMap.set(reg.propertyName, regs);
         }
-        propertyMap.get(reg.propertyName).push(reg);
+        regs.push(reg);
       }
     }
     return grouped;
@@ -12452,8 +15752,11 @@
       for (const rule of ruleList) {
         if (activeConfig2[rule.featureName] && rule.setter) {
           if (rule.setter.call(this, value)) {
-            console.log(
-              `[Purify] Setter for "${propertyName}" blocked by feature "${rule.featureName}".`
+            logger$2.info(
+              instance.t("services:propertyInterceptor.blocked", {
+                propertyName,
+                featureName: rule.featureName
+              })
             );
             return;
           }
@@ -12468,8 +15771,11 @@
         if (activeConfig2[rule.featureName] && rule.getter) {
           const result = rule.getter.call(this);
           if (result !== void 0) {
-            console.log(
-              `[Purify] Getter for "${propertyName}" intercepted by feature "${rule.featureName}".`
+            logger$2.info(
+              instance.t("services:propertyInterceptor.getter.blocked", {
+                propertyName,
+                featureName: rule.featureName
+              })
             );
             return result;
           }
@@ -12480,7 +15786,7 @@
   }
   function installPropertyInterceptor(activeConfig2) {
     if (isInstalled) return;
-    console.log("[Purify] Installing Property Interceptor Service...");
+    logger$2.info(instance.t("services:propertyInterceptor.install"));
     const groupedRegistrations = groupRegistrations(registrations);
     for (const [target, propertyMap] of groupedRegistrations.entries()) {
       if (!interceptedProperties.has(target)) {
@@ -12491,10 +15797,11 @@
         if (interceptedSet.has(propertyName)) continue;
         const originalDescriptor = Object.getOwnPropertyDescriptor(target, propertyName);
         if (originalDescriptor?.configurable === false) {
-          console.warn(
-            `[Purify] Property "${propertyName}" on`,
-            target,
-            `is not configurable and cannot be intercepted.`
+          logger$2.warn(
+            instance.t("services:propertyInterceptor.notConfigurable", {
+              propertyName,
+              targetObject: target
+            })
           );
           continue;
         }
@@ -12508,10 +15815,11 @@
       }
     }
     isInstalled = true;
-    console.log("[Purify] Property Interceptor Service installed successfully.");
+    logger$2.info(instance.t("services:propertyInterceptor.installSuccess"));
   }
   const featureKeys = [];
-  const modules = /* @__PURE__ */ Object.assign({ "../features/autoExpandCodeBlocks.ts": __vite_glob_0_0$1, "../features/disableTitleChange.ts": __vite_glob_0_1$1, "../features/index.ts": __vite_glob_0_2$1, "../features/removeBackgroundEffects.ts": __vite_glob_0_3$1, "../features/removeClickEffects.ts": __vite_glob_0_4, "../features/removeCustomContextMenu.ts": __vite_glob_0_5, "../features/removeCustomCursor.ts": __vite_glob_0_6, "../features/removeLive2D.ts": __vite_glob_0_7, "../features/removeMusicPlayer.ts": __vite_glob_0_8 });
+  const logger$1 = createLogger("features");
+  const modules = /* @__PURE__ */ Object.assign({ "../features/autoExpandCodeBlocks.ts": __vite_glob_0_0, "../features/disableTitleChange.ts": __vite_glob_0_1, "../features/index.ts": __vite_glob_0_2, "../features/removeBackgroundEffects.ts": __vite_glob_0_3, "../features/removeClickEffects.ts": __vite_glob_0_4, "../features/removeCustomContextMenu.ts": __vite_glob_0_5, "../features/removeCustomCursor.ts": __vite_glob_0_6, "../features/removeLive2D.ts": __vite_glob_0_7, "../features/removeMusicPlayer.ts": __vite_glob_0_8 });
   for (const path2 in modules) {
     const module = modules[path2];
     const keyMatch = path2.match(/\/(\w+)\.ts$/);
@@ -12520,14 +15828,18 @@
       featureKeys.push(featureName);
       module.default;
       if (module.eventInterceptorPayload) {
-        console.log(`[Feature Loader] Event Found interceptor for feature: ${featureName}`);
+        logger$1.info(
+          instance.t("features:loadFeatures.eventInterceptorFound", { featureName })
+        );
         registerEventInterceptor({
           featureName,
           ...module.eventInterceptorPayload
         });
       }
       if (module.propertyInterceptors) {
-        console.log(`[Feature Loader] Found property interceptors for feature: ${featureName}`);
+        logger$1.info(
+          instance.t("features:loadFeatures.propertyInterceptorsFound", { featureName })
+        );
         for (const payload of module.propertyInterceptors) {
           registerPropertyInterceptor({
             featureName,
@@ -12537,239 +15849,6 @@
       }
     }
   }
-  const warn = (i18n, code, msg, rest) => {
-    const args = [msg, {
-      code,
-      ...rest || {}
-    }];
-    if (i18n?.services?.logger?.forward) {
-      return i18n.services.logger.forward(args, "warn", "react-i18next::", true);
-    }
-    if (isString$1(args[0])) args[0] = `react-i18next:: ${args[0]}`;
-    if (i18n?.services?.logger?.warn) {
-      i18n.services.logger.warn(...args);
-    } else if (console?.warn) {
-      console.warn(...args);
-    }
-  };
-  const alreadyWarned = {};
-  const warnOnce = (i18n, code, msg, rest) => {
-    if (isString$1(msg) && alreadyWarned[msg]) return;
-    if (isString$1(msg)) alreadyWarned[msg] = /* @__PURE__ */ new Date();
-    warn(i18n, code, msg, rest);
-  };
-  const loadedClb = (i18n, cb) => () => {
-    if (i18n.isInitialized) {
-      cb();
-    } else {
-      const initialized = () => {
-        setTimeout(() => {
-          i18n.off("initialized", initialized);
-        }, 0);
-        cb();
-      };
-      i18n.on("initialized", initialized);
-    }
-  };
-  const loadNamespaces = (i18n, ns, cb) => {
-    i18n.loadNamespaces(ns, loadedClb(i18n, cb));
-  };
-  const loadLanguages = (i18n, lng, ns, cb) => {
-    if (isString$1(ns)) ns = [ns];
-    if (i18n.options.preload && i18n.options.preload.indexOf(lng) > -1) return loadNamespaces(i18n, ns, cb);
-    ns.forEach((n) => {
-      if (i18n.options.ns.indexOf(n) < 0) i18n.options.ns.push(n);
-    });
-    i18n.loadLanguages(lng, loadedClb(i18n, cb));
-  };
-  const hasLoadedNamespace = (ns, i18n, options2 = {}) => {
-    if (!i18n.languages || !i18n.languages.length) {
-      warnOnce(i18n, "NO_LANGUAGES", "i18n.languages were undefined or empty", {
-        languages: i18n.languages
-      });
-      return true;
-    }
-    return i18n.hasLoadedNamespace(ns, {
-      lng: options2.lng,
-      precheck: (i18nInstance2, loadNotPending) => {
-        if (options2.bindI18n && options2.bindI18n.indexOf("languageChanging") > -1 && i18nInstance2.services.backendConnector.backend && i18nInstance2.isLanguageChangingTo && !loadNotPending(i18nInstance2.isLanguageChangingTo, ns)) return false;
-      }
-    });
-  };
-  const isString$1 = (obj) => typeof obj === "string";
-  const isObject = (obj) => typeof obj === "object" && obj !== null;
-  const matchHtmlEntity = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34|nbsp|#160|copy|#169|reg|#174|hellip|#8230|#x2F|#47);/g;
-  const htmlEntities = {
-    "&amp;": "&",
-    "&#38;": "&",
-    "&lt;": "<",
-    "&#60;": "<",
-    "&gt;": ">",
-    "&#62;": ">",
-    "&apos;": "'",
-    "&#39;": "'",
-    "&quot;": '"',
-    "&#34;": '"',
-    "&nbsp;": " ",
-    "&#160;": " ",
-    "&copy;": "©",
-    "&#169;": "©",
-    "&reg;": "®",
-    "&#174;": "®",
-    "&hellip;": "…",
-    "&#8230;": "…",
-    "&#x2F;": "/",
-    "&#47;": "/"
-  };
-  const unescapeHtmlEntity = (m) => htmlEntities[m];
-  const unescape = (text) => text.replace(matchHtmlEntity, unescapeHtmlEntity);
-  let defaultOptions = {
-    bindI18n: "languageChanged",
-    bindI18nStore: "",
-    transEmptyNodeValue: "",
-    transSupportBasicHtmlNodes: true,
-    transWrapTextNodes: "",
-    transKeepBasicHtmlNodesFor: ["br", "strong", "i", "p"],
-    useSuspense: true,
-    unescape
-  };
-  const setDefaults = (options2 = {}) => {
-    defaultOptions = {
-      ...defaultOptions,
-      ...options2
-    };
-  };
-  const getDefaults$1 = () => defaultOptions;
-  let i18nInstance;
-  const setI18n = (instance2) => {
-    i18nInstance = instance2;
-  };
-  const getI18n = () => i18nInstance;
-  const initReactI18next = {
-    type: "3rdParty",
-    init(instance2) {
-      setDefaults(instance2.options.react);
-      setI18n(instance2);
-    }
-  };
-  const I18nContext = reactExports.createContext();
-  class ReportNamespaces {
-    constructor() {
-      this.usedNamespaces = {};
-    }
-    addUsedNamespaces(namespaces) {
-      namespaces.forEach((ns) => {
-        if (!this.usedNamespaces[ns]) this.usedNamespaces[ns] = true;
-      });
-    }
-    getUsedNamespaces() {
-      return Object.keys(this.usedNamespaces);
-    }
-  }
-  const usePrevious = (value, ignore) => {
-    const ref = reactExports.useRef();
-    reactExports.useEffect(() => {
-      ref.current = value;
-    }, [value, ignore]);
-    return ref.current;
-  };
-  const alwaysNewT = (i18n, language, namespace, keyPrefix) => i18n.getFixedT(language, namespace, keyPrefix);
-  const useMemoizedT = (i18n, language, namespace, keyPrefix) => reactExports.useCallback(alwaysNewT(i18n, language, namespace, keyPrefix), [i18n, language, namespace, keyPrefix]);
-  const useTranslation = (ns, props = {}) => {
-    const {
-      i18n: i18nFromProps
-    } = props;
-    const {
-      i18n: i18nFromContext,
-      defaultNS: defaultNSFromContext
-    } = reactExports.useContext(I18nContext) || {};
-    const i18n = i18nFromProps || i18nFromContext || getI18n();
-    if (i18n && !i18n.reportNamespaces) i18n.reportNamespaces = new ReportNamespaces();
-    if (!i18n) {
-      warnOnce(i18n, "NO_I18NEXT_INSTANCE", "useTranslation: You will need to pass in an i18next instance by using initReactI18next");
-      const notReadyT = (k, optsOrDefaultValue) => {
-        if (isString$1(optsOrDefaultValue)) return optsOrDefaultValue;
-        if (isObject(optsOrDefaultValue) && isString$1(optsOrDefaultValue.defaultValue)) return optsOrDefaultValue.defaultValue;
-        return Array.isArray(k) ? k[k.length - 1] : k;
-      };
-      const retNotReady = [notReadyT, {}, false];
-      retNotReady.t = notReadyT;
-      retNotReady.i18n = {};
-      retNotReady.ready = false;
-      return retNotReady;
-    }
-    if (i18n.options.react?.wait) warnOnce(i18n, "DEPRECATED_OPTION", "useTranslation: It seems you are still using the old wait option, you may migrate to the new useSuspense behaviour.");
-    const i18nOptions = {
-      ...getDefaults$1(),
-      ...i18n.options.react,
-      ...props
-    };
-    const {
-      useSuspense,
-      keyPrefix
-    } = i18nOptions;
-    let namespaces = defaultNSFromContext || i18n.options?.defaultNS;
-    namespaces = isString$1(namespaces) ? [namespaces] : namespaces || ["translation"];
-    i18n.reportNamespaces.addUsedNamespaces?.(namespaces);
-    const ready = (i18n.isInitialized || i18n.initializedStoreOnce) && namespaces.every((n) => hasLoadedNamespace(n, i18n, i18nOptions));
-    const memoGetT = useMemoizedT(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
-    const getT = () => memoGetT;
-    const getNewT = () => alwaysNewT(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
-    const [t, setT] = reactExports.useState(getT);
-    let joinedNS = namespaces.join();
-    if (props.lng) joinedNS = `${props.lng}${joinedNS}`;
-    const previousJoinedNS = usePrevious(joinedNS);
-    const isMounted = reactExports.useRef(true);
-    reactExports.useEffect(() => {
-      const {
-        bindI18n,
-        bindI18nStore
-      } = i18nOptions;
-      isMounted.current = true;
-      if (!ready && !useSuspense) {
-        if (props.lng) {
-          loadLanguages(i18n, props.lng, namespaces, () => {
-            if (isMounted.current) setT(getNewT);
-          });
-        } else {
-          loadNamespaces(i18n, namespaces, () => {
-            if (isMounted.current) setT(getNewT);
-          });
-        }
-      }
-      if (ready && previousJoinedNS && previousJoinedNS !== joinedNS && isMounted.current) {
-        setT(getNewT);
-      }
-      const boundReset = () => {
-        if (isMounted.current) setT(getNewT);
-      };
-      if (bindI18n) i18n?.on(bindI18n, boundReset);
-      if (bindI18nStore) i18n?.store.on(bindI18nStore, boundReset);
-      return () => {
-        isMounted.current = false;
-        if (i18n && bindI18n) bindI18n?.split(" ").forEach((e) => i18n.off(e, boundReset));
-        if (bindI18nStore && i18n) bindI18nStore.split(" ").forEach((e) => i18n.store.off(e, boundReset));
-      };
-    }, [i18n, joinedNS]);
-    reactExports.useEffect(() => {
-      if (isMounted.current && ready) {
-        setT(getT);
-      }
-    }, [i18n, keyPrefix, ready]);
-    const ret = [t, i18n, ready];
-    ret.t = t;
-    ret.i18n = i18n;
-    ret.ready = ready;
-    if (ready) return ret;
-    if (!ready && !useSuspense) return ret;
-    throw new Promise((resolve) => {
-      if (props.lng) {
-        loadLanguages(i18n, props.lng, namespaces, () => resolve());
-      } else {
-        loadNamespaces(i18n, namespaces, () => resolve());
-      }
-    });
-  };
   const mask = "_mask_12cni_1";
   const panel = "_panel_12cni_14";
   const title = "_title_12cni_24";
@@ -12870,2954 +15949,6 @@
       ] }) })
     ] });
   };
-  const panelTitle$1 = "Website Purifier Settings";
-  const closeTitle$1 = "Close";
-  const refreshButton$1 = "Refresh to Apply";
-  const currentSiteConfigTab$1 = "Current Site";
-  const globalConfigTab$1 = "Global";
-  const save$1 = "Save";
-  const common$1 = {
-    panelTitle: panelTitle$1,
-    closeTitle: closeTitle$1,
-    refreshButton: refreshButton$1,
-    currentSiteConfigTab: currentSiteConfigTab$1,
-    globalConfigTab: globalConfigTab$1,
-    save: save$1
-  };
-  const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    closeTitle: closeTitle$1,
-    currentSiteConfigTab: currentSiteConfigTab$1,
-    default: common$1,
-    globalConfigTab: globalConfigTab$1,
-    panelTitle: panelTitle$1,
-    refreshButton: refreshButton$1,
-    save: save$1
-  }, Symbol.toStringTag, { value: "Module" }));
-  const disableTitleChange$1 = { "label": "Disable Title Hijacking", "description": "Prevent websites from including baiting text through the title to grab the user's attention when switching to other tabs." };
-  const removeBackgroundEffects$1 = { "label": "Remove Background Effects", "description": "Disables animated backgrounds, such as falling petals, snowflakes, or other canvas-based effects." };
-  const removeMusicPlayer$1 = { "label": "Remove Music Player", "description": "Hides the auto-playing background music player often found on personal blogs." };
-  const removeCustomCursor$1 = { "label": "Remove Custom Cursor", "description": "Restores the default system mouse pointer, disabling any custom cursors or pointer trail effects." };
-  const removeLive2D$1 = { "label": "Remove Live2D Widget", "description": "Hides the animated character widget, usually located in the corner of the screen." };
-  const removeClickEffects$1 = { "label": "Remove Click Effects", "description": "Disables colorful words, sparkles, or other effects that appear when you click the mouse." };
-  const removeCustomContextMenu$1 = { "label": "Remove Custom Context Menu", "description": "Removes site-specific right-click menus, restoring the browser default menu." };
-  const autoExpandCodeBlocks$1 = { "label": "Auto Expand Code Blocks", "description": "Automatically clicks and expands all collapsed code block areas, supporting common blogs, forums, and more." };
-  const features$1 = {
-    disableTitleChange: disableTitleChange$1,
-    removeBackgroundEffects: removeBackgroundEffects$1,
-    removeMusicPlayer: removeMusicPlayer$1,
-    removeCustomCursor: removeCustomCursor$1,
-    removeLive2D: removeLive2D$1,
-    removeClickEffects: removeClickEffects$1,
-    removeCustomContextMenu: removeCustomContextMenu$1,
-    autoExpandCodeBlocks: autoExpandCodeBlocks$1
-  };
-  const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    autoExpandCodeBlocks: autoExpandCodeBlocks$1,
-    default: features$1,
-    disableTitleChange: disableTitleChange$1,
-    removeBackgroundEffects: removeBackgroundEffects$1,
-    removeClickEffects: removeClickEffects$1,
-    removeCustomContextMenu: removeCustomContextMenu$1,
-    removeCustomCursor: removeCustomCursor$1,
-    removeLive2D: removeLive2D$1,
-    removeMusicPlayer: removeMusicPlayer$1
-  }, Symbol.toStringTag, { value: "Module" }));
-  const panelTitle = "网站净化设置";
-  const closeTitle = "关闭";
-  const refreshButton = "刷新页面生效";
-  const currentSiteConfigTab = "当前站点";
-  const globalConfigTab = "全局";
-  const save = "保存";
-  const common = {
-    panelTitle,
-    closeTitle,
-    refreshButton,
-    currentSiteConfigTab,
-    globalConfigTab,
-    save
-  };
-  const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    closeTitle,
-    currentSiteConfigTab,
-    default: common,
-    globalConfigTab,
-    panelTitle,
-    refreshButton,
-    save
-  }, Symbol.toStringTag, { value: "Module" }));
-  const disableTitleChange = { "label": "禁止标题变更", "description": "防止网站在切换到其他标签页时通过标题加入诱导性文本来吸引用户的注意力。" };
-  const removeBackgroundEffects = { "label": "移除背景特效", "description": "禁用动态的背景效果，例如背景飘花、雪花、彩带或其他基于Canvas的动画。" };
-  const removeMusicPlayer = { "label": "移除音乐播放器", "description": "隐藏在部分个人博客上会自动播放的背景音乐播放器。" };
-  const removeCustomCursor = { "label": "移除自定义鼠标指针", "description": "恢复系统默认的鼠标指针样式，禁用网站设置的特殊图标指针或鼠标拖尾特效。" };
-  const removeLive2D = { "label": "移除Live2D看板娘", "description": "隐藏通常位于屏幕角落的动态卡通人物（看板娘）挂件。" };
-  const removeClickEffects = { "label": "移除点击特效", "description": "禁用鼠标点击时出现的彩色文字、爱心、烟花或其他浮夸的点击反馈效果。" };
-  const removeCustomContextMenu = { "label": "移除自定义右键菜单", "description": "移除网站自定义的右键菜单，还原浏览器默认菜单。" };
-  const autoExpandCodeBlocks = { "label": "自动展开代码块", "description": "自动点击并展开所有折叠的代码块区域，支持常见博客、论坛等页面。" };
-  const features = {
-    disableTitleChange,
-    removeBackgroundEffects,
-    removeMusicPlayer,
-    removeCustomCursor,
-    removeLive2D,
-    removeClickEffects,
-    removeCustomContextMenu,
-    autoExpandCodeBlocks
-  };
-  const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    autoExpandCodeBlocks,
-    default: features,
-    disableTitleChange,
-    removeBackgroundEffects,
-    removeClickEffects,
-    removeCustomContextMenu,
-    removeCustomCursor,
-    removeLive2D,
-    removeMusicPlayer
-  }, Symbol.toStringTag, { value: "Module" }));
-  const isString = (obj) => typeof obj === "string";
-  const defer = () => {
-    let res;
-    let rej;
-    const promise = new Promise((resolve, reject) => {
-      res = resolve;
-      rej = reject;
-    });
-    promise.resolve = res;
-    promise.reject = rej;
-    return promise;
-  };
-  const makeString = (object) => {
-    if (object == null) return "";
-    return "" + object;
-  };
-  const copy = (a, s, t) => {
-    a.forEach((m) => {
-      if (s[m]) t[m] = s[m];
-    });
-  };
-  const lastOfPathSeparatorRegExp = /###/g;
-  const cleanKey = (key) => key && key.indexOf("###") > -1 ? key.replace(lastOfPathSeparatorRegExp, ".") : key;
-  const canNotTraverseDeeper = (object) => !object || isString(object);
-  const getLastOfPath = (object, path2, Empty) => {
-    const stack = !isString(path2) ? path2 : path2.split(".");
-    let stackIndex = 0;
-    while (stackIndex < stack.length - 1) {
-      if (canNotTraverseDeeper(object)) return {};
-      const key = cleanKey(stack[stackIndex]);
-      if (!object[key] && Empty) object[key] = new Empty();
-      if (Object.prototype.hasOwnProperty.call(object, key)) {
-        object = object[key];
-      } else {
-        object = {};
-      }
-      ++stackIndex;
-    }
-    if (canNotTraverseDeeper(object)) return {};
-    return {
-      obj: object,
-      k: cleanKey(stack[stackIndex])
-    };
-  };
-  const setPath = (object, path2, newValue) => {
-    const {
-      obj,
-      k
-    } = getLastOfPath(object, path2, Object);
-    if (obj !== void 0 || path2.length === 1) {
-      obj[k] = newValue;
-      return;
-    }
-    let e = path2[path2.length - 1];
-    let p = path2.slice(0, path2.length - 1);
-    let last = getLastOfPath(object, p, Object);
-    while (last.obj === void 0 && p.length) {
-      e = `${p[p.length - 1]}.${e}`;
-      p = p.slice(0, p.length - 1);
-      last = getLastOfPath(object, p, Object);
-      if (last?.obj && typeof last.obj[`${last.k}.${e}`] !== "undefined") {
-        last.obj = void 0;
-      }
-    }
-    last.obj[`${last.k}.${e}`] = newValue;
-  };
-  const pushPath = (object, path2, newValue, concat) => {
-    const {
-      obj,
-      k
-    } = getLastOfPath(object, path2, Object);
-    obj[k] = obj[k] || [];
-    obj[k].push(newValue);
-  };
-  const getPath = (object, path2) => {
-    const {
-      obj,
-      k
-    } = getLastOfPath(object, path2);
-    if (!obj) return void 0;
-    if (!Object.prototype.hasOwnProperty.call(obj, k)) return void 0;
-    return obj[k];
-  };
-  const getPathWithDefaults = (data, defaultData, key) => {
-    const value = getPath(data, key);
-    if (value !== void 0) {
-      return value;
-    }
-    return getPath(defaultData, key);
-  };
-  const deepExtend = (target, source, overwrite) => {
-    for (const prop in source) {
-      if (prop !== "__proto__" && prop !== "constructor") {
-        if (prop in target) {
-          if (isString(target[prop]) || target[prop] instanceof String || isString(source[prop]) || source[prop] instanceof String) {
-            if (overwrite) target[prop] = source[prop];
-          } else {
-            deepExtend(target[prop], source[prop], overwrite);
-          }
-        } else {
-          target[prop] = source[prop];
-        }
-      }
-    }
-    return target;
-  };
-  const regexEscape = (str) => str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-  var _entityMap = {
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;",
-    "/": "&#x2F;"
-  };
-  const escape = (data) => {
-    if (isString(data)) {
-      return data.replace(/[&<>"'\/]/g, (s) => _entityMap[s]);
-    }
-    return data;
-  };
-  class RegExpCache {
-    constructor(capacity) {
-      this.capacity = capacity;
-      this.regExpMap = /* @__PURE__ */ new Map();
-      this.regExpQueue = [];
-    }
-    getRegExp(pattern) {
-      const regExpFromCache = this.regExpMap.get(pattern);
-      if (regExpFromCache !== void 0) {
-        return regExpFromCache;
-      }
-      const regExpNew = new RegExp(pattern);
-      if (this.regExpQueue.length === this.capacity) {
-        this.regExpMap.delete(this.regExpQueue.shift());
-      }
-      this.regExpMap.set(pattern, regExpNew);
-      this.regExpQueue.push(pattern);
-      return regExpNew;
-    }
-  }
-  const chars = [" ", ",", "?", "!", ";"];
-  const looksLikeObjectPathRegExpCache = new RegExpCache(20);
-  const looksLikeObjectPath = (key, nsSeparator, keySeparator) => {
-    nsSeparator = nsSeparator || "";
-    keySeparator = keySeparator || "";
-    const possibleChars = chars.filter((c) => nsSeparator.indexOf(c) < 0 && keySeparator.indexOf(c) < 0);
-    if (possibleChars.length === 0) return true;
-    const r = looksLikeObjectPathRegExpCache.getRegExp(`(${possibleChars.map((c) => c === "?" ? "\\?" : c).join("|")})`);
-    let matched = !r.test(key);
-    if (!matched) {
-      const ki = key.indexOf(keySeparator);
-      if (ki > 0 && !r.test(key.substring(0, ki))) {
-        matched = true;
-      }
-    }
-    return matched;
-  };
-  const deepFind = (obj, path2, keySeparator = ".") => {
-    if (!obj) return void 0;
-    if (obj[path2]) {
-      if (!Object.prototype.hasOwnProperty.call(obj, path2)) return void 0;
-      return obj[path2];
-    }
-    const tokens = path2.split(keySeparator);
-    let current = obj;
-    for (let i = 0; i < tokens.length; ) {
-      if (!current || typeof current !== "object") {
-        return void 0;
-      }
-      let next;
-      let nextPath = "";
-      for (let j = i; j < tokens.length; ++j) {
-        if (j !== i) {
-          nextPath += keySeparator;
-        }
-        nextPath += tokens[j];
-        next = current[nextPath];
-        if (next !== void 0) {
-          if (["string", "number", "boolean"].indexOf(typeof next) > -1 && j < tokens.length - 1) {
-            continue;
-          }
-          i += j - i + 1;
-          break;
-        }
-      }
-      current = next;
-    }
-    return current;
-  };
-  const getCleanedCode = (code) => code?.replace("_", "-");
-  const consoleLogger = {
-    type: "logger",
-    log(args) {
-      this.output("log", args);
-    },
-    warn(args) {
-      this.output("warn", args);
-    },
-    error(args) {
-      this.output("error", args);
-    },
-    output(type, args) {
-      console?.[type]?.apply?.(console, args);
-    }
-  };
-  class Logger {
-    constructor(concreteLogger, options2 = {}) {
-      this.init(concreteLogger, options2);
-    }
-    init(concreteLogger, options2 = {}) {
-      this.prefix = options2.prefix || "i18next:";
-      this.logger = concreteLogger || consoleLogger;
-      this.options = options2;
-      this.debug = options2.debug;
-    }
-    log(...args) {
-      return this.forward(args, "log", "", true);
-    }
-    warn(...args) {
-      return this.forward(args, "warn", "", true);
-    }
-    error(...args) {
-      return this.forward(args, "error", "");
-    }
-    deprecate(...args) {
-      return this.forward(args, "warn", "WARNING DEPRECATED: ", true);
-    }
-    forward(args, lvl, prefix, debugOnly) {
-      if (debugOnly && !this.debug) return null;
-      if (isString(args[0])) args[0] = `${prefix}${this.prefix} ${args[0]}`;
-      return this.logger[lvl](args);
-    }
-    create(moduleName) {
-      return new Logger(this.logger, {
-        ...{
-          prefix: `${this.prefix}:${moduleName}:`
-        },
-        ...this.options
-      });
-    }
-    clone(options2) {
-      options2 = options2 || this.options;
-      options2.prefix = options2.prefix || this.prefix;
-      return new Logger(this.logger, options2);
-    }
-  }
-  var baseLogger = new Logger();
-  class EventEmitter {
-    constructor() {
-      this.observers = {};
-    }
-    on(events, listener) {
-      events.split(" ").forEach((event) => {
-        if (!this.observers[event]) this.observers[event] = /* @__PURE__ */ new Map();
-        const numListeners = this.observers[event].get(listener) || 0;
-        this.observers[event].set(listener, numListeners + 1);
-      });
-      return this;
-    }
-    off(event, listener) {
-      if (!this.observers[event]) return;
-      if (!listener) {
-        delete this.observers[event];
-        return;
-      }
-      this.observers[event].delete(listener);
-    }
-    emit(event, ...args) {
-      if (this.observers[event]) {
-        const cloned = Array.from(this.observers[event].entries());
-        cloned.forEach(([observer, numTimesAdded]) => {
-          for (let i = 0; i < numTimesAdded; i++) {
-            observer(...args);
-          }
-        });
-      }
-      if (this.observers["*"]) {
-        const cloned = Array.from(this.observers["*"].entries());
-        cloned.forEach(([observer, numTimesAdded]) => {
-          for (let i = 0; i < numTimesAdded; i++) {
-            observer.apply(observer, [event, ...args]);
-          }
-        });
-      }
-    }
-  }
-  class ResourceStore extends EventEmitter {
-    constructor(data, options2 = {
-      ns: ["translation"],
-      defaultNS: "translation"
-    }) {
-      super();
-      this.data = data || {};
-      this.options = options2;
-      if (this.options.keySeparator === void 0) {
-        this.options.keySeparator = ".";
-      }
-      if (this.options.ignoreJSONStructure === void 0) {
-        this.options.ignoreJSONStructure = true;
-      }
-    }
-    addNamespaces(ns) {
-      if (this.options.ns.indexOf(ns) < 0) {
-        this.options.ns.push(ns);
-      }
-    }
-    removeNamespaces(ns) {
-      const index = this.options.ns.indexOf(ns);
-      if (index > -1) {
-        this.options.ns.splice(index, 1);
-      }
-    }
-    getResource(lng, ns, key, options2 = {}) {
-      const keySeparator = options2.keySeparator !== void 0 ? options2.keySeparator : this.options.keySeparator;
-      const ignoreJSONStructure = options2.ignoreJSONStructure !== void 0 ? options2.ignoreJSONStructure : this.options.ignoreJSONStructure;
-      let path2;
-      if (lng.indexOf(".") > -1) {
-        path2 = lng.split(".");
-      } else {
-        path2 = [lng, ns];
-        if (key) {
-          if (Array.isArray(key)) {
-            path2.push(...key);
-          } else if (isString(key) && keySeparator) {
-            path2.push(...key.split(keySeparator));
-          } else {
-            path2.push(key);
-          }
-        }
-      }
-      const result = getPath(this.data, path2);
-      if (!result && !ns && !key && lng.indexOf(".") > -1) {
-        lng = path2[0];
-        ns = path2[1];
-        key = path2.slice(2).join(".");
-      }
-      if (result || !ignoreJSONStructure || !isString(key)) return result;
-      return deepFind(this.data?.[lng]?.[ns], key, keySeparator);
-    }
-    addResource(lng, ns, key, value, options2 = {
-      silent: false
-    }) {
-      const keySeparator = options2.keySeparator !== void 0 ? options2.keySeparator : this.options.keySeparator;
-      let path2 = [lng, ns];
-      if (key) path2 = path2.concat(keySeparator ? key.split(keySeparator) : key);
-      if (lng.indexOf(".") > -1) {
-        path2 = lng.split(".");
-        value = ns;
-        ns = path2[1];
-      }
-      this.addNamespaces(ns);
-      setPath(this.data, path2, value);
-      if (!options2.silent) this.emit("added", lng, ns, key, value);
-    }
-    addResources(lng, ns, resources2, options2 = {
-      silent: false
-    }) {
-      for (const m in resources2) {
-        if (isString(resources2[m]) || Array.isArray(resources2[m])) this.addResource(lng, ns, m, resources2[m], {
-          silent: true
-        });
-      }
-      if (!options2.silent) this.emit("added", lng, ns, resources2);
-    }
-    addResourceBundle(lng, ns, resources2, deep, overwrite, options2 = {
-      silent: false,
-      skipCopy: false
-    }) {
-      let path2 = [lng, ns];
-      if (lng.indexOf(".") > -1) {
-        path2 = lng.split(".");
-        deep = resources2;
-        resources2 = ns;
-        ns = path2[1];
-      }
-      this.addNamespaces(ns);
-      let pack = getPath(this.data, path2) || {};
-      if (!options2.skipCopy) resources2 = JSON.parse(JSON.stringify(resources2));
-      if (deep) {
-        deepExtend(pack, resources2, overwrite);
-      } else {
-        pack = {
-          ...pack,
-          ...resources2
-        };
-      }
-      setPath(this.data, path2, pack);
-      if (!options2.silent) this.emit("added", lng, ns, resources2);
-    }
-    removeResourceBundle(lng, ns) {
-      if (this.hasResourceBundle(lng, ns)) {
-        delete this.data[lng][ns];
-      }
-      this.removeNamespaces(ns);
-      this.emit("removed", lng, ns);
-    }
-    hasResourceBundle(lng, ns) {
-      return this.getResource(lng, ns) !== void 0;
-    }
-    getResourceBundle(lng, ns) {
-      if (!ns) ns = this.options.defaultNS;
-      return this.getResource(lng, ns);
-    }
-    getDataByLanguage(lng) {
-      return this.data[lng];
-    }
-    hasLanguageSomeTranslations(lng) {
-      const data = this.getDataByLanguage(lng);
-      const n = data && Object.keys(data) || [];
-      return !!n.find((v) => data[v] && Object.keys(data[v]).length > 0);
-    }
-    toJSON() {
-      return this.data;
-    }
-  }
-  var postProcessor = {
-    processors: {},
-    addPostProcessor(module) {
-      this.processors[module.name] = module;
-    },
-    handle(processors, value, key, options2, translator) {
-      processors.forEach((processor) => {
-        value = this.processors[processor]?.process(value, key, options2, translator) ?? value;
-      });
-      return value;
-    }
-  };
-  const checkedLoadedFor = {};
-  const shouldHandleAsObject = (res) => !isString(res) && typeof res !== "boolean" && typeof res !== "number";
-  class Translator extends EventEmitter {
-    constructor(services, options2 = {}) {
-      super();
-      copy(["resourceStore", "languageUtils", "pluralResolver", "interpolator", "backendConnector", "i18nFormat", "utils"], services, this);
-      this.options = options2;
-      if (this.options.keySeparator === void 0) {
-        this.options.keySeparator = ".";
-      }
-      this.logger = baseLogger.create("translator");
-    }
-    changeLanguage(lng) {
-      if (lng) this.language = lng;
-    }
-    exists(key, o = {
-      interpolation: {}
-    }) {
-      const opt = {
-        ...o
-      };
-      if (key == null) return false;
-      const resolved = this.resolve(key, opt);
-      return resolved?.res !== void 0;
-    }
-    extractFromKey(key, opt) {
-      let nsSeparator = opt.nsSeparator !== void 0 ? opt.nsSeparator : this.options.nsSeparator;
-      if (nsSeparator === void 0) nsSeparator = ":";
-      const keySeparator = opt.keySeparator !== void 0 ? opt.keySeparator : this.options.keySeparator;
-      let namespaces = opt.ns || this.options.defaultNS || [];
-      const wouldCheckForNsInKey = nsSeparator && key.indexOf(nsSeparator) > -1;
-      const seemsNaturalLanguage = !this.options.userDefinedKeySeparator && !opt.keySeparator && !this.options.userDefinedNsSeparator && !opt.nsSeparator && !looksLikeObjectPath(key, nsSeparator, keySeparator);
-      if (wouldCheckForNsInKey && !seemsNaturalLanguage) {
-        const m = key.match(this.interpolator.nestingRegexp);
-        if (m && m.length > 0) {
-          return {
-            key,
-            namespaces: isString(namespaces) ? [namespaces] : namespaces
-          };
-        }
-        const parts = key.split(nsSeparator);
-        if (nsSeparator !== keySeparator || nsSeparator === keySeparator && this.options.ns.indexOf(parts[0]) > -1) namespaces = parts.shift();
-        key = parts.join(keySeparator);
-      }
-      return {
-        key,
-        namespaces: isString(namespaces) ? [namespaces] : namespaces
-      };
-    }
-    translate(keys, o, lastKey) {
-      let opt = typeof o === "object" ? {
-        ...o
-      } : o;
-      if (typeof opt !== "object" && this.options.overloadTranslationOptionHandler) {
-        opt = this.options.overloadTranslationOptionHandler(arguments);
-      }
-      if (typeof options === "object") opt = {
-        ...opt
-      };
-      if (!opt) opt = {};
-      if (keys == null) return "";
-      if (!Array.isArray(keys)) keys = [String(keys)];
-      const returnDetails = opt.returnDetails !== void 0 ? opt.returnDetails : this.options.returnDetails;
-      const keySeparator = opt.keySeparator !== void 0 ? opt.keySeparator : this.options.keySeparator;
-      const {
-        key,
-        namespaces
-      } = this.extractFromKey(keys[keys.length - 1], opt);
-      const namespace = namespaces[namespaces.length - 1];
-      let nsSeparator = opt.nsSeparator !== void 0 ? opt.nsSeparator : this.options.nsSeparator;
-      if (nsSeparator === void 0) nsSeparator = ":";
-      const lng = opt.lng || this.language;
-      const appendNamespaceToCIMode = opt.appendNamespaceToCIMode || this.options.appendNamespaceToCIMode;
-      if (lng?.toLowerCase() === "cimode") {
-        if (appendNamespaceToCIMode) {
-          if (returnDetails) {
-            return {
-              res: `${namespace}${nsSeparator}${key}`,
-              usedKey: key,
-              exactUsedKey: key,
-              usedLng: lng,
-              usedNS: namespace,
-              usedParams: this.getUsedParamsDetails(opt)
-            };
-          }
-          return `${namespace}${nsSeparator}${key}`;
-        }
-        if (returnDetails) {
-          return {
-            res: key,
-            usedKey: key,
-            exactUsedKey: key,
-            usedLng: lng,
-            usedNS: namespace,
-            usedParams: this.getUsedParamsDetails(opt)
-          };
-        }
-        return key;
-      }
-      const resolved = this.resolve(keys, opt);
-      let res = resolved?.res;
-      const resUsedKey = resolved?.usedKey || key;
-      const resExactUsedKey = resolved?.exactUsedKey || key;
-      const noObject = ["[object Number]", "[object Function]", "[object RegExp]"];
-      const joinArrays = opt.joinArrays !== void 0 ? opt.joinArrays : this.options.joinArrays;
-      const handleAsObjectInI18nFormat = !this.i18nFormat || this.i18nFormat.handleAsObject;
-      const needsPluralHandling = opt.count !== void 0 && !isString(opt.count);
-      const hasDefaultValue = Translator.hasDefaultValue(opt);
-      const defaultValueSuffix = needsPluralHandling ? this.pluralResolver.getSuffix(lng, opt.count, opt) : "";
-      const defaultValueSuffixOrdinalFallback = opt.ordinal && needsPluralHandling ? this.pluralResolver.getSuffix(lng, opt.count, {
-        ordinal: false
-      }) : "";
-      const needsZeroSuffixLookup = needsPluralHandling && !opt.ordinal && opt.count === 0;
-      const defaultValue = needsZeroSuffixLookup && opt[`defaultValue${this.options.pluralSeparator}zero`] || opt[`defaultValue${defaultValueSuffix}`] || opt[`defaultValue${defaultValueSuffixOrdinalFallback}`] || opt.defaultValue;
-      let resForObjHndl = res;
-      if (handleAsObjectInI18nFormat && !res && hasDefaultValue) {
-        resForObjHndl = defaultValue;
-      }
-      const handleAsObject = shouldHandleAsObject(resForObjHndl);
-      const resType = Object.prototype.toString.apply(resForObjHndl);
-      if (handleAsObjectInI18nFormat && resForObjHndl && handleAsObject && noObject.indexOf(resType) < 0 && !(isString(joinArrays) && Array.isArray(resForObjHndl))) {
-        if (!opt.returnObjects && !this.options.returnObjects) {
-          if (!this.options.returnedObjectHandler) {
-            this.logger.warn("accessing an object - but returnObjects options is not enabled!");
-          }
-          const r = this.options.returnedObjectHandler ? this.options.returnedObjectHandler(resUsedKey, resForObjHndl, {
-            ...opt,
-            ns: namespaces
-          }) : `key '${key} (${this.language})' returned an object instead of string.`;
-          if (returnDetails) {
-            resolved.res = r;
-            resolved.usedParams = this.getUsedParamsDetails(opt);
-            return resolved;
-          }
-          return r;
-        }
-        if (keySeparator) {
-          const resTypeIsArray = Array.isArray(resForObjHndl);
-          const copy2 = resTypeIsArray ? [] : {};
-          const newKeyToUse = resTypeIsArray ? resExactUsedKey : resUsedKey;
-          for (const m in resForObjHndl) {
-            if (Object.prototype.hasOwnProperty.call(resForObjHndl, m)) {
-              const deepKey = `${newKeyToUse}${keySeparator}${m}`;
-              if (hasDefaultValue && !res) {
-                copy2[m] = this.translate(deepKey, {
-                  ...opt,
-                  defaultValue: shouldHandleAsObject(defaultValue) ? defaultValue[m] : void 0,
-                  ...{
-                    joinArrays: false,
-                    ns: namespaces
-                  }
-                });
-              } else {
-                copy2[m] = this.translate(deepKey, {
-                  ...opt,
-                  ...{
-                    joinArrays: false,
-                    ns: namespaces
-                  }
-                });
-              }
-              if (copy2[m] === deepKey) copy2[m] = resForObjHndl[m];
-            }
-          }
-          res = copy2;
-        }
-      } else if (handleAsObjectInI18nFormat && isString(joinArrays) && Array.isArray(res)) {
-        res = res.join(joinArrays);
-        if (res) res = this.extendTranslation(res, keys, opt, lastKey);
-      } else {
-        let usedDefault = false;
-        let usedKey = false;
-        if (!this.isValidLookup(res) && hasDefaultValue) {
-          usedDefault = true;
-          res = defaultValue;
-        }
-        if (!this.isValidLookup(res)) {
-          usedKey = true;
-          res = key;
-        }
-        const missingKeyNoValueFallbackToKey = opt.missingKeyNoValueFallbackToKey || this.options.missingKeyNoValueFallbackToKey;
-        const resForMissing = missingKeyNoValueFallbackToKey && usedKey ? void 0 : res;
-        const updateMissing = hasDefaultValue && defaultValue !== res && this.options.updateMissing;
-        if (usedKey || usedDefault || updateMissing) {
-          this.logger.log(updateMissing ? "updateKey" : "missingKey", lng, namespace, key, updateMissing ? defaultValue : res);
-          if (keySeparator) {
-            const fk = this.resolve(key, {
-              ...opt,
-              keySeparator: false
-            });
-            if (fk && fk.res) this.logger.warn("Seems the loaded translations were in flat JSON format instead of nested. Either set keySeparator: false on init or make sure your translations are published in nested format.");
-          }
-          let lngs = [];
-          const fallbackLngs = this.languageUtils.getFallbackCodes(this.options.fallbackLng, opt.lng || this.language);
-          if (this.options.saveMissingTo === "fallback" && fallbackLngs && fallbackLngs[0]) {
-            for (let i = 0; i < fallbackLngs.length; i++) {
-              lngs.push(fallbackLngs[i]);
-            }
-          } else if (this.options.saveMissingTo === "all") {
-            lngs = this.languageUtils.toResolveHierarchy(opt.lng || this.language);
-          } else {
-            lngs.push(opt.lng || this.language);
-          }
-          const send = (l, k, specificDefaultValue) => {
-            const defaultForMissing = hasDefaultValue && specificDefaultValue !== res ? specificDefaultValue : resForMissing;
-            if (this.options.missingKeyHandler) {
-              this.options.missingKeyHandler(l, namespace, k, defaultForMissing, updateMissing, opt);
-            } else if (this.backendConnector?.saveMissing) {
-              this.backendConnector.saveMissing(l, namespace, k, defaultForMissing, updateMissing, opt);
-            }
-            this.emit("missingKey", l, namespace, k, res);
-          };
-          if (this.options.saveMissing) {
-            if (this.options.saveMissingPlurals && needsPluralHandling) {
-              lngs.forEach((language) => {
-                const suffixes = this.pluralResolver.getSuffixes(language, opt);
-                if (needsZeroSuffixLookup && opt[`defaultValue${this.options.pluralSeparator}zero`] && suffixes.indexOf(`${this.options.pluralSeparator}zero`) < 0) {
-                  suffixes.push(`${this.options.pluralSeparator}zero`);
-                }
-                suffixes.forEach((suffix) => {
-                  send([language], key + suffix, opt[`defaultValue${suffix}`] || defaultValue);
-                });
-              });
-            } else {
-              send(lngs, key, defaultValue);
-            }
-          }
-        }
-        res = this.extendTranslation(res, keys, opt, resolved, lastKey);
-        if (usedKey && res === key && this.options.appendNamespaceToMissingKey) {
-          res = `${namespace}${nsSeparator}${key}`;
-        }
-        if ((usedKey || usedDefault) && this.options.parseMissingKeyHandler) {
-          res = this.options.parseMissingKeyHandler(this.options.appendNamespaceToMissingKey ? `${namespace}${nsSeparator}${key}` : key, usedDefault ? res : void 0, opt);
-        }
-      }
-      if (returnDetails) {
-        resolved.res = res;
-        resolved.usedParams = this.getUsedParamsDetails(opt);
-        return resolved;
-      }
-      return res;
-    }
-    extendTranslation(res, key, opt, resolved, lastKey) {
-      if (this.i18nFormat?.parse) {
-        res = this.i18nFormat.parse(res, {
-          ...this.options.interpolation.defaultVariables,
-          ...opt
-        }, opt.lng || this.language || resolved.usedLng, resolved.usedNS, resolved.usedKey, {
-          resolved
-        });
-      } else if (!opt.skipInterpolation) {
-        if (opt.interpolation) this.interpolator.init({
-          ...opt,
-          ...{
-            interpolation: {
-              ...this.options.interpolation,
-              ...opt.interpolation
-            }
-          }
-        });
-        const skipOnVariables = isString(res) && (opt?.interpolation?.skipOnVariables !== void 0 ? opt.interpolation.skipOnVariables : this.options.interpolation.skipOnVariables);
-        let nestBef;
-        if (skipOnVariables) {
-          const nb = res.match(this.interpolator.nestingRegexp);
-          nestBef = nb && nb.length;
-        }
-        let data = opt.replace && !isString(opt.replace) ? opt.replace : opt;
-        if (this.options.interpolation.defaultVariables) data = {
-          ...this.options.interpolation.defaultVariables,
-          ...data
-        };
-        res = this.interpolator.interpolate(res, data, opt.lng || this.language || resolved.usedLng, opt);
-        if (skipOnVariables) {
-          const na = res.match(this.interpolator.nestingRegexp);
-          const nestAft = na && na.length;
-          if (nestBef < nestAft) opt.nest = false;
-        }
-        if (!opt.lng && resolved && resolved.res) opt.lng = this.language || resolved.usedLng;
-        if (opt.nest !== false) res = this.interpolator.nest(res, (...args) => {
-          if (lastKey?.[0] === args[0] && !opt.context) {
-            this.logger.warn(`It seems you are nesting recursively key: ${args[0]} in key: ${key[0]}`);
-            return null;
-          }
-          return this.translate(...args, key);
-        }, opt);
-        if (opt.interpolation) this.interpolator.reset();
-      }
-      const postProcess = opt.postProcess || this.options.postProcess;
-      const postProcessorNames = isString(postProcess) ? [postProcess] : postProcess;
-      if (res != null && postProcessorNames?.length && opt.applyPostProcessor !== false) {
-        res = postProcessor.handle(postProcessorNames, res, key, this.options && this.options.postProcessPassResolved ? {
-          i18nResolved: {
-            ...resolved,
-            usedParams: this.getUsedParamsDetails(opt)
-          },
-          ...opt
-        } : opt, this);
-      }
-      return res;
-    }
-    resolve(keys, opt = {}) {
-      let found;
-      let usedKey;
-      let exactUsedKey;
-      let usedLng;
-      let usedNS;
-      if (isString(keys)) keys = [keys];
-      keys.forEach((k) => {
-        if (this.isValidLookup(found)) return;
-        const extracted = this.extractFromKey(k, opt);
-        const key = extracted.key;
-        usedKey = key;
-        let namespaces = extracted.namespaces;
-        if (this.options.fallbackNS) namespaces = namespaces.concat(this.options.fallbackNS);
-        const needsPluralHandling = opt.count !== void 0 && !isString(opt.count);
-        const needsZeroSuffixLookup = needsPluralHandling && !opt.ordinal && opt.count === 0;
-        const needsContextHandling = opt.context !== void 0 && (isString(opt.context) || typeof opt.context === "number") && opt.context !== "";
-        const codes = opt.lngs ? opt.lngs : this.languageUtils.toResolveHierarchy(opt.lng || this.language, opt.fallbackLng);
-        namespaces.forEach((ns) => {
-          if (this.isValidLookup(found)) return;
-          usedNS = ns;
-          if (!checkedLoadedFor[`${codes[0]}-${ns}`] && this.utils?.hasLoadedNamespace && !this.utils?.hasLoadedNamespace(usedNS)) {
-            checkedLoadedFor[`${codes[0]}-${ns}`] = true;
-            this.logger.warn(`key "${usedKey}" for languages "${codes.join(", ")}" won't get resolved as namespace "${usedNS}" was not yet loaded`, "This means something IS WRONG in your setup. You access the t function before i18next.init / i18next.loadNamespace / i18next.changeLanguage was done. Wait for the callback or Promise to resolve before accessing it!!!");
-          }
-          codes.forEach((code) => {
-            if (this.isValidLookup(found)) return;
-            usedLng = code;
-            const finalKeys = [key];
-            if (this.i18nFormat?.addLookupKeys) {
-              this.i18nFormat.addLookupKeys(finalKeys, key, code, ns, opt);
-            } else {
-              let pluralSuffix;
-              if (needsPluralHandling) pluralSuffix = this.pluralResolver.getSuffix(code, opt.count, opt);
-              const zeroSuffix = `${this.options.pluralSeparator}zero`;
-              const ordinalPrefix = `${this.options.pluralSeparator}ordinal${this.options.pluralSeparator}`;
-              if (needsPluralHandling) {
-                finalKeys.push(key + pluralSuffix);
-                if (opt.ordinal && pluralSuffix.indexOf(ordinalPrefix) === 0) {
-                  finalKeys.push(key + pluralSuffix.replace(ordinalPrefix, this.options.pluralSeparator));
-                }
-                if (needsZeroSuffixLookup) {
-                  finalKeys.push(key + zeroSuffix);
-                }
-              }
-              if (needsContextHandling) {
-                const contextKey = `${key}${this.options.contextSeparator}${opt.context}`;
-                finalKeys.push(contextKey);
-                if (needsPluralHandling) {
-                  finalKeys.push(contextKey + pluralSuffix);
-                  if (opt.ordinal && pluralSuffix.indexOf(ordinalPrefix) === 0) {
-                    finalKeys.push(contextKey + pluralSuffix.replace(ordinalPrefix, this.options.pluralSeparator));
-                  }
-                  if (needsZeroSuffixLookup) {
-                    finalKeys.push(contextKey + zeroSuffix);
-                  }
-                }
-              }
-            }
-            let possibleKey;
-            while (possibleKey = finalKeys.pop()) {
-              if (!this.isValidLookup(found)) {
-                exactUsedKey = possibleKey;
-                found = this.getResource(code, ns, possibleKey, opt);
-              }
-            }
-          });
-        });
-      });
-      return {
-        res: found,
-        usedKey,
-        exactUsedKey,
-        usedLng,
-        usedNS
-      };
-    }
-    isValidLookup(res) {
-      return res !== void 0 && !(!this.options.returnNull && res === null) && !(!this.options.returnEmptyString && res === "");
-    }
-    getResource(code, ns, key, options2 = {}) {
-      if (this.i18nFormat?.getResource) return this.i18nFormat.getResource(code, ns, key, options2);
-      return this.resourceStore.getResource(code, ns, key, options2);
-    }
-    getUsedParamsDetails(options2 = {}) {
-      const optionsKeys = ["defaultValue", "ordinal", "context", "replace", "lng", "lngs", "fallbackLng", "ns", "keySeparator", "nsSeparator", "returnObjects", "returnDetails", "joinArrays", "postProcess", "interpolation"];
-      const useOptionsReplaceForData = options2.replace && !isString(options2.replace);
-      let data = useOptionsReplaceForData ? options2.replace : options2;
-      if (useOptionsReplaceForData && typeof options2.count !== "undefined") {
-        data.count = options2.count;
-      }
-      if (this.options.interpolation.defaultVariables) {
-        data = {
-          ...this.options.interpolation.defaultVariables,
-          ...data
-        };
-      }
-      if (!useOptionsReplaceForData) {
-        data = {
-          ...data
-        };
-        for (const key of optionsKeys) {
-          delete data[key];
-        }
-      }
-      return data;
-    }
-    static hasDefaultValue(options2) {
-      const prefix = "defaultValue";
-      for (const option in options2) {
-        if (Object.prototype.hasOwnProperty.call(options2, option) && prefix === option.substring(0, prefix.length) && void 0 !== options2[option]) {
-          return true;
-        }
-      }
-      return false;
-    }
-  }
-  class LanguageUtil {
-    constructor(options2) {
-      this.options = options2;
-      this.supportedLngs = this.options.supportedLngs || false;
-      this.logger = baseLogger.create("languageUtils");
-    }
-    getScriptPartFromCode(code) {
-      code = getCleanedCode(code);
-      if (!code || code.indexOf("-") < 0) return null;
-      const p = code.split("-");
-      if (p.length === 2) return null;
-      p.pop();
-      if (p[p.length - 1].toLowerCase() === "x") return null;
-      return this.formatLanguageCode(p.join("-"));
-    }
-    getLanguagePartFromCode(code) {
-      code = getCleanedCode(code);
-      if (!code || code.indexOf("-") < 0) return code;
-      const p = code.split("-");
-      return this.formatLanguageCode(p[0]);
-    }
-    formatLanguageCode(code) {
-      if (isString(code) && code.indexOf("-") > -1) {
-        let formattedCode;
-        try {
-          formattedCode = Intl.getCanonicalLocales(code)[0];
-        } catch (e) {
-        }
-        if (formattedCode && this.options.lowerCaseLng) {
-          formattedCode = formattedCode.toLowerCase();
-        }
-        if (formattedCode) return formattedCode;
-        if (this.options.lowerCaseLng) {
-          return code.toLowerCase();
-        }
-        return code;
-      }
-      return this.options.cleanCode || this.options.lowerCaseLng ? code.toLowerCase() : code;
-    }
-    isSupportedCode(code) {
-      if (this.options.load === "languageOnly" || this.options.nonExplicitSupportedLngs) {
-        code = this.getLanguagePartFromCode(code);
-      }
-      return !this.supportedLngs || !this.supportedLngs.length || this.supportedLngs.indexOf(code) > -1;
-    }
-    getBestMatchFromCodes(codes) {
-      if (!codes) return null;
-      let found;
-      codes.forEach((code) => {
-        if (found) return;
-        const cleanedLng = this.formatLanguageCode(code);
-        if (!this.options.supportedLngs || this.isSupportedCode(cleanedLng)) found = cleanedLng;
-      });
-      if (!found && this.options.supportedLngs) {
-        codes.forEach((code) => {
-          if (found) return;
-          const lngScOnly = this.getScriptPartFromCode(code);
-          if (this.isSupportedCode(lngScOnly)) return found = lngScOnly;
-          const lngOnly = this.getLanguagePartFromCode(code);
-          if (this.isSupportedCode(lngOnly)) return found = lngOnly;
-          found = this.options.supportedLngs.find((supportedLng) => {
-            if (supportedLng === lngOnly) return supportedLng;
-            if (supportedLng.indexOf("-") < 0 && lngOnly.indexOf("-") < 0) return;
-            if (supportedLng.indexOf("-") > 0 && lngOnly.indexOf("-") < 0 && supportedLng.substring(0, supportedLng.indexOf("-")) === lngOnly) return supportedLng;
-            if (supportedLng.indexOf(lngOnly) === 0 && lngOnly.length > 1) return supportedLng;
-          });
-        });
-      }
-      if (!found) found = this.getFallbackCodes(this.options.fallbackLng)[0];
-      return found;
-    }
-    getFallbackCodes(fallbacks, code) {
-      if (!fallbacks) return [];
-      if (typeof fallbacks === "function") fallbacks = fallbacks(code);
-      if (isString(fallbacks)) fallbacks = [fallbacks];
-      if (Array.isArray(fallbacks)) return fallbacks;
-      if (!code) return fallbacks.default || [];
-      let found = fallbacks[code];
-      if (!found) found = fallbacks[this.getScriptPartFromCode(code)];
-      if (!found) found = fallbacks[this.formatLanguageCode(code)];
-      if (!found) found = fallbacks[this.getLanguagePartFromCode(code)];
-      if (!found) found = fallbacks.default;
-      return found || [];
-    }
-    toResolveHierarchy(code, fallbackCode) {
-      const fallbackCodes = this.getFallbackCodes((fallbackCode === false ? [] : fallbackCode) || this.options.fallbackLng || [], code);
-      const codes = [];
-      const addCode = (c) => {
-        if (!c) return;
-        if (this.isSupportedCode(c)) {
-          codes.push(c);
-        } else {
-          this.logger.warn(`rejecting language code not found in supportedLngs: ${c}`);
-        }
-      };
-      if (isString(code) && (code.indexOf("-") > -1 || code.indexOf("_") > -1)) {
-        if (this.options.load !== "languageOnly") addCode(this.formatLanguageCode(code));
-        if (this.options.load !== "languageOnly" && this.options.load !== "currentOnly") addCode(this.getScriptPartFromCode(code));
-        if (this.options.load !== "currentOnly") addCode(this.getLanguagePartFromCode(code));
-      } else if (isString(code)) {
-        addCode(this.formatLanguageCode(code));
-      }
-      fallbackCodes.forEach((fc) => {
-        if (codes.indexOf(fc) < 0) addCode(this.formatLanguageCode(fc));
-      });
-      return codes;
-    }
-  }
-  const suffixesOrder = {
-    zero: 0,
-    one: 1,
-    two: 2,
-    few: 3,
-    many: 4,
-    other: 5
-  };
-  const dummyRule = {
-    select: (count) => count === 1 ? "one" : "other",
-    resolvedOptions: () => ({
-      pluralCategories: ["one", "other"]
-    })
-  };
-  class PluralResolver {
-    constructor(languageUtils, options2 = {}) {
-      this.languageUtils = languageUtils;
-      this.options = options2;
-      this.logger = baseLogger.create("pluralResolver");
-      this.pluralRulesCache = {};
-    }
-    addRule(lng, obj) {
-      this.rules[lng] = obj;
-    }
-    clearCache() {
-      this.pluralRulesCache = {};
-    }
-    getRule(code, options2 = {}) {
-      const cleanedCode = getCleanedCode(code === "dev" ? "en" : code);
-      const type = options2.ordinal ? "ordinal" : "cardinal";
-      const cacheKey = JSON.stringify({
-        cleanedCode,
-        type
-      });
-      if (cacheKey in this.pluralRulesCache) {
-        return this.pluralRulesCache[cacheKey];
-      }
-      let rule;
-      try {
-        rule = new Intl.PluralRules(cleanedCode, {
-          type
-        });
-      } catch (err) {
-        if (!Intl) {
-          this.logger.error("No Intl support, please use an Intl polyfill!");
-          return dummyRule;
-        }
-        if (!code.match(/-|_/)) return dummyRule;
-        const lngPart = this.languageUtils.getLanguagePartFromCode(code);
-        rule = this.getRule(lngPart, options2);
-      }
-      this.pluralRulesCache[cacheKey] = rule;
-      return rule;
-    }
-    needsPlural(code, options2 = {}) {
-      let rule = this.getRule(code, options2);
-      if (!rule) rule = this.getRule("dev", options2);
-      return rule?.resolvedOptions().pluralCategories.length > 1;
-    }
-    getPluralFormsOfKey(code, key, options2 = {}) {
-      return this.getSuffixes(code, options2).map((suffix) => `${key}${suffix}`);
-    }
-    getSuffixes(code, options2 = {}) {
-      let rule = this.getRule(code, options2);
-      if (!rule) rule = this.getRule("dev", options2);
-      if (!rule) return [];
-      return rule.resolvedOptions().pluralCategories.sort((pluralCategory1, pluralCategory2) => suffixesOrder[pluralCategory1] - suffixesOrder[pluralCategory2]).map((pluralCategory) => `${this.options.prepend}${options2.ordinal ? `ordinal${this.options.prepend}` : ""}${pluralCategory}`);
-    }
-    getSuffix(code, count, options2 = {}) {
-      const rule = this.getRule(code, options2);
-      if (rule) {
-        return `${this.options.prepend}${options2.ordinal ? `ordinal${this.options.prepend}` : ""}${rule.select(count)}`;
-      }
-      this.logger.warn(`no plural rule found for: ${code}`);
-      return this.getSuffix("dev", count, options2);
-    }
-  }
-  const deepFindWithDefaults = (data, defaultData, key, keySeparator = ".", ignoreJSONStructure = true) => {
-    let path2 = getPathWithDefaults(data, defaultData, key);
-    if (!path2 && ignoreJSONStructure && isString(key)) {
-      path2 = deepFind(data, key, keySeparator);
-      if (path2 === void 0) path2 = deepFind(defaultData, key, keySeparator);
-    }
-    return path2;
-  };
-  const regexSafe = (val) => val.replace(/\$/g, "$$$$");
-  class Interpolator {
-    constructor(options2 = {}) {
-      this.logger = baseLogger.create("interpolator");
-      this.options = options2;
-      this.format = options2?.interpolation?.format || ((value) => value);
-      this.init(options2);
-    }
-    init(options2 = {}) {
-      if (!options2.interpolation) options2.interpolation = {
-        escapeValue: true
-      };
-      const {
-        escape: escape$1,
-        escapeValue,
-        useRawValueToEscape,
-        prefix,
-        prefixEscaped,
-        suffix,
-        suffixEscaped,
-        formatSeparator,
-        unescapeSuffix,
-        unescapePrefix,
-        nestingPrefix,
-        nestingPrefixEscaped,
-        nestingSuffix,
-        nestingSuffixEscaped,
-        nestingOptionsSeparator,
-        maxReplaces,
-        alwaysFormat
-      } = options2.interpolation;
-      this.escape = escape$1 !== void 0 ? escape$1 : escape;
-      this.escapeValue = escapeValue !== void 0 ? escapeValue : true;
-      this.useRawValueToEscape = useRawValueToEscape !== void 0 ? useRawValueToEscape : false;
-      this.prefix = prefix ? regexEscape(prefix) : prefixEscaped || "{{";
-      this.suffix = suffix ? regexEscape(suffix) : suffixEscaped || "}}";
-      this.formatSeparator = formatSeparator || ",";
-      this.unescapePrefix = unescapeSuffix ? "" : unescapePrefix || "-";
-      this.unescapeSuffix = this.unescapePrefix ? "" : unescapeSuffix || "";
-      this.nestingPrefix = nestingPrefix ? regexEscape(nestingPrefix) : nestingPrefixEscaped || regexEscape("$t(");
-      this.nestingSuffix = nestingSuffix ? regexEscape(nestingSuffix) : nestingSuffixEscaped || regexEscape(")");
-      this.nestingOptionsSeparator = nestingOptionsSeparator || ",";
-      this.maxReplaces = maxReplaces || 1e3;
-      this.alwaysFormat = alwaysFormat !== void 0 ? alwaysFormat : false;
-      this.resetRegExp();
-    }
-    reset() {
-      if (this.options) this.init(this.options);
-    }
-    resetRegExp() {
-      const getOrResetRegExp = (existingRegExp, pattern) => {
-        if (existingRegExp?.source === pattern) {
-          existingRegExp.lastIndex = 0;
-          return existingRegExp;
-        }
-        return new RegExp(pattern, "g");
-      };
-      this.regexp = getOrResetRegExp(this.regexp, `${this.prefix}(.+?)${this.suffix}`);
-      this.regexpUnescape = getOrResetRegExp(this.regexpUnescape, `${this.prefix}${this.unescapePrefix}(.+?)${this.unescapeSuffix}${this.suffix}`);
-      this.nestingRegexp = getOrResetRegExp(this.nestingRegexp, `${this.nestingPrefix}(.+?)${this.nestingSuffix}`);
-    }
-    interpolate(str, data, lng, options2) {
-      let match;
-      let value;
-      let replaces;
-      const defaultData = this.options && this.options.interpolation && this.options.interpolation.defaultVariables || {};
-      const handleFormat = (key) => {
-        if (key.indexOf(this.formatSeparator) < 0) {
-          const path2 = deepFindWithDefaults(data, defaultData, key, this.options.keySeparator, this.options.ignoreJSONStructure);
-          return this.alwaysFormat ? this.format(path2, void 0, lng, {
-            ...options2,
-            ...data,
-            interpolationkey: key
-          }) : path2;
-        }
-        const p = key.split(this.formatSeparator);
-        const k = p.shift().trim();
-        const f = p.join(this.formatSeparator).trim();
-        return this.format(deepFindWithDefaults(data, defaultData, k, this.options.keySeparator, this.options.ignoreJSONStructure), f, lng, {
-          ...options2,
-          ...data,
-          interpolationkey: k
-        });
-      };
-      this.resetRegExp();
-      const missingInterpolationHandler = options2?.missingInterpolationHandler || this.options.missingInterpolationHandler;
-      const skipOnVariables = options2?.interpolation?.skipOnVariables !== void 0 ? options2.interpolation.skipOnVariables : this.options.interpolation.skipOnVariables;
-      const todos = [{
-        regex: this.regexpUnescape,
-        safeValue: (val) => regexSafe(val)
-      }, {
-        regex: this.regexp,
-        safeValue: (val) => this.escapeValue ? regexSafe(this.escape(val)) : regexSafe(val)
-      }];
-      todos.forEach((todo) => {
-        replaces = 0;
-        while (match = todo.regex.exec(str)) {
-          const matchedVar = match[1].trim();
-          value = handleFormat(matchedVar);
-          if (value === void 0) {
-            if (typeof missingInterpolationHandler === "function") {
-              const temp = missingInterpolationHandler(str, match, options2);
-              value = isString(temp) ? temp : "";
-            } else if (options2 && Object.prototype.hasOwnProperty.call(options2, matchedVar)) {
-              value = "";
-            } else if (skipOnVariables) {
-              value = match[0];
-              continue;
-            } else {
-              this.logger.warn(`missed to pass in variable ${matchedVar} for interpolating ${str}`);
-              value = "";
-            }
-          } else if (!isString(value) && !this.useRawValueToEscape) {
-            value = makeString(value);
-          }
-          const safeValue = todo.safeValue(value);
-          str = str.replace(match[0], safeValue);
-          if (skipOnVariables) {
-            todo.regex.lastIndex += value.length;
-            todo.regex.lastIndex -= match[0].length;
-          } else {
-            todo.regex.lastIndex = 0;
-          }
-          replaces++;
-          if (replaces >= this.maxReplaces) {
-            break;
-          }
-        }
-      });
-      return str;
-    }
-    nest(str, fc, options2 = {}) {
-      let match;
-      let value;
-      let clonedOptions;
-      const handleHasOptions = (key, inheritedOptions) => {
-        const sep = this.nestingOptionsSeparator;
-        if (key.indexOf(sep) < 0) return key;
-        const c = key.split(new RegExp(`${sep}[ ]*{`));
-        let optionsString = `{${c[1]}`;
-        key = c[0];
-        optionsString = this.interpolate(optionsString, clonedOptions);
-        const matchedSingleQuotes = optionsString.match(/'/g);
-        const matchedDoubleQuotes = optionsString.match(/"/g);
-        if ((matchedSingleQuotes?.length ?? 0) % 2 === 0 && !matchedDoubleQuotes || matchedDoubleQuotes.length % 2 !== 0) {
-          optionsString = optionsString.replace(/'/g, '"');
-        }
-        try {
-          clonedOptions = JSON.parse(optionsString);
-          if (inheritedOptions) clonedOptions = {
-            ...inheritedOptions,
-            ...clonedOptions
-          };
-        } catch (e) {
-          this.logger.warn(`failed parsing options string in nesting for key ${key}`, e);
-          return `${key}${sep}${optionsString}`;
-        }
-        if (clonedOptions.defaultValue && clonedOptions.defaultValue.indexOf(this.prefix) > -1) delete clonedOptions.defaultValue;
-        return key;
-      };
-      while (match = this.nestingRegexp.exec(str)) {
-        let formatters = [];
-        clonedOptions = {
-          ...options2
-        };
-        clonedOptions = clonedOptions.replace && !isString(clonedOptions.replace) ? clonedOptions.replace : clonedOptions;
-        clonedOptions.applyPostProcessor = false;
-        delete clonedOptions.defaultValue;
-        const keyEndIndex = /{.*}/.test(match[1]) ? match[1].lastIndexOf("}") + 1 : match[1].indexOf(this.formatSeparator);
-        if (keyEndIndex !== -1) {
-          formatters = match[1].slice(keyEndIndex).split(this.formatSeparator).map((elem) => elem.trim()).filter(Boolean);
-          match[1] = match[1].slice(0, keyEndIndex);
-        }
-        value = fc(handleHasOptions.call(this, match[1].trim(), clonedOptions), clonedOptions);
-        if (value && match[0] === str && !isString(value)) return value;
-        if (!isString(value)) value = makeString(value);
-        if (!value) {
-          this.logger.warn(`missed to resolve ${match[1]} for nesting ${str}`);
-          value = "";
-        }
-        if (formatters.length) {
-          value = formatters.reduce((v, f) => this.format(v, f, options2.lng, {
-            ...options2,
-            interpolationkey: match[1].trim()
-          }), value.trim());
-        }
-        str = str.replace(match[0], value);
-        this.regexp.lastIndex = 0;
-      }
-      return str;
-    }
-  }
-  const parseFormatStr = (formatStr) => {
-    let formatName = formatStr.toLowerCase().trim();
-    const formatOptions = {};
-    if (formatStr.indexOf("(") > -1) {
-      const p = formatStr.split("(");
-      formatName = p[0].toLowerCase().trim();
-      const optStr = p[1].substring(0, p[1].length - 1);
-      if (formatName === "currency" && optStr.indexOf(":") < 0) {
-        if (!formatOptions.currency) formatOptions.currency = optStr.trim();
-      } else if (formatName === "relativetime" && optStr.indexOf(":") < 0) {
-        if (!formatOptions.range) formatOptions.range = optStr.trim();
-      } else {
-        const opts = optStr.split(";");
-        opts.forEach((opt) => {
-          if (opt) {
-            const [key, ...rest] = opt.split(":");
-            const val = rest.join(":").trim().replace(/^'+|'+$/g, "");
-            const trimmedKey = key.trim();
-            if (!formatOptions[trimmedKey]) formatOptions[trimmedKey] = val;
-            if (val === "false") formatOptions[trimmedKey] = false;
-            if (val === "true") formatOptions[trimmedKey] = true;
-            if (!isNaN(val)) formatOptions[trimmedKey] = parseInt(val, 10);
-          }
-        });
-      }
-    }
-    return {
-      formatName,
-      formatOptions
-    };
-  };
-  const createCachedFormatter = (fn) => {
-    const cache = {};
-    return (v, l, o) => {
-      let optForCache = o;
-      if (o && o.interpolationkey && o.formatParams && o.formatParams[o.interpolationkey] && o[o.interpolationkey]) {
-        optForCache = {
-          ...optForCache,
-          [o.interpolationkey]: void 0
-        };
-      }
-      const key = l + JSON.stringify(optForCache);
-      let frm = cache[key];
-      if (!frm) {
-        frm = fn(getCleanedCode(l), o);
-        cache[key] = frm;
-      }
-      return frm(v);
-    };
-  };
-  const createNonCachedFormatter = (fn) => (v, l, o) => fn(getCleanedCode(l), o)(v);
-  class Formatter {
-    constructor(options2 = {}) {
-      this.logger = baseLogger.create("formatter");
-      this.options = options2;
-      this.init(options2);
-    }
-    init(services, options2 = {
-      interpolation: {}
-    }) {
-      this.formatSeparator = options2.interpolation.formatSeparator || ",";
-      const cf = options2.cacheInBuiltFormats ? createCachedFormatter : createNonCachedFormatter;
-      this.formats = {
-        number: cf((lng, opt) => {
-          const formatter = new Intl.NumberFormat(lng, {
-            ...opt
-          });
-          return (val) => formatter.format(val);
-        }),
-        currency: cf((lng, opt) => {
-          const formatter = new Intl.NumberFormat(lng, {
-            ...opt,
-            style: "currency"
-          });
-          return (val) => formatter.format(val);
-        }),
-        datetime: cf((lng, opt) => {
-          const formatter = new Intl.DateTimeFormat(lng, {
-            ...opt
-          });
-          return (val) => formatter.format(val);
-        }),
-        relativetime: cf((lng, opt) => {
-          const formatter = new Intl.RelativeTimeFormat(lng, {
-            ...opt
-          });
-          return (val) => formatter.format(val, opt.range || "day");
-        }),
-        list: cf((lng, opt) => {
-          const formatter = new Intl.ListFormat(lng, {
-            ...opt
-          });
-          return (val) => formatter.format(val);
-        })
-      };
-    }
-    add(name, fc) {
-      this.formats[name.toLowerCase().trim()] = fc;
-    }
-    addCached(name, fc) {
-      this.formats[name.toLowerCase().trim()] = createCachedFormatter(fc);
-    }
-    format(value, format, lng, options2 = {}) {
-      const formats = format.split(this.formatSeparator);
-      if (formats.length > 1 && formats[0].indexOf("(") > 1 && formats[0].indexOf(")") < 0 && formats.find((f) => f.indexOf(")") > -1)) {
-        const lastIndex = formats.findIndex((f) => f.indexOf(")") > -1);
-        formats[0] = [formats[0], ...formats.splice(1, lastIndex)].join(this.formatSeparator);
-      }
-      const result = formats.reduce((mem, f) => {
-        const {
-          formatName,
-          formatOptions
-        } = parseFormatStr(f);
-        if (this.formats[formatName]) {
-          let formatted = mem;
-          try {
-            const valOptions = options2?.formatParams?.[options2.interpolationkey] || {};
-            const l = valOptions.locale || valOptions.lng || options2.locale || options2.lng || lng;
-            formatted = this.formats[formatName](mem, l, {
-              ...formatOptions,
-              ...options2,
-              ...valOptions
-            });
-          } catch (error) {
-            this.logger.warn(error);
-          }
-          return formatted;
-        } else {
-          this.logger.warn(`there was no format function for ${formatName}`);
-        }
-        return mem;
-      }, value);
-      return result;
-    }
-  }
-  const removePending = (q, name) => {
-    if (q.pending[name] !== void 0) {
-      delete q.pending[name];
-      q.pendingCount--;
-    }
-  };
-  class Connector extends EventEmitter {
-    constructor(backend, store, services, options2 = {}) {
-      super();
-      this.backend = backend;
-      this.store = store;
-      this.services = services;
-      this.languageUtils = services.languageUtils;
-      this.options = options2;
-      this.logger = baseLogger.create("backendConnector");
-      this.waitingReads = [];
-      this.maxParallelReads = options2.maxParallelReads || 10;
-      this.readingCalls = 0;
-      this.maxRetries = options2.maxRetries >= 0 ? options2.maxRetries : 5;
-      this.retryTimeout = options2.retryTimeout >= 1 ? options2.retryTimeout : 350;
-      this.state = {};
-      this.queue = [];
-      this.backend?.init?.(services, options2.backend, options2);
-    }
-    queueLoad(languages, namespaces, options2, callback) {
-      const toLoad = {};
-      const pending = {};
-      const toLoadLanguages = {};
-      const toLoadNamespaces = {};
-      languages.forEach((lng) => {
-        let hasAllNamespaces = true;
-        namespaces.forEach((ns) => {
-          const name = `${lng}|${ns}`;
-          if (!options2.reload && this.store.hasResourceBundle(lng, ns)) {
-            this.state[name] = 2;
-          } else if (this.state[name] < 0) ;
-          else if (this.state[name] === 1) {
-            if (pending[name] === void 0) pending[name] = true;
-          } else {
-            this.state[name] = 1;
-            hasAllNamespaces = false;
-            if (pending[name] === void 0) pending[name] = true;
-            if (toLoad[name] === void 0) toLoad[name] = true;
-            if (toLoadNamespaces[ns] === void 0) toLoadNamespaces[ns] = true;
-          }
-        });
-        if (!hasAllNamespaces) toLoadLanguages[lng] = true;
-      });
-      if (Object.keys(toLoad).length || Object.keys(pending).length) {
-        this.queue.push({
-          pending,
-          pendingCount: Object.keys(pending).length,
-          loaded: {},
-          errors: [],
-          callback
-        });
-      }
-      return {
-        toLoad: Object.keys(toLoad),
-        pending: Object.keys(pending),
-        toLoadLanguages: Object.keys(toLoadLanguages),
-        toLoadNamespaces: Object.keys(toLoadNamespaces)
-      };
-    }
-    loaded(name, err, data) {
-      const s = name.split("|");
-      const lng = s[0];
-      const ns = s[1];
-      if (err) this.emit("failedLoading", lng, ns, err);
-      if (!err && data) {
-        this.store.addResourceBundle(lng, ns, data, void 0, void 0, {
-          skipCopy: true
-        });
-      }
-      this.state[name] = err ? -1 : 2;
-      if (err && data) this.state[name] = 0;
-      const loaded = {};
-      this.queue.forEach((q) => {
-        pushPath(q.loaded, [lng], ns);
-        removePending(q, name);
-        if (err) q.errors.push(err);
-        if (q.pendingCount === 0 && !q.done) {
-          Object.keys(q.loaded).forEach((l) => {
-            if (!loaded[l]) loaded[l] = {};
-            const loadedKeys = q.loaded[l];
-            if (loadedKeys.length) {
-              loadedKeys.forEach((n) => {
-                if (loaded[l][n] === void 0) loaded[l][n] = true;
-              });
-            }
-          });
-          q.done = true;
-          if (q.errors.length) {
-            q.callback(q.errors);
-          } else {
-            q.callback();
-          }
-        }
-      });
-      this.emit("loaded", loaded);
-      this.queue = this.queue.filter((q) => !q.done);
-    }
-    read(lng, ns, fcName, tried = 0, wait = this.retryTimeout, callback) {
-      if (!lng.length) return callback(null, {});
-      if (this.readingCalls >= this.maxParallelReads) {
-        this.waitingReads.push({
-          lng,
-          ns,
-          fcName,
-          tried,
-          wait,
-          callback
-        });
-        return;
-      }
-      this.readingCalls++;
-      const resolver = (err, data) => {
-        this.readingCalls--;
-        if (this.waitingReads.length > 0) {
-          const next = this.waitingReads.shift();
-          this.read(next.lng, next.ns, next.fcName, next.tried, next.wait, next.callback);
-        }
-        if (err && data && tried < this.maxRetries) {
-          setTimeout(() => {
-            this.read.call(this, lng, ns, fcName, tried + 1, wait * 2, callback);
-          }, wait);
-          return;
-        }
-        callback(err, data);
-      };
-      const fc = this.backend[fcName].bind(this.backend);
-      if (fc.length === 2) {
-        try {
-          const r = fc(lng, ns);
-          if (r && typeof r.then === "function") {
-            r.then((data) => resolver(null, data)).catch(resolver);
-          } else {
-            resolver(null, r);
-          }
-        } catch (err) {
-          resolver(err);
-        }
-        return;
-      }
-      return fc(lng, ns, resolver);
-    }
-    prepareLoading(languages, namespaces, options2 = {}, callback) {
-      if (!this.backend) {
-        this.logger.warn("No backend was added via i18next.use. Will not load resources.");
-        return callback && callback();
-      }
-      if (isString(languages)) languages = this.languageUtils.toResolveHierarchy(languages);
-      if (isString(namespaces)) namespaces = [namespaces];
-      const toLoad = this.queueLoad(languages, namespaces, options2, callback);
-      if (!toLoad.toLoad.length) {
-        if (!toLoad.pending.length) callback();
-        return null;
-      }
-      toLoad.toLoad.forEach((name) => {
-        this.loadOne(name);
-      });
-    }
-    load(languages, namespaces, callback) {
-      this.prepareLoading(languages, namespaces, {}, callback);
-    }
-    reload(languages, namespaces, callback) {
-      this.prepareLoading(languages, namespaces, {
-        reload: true
-      }, callback);
-    }
-    loadOne(name, prefix = "") {
-      const s = name.split("|");
-      const lng = s[0];
-      const ns = s[1];
-      this.read(lng, ns, "read", void 0, void 0, (err, data) => {
-        if (err) this.logger.warn(`${prefix}loading namespace ${ns} for language ${lng} failed`, err);
-        if (!err && data) this.logger.log(`${prefix}loaded namespace ${ns} for language ${lng}`, data);
-        this.loaded(name, err, data);
-      });
-    }
-    saveMissing(languages, namespace, key, fallbackValue, isUpdate, options2 = {}, clb = () => {
-    }) {
-      if (this.services?.utils?.hasLoadedNamespace && !this.services?.utils?.hasLoadedNamespace(namespace)) {
-        this.logger.warn(`did not save key "${key}" as the namespace "${namespace}" was not yet loaded`, "This means something IS WRONG in your setup. You access the t function before i18next.init / i18next.loadNamespace / i18next.changeLanguage was done. Wait for the callback or Promise to resolve before accessing it!!!");
-        return;
-      }
-      if (key === void 0 || key === null || key === "") return;
-      if (this.backend?.create) {
-        const opts = {
-          ...options2,
-          isUpdate
-        };
-        const fc = this.backend.create.bind(this.backend);
-        if (fc.length < 6) {
-          try {
-            let r;
-            if (fc.length === 5) {
-              r = fc(languages, namespace, key, fallbackValue, opts);
-            } else {
-              r = fc(languages, namespace, key, fallbackValue);
-            }
-            if (r && typeof r.then === "function") {
-              r.then((data) => clb(null, data)).catch(clb);
-            } else {
-              clb(null, r);
-            }
-          } catch (err) {
-            clb(err);
-          }
-        } else {
-          fc(languages, namespace, key, fallbackValue, clb, opts);
-        }
-      }
-      if (!languages || !languages[0]) return;
-      this.store.addResource(languages[0], namespace, key, fallbackValue);
-    }
-  }
-  const get = () => ({
-    debug: false,
-    initAsync: true,
-    ns: ["translation"],
-    defaultNS: ["translation"],
-    fallbackLng: ["dev"],
-    fallbackNS: false,
-    supportedLngs: false,
-    nonExplicitSupportedLngs: false,
-    load: "all",
-    preload: false,
-    simplifyPluralSuffix: true,
-    keySeparator: ".",
-    nsSeparator: ":",
-    pluralSeparator: "_",
-    contextSeparator: "_",
-    partialBundledLanguages: false,
-    saveMissing: false,
-    updateMissing: false,
-    saveMissingTo: "fallback",
-    saveMissingPlurals: true,
-    missingKeyHandler: false,
-    missingInterpolationHandler: false,
-    postProcess: false,
-    postProcessPassResolved: false,
-    returnNull: false,
-    returnEmptyString: true,
-    returnObjects: false,
-    joinArrays: false,
-    returnedObjectHandler: false,
-    parseMissingKeyHandler: false,
-    appendNamespaceToMissingKey: false,
-    appendNamespaceToCIMode: false,
-    overloadTranslationOptionHandler: (args) => {
-      let ret = {};
-      if (typeof args[1] === "object") ret = args[1];
-      if (isString(args[1])) ret.defaultValue = args[1];
-      if (isString(args[2])) ret.tDescription = args[2];
-      if (typeof args[2] === "object" || typeof args[3] === "object") {
-        const options2 = args[3] || args[2];
-        Object.keys(options2).forEach((key) => {
-          ret[key] = options2[key];
-        });
-      }
-      return ret;
-    },
-    interpolation: {
-      escapeValue: true,
-      format: (value) => value,
-      prefix: "{{",
-      suffix: "}}",
-      formatSeparator: ",",
-      unescapePrefix: "-",
-      nestingPrefix: "$t(",
-      nestingSuffix: ")",
-      nestingOptionsSeparator: ",",
-      maxReplaces: 1e3,
-      skipOnVariables: true
-    },
-    cacheInBuiltFormats: true
-  });
-  const transformOptions = (options2) => {
-    if (isString(options2.ns)) options2.ns = [options2.ns];
-    if (isString(options2.fallbackLng)) options2.fallbackLng = [options2.fallbackLng];
-    if (isString(options2.fallbackNS)) options2.fallbackNS = [options2.fallbackNS];
-    if (options2.supportedLngs?.indexOf?.("cimode") < 0) {
-      options2.supportedLngs = options2.supportedLngs.concat(["cimode"]);
-    }
-    if (typeof options2.initImmediate === "boolean") options2.initAsync = options2.initImmediate;
-    return options2;
-  };
-  const noop = () => {
-  };
-  const bindMemberFunctions = (inst) => {
-    const mems = Object.getOwnPropertyNames(Object.getPrototypeOf(inst));
-    mems.forEach((mem) => {
-      if (typeof inst[mem] === "function") {
-        inst[mem] = inst[mem].bind(inst);
-      }
-    });
-  };
-  class I18n extends EventEmitter {
-    constructor(options2 = {}, callback) {
-      super();
-      this.options = transformOptions(options2);
-      this.services = {};
-      this.logger = baseLogger;
-      this.modules = {
-        external: []
-      };
-      bindMemberFunctions(this);
-      if (callback && !this.isInitialized && !options2.isClone) {
-        if (!this.options.initAsync) {
-          this.init(options2, callback);
-          return this;
-        }
-        setTimeout(() => {
-          this.init(options2, callback);
-        }, 0);
-      }
-    }
-    init(options2 = {}, callback) {
-      this.isInitializing = true;
-      if (typeof options2 === "function") {
-        callback = options2;
-        options2 = {};
-      }
-      if (options2.defaultNS == null && options2.ns) {
-        if (isString(options2.ns)) {
-          options2.defaultNS = options2.ns;
-        } else if (options2.ns.indexOf("translation") < 0) {
-          options2.defaultNS = options2.ns[0];
-        }
-      }
-      const defOpts = get();
-      this.options = {
-        ...defOpts,
-        ...this.options,
-        ...transformOptions(options2)
-      };
-      this.options.interpolation = {
-        ...defOpts.interpolation,
-        ...this.options.interpolation
-      };
-      if (options2.keySeparator !== void 0) {
-        this.options.userDefinedKeySeparator = options2.keySeparator;
-      }
-      if (options2.nsSeparator !== void 0) {
-        this.options.userDefinedNsSeparator = options2.nsSeparator;
-      }
-      const createClassOnDemand = (ClassOrObject) => {
-        if (!ClassOrObject) return null;
-        if (typeof ClassOrObject === "function") return new ClassOrObject();
-        return ClassOrObject;
-      };
-      if (!this.options.isClone) {
-        if (this.modules.logger) {
-          baseLogger.init(createClassOnDemand(this.modules.logger), this.options);
-        } else {
-          baseLogger.init(null, this.options);
-        }
-        let formatter;
-        if (this.modules.formatter) {
-          formatter = this.modules.formatter;
-        } else {
-          formatter = Formatter;
-        }
-        const lu = new LanguageUtil(this.options);
-        this.store = new ResourceStore(this.options.resources, this.options);
-        const s = this.services;
-        s.logger = baseLogger;
-        s.resourceStore = this.store;
-        s.languageUtils = lu;
-        s.pluralResolver = new PluralResolver(lu, {
-          prepend: this.options.pluralSeparator,
-          simplifyPluralSuffix: this.options.simplifyPluralSuffix
-        });
-        const usingLegacyFormatFunction = this.options.interpolation.format && this.options.interpolation.format !== defOpts.interpolation.format;
-        if (usingLegacyFormatFunction) {
-          this.logger.warn(`init: you are still using the legacy format function, please use the new approach: https://www.i18next.com/translation-function/formatting`);
-        }
-        if (formatter && (!this.options.interpolation.format || this.options.interpolation.format === defOpts.interpolation.format)) {
-          s.formatter = createClassOnDemand(formatter);
-          if (s.formatter.init) s.formatter.init(s, this.options);
-          this.options.interpolation.format = s.formatter.format.bind(s.formatter);
-        }
-        s.interpolator = new Interpolator(this.options);
-        s.utils = {
-          hasLoadedNamespace: this.hasLoadedNamespace.bind(this)
-        };
-        s.backendConnector = new Connector(createClassOnDemand(this.modules.backend), s.resourceStore, s, this.options);
-        s.backendConnector.on("*", (event, ...args) => {
-          this.emit(event, ...args);
-        });
-        if (this.modules.languageDetector) {
-          s.languageDetector = createClassOnDemand(this.modules.languageDetector);
-          if (s.languageDetector.init) s.languageDetector.init(s, this.options.detection, this.options);
-        }
-        if (this.modules.i18nFormat) {
-          s.i18nFormat = createClassOnDemand(this.modules.i18nFormat);
-          if (s.i18nFormat.init) s.i18nFormat.init(this);
-        }
-        this.translator = new Translator(this.services, this.options);
-        this.translator.on("*", (event, ...args) => {
-          this.emit(event, ...args);
-        });
-        this.modules.external.forEach((m) => {
-          if (m.init) m.init(this);
-        });
-      }
-      this.format = this.options.interpolation.format;
-      if (!callback) callback = noop;
-      if (this.options.fallbackLng && !this.services.languageDetector && !this.options.lng) {
-        const codes = this.services.languageUtils.getFallbackCodes(this.options.fallbackLng);
-        if (codes.length > 0 && codes[0] !== "dev") this.options.lng = codes[0];
-      }
-      if (!this.services.languageDetector && !this.options.lng) {
-        this.logger.warn("init: no languageDetector is used and no lng is defined");
-      }
-      const storeApi = ["getResource", "hasResourceBundle", "getResourceBundle", "getDataByLanguage"];
-      storeApi.forEach((fcName) => {
-        this[fcName] = (...args) => this.store[fcName](...args);
-      });
-      const storeApiChained = ["addResource", "addResources", "addResourceBundle", "removeResourceBundle"];
-      storeApiChained.forEach((fcName) => {
-        this[fcName] = (...args) => {
-          this.store[fcName](...args);
-          return this;
-        };
-      });
-      const deferred = defer();
-      const load = () => {
-        const finish = (err, t) => {
-          this.isInitializing = false;
-          if (this.isInitialized && !this.initializedStoreOnce) this.logger.warn("init: i18next is already initialized. You should call init just once!");
-          this.isInitialized = true;
-          if (!this.options.isClone) this.logger.log("initialized", this.options);
-          this.emit("initialized", this.options);
-          deferred.resolve(t);
-          callback(err, t);
-        };
-        if (this.languages && !this.isInitialized) return finish(null, this.t.bind(this));
-        this.changeLanguage(this.options.lng, finish);
-      };
-      if (this.options.resources || !this.options.initAsync) {
-        load();
-      } else {
-        setTimeout(load, 0);
-      }
-      return deferred;
-    }
-    loadResources(language, callback = noop) {
-      let usedCallback = callback;
-      const usedLng = isString(language) ? language : this.language;
-      if (typeof language === "function") usedCallback = language;
-      if (!this.options.resources || this.options.partialBundledLanguages) {
-        if (usedLng?.toLowerCase() === "cimode" && (!this.options.preload || this.options.preload.length === 0)) return usedCallback();
-        const toLoad = [];
-        const append = (lng) => {
-          if (!lng) return;
-          if (lng === "cimode") return;
-          const lngs = this.services.languageUtils.toResolveHierarchy(lng);
-          lngs.forEach((l) => {
-            if (l === "cimode") return;
-            if (toLoad.indexOf(l) < 0) toLoad.push(l);
-          });
-        };
-        if (!usedLng) {
-          const fallbacks = this.services.languageUtils.getFallbackCodes(this.options.fallbackLng);
-          fallbacks.forEach((l) => append(l));
-        } else {
-          append(usedLng);
-        }
-        this.options.preload?.forEach?.((l) => append(l));
-        this.services.backendConnector.load(toLoad, this.options.ns, (e) => {
-          if (!e && !this.resolvedLanguage && this.language) this.setResolvedLanguage(this.language);
-          usedCallback(e);
-        });
-      } else {
-        usedCallback(null);
-      }
-    }
-    reloadResources(lngs, ns, callback) {
-      const deferred = defer();
-      if (typeof lngs === "function") {
-        callback = lngs;
-        lngs = void 0;
-      }
-      if (typeof ns === "function") {
-        callback = ns;
-        ns = void 0;
-      }
-      if (!lngs) lngs = this.languages;
-      if (!ns) ns = this.options.ns;
-      if (!callback) callback = noop;
-      this.services.backendConnector.reload(lngs, ns, (err) => {
-        deferred.resolve();
-        callback(err);
-      });
-      return deferred;
-    }
-    use(module) {
-      if (!module) throw new Error("You are passing an undefined module! Please check the object you are passing to i18next.use()");
-      if (!module.type) throw new Error("You are passing a wrong module! Please check the object you are passing to i18next.use()");
-      if (module.type === "backend") {
-        this.modules.backend = module;
-      }
-      if (module.type === "logger" || module.log && module.warn && module.error) {
-        this.modules.logger = module;
-      }
-      if (module.type === "languageDetector") {
-        this.modules.languageDetector = module;
-      }
-      if (module.type === "i18nFormat") {
-        this.modules.i18nFormat = module;
-      }
-      if (module.type === "postProcessor") {
-        postProcessor.addPostProcessor(module);
-      }
-      if (module.type === "formatter") {
-        this.modules.formatter = module;
-      }
-      if (module.type === "3rdParty") {
-        this.modules.external.push(module);
-      }
-      return this;
-    }
-    setResolvedLanguage(l) {
-      if (!l || !this.languages) return;
-      if (["cimode", "dev"].indexOf(l) > -1) return;
-      for (let li = 0; li < this.languages.length; li++) {
-        const lngInLngs = this.languages[li];
-        if (["cimode", "dev"].indexOf(lngInLngs) > -1) continue;
-        if (this.store.hasLanguageSomeTranslations(lngInLngs)) {
-          this.resolvedLanguage = lngInLngs;
-          break;
-        }
-      }
-      if (!this.resolvedLanguage && this.languages.indexOf(l) < 0 && this.store.hasLanguageSomeTranslations(l)) {
-        this.resolvedLanguage = l;
-        this.languages.unshift(l);
-      }
-    }
-    changeLanguage(lng, callback) {
-      this.isLanguageChangingTo = lng;
-      const deferred = defer();
-      this.emit("languageChanging", lng);
-      const setLngProps = (l) => {
-        this.language = l;
-        this.languages = this.services.languageUtils.toResolveHierarchy(l);
-        this.resolvedLanguage = void 0;
-        this.setResolvedLanguage(l);
-      };
-      const done = (err, l) => {
-        if (l) {
-          if (this.isLanguageChangingTo === lng) {
-            setLngProps(l);
-            this.translator.changeLanguage(l);
-            this.isLanguageChangingTo = void 0;
-            this.emit("languageChanged", l);
-            this.logger.log("languageChanged", l);
-          }
-        } else {
-          this.isLanguageChangingTo = void 0;
-        }
-        deferred.resolve((...args) => this.t(...args));
-        if (callback) callback(err, (...args) => this.t(...args));
-      };
-      const setLng = (lngs) => {
-        if (!lng && !lngs && this.services.languageDetector) lngs = [];
-        const fl = isString(lngs) ? lngs : lngs && lngs[0];
-        const l = this.store.hasLanguageSomeTranslations(fl) ? fl : this.services.languageUtils.getBestMatchFromCodes(isString(lngs) ? [lngs] : lngs);
-        if (l) {
-          if (!this.language) {
-            setLngProps(l);
-          }
-          if (!this.translator.language) this.translator.changeLanguage(l);
-          this.services.languageDetector?.cacheUserLanguage?.(l);
-        }
-        this.loadResources(l, (err) => {
-          done(err, l);
-        });
-      };
-      if (!lng && this.services.languageDetector && !this.services.languageDetector.async) {
-        setLng(this.services.languageDetector.detect());
-      } else if (!lng && this.services.languageDetector && this.services.languageDetector.async) {
-        if (this.services.languageDetector.detect.length === 0) {
-          this.services.languageDetector.detect().then(setLng);
-        } else {
-          this.services.languageDetector.detect(setLng);
-        }
-      } else {
-        setLng(lng);
-      }
-      return deferred;
-    }
-    getFixedT(lng, ns, keyPrefix) {
-      const fixedT = (key, opts, ...rest) => {
-        let o;
-        if (typeof opts !== "object") {
-          o = this.options.overloadTranslationOptionHandler([key, opts].concat(rest));
-        } else {
-          o = {
-            ...opts
-          };
-        }
-        o.lng = o.lng || fixedT.lng;
-        o.lngs = o.lngs || fixedT.lngs;
-        o.ns = o.ns || fixedT.ns;
-        if (o.keyPrefix !== "") o.keyPrefix = o.keyPrefix || keyPrefix || fixedT.keyPrefix;
-        const keySeparator = this.options.keySeparator || ".";
-        let resultKey;
-        if (o.keyPrefix && Array.isArray(key)) {
-          resultKey = key.map((k) => `${o.keyPrefix}${keySeparator}${k}`);
-        } else {
-          resultKey = o.keyPrefix ? `${o.keyPrefix}${keySeparator}${key}` : key;
-        }
-        return this.t(resultKey, o);
-      };
-      if (isString(lng)) {
-        fixedT.lng = lng;
-      } else {
-        fixedT.lngs = lng;
-      }
-      fixedT.ns = ns;
-      fixedT.keyPrefix = keyPrefix;
-      return fixedT;
-    }
-    t(...args) {
-      return this.translator?.translate(...args);
-    }
-    exists(...args) {
-      return this.translator?.exists(...args);
-    }
-    setDefaultNamespace(ns) {
-      this.options.defaultNS = ns;
-    }
-    hasLoadedNamespace(ns, options2 = {}) {
-      if (!this.isInitialized) {
-        this.logger.warn("hasLoadedNamespace: i18next was not initialized", this.languages);
-        return false;
-      }
-      if (!this.languages || !this.languages.length) {
-        this.logger.warn("hasLoadedNamespace: i18n.languages were undefined or empty", this.languages);
-        return false;
-      }
-      const lng = options2.lng || this.resolvedLanguage || this.languages[0];
-      const fallbackLng = this.options ? this.options.fallbackLng : false;
-      const lastLng = this.languages[this.languages.length - 1];
-      if (lng.toLowerCase() === "cimode") return true;
-      const loadNotPending = (l, n) => {
-        const loadState = this.services.backendConnector.state[`${l}|${n}`];
-        return loadState === -1 || loadState === 0 || loadState === 2;
-      };
-      if (options2.precheck) {
-        const preResult = options2.precheck(this, loadNotPending);
-        if (preResult !== void 0) return preResult;
-      }
-      if (this.hasResourceBundle(lng, ns)) return true;
-      if (!this.services.backendConnector.backend || this.options.resources && !this.options.partialBundledLanguages) return true;
-      if (loadNotPending(lng, ns) && (!fallbackLng || loadNotPending(lastLng, ns))) return true;
-      return false;
-    }
-    loadNamespaces(ns, callback) {
-      const deferred = defer();
-      if (!this.options.ns) {
-        if (callback) callback();
-        return Promise.resolve();
-      }
-      if (isString(ns)) ns = [ns];
-      ns.forEach((n) => {
-        if (this.options.ns.indexOf(n) < 0) this.options.ns.push(n);
-      });
-      this.loadResources((err) => {
-        deferred.resolve();
-        if (callback) callback(err);
-      });
-      return deferred;
-    }
-    loadLanguages(lngs, callback) {
-      const deferred = defer();
-      if (isString(lngs)) lngs = [lngs];
-      const preloaded = this.options.preload || [];
-      const newLngs = lngs.filter((lng) => preloaded.indexOf(lng) < 0 && this.services.languageUtils.isSupportedCode(lng));
-      if (!newLngs.length) {
-        if (callback) callback();
-        return Promise.resolve();
-      }
-      this.options.preload = preloaded.concat(newLngs);
-      this.loadResources((err) => {
-        deferred.resolve();
-        if (callback) callback(err);
-      });
-      return deferred;
-    }
-    dir(lng) {
-      if (!lng) lng = this.resolvedLanguage || (this.languages?.length > 0 ? this.languages[0] : this.language);
-      if (!lng) return "rtl";
-      try {
-        const l = new Intl.Locale(lng);
-        if (l && l.getTextInfo) {
-          const ti = l.getTextInfo();
-          if (ti && ti.direction) return ti.direction;
-        }
-      } catch (e) {
-      }
-      const rtlLngs = ["ar", "shu", "sqr", "ssh", "xaa", "yhd", "yud", "aao", "abh", "abv", "acm", "acq", "acw", "acx", "acy", "adf", "ads", "aeb", "aec", "afb", "ajp", "apc", "apd", "arb", "arq", "ars", "ary", "arz", "auz", "avl", "ayh", "ayl", "ayn", "ayp", "bbz", "pga", "he", "iw", "ps", "pbt", "pbu", "pst", "prp", "prd", "ug", "ur", "ydd", "yds", "yih", "ji", "yi", "hbo", "men", "xmn", "fa", "jpr", "peo", "pes", "prs", "dv", "sam", "ckb"];
-      const languageUtils = this.services?.languageUtils || new LanguageUtil(get());
-      if (lng.toLowerCase().indexOf("-latn") > 1) return "ltr";
-      return rtlLngs.indexOf(languageUtils.getLanguagePartFromCode(lng)) > -1 || lng.toLowerCase().indexOf("-arab") > 1 ? "rtl" : "ltr";
-    }
-    static createInstance(options2 = {}, callback) {
-      return new I18n(options2, callback);
-    }
-    cloneInstance(options2 = {}, callback = noop) {
-      const forkResourceStore = options2.forkResourceStore;
-      if (forkResourceStore) delete options2.forkResourceStore;
-      const mergedOptions = {
-        ...this.options,
-        ...options2,
-        ...{
-          isClone: true
-        }
-      };
-      const clone = new I18n(mergedOptions);
-      if (options2.debug !== void 0 || options2.prefix !== void 0) {
-        clone.logger = clone.logger.clone(options2);
-      }
-      const membersToCopy = ["store", "services", "language"];
-      membersToCopy.forEach((m) => {
-        clone[m] = this[m];
-      });
-      clone.services = {
-        ...this.services
-      };
-      clone.services.utils = {
-        hasLoadedNamespace: clone.hasLoadedNamespace.bind(clone)
-      };
-      if (forkResourceStore) {
-        const clonedData = Object.keys(this.store.data).reduce((prev, l) => {
-          prev[l] = {
-            ...this.store.data[l]
-          };
-          prev[l] = Object.keys(prev[l]).reduce((acc, n) => {
-            acc[n] = {
-              ...prev[l][n]
-            };
-            return acc;
-          }, prev[l]);
-          return prev;
-        }, {});
-        clone.store = new ResourceStore(clonedData, mergedOptions);
-        clone.services.resourceStore = clone.store;
-      }
-      clone.translator = new Translator(clone.services, mergedOptions);
-      clone.translator.on("*", (event, ...args) => {
-        clone.emit(event, ...args);
-      });
-      clone.init(mergedOptions, callback);
-      clone.translator.options = mergedOptions;
-      clone.translator.backendConnector.services.utils = {
-        hasLoadedNamespace: clone.hasLoadedNamespace.bind(clone)
-      };
-      return clone;
-    }
-    toJSON() {
-      return {
-        options: this.options,
-        store: this.store,
-        language: this.language,
-        languages: this.languages,
-        resolvedLanguage: this.resolvedLanguage
-      };
-    }
-  }
-  const instance = I18n.createInstance();
-  instance.createInstance = I18n.createInstance;
-  instance.createInstance;
-  instance.dir;
-  instance.init;
-  instance.loadResources;
-  instance.reloadResources;
-  instance.use;
-  instance.changeLanguage;
-  instance.getFixedT;
-  instance.t;
-  instance.exists;
-  instance.setDefaultNamespace;
-  instance.hasLoadedNamespace;
-  instance.loadNamespaces;
-  instance.loadLanguages;
-  const {
-    slice,
-    forEach
-  } = [];
-  function defaults(obj) {
-    forEach.call(slice.call(arguments, 1), (source) => {
-      if (source) {
-        for (const prop in source) {
-          if (obj[prop] === void 0) obj[prop] = source[prop];
-        }
-      }
-    });
-    return obj;
-  }
-  function hasXSS(input) {
-    if (typeof input !== "string") return false;
-    const xssPatterns = [/<\s*script.*?>/i, /<\s*\/\s*script\s*>/i, /<\s*img.*?on\w+\s*=/i, /<\s*\w+\s*on\w+\s*=.*?>/i, /javascript\s*:/i, /vbscript\s*:/i, /expression\s*\(/i, /eval\s*\(/i, /alert\s*\(/i, /document\.cookie/i, /document\.write\s*\(/i, /window\.location/i, /innerHTML/i];
-    return xssPatterns.some((pattern) => pattern.test(input));
-  }
-  const fieldContentRegExp = /^[\u0009\u0020-\u007e\u0080-\u00ff]+$/;
-  const serializeCookie = function(name, val) {
-    let options2 = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {
-      path: "/"
-    };
-    const opt = options2;
-    const value = encodeURIComponent(val);
-    let str = `${name}=${value}`;
-    if (opt.maxAge > 0) {
-      const maxAge = opt.maxAge - 0;
-      if (Number.isNaN(maxAge)) throw new Error("maxAge should be a Number");
-      str += `; Max-Age=${Math.floor(maxAge)}`;
-    }
-    if (opt.domain) {
-      if (!fieldContentRegExp.test(opt.domain)) {
-        throw new TypeError("option domain is invalid");
-      }
-      str += `; Domain=${opt.domain}`;
-    }
-    if (opt.path) {
-      if (!fieldContentRegExp.test(opt.path)) {
-        throw new TypeError("option path is invalid");
-      }
-      str += `; Path=${opt.path}`;
-    }
-    if (opt.expires) {
-      if (typeof opt.expires.toUTCString !== "function") {
-        throw new TypeError("option expires is invalid");
-      }
-      str += `; Expires=${opt.expires.toUTCString()}`;
-    }
-    if (opt.httpOnly) str += "; HttpOnly";
-    if (opt.secure) str += "; Secure";
-    if (opt.sameSite) {
-      const sameSite = typeof opt.sameSite === "string" ? opt.sameSite.toLowerCase() : opt.sameSite;
-      switch (sameSite) {
-        case true:
-          str += "; SameSite=Strict";
-          break;
-        case "lax":
-          str += "; SameSite=Lax";
-          break;
-        case "strict":
-          str += "; SameSite=Strict";
-          break;
-        case "none":
-          str += "; SameSite=None";
-          break;
-        default:
-          throw new TypeError("option sameSite is invalid");
-      }
-    }
-    if (opt.partitioned) str += "; Partitioned";
-    return str;
-  };
-  const cookie = {
-    create(name, value, minutes, domain) {
-      let cookieOptions = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : {
-        path: "/",
-        sameSite: "strict"
-      };
-      if (minutes) {
-        cookieOptions.expires = /* @__PURE__ */ new Date();
-        cookieOptions.expires.setTime(cookieOptions.expires.getTime() + minutes * 60 * 1e3);
-      }
-      if (domain) cookieOptions.domain = domain;
-      document.cookie = serializeCookie(name, value, cookieOptions);
-    },
-    read(name) {
-      const nameEQ = `${name}=`;
-      const ca = document.cookie.split(";");
-      for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === " ") c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-      }
-      return null;
-    },
-    remove(name, domain) {
-      this.create(name, "", -1, domain);
-    }
-  };
-  var cookie$1 = {
-    name: "cookie",
-    // Deconstruct the options object and extract the lookupCookie property
-    lookup(_ref) {
-      let {
-        lookupCookie
-      } = _ref;
-      if (lookupCookie && typeof document !== "undefined") {
-        return cookie.read(lookupCookie) || void 0;
-      }
-      return void 0;
-    },
-    // Deconstruct the options object and extract the lookupCookie, cookieMinutes, cookieDomain, and cookieOptions properties
-    cacheUserLanguage(lng, _ref2) {
-      let {
-        lookupCookie,
-        cookieMinutes,
-        cookieDomain,
-        cookieOptions
-      } = _ref2;
-      if (lookupCookie && typeof document !== "undefined") {
-        cookie.create(lookupCookie, lng, cookieMinutes, cookieDomain, cookieOptions);
-      }
-    }
-  };
-  var querystring = {
-    name: "querystring",
-    // Deconstruct the options object and extract the lookupQuerystring property
-    lookup(_ref) {
-      let {
-        lookupQuerystring
-      } = _ref;
-      let found;
-      if (typeof window !== "undefined") {
-        let {
-          search
-        } = window.location;
-        if (!window.location.search && window.location.hash?.indexOf("?") > -1) {
-          search = window.location.hash.substring(window.location.hash.indexOf("?"));
-        }
-        const query = search.substring(1);
-        const params = query.split("&");
-        for (let i = 0; i < params.length; i++) {
-          const pos = params[i].indexOf("=");
-          if (pos > 0) {
-            const key = params[i].substring(0, pos);
-            if (key === lookupQuerystring) {
-              found = params[i].substring(pos + 1);
-            }
-          }
-        }
-      }
-      return found;
-    }
-  };
-  var hash = {
-    name: "hash",
-    // Deconstruct the options object and extract the lookupHash property and the lookupFromHashIndex property
-    lookup(_ref) {
-      let {
-        lookupHash,
-        lookupFromHashIndex
-      } = _ref;
-      let found;
-      if (typeof window !== "undefined") {
-        const {
-          hash: hash2
-        } = window.location;
-        if (hash2 && hash2.length > 2) {
-          const query = hash2.substring(1);
-          if (lookupHash) {
-            const params = query.split("&");
-            for (let i = 0; i < params.length; i++) {
-              const pos = params[i].indexOf("=");
-              if (pos > 0) {
-                const key = params[i].substring(0, pos);
-                if (key === lookupHash) {
-                  found = params[i].substring(pos + 1);
-                }
-              }
-            }
-          }
-          if (found) return found;
-          if (!found && lookupFromHashIndex > -1) {
-            const language = hash2.match(/\/([a-zA-Z-]*)/g);
-            if (!Array.isArray(language)) return void 0;
-            const index = typeof lookupFromHashIndex === "number" ? lookupFromHashIndex : 0;
-            return language[index]?.replace("/", "");
-          }
-        }
-      }
-      return found;
-    }
-  };
-  let hasLocalStorageSupport = null;
-  const localStorageAvailable = () => {
-    if (hasLocalStorageSupport !== null) return hasLocalStorageSupport;
-    try {
-      hasLocalStorageSupport = typeof window !== "undefined" && window.localStorage !== null;
-      if (!hasLocalStorageSupport) {
-        return false;
-      }
-      const testKey = "i18next.translate.boo";
-      window.localStorage.setItem(testKey, "foo");
-      window.localStorage.removeItem(testKey);
-    } catch (e) {
-      hasLocalStorageSupport = false;
-    }
-    return hasLocalStorageSupport;
-  };
-  var localStorage = {
-    name: "localStorage",
-    // Deconstruct the options object and extract the lookupLocalStorage property
-    lookup(_ref) {
-      let {
-        lookupLocalStorage
-      } = _ref;
-      if (lookupLocalStorage && localStorageAvailable()) {
-        return window.localStorage.getItem(lookupLocalStorage) || void 0;
-      }
-      return void 0;
-    },
-    // Deconstruct the options object and extract the lookupLocalStorage property
-    cacheUserLanguage(lng, _ref2) {
-      let {
-        lookupLocalStorage
-      } = _ref2;
-      if (lookupLocalStorage && localStorageAvailable()) {
-        window.localStorage.setItem(lookupLocalStorage, lng);
-      }
-    }
-  };
-  let hasSessionStorageSupport = null;
-  const sessionStorageAvailable = () => {
-    if (hasSessionStorageSupport !== null) return hasSessionStorageSupport;
-    try {
-      hasSessionStorageSupport = typeof window !== "undefined" && window.sessionStorage !== null;
-      if (!hasSessionStorageSupport) {
-        return false;
-      }
-      const testKey = "i18next.translate.boo";
-      window.sessionStorage.setItem(testKey, "foo");
-      window.sessionStorage.removeItem(testKey);
-    } catch (e) {
-      hasSessionStorageSupport = false;
-    }
-    return hasSessionStorageSupport;
-  };
-  var sessionStorage = {
-    name: "sessionStorage",
-    lookup(_ref) {
-      let {
-        lookupSessionStorage
-      } = _ref;
-      if (lookupSessionStorage && sessionStorageAvailable()) {
-        return window.sessionStorage.getItem(lookupSessionStorage) || void 0;
-      }
-      return void 0;
-    },
-    cacheUserLanguage(lng, _ref2) {
-      let {
-        lookupSessionStorage
-      } = _ref2;
-      if (lookupSessionStorage && sessionStorageAvailable()) {
-        window.sessionStorage.setItem(lookupSessionStorage, lng);
-      }
-    }
-  };
-  var navigator$1 = {
-    name: "navigator",
-    lookup(options2) {
-      const found = [];
-      if (typeof navigator !== "undefined") {
-        const {
-          languages,
-          userLanguage,
-          language
-        } = navigator;
-        if (languages) {
-          for (let i = 0; i < languages.length; i++) {
-            found.push(languages[i]);
-          }
-        }
-        if (userLanguage) {
-          found.push(userLanguage);
-        }
-        if (language) {
-          found.push(language);
-        }
-      }
-      return found.length > 0 ? found : void 0;
-    }
-  };
-  var htmlTag = {
-    name: "htmlTag",
-    // Deconstruct the options object and extract the htmlTag property
-    lookup(_ref) {
-      let {
-        htmlTag: htmlTag2
-      } = _ref;
-      let found;
-      const internalHtmlTag = htmlTag2 || (typeof document !== "undefined" ? document.documentElement : null);
-      if (internalHtmlTag && typeof internalHtmlTag.getAttribute === "function") {
-        found = internalHtmlTag.getAttribute("lang");
-      }
-      return found;
-    }
-  };
-  var path = {
-    name: "path",
-    // Deconstruct the options object and extract the lookupFromPathIndex property
-    lookup(_ref) {
-      let {
-        lookupFromPathIndex
-      } = _ref;
-      if (typeof window === "undefined") return void 0;
-      const language = window.location.pathname.match(/\/([a-zA-Z-]*)/g);
-      if (!Array.isArray(language)) return void 0;
-      const index = typeof lookupFromPathIndex === "number" ? lookupFromPathIndex : 0;
-      return language[index]?.replace("/", "");
-    }
-  };
-  var subdomain = {
-    name: "subdomain",
-    lookup(_ref) {
-      let {
-        lookupFromSubdomainIndex
-      } = _ref;
-      const internalLookupFromSubdomainIndex = typeof lookupFromSubdomainIndex === "number" ? lookupFromSubdomainIndex + 1 : 1;
-      const language = typeof window !== "undefined" && window.location?.hostname?.match(/^(\w{2,5})\.(([a-z0-9-]{1,63}\.[a-z]{2,6})|localhost)/i);
-      if (!language) return void 0;
-      return language[internalLookupFromSubdomainIndex];
-    }
-  };
-  let canCookies = false;
-  try {
-    document.cookie;
-    canCookies = true;
-  } catch (e) {
-  }
-  const order = ["querystring", "cookie", "localStorage", "sessionStorage", "navigator", "htmlTag"];
-  if (!canCookies) order.splice(1, 1);
-  const getDefaults = () => ({
-    order,
-    lookupQuerystring: "lng",
-    lookupCookie: "i18next",
-    lookupLocalStorage: "i18nextLng",
-    lookupSessionStorage: "i18nextLng",
-    // cache user language
-    caches: ["localStorage"],
-    excludeCacheFor: ["cimode"],
-    // cookieMinutes: 10,
-    // cookieDomain: 'myDomain'
-    convertDetectedLanguage: (l) => l
-  });
-  class Browser {
-    constructor(services) {
-      let options2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-      this.type = "languageDetector";
-      this.detectors = {};
-      this.init(services, options2);
-    }
-    init() {
-      let services = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {
-        languageUtils: {}
-      };
-      let options2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-      let i18nOptions = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
-      this.services = services;
-      this.options = defaults(options2, this.options || {}, getDefaults());
-      if (typeof this.options.convertDetectedLanguage === "string" && this.options.convertDetectedLanguage.indexOf("15897") > -1) {
-        this.options.convertDetectedLanguage = (l) => l.replace("-", "_");
-      }
-      if (this.options.lookupFromUrlIndex) this.options.lookupFromPathIndex = this.options.lookupFromUrlIndex;
-      this.i18nOptions = i18nOptions;
-      this.addDetector(cookie$1);
-      this.addDetector(querystring);
-      this.addDetector(localStorage);
-      this.addDetector(sessionStorage);
-      this.addDetector(navigator$1);
-      this.addDetector(htmlTag);
-      this.addDetector(path);
-      this.addDetector(subdomain);
-      this.addDetector(hash);
-    }
-    addDetector(detector) {
-      this.detectors[detector.name] = detector;
-      return this;
-    }
-    detect() {
-      let detectionOrder = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : this.options.order;
-      let detected = [];
-      detectionOrder.forEach((detectorName) => {
-        if (this.detectors[detectorName]) {
-          let lookup = this.detectors[detectorName].lookup(this.options);
-          if (lookup && typeof lookup === "string") lookup = [lookup];
-          if (lookup) detected = detected.concat(lookup);
-        }
-      });
-      detected = detected.filter((d) => d !== void 0 && d !== null && !hasXSS(d)).map((d) => this.options.convertDetectedLanguage(d));
-      if (this.services && this.services.languageUtils && this.services.languageUtils.getBestMatchFromCodes) return detected;
-      return detected.length > 0 ? detected[0] : null;
-    }
-    cacheUserLanguage(lng) {
-      let caches = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : this.options.caches;
-      if (!caches) return;
-      if (this.options.excludeCacheFor && this.options.excludeCacheFor.indexOf(lng) > -1) return;
-      caches.forEach((cacheName) => {
-        if (this.detectors[cacheName]) this.detectors[cacheName].cacheUserLanguage(lng, this.options);
-      });
-    }
-  }
-  Browser.type = "languageDetector";
-  const actions = {
-    defaultMerge: Symbol("deepmerge-ts: default merge"),
-    skip: Symbol("deepmerge-ts: skip")
-  };
-  ({
-    defaultMerge: actions.defaultMerge
-  });
-  function defaultMetaDataUpdater(previousMeta, metaMeta) {
-    return metaMeta;
-  }
-  function defaultFilterValues(values, meta) {
-    return values.filter((value) => value !== void 0);
-  }
-  var ObjectType;
-  (function(ObjectType2) {
-    ObjectType2[ObjectType2["NOT"] = 0] = "NOT";
-    ObjectType2[ObjectType2["RECORD"] = 1] = "RECORD";
-    ObjectType2[ObjectType2["ARRAY"] = 2] = "ARRAY";
-    ObjectType2[ObjectType2["SET"] = 3] = "SET";
-    ObjectType2[ObjectType2["MAP"] = 4] = "MAP";
-    ObjectType2[ObjectType2["OTHER"] = 5] = "OTHER";
-  })(ObjectType || (ObjectType = {}));
-  function getObjectType(object) {
-    if (typeof object !== "object" || object === null) {
-      return 0;
-    }
-    if (Array.isArray(object)) {
-      return 2;
-    }
-    if (isRecord(object)) {
-      return 1;
-    }
-    if (object instanceof Set) {
-      return 3;
-    }
-    if (object instanceof Map) {
-      return 4;
-    }
-    return 5;
-  }
-  function getKeys(objects) {
-    const keys = /* @__PURE__ */ new Set();
-    for (const object of objects) {
-      for (const key of [...Object.keys(object), ...Object.getOwnPropertySymbols(object)]) {
-        keys.add(key);
-      }
-    }
-    return keys;
-  }
-  function objectHasProperty(object, property) {
-    return typeof object === "object" && Object.prototype.propertyIsEnumerable.call(object, property);
-  }
-  function getIterableOfIterables(iterables) {
-    let mut_iterablesIndex = 0;
-    let mut_iterator = iterables[0]?.[Symbol.iterator]();
-    return {
-      [Symbol.iterator]() {
-        return {
-          next() {
-            do {
-              if (mut_iterator === void 0) {
-                return { done: true, value: void 0 };
-              }
-              const result = mut_iterator.next();
-              if (result.done === true) {
-                mut_iterablesIndex += 1;
-                mut_iterator = iterables[mut_iterablesIndex]?.[Symbol.iterator]();
-                continue;
-              }
-              return {
-                done: false,
-                value: result.value
-              };
-            } while (true);
-          }
-        };
-      }
-    };
-  }
-  const validRecordToStringValues = ["[object Object]", "[object Module]"];
-  function isRecord(value) {
-    if (!validRecordToStringValues.includes(Object.prototype.toString.call(value))) {
-      return false;
-    }
-    const { constructor } = value;
-    if (constructor === void 0) {
-      return true;
-    }
-    const prototype = constructor.prototype;
-    if (prototype === null || typeof prototype !== "object" || !validRecordToStringValues.includes(Object.prototype.toString.call(prototype))) {
-      return false;
-    }
-    if (!prototype.hasOwnProperty("isPrototypeOf")) {
-      return false;
-    }
-    return true;
-  }
-  function mergeRecords$1(values, utils, meta) {
-    const result = {};
-    for (const key of getKeys(values)) {
-      const propValues = [];
-      for (const value of values) {
-        if (objectHasProperty(value, key)) {
-          propValues.push(value[key]);
-        }
-      }
-      if (propValues.length === 0) {
-        continue;
-      }
-      const updatedMeta = utils.metaDataUpdater(meta, {
-        key,
-        parents: values
-      });
-      const propertyResult = mergeUnknowns(propValues, utils, updatedMeta);
-      if (propertyResult === actions.skip) {
-        continue;
-      }
-      if (key === "__proto__") {
-        Object.defineProperty(result, key, {
-          value: propertyResult,
-          configurable: true,
-          enumerable: true,
-          writable: true
-        });
-      } else {
-        result[key] = propertyResult;
-      }
-    }
-    return result;
-  }
-  function mergeArrays$1(values) {
-    return values.flat();
-  }
-  function mergeSets$1(values) {
-    return new Set(getIterableOfIterables(values));
-  }
-  function mergeMaps$1(values) {
-    return new Map(getIterableOfIterables(values));
-  }
-  function mergeOthers$1(values) {
-    return values.at(-1);
-  }
-  const mergeFunctions = {
-    mergeRecords: mergeRecords$1,
-    mergeArrays: mergeArrays$1,
-    mergeSets: mergeSets$1,
-    mergeMaps: mergeMaps$1,
-    mergeOthers: mergeOthers$1
-  };
-  function deepmerge(...objects) {
-    return deepmergeCustom({})(...objects);
-  }
-  function deepmergeCustom(options2, rootMetaData) {
-    const utils = getUtils(options2, customizedDeepmerge);
-    function customizedDeepmerge(...objects) {
-      return mergeUnknowns(objects, utils, rootMetaData);
-    }
-    return customizedDeepmerge;
-  }
-  function getUtils(options2, customizedDeepmerge) {
-    return {
-      defaultMergeFunctions: mergeFunctions,
-      mergeFunctions: {
-        ...mergeFunctions,
-        ...Object.fromEntries(Object.entries(options2).filter(([key, option]) => Object.hasOwn(mergeFunctions, key)).map(([key, option]) => option === false ? [key, mergeFunctions.mergeOthers] : [key, option]))
-      },
-      metaDataUpdater: options2.metaDataUpdater ?? defaultMetaDataUpdater,
-      deepmerge: customizedDeepmerge,
-      useImplicitDefaultMerging: options2.enableImplicitDefaultMerging ?? false,
-      filterValues: options2.filterValues === false ? void 0 : options2.filterValues ?? defaultFilterValues,
-      actions
-    };
-  }
-  function mergeUnknowns(values, utils, meta) {
-    const filteredValues = utils.filterValues?.(values, meta) ?? values;
-    if (filteredValues.length === 0) {
-      return void 0;
-    }
-    if (filteredValues.length === 1) {
-      return mergeOthers(filteredValues, utils, meta);
-    }
-    const type = getObjectType(filteredValues[0]);
-    if (type !== 0 && type !== 5) {
-      for (let mut_index = 1; mut_index < filteredValues.length; mut_index++) {
-        if (getObjectType(filteredValues[mut_index]) === type) {
-          continue;
-        }
-        return mergeOthers(filteredValues, utils, meta);
-      }
-    }
-    switch (type) {
-      case 1: {
-        return mergeRecords(filteredValues, utils, meta);
-      }
-      case 2: {
-        return mergeArrays(filteredValues, utils, meta);
-      }
-      case 3: {
-        return mergeSets(filteredValues, utils, meta);
-      }
-      case 4: {
-        return mergeMaps(filteredValues, utils, meta);
-      }
-      default: {
-        return mergeOthers(filteredValues, utils, meta);
-      }
-    }
-  }
-  function mergeRecords(values, utils, meta) {
-    const result = utils.mergeFunctions.mergeRecords(values, utils, meta);
-    if (result === actions.defaultMerge || utils.useImplicitDefaultMerging && result === void 0 && utils.mergeFunctions.mergeRecords !== utils.defaultMergeFunctions.mergeRecords) {
-      return utils.defaultMergeFunctions.mergeRecords(values, utils, meta);
-    }
-    return result;
-  }
-  function mergeArrays(values, utils, meta) {
-    const result = utils.mergeFunctions.mergeArrays(values, utils, meta);
-    if (result === actions.defaultMerge || utils.useImplicitDefaultMerging && result === void 0 && utils.mergeFunctions.mergeArrays !== utils.defaultMergeFunctions.mergeArrays) {
-      return utils.defaultMergeFunctions.mergeArrays(values);
-    }
-    return result;
-  }
-  function mergeSets(values, utils, meta) {
-    const result = utils.mergeFunctions.mergeSets(values, utils, meta);
-    if (result === actions.defaultMerge || utils.useImplicitDefaultMerging && result === void 0 && utils.mergeFunctions.mergeSets !== utils.defaultMergeFunctions.mergeSets) {
-      return utils.defaultMergeFunctions.mergeSets(values);
-    }
-    return result;
-  }
-  function mergeMaps(values, utils, meta) {
-    const result = utils.mergeFunctions.mergeMaps(values, utils, meta);
-    if (result === actions.defaultMerge || utils.useImplicitDefaultMerging && result === void 0 && utils.mergeFunctions.mergeMaps !== utils.defaultMergeFunctions.mergeMaps) {
-      return utils.defaultMergeFunctions.mergeMaps(values);
-    }
-    return result;
-  }
-  function mergeOthers(values, utils, meta) {
-    const result = utils.mergeFunctions.mergeOthers(values, utils, meta);
-    if (result === actions.defaultMerge || utils.useImplicitDefaultMerging && result === void 0 && utils.mergeFunctions.mergeOthers !== utils.defaultMergeFunctions.mergeOthers) {
-      return utils.defaultMergeFunctions.mergeOthers(values);
-    }
-    return result;
-  }
-  const localeModules = /* @__PURE__ */ Object.assign({ "./en/common.json": __vite_glob_0_0, "./en/features.json": __vite_glob_0_1, "./zh-CN/common.json": __vite_glob_0_2, "./zh-CN/features.json": __vite_glob_0_3 });
-  const namespaceSet = /* @__PURE__ */ new Set();
-  const resources = {};
-  for (const path2 in localeModules) {
-    const content = localeModules[path2].default;
-    const pathParts = path2.replace("./", "").replace(".json", "").split("/");
-    const lang = pathParts[0];
-    const namespace = pathParts[1];
-    namespaceSet.add(namespace);
-    if (lang && namespace) {
-      resources[lang] = deepmerge(resources[lang] || {}, { [namespace]: content });
-    }
-  }
-  const NS = [...namespaceSet];
-  console.log("i18n resources loaded automatically:", NS, resources);
-  instance.use(Browser).use(initReactI18next).init({
-    // 明确定义我们拥有的命名空间
-    ns: NS,
-    defaultNS: DEFAULT_NS,
-    // 设置默认命名空间
-    fallbackLng: "en",
-    // 关键的后备语言
-    resources,
-    interpolation: {
-      escapeValue: false
-    },
-    debug: false
-    // 生产环境建议关闭
-  });
   const App = () => {
     const [showSettings, setShowSettings] = reactExports.useState(false);
     reactExports.useEffect(() => {
@@ -15838,6 +15969,7 @@
       }
     ) });
   };
+  const logger = createLogger("main");
   const activeConfig = getConfigForCurrentSite();
   installEventInterceptor(activeConfig);
   installPropertyInterceptor(activeConfig);
@@ -15846,9 +15978,11 @@
     const isEnabled = activeConfig[featureName];
     if (isEnabled && featureRegistry[featureName]) {
       try {
+        logger.info(instance.t("features:executeFeatures.start", { featureName }));
         featureRegistry[featureName]();
+        logger.info(instance.t("features:executeFeatures.end", { featureName }));
       } catch (error) {
-        console.error(`[Purify] Error executing feature: ${featureName}`, error);
+        logger.error(instance.t("features:executeFeatures.error"), error);
       }
     }
   }
@@ -15866,7 +16000,7 @@
   ).render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   );
-  _GM_registerMenuCommand(instance.t("panelTitle"), () => {
+  _GM_registerMenuCommand(instance.t("common:panelTitle"), () => {
     if (typeof window.toggleSettingsPanel === "function") {
       window.toggleSettingsPanel();
     }
