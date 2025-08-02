@@ -51,19 +51,20 @@ function groupRegistrations(
 
     for (const target of targets) {
       // 为每个 target 获取或创建属性映射
-      if (!grouped.has(target)) {
-        grouped.set(target, new Map())
+      let propertyMap = grouped.get(target)
+      if (!propertyMap) {
+        propertyMap = new Map()
+        grouped.set(target, propertyMap)
       }
-      const propertyMap = grouped.get(target)!
-
       // 为每个属性获取或创建规则列表
-      if (!propertyMap.has(reg.propertyName)) {
-        propertyMap.set(reg.propertyName, [])
+      let regs = propertyMap.get(reg.propertyName)
+      if (!regs) {
+        regs = []
+        propertyMap.set(reg.propertyName, regs)
       }
-      propertyMap.get(reg.propertyName)!.push(reg)
+      regs.push(reg)
     }
   }
-
   return grouped
 }
 
