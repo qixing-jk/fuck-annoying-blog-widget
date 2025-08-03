@@ -2,7 +2,7 @@
 // @name               Personal Blog Annoying Features and Pendant Purification
 // @name:zh-CN         个人博客恼人功能和挂件净化
 // @namespace          https://github.com/qixing-jk/fuck-annoying-blog-widget
-// @version            1.4.2
+// @version            1.5.0
 // @description        purify personal blogs by removing or disabling common annoying widgets and effects.
 // @description:zh-CN  净化个人博客，自动移除或禁用常见的烦人挂件和特效。
 // @icon               https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/refs/heads/main/src/assets/logo.jpg
@@ -3800,7 +3800,7 @@
   const STORAGE_KEY = "site_configs";
   const ROOT_ELEMENT_ID = "fuck-annoying-blog-widget-script-root";
   const DEFAULT_NS = "common";
-  const COMMON_DOM_TARGETS = [window, document, document.body];
+  const COMMON_DOM_TARGETS = [window, document];
   const localeModules = /* @__PURE__ */ Object.assign({ "./en/common.json": __vite_glob_0_0$1, "./en/config.json": __vite_glob_0_1$1, "./en/features.json": __vite_glob_0_2$1, "./en/services.json": __vite_glob_0_3$1, "./en/utils.json": __vite_glob_0_4$1, "./zh-CN/common.json": __vite_glob_0_5$1, "./zh-CN/config.json": __vite_glob_0_6$1, "./zh-CN/features.json": __vite_glob_0_7$1, "./zh-CN/services.json": __vite_glob_0_8$1, "./zh-CN/utils.json": __vite_glob_0_9 });
   const namespaceSet = /* @__PURE__ */ new Set();
   const resources = {};
@@ -15372,7 +15372,7 @@
   var clientExports = requireClient();
   const ReactDOM = /* @__PURE__ */ getDefaultExportFromCjs(clientExports);
   const name = "fuck-annoying-blog-widget";
-  const version$1 = "1.4.2";
+  const version$1 = "1.5.0";
   const pkg = {
     name,
     version: version$1
@@ -15496,7 +15496,7 @@
   const eventInterceptor$1 = (type) => {
     const blockedEventType = "visibilitychange";
     if (type === blockedEventType) {
-      logger$8.info(instance.t("services:eventInterceptor.blocked", blockedEventType));
+      logger$8.info(instance.t("services:eventInterceptor.blocked", { blockedEventType }));
       return true;
     }
     return false;
@@ -15535,7 +15535,7 @@
   const eventInterceptor = (type) => {
     const blockedEventType = "click";
     if (type === blockedEventType) {
-      logger$7.info(instance.t("services:eventInterceptor.blocked", blockedEventType));
+      logger$7.info(instance.t("services:eventInterceptor.blocked", { blockedEventType }));
       return true;
     }
     return false;
@@ -16254,7 +16254,6 @@
       {
         onClose: () => {
           setShowSettings(false);
-          window.location.reload();
         }
       }
     ) });
