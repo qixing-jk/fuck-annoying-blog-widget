@@ -7,5 +7,9 @@
   "save": "Save",
   "saveAndRefresh": "Save and Refresh",
   "startExecution": "Start Execution",
-  "endExecution": "End Execution"
+  "endExecution": "End Execution",
+  "unsavedTitle": "Unsaved Changes",
+  "unsavedContent": "You have unsaved changes. Do you want to save them before proceeding?",
+  "saveSuccess": "Saved successfully!",
+  "cancel": "Cancel"
 }

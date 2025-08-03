@@ -10,6 +10,8 @@ import { useTranslation } from 'react-i18next'
 import styles from './index.module.css'
 import styleText from './index.module.css?inline'
 import pkg from '../../../package.json'
+import { showModal } from '../Modal'
+import { showBanner } from '../Banner'
 import Index from '../SwitchPill'
 
 interface SettingsPanelProps {
@@ -30,6 +32,12 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
     setGlobalConfig(all['global'] || {})
   }, [])
 
+  const isSiteDirty = () => JSON.stringify(siteConfig) !== JSON.stringify(getConfigForCurrentSite())
+  const isGlobalDirty = () => {
+    const all = getAllConfigs()
+    return JSON.stringify(globalConfig) !== JSON.stringify(all['global'] || {})
+  }
+
   const handleChange = (key: string, type: TabType) => (e: React.ChangeEvent<HTMLInputElement>) => {
     if (type === 'site') {
       setSiteConfig((prev: any) => ({ ...prev, [key]: e.target.checked }))
@@ -38,18 +46,56 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
     }
   }
 
+  const handleTabSwitch = async (nextTab: TabType) => {
+    const dirty = tab === 'site' ? isSiteDirty() : isGlobalDirty()
+    if (dirty) {
+      const ok = await showModal({
+        title: t('common:unsavedTitle'),
+        content: t('common:unsavedContent'),
+        okText: t('common:save'),
+        cancelText: t('common:cancel'),
+      })
+      if (ok) {
+        handleSave()
+        setTab(nextTab)
+      }
+      // 取消时什么都不做，保持在原tab
+      return
+    }
+    setTab(nextTab)
+  }
+
   const handleSave = () => {
     if (tab === 'site') {
       saveConfigForCurrentSite(siteConfig)
     } else {
       saveGlobalConfig(globalConfig)
     }
-    if (onClose) onClose()
+    showBanner(t('common:saveSuccess'), 'success')
   }
 
   const handleSaveAndreFresh = () => {
     handleSave()
     window.location.reload()
+  }
+
+  const handlePanelClose = async () => {
+    const dirty = tab === 'site' ? isSiteDirty() : isGlobalDirty()
+    if (dirty) {
+      const ok = await showModal({
+        title: t('common:unsavedTitle'),
+        content: t('common:unsavedContent'),
+        okText: t('common:save'),
+        cancelText: t('common:cancel'),
+      })
+      if (ok) {
+        handleSave()
+        if (onClose) onClose()
+      }
+      // 取消时不关闭面板，保持原状态
+      return
+    }
+    if (onClose) onClose()
   }
 
   return (
@@ -60,7 +106,11 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
           {/* 顶部关闭按钮单独一行 */}
           <div className={styles.headerBar}>
             {onClose && (
-              <button className={styles.closeBtn} onClick={onClose} title={t('common:closeTitle')}>
+              <button
+                className={styles.closeBtn}
+                onClick={handlePanelClose}
+                title={t('common:closeTitle')}
+              >
                 ×
               </button>
             )}
@@ -77,7 +127,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
                 styles.tabBtnLeft,
                 tab === 'site' ? styles.tabBtnActive : '',
               ].join(' ')}
-              onClick={() => setTab('site')}
+              onClick={() => handleTabSwitch('site')}
             >
               {t('common:currentSiteConfigTab')}
             </button>
@@ -87,7 +137,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
                 styles.tabBtnRight,
                 tab === 'global' ? styles.tabBtnActive : '',
               ].join(' ')}
-              onClick={() => setTab('global')}
+              onClick={() => handleTabSwitch('global')}
             >
               {t('common:globalConfigTab')}
             </button>

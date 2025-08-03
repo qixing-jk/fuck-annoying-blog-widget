@@ -7,5 +7,9 @@
   "save": "保存",
   "saveAndRefresh": "保存并刷新",
   "startExecution": "开始执行",
-  "endExecution": "执行结束"
+  "endExecution": "执行结束",
+  "unsavedTitle": "有未保存的更改",
+  "unsavedContent": "你有未保存的更改，是否在继续前保存？",
+  "saveSuccess": "保存成功！",
+  "cancel": "取消"
 }
