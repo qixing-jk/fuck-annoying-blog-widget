@@ -96,6 +96,83 @@
     margin-bottom: 12px;
 }
 
+.featureItemRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 0 2px 2px;
+    min-height: 36px;
+}
+
+.featureItemLabel {
+    flex: 1;
+    font-size: 15px;
+    color: #222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.featureItemControl {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.select {
+    padding: 3px 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #d9d9d9;
+    margin-right: 8px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: 0.2s;
+}
+
+.switch input:checked + .slider {
+    background-color: #1890ff;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
 .saveBtn {
     width: 100%;
     padding: 10px 0;
