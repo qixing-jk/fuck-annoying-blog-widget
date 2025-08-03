@@ -13,4 +13,4 @@ export const DEFAULT_NS = 'common'
 
 export const ALL_DOM_TARGETS = [EventTarget.prototype, window, document, document.body]
 
-export const COMMON_DOM_TARGETS = [window, document, document.body]
+export const COMMON_DOM_TARGETS = [window, document]
