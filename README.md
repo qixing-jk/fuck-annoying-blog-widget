@@ -23,12 +23,17 @@ panel.
 - Block custom cursors
 - Block click effects (e.g., floating text, hearts, fireworks)
 - Block title change tricks
+- Auto-expand code blocks
 - Easy per-site/global config with a React panel
 - Multi-language support (i18next)
 
 ## Quick Start
 
 - Install the generated userscript in your browser
+
+| GitHub Source (Recommended, minified)                                                                                                  | Greasy Fork (Not recommended, forced unminified, worse performance) |
+|----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|
+| [Install](https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/main/dist/fuck-annoying-blog-widget.optimized.user.js) | [Install](https://greasyfork.org/scripts/543963)                    |
 - Click the Tampermonkey menu to open the settings panel
 - Configure features per site or globally (By default, no features are enabled, and they only take effect when enabled
   in the settings panel.)
