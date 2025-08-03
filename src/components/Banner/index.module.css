@@ -1,0 +1,44 @@
+.banner {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 220px;
+    max-width: 90vw;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    z-index: 1200;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.09);
+    animation: bannerIn 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+@keyframes bannerIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.success {
+    background: #f6ffed;
+    color: #389e0d;
+    border: 1px solid #b7eb8f;
+}
+
+.error {
+    background: #fff2f0;
+    color: #cf1322;
+    border: 1px solid #ffa39e;
+}
+
+.info {
+    background: #e6f4ff;
+    color: #0958d9;
+    border: 1px solid #91caff;
+}
