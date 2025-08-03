@@ -1,3 +1,12 @@
+## [1.4.1](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.4.0...v1.4.1) (2025-08-03)
+
+
+### Performance Improvements
+
+* implement lazy loading for React UI components ([1d5fe22](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/1d5fe22a2ae64da430bb37e238e80cba4200a36a))
+
+
+
 # [1.4.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.3.0...v1.4.0) (2025-08-03)
 
 
@@ -48,24 +57,6 @@
 * **features:** add auto expand code blocks functionality ([a40aab8](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/a40aab8d3613f85fbed1647c1ecc40942a4e7128))
 * **i18n:** add auto expand code blocks feature translations ([255b36b](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/255b36b1b6b9fbf2d7b59f0947624156c76af5a0))
 * **utils:** add delay parameter to onDOMReady function ([c9a1803](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/c9a1803acede4394b93879823deae948eb51a9b5))
-
-
-
-## [1.0.1](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.0.0...v1.0.1) (2025-07-29)
-
-
-### Bug Fixes
-
-* rename README.zh-CN.md to README_zh-CN.md for file reference consistency ([897aaf6](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/897aaf67e2654a655f4bbfb2b06826b6cbfe79ee))
-
-
-### Features
-
-* add onDOMReady utility function ([0b1b0f6](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/0b1b0f6233d6ace97ff18af503d95a19951c9a2c))
-* bump version to 1.0.1 ([15c7e0c](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/15c7e0cad808005ccd14ba26f102eaa348e23806))
-* **config:** add multilingual support for userscript name ([9a054d5](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/9a054d51d89da2879195bbde7beb048aa1230de2))
-* enhance meting music player removal logic ([b7aefe1](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/b7aefe193c4329cdd26e7be09ebba1214310b1d3))
-* enhance watchAndDestroy with callback options ([ee238cd](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/ee238cd14d0c130e5b95bef82aa6c00508da355b))
 
 
 
