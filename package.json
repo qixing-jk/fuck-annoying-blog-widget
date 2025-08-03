@@ -7,7 +7,9 @@
     "preinstall": "npx only-allow pnpm",
     "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,md}\"",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && vite build --mode optimize",
+    "build:optimize": "tsc && vite build --mode optimize",
+    "build:no-optimize": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
