@@ -1,3 +1,17 @@
+# [1.5.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.4.2...v1.5.0) (2025-08-03)
+
+
+### Features
+
+* add injectReactWithShadow utility function ([19ed891](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/19ed891e505191a7e10f4b1199045e58693d41c6))
+* add SwitchPill component and integrate into SettingsPanel ([37390c8](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/37390c8238d1bda3c787f3111411dba0c508c6c2))
+* add unsaved changes handling and success notifications ([f80b9bf](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/f80b9bf579fde83f246960c305e7257e92a67b93))
+* **banner:** add notification banner component with shadow DOM support ([70368c5](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/70368c50c74b638961c8f136caccc6af8e9d4d23))
+* **modal:** add modal component with shadow DOM support and animation effects ([957de10](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/957de10d7566e033545d3048a50bda06d6aeeb48))
+* **settings:** add save and refresh functionality with UI improvements ([bf66b30](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/bf66b3037c3018b227617212981ab28f2ce729c6))
+
+
+
 ## [1.4.2](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.4.1...v1.4.2) (2025-08-03)
 
 
@@ -36,22 +50,6 @@
 * add update and download URLs for userscript auto-update ([b6fb162](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/b6fb1625c14e087e395b8397c1c4ed52f360822d))
 * bump version to 1.3.0 ([e2d5dd1](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/e2d5dd1bac5d4a58b074835f9ef528ee0477ea0e))
 * **ci:** add changelog generation to release workflow ([f0e5bd8](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/f0e5bd8bd5bbe65df2884c79d2591c91d6ed7888))
-
-
-
-# [1.2.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.1.0...v1.2.0) (2025-08-02)
-
-
-### Bug Fixes
-
-* add missing i18n config import to main.tsx ([31ef4c0](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/31ef4c052c9c59228b0c66ef2f30d74b21029f56))
-
-
-### Features
-
-* add logger utility and implement logging in features ([7fe2251](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/7fe225159b2a5949bc9aa3a470dbe9e828838c78))
-* bump version to 1.2.0 ([82effa7](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/82effa7b6981c3bd07737b55e0f8587961661660))
-* **propertyInterceptorService:** improve property mapping initialization ([d0aafb6](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/d0aafb69be611873f1bba4b0b0edb112104e209c))
 
 
 
