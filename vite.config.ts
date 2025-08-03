@@ -7,6 +7,13 @@ import pkg from './package.json'
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const IsNeedOptimize = mode === 'optimize'
+
+  const rawGithubURL = 'https://raw.githubusercontent.com/'
+  const repositoryPath = 'qixing-jk/fuck-annoying-blog-widget'
+  const scriptName = (pkg.name ?? 'monkey') + (IsNeedOptimize ? '.optimized' : '')
+  const scriptFullName = scriptName + '.user.js'
+  const scriptUrl = rawGithubURL + repositoryPath + '/refs/heads/main/dist/' + scriptFullName
+
   return {
     plugins: [
       react(),
@@ -25,13 +32,15 @@ export default defineConfig(({ mode }) => {
             '': 'purify personal blogs by removing or disabling common annoying widgets and effects.',
             'zh-CN': '净化个人博客，自动移除或禁用常见的烦人挂件和特效。',
           },
-          icon: 'https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/refs/heads/main/src/assets/logo.jpg',
-          namespace: 'https://github.com/qixing-jk/fuck-annoying-blog-widget',
+          icon: rawGithubURL + repositoryPath + '/refs/heads/main/src/assets/logo.jpg',
+          namespace: 'https://github.com/' + repositoryPath,
           match: ['*://*/*'],
+          updateURL: scriptUrl,
+          downloadURL: scriptUrl,
           'run-at': 'document-start',
         },
         build: {
-          fileName: (pkg.name ?? 'monkey') + (IsNeedOptimize ? '.optimized' : '') + '.user.js',
+          fileName: scriptFullName,
         },
       }),
     ],

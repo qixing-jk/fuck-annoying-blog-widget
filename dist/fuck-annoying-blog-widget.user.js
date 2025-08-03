@@ -6,6 +6,8 @@
 // @description        purify personal blogs by removing or disabling common annoying widgets and effects.
 // @description:zh-CN  净化个人博客，自动移除或禁用常见的烦人挂件和特效。
 // @icon               https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/refs/heads/main/src/assets/logo.jpg
+// @downloadURL        https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/refs/heads/main/dist/fuck-annoying-blog-widget.user.js
+// @updateURL          https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/refs/heads/main/dist/fuck-annoying-blog-widget.user.js
 // @match              *://*/*
 // @grant              GM_addStyle
 // @grant              GM_getValue
