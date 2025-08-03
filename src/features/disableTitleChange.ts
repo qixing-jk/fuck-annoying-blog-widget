@@ -16,7 +16,7 @@ export const propertyInterceptors: PropertyInterceptorPayload[] = [
 const eventInterceptor: EventInterceptor = (type) => {
   const blockedEventType = 'visibilitychange'
   if (type === blockedEventType) {
-    logger.info(i18n.t('services:eventInterceptor.blocked', blockedEventType))
+    logger.info(i18n.t('services:eventInterceptor.blocked', { blockedEventType }))
     return true
   }
   return false

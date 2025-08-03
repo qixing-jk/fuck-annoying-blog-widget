@@ -9,7 +9,7 @@ const logger = createLogger('removeClickEffects')
 const eventInterceptor: EventInterceptor = (type) => {
   const blockedEventType = 'click'
   if (type === blockedEventType) {
-    logger.info(i18n.t('services:eventInterceptor.blocked', blockedEventType))
+    logger.info(i18n.t('services:eventInterceptor.blocked', { blockedEventType }))
     return true
   }
   return false
