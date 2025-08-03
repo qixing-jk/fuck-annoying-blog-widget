@@ -1,3 +1,18 @@
+# [1.6.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.5.0...v1.6.0) (2025-08-03)
+
+
+### Bug Fixes
+
+* correct i18n translation parameter format in event interceptors ([257841d](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/257841df4d3fe9300b0bc4edcf052e0f60cb9ac0))
+
+
+### Features
+
+* reduce false positives in DOM target filtering ([962cdd8](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/962cdd833faa4152d09bd56716f5fc099dbf9611))
+* remove page reload after closing settings panel ([a2de9f9](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/a2de9f98deb42fdb7d918c01341fa6aa53db4655))
+
+
+
 # [1.5.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.4.2...v1.5.0) (2025-08-03)
 
 
@@ -36,20 +51,6 @@
 ### Features
 
 * **ci:** move release workflow into build.yml and update changelog action ([db461c3](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/db461c3eca58973f87d7d5d44ef1be4b5dd185ed))
-
-
-
-# [1.3.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.2.0...v1.3.0) (2025-08-03)
-
-
-### Features
-
-* add build optimization version support ([07878dd](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/07878dd7eae03fbe86e84ddd7eb6570de1367d2b))
-* add GitHub Actions build workflow ([3b94321](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/3b943215123bdc89849c987a3fd669475b786ec3))
-* add packageManager field to package.json ([01f3637](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/01f36374236216a8bbcc23851f95b1948cc01c49))
-* add update and download URLs for userscript auto-update ([b6fb162](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/b6fb1625c14e087e395b8397c1c4ed52f360822d))
-* bump version to 1.3.0 ([e2d5dd1](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/e2d5dd1bac5d4a58b074835f9ef528ee0477ea0e))
-* **ci:** add changelog generation to release workflow ([f0e5bd8](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/f0e5bd8bd5bbe65df2884c79d2591c91d6ed7888))
 
 
 
