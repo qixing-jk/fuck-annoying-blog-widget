@@ -22,7 +22,6 @@ const App: React.FC = () => {
         <SettingsPanel
           onClose={() => {
             setShowSettings(false)
-            window.location.reload()
           }}
         />
       )}
