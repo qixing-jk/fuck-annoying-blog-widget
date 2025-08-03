@@ -1,3 +1,12 @@
+## [1.4.2](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.4.1...v1.4.2) (2025-08-03)
+
+
+### Bug Fixes
+
+* **workflow:** ensure release runs after build ([6aa69c8](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/6aa69c824f2351c3b894d3a7ea8bf7bd0850ea6b))
+
+
+
 ## [1.4.1](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.4.0...v1.4.1) (2025-08-03)
 
 
@@ -43,20 +52,6 @@
 * add logger utility and implement logging in features ([7fe2251](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/7fe225159b2a5949bc9aa3a470dbe9e828838c78))
 * bump version to 1.2.0 ([82effa7](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/82effa7b6981c3bd07737b55e0f8587961661660))
 * **propertyInterceptorService:** improve property mapping initialization ([d0aafb6](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/d0aafb69be611873f1bba4b0b0edb112104e209c))
-
-
-
-# [1.1.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.0.1...v1.1.0) (2025-08-02)
-
-
-### Features
-
-* add GitHub Actions workflow for automated releases ([6d84fa9](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/6d84fa9adaa781434d04842929e5831dfbeb9a0d))
-* bump version to 1.1.0 ([0b2782f](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/0b2782fb88f997f4b2d6300679d57edf84f5f30a))
-* bump version to 1.1.0 ([ccb6a31](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/ccb6a3118f1dd0a75c6096a2033777ed315fe6ab))
-* **features:** add auto expand code blocks functionality ([a40aab8](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/a40aab8d3613f85fbed1647c1ecc40942a4e7128))
-* **i18n:** add auto expand code blocks feature translations ([255b36b](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/255b36b1b6b9fbf2d7b59f0947624156c76af5a0))
-* **utils:** add delay parameter to onDOMReady function ([c9a1803](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/c9a1803acede4394b93879823deae948eb51a9b5))
 
 
 
