@@ -1,0 +1,71 @@
+# [1.4.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.3.0...v1.4.0) (2025-08-03)
+
+
+### Features
+
+* **ci:** move release workflow into build.yml and update changelog action ([db461c3](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/db461c3eca58973f87d7d5d44ef1be4b5dd185ed))
+
+
+
+# [1.3.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.2.0...v1.3.0) (2025-08-03)
+
+
+### Features
+
+* add build optimization version support ([07878dd](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/07878dd7eae03fbe86e84ddd7eb6570de1367d2b))
+* add GitHub Actions build workflow ([3b94321](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/3b943215123bdc89849c987a3fd669475b786ec3))
+* add packageManager field to package.json ([01f3637](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/01f36374236216a8bbcc23851f95b1948cc01c49))
+* add update and download URLs for userscript auto-update ([b6fb162](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/b6fb1625c14e087e395b8397c1c4ed52f360822d))
+* bump version to 1.3.0 ([e2d5dd1](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/e2d5dd1bac5d4a58b074835f9ef528ee0477ea0e))
+* **ci:** add changelog generation to release workflow ([f0e5bd8](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/f0e5bd8bd5bbe65df2884c79d2591c91d6ed7888))
+
+
+
+# [1.2.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.1.0...v1.2.0) (2025-08-02)
+
+
+### Bug Fixes
+
+* add missing i18n config import to main.tsx ([31ef4c0](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/31ef4c052c9c59228b0c66ef2f30d74b21029f56))
+
+
+### Features
+
+* add logger utility and implement logging in features ([7fe2251](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/7fe225159b2a5949bc9aa3a470dbe9e828838c78))
+* bump version to 1.2.0 ([82effa7](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/82effa7b6981c3bd07737b55e0f8587961661660))
+* **propertyInterceptorService:** improve property mapping initialization ([d0aafb6](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/d0aafb69be611873f1bba4b0b0edb112104e209c))
+
+
+
+# [1.1.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.0.1...v1.1.0) (2025-08-02)
+
+
+### Features
+
+* add GitHub Actions workflow for automated releases ([6d84fa9](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/6d84fa9adaa781434d04842929e5831dfbeb9a0d))
+* bump version to 1.1.0 ([0b2782f](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/0b2782fb88f997f4b2d6300679d57edf84f5f30a))
+* bump version to 1.1.0 ([ccb6a31](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/ccb6a3118f1dd0a75c6096a2033777ed315fe6ab))
+* **features:** add auto expand code blocks functionality ([a40aab8](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/a40aab8d3613f85fbed1647c1ecc40942a4e7128))
+* **i18n:** add auto expand code blocks feature translations ([255b36b](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/255b36b1b6b9fbf2d7b59f0947624156c76af5a0))
+* **utils:** add delay parameter to onDOMReady function ([c9a1803](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/c9a1803acede4394b93879823deae948eb51a9b5))
+
+
+
+## [1.0.1](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.0.0...v1.0.1) (2025-07-29)
+
+
+### Bug Fixes
+
+* rename README.zh-CN.md to README_zh-CN.md for file reference consistency ([897aaf6](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/897aaf67e2654a655f4bbfb2b06826b6cbfe79ee))
+
+
+### Features
+
+* add onDOMReady utility function ([0b1b0f6](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/0b1b0f6233d6ace97ff18af503d95a19951c9a2c))
+* bump version to 1.0.1 ([15c7e0c](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/15c7e0cad808005ccd14ba26f102eaa348e23806))
+* **config:** add multilingual support for userscript name ([9a054d5](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/9a054d51d89da2879195bbde7beb048aa1230de2))
+* enhance meting music player removal logic ([b7aefe1](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/b7aefe193c4329cdd26e7be09ebba1214310b1d3))
+* enhance watchAndDestroy with callback options ([ee238cd](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/ee238cd14d0c130e5b95bef82aa6c00508da355b))
+
+
+
