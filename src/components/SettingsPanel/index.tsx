@@ -9,6 +9,7 @@ import { featureKeys } from '../../config/features'
 import { useTranslation } from 'react-i18next'
 import styles from './SettingsPanel.module.css'
 import styleText from './SettingsPanel.module.css?inline'
+import pkg from '../../../package.json'
 
 interface SettingsPanelProps {
   onClose?: () => void
@@ -43,6 +44,10 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
       saveGlobalConfig(globalConfig)
     }
     if (onClose) onClose()
+  }
+
+  const handleSaveAndreFresh = () => {
+    handleSave()
     window.location.reload()
   }
 
@@ -51,7 +56,19 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
       <style>{styleText}</style>
       <div className={styles.mask}>
         <div className={styles.panel}>
-          <h2 className={styles.title}>{t('panelTitle')}</h2>
+          {/* 顶部关闭按钮单独一行 */}
+          <div className={styles.headerBar}>
+            {onClose && (
+              <button className={styles.closeBtn} onClick={onClose} title={t('common:closeTitle')}>
+                ×
+              </button>
+            )}
+          </div>
+          {/* 标题和版本号一行 */}
+          <div className={styles.titleRow}>
+            <h2 className={styles.title}>{t('common:panelTitle')}</h2>
+            <span className={styles.version}>V{pkg.version}</span>
+          </div>
           <div className={styles.tabs}>
             <button
               className={[
@@ -61,7 +78,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
               ].join(' ')}
               onClick={() => setTab('site')}
             >
-              {t('currentSiteConfigTab', '当前站点配置')}
+              {t('common:currentSiteConfigTab')}
             </button>
             <button
               className={[
@@ -71,13 +88,13 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
               ].join(' ')}
               onClick={() => setTab('global')}
             >
-              {t('globalConfigTab', '全局配置')}
+              {t('common:globalConfigTab')}
             </button>
           </div>
           <div className={styles.featureList}>
             {featureKeys.map((key) => (
               <div key={key} className={styles.featureItem}>
-                <label title={t(`features:${key}.description`, '')}>
+                <label title={t(`features:${key}.description`)}>
                   <input
                     type="checkbox"
                     checked={tab === 'site' ? !!siteConfig[key] : !!globalConfig[key]}
@@ -88,14 +105,18 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
               </div>
             ))}
           </div>
-          <button className={styles.saveBtn} onClick={handleSave}>
-            {t('save', '保存')}
-          </button>
-          {onClose && (
-            <button className={styles.closeBtn} onClick={onClose} title={t('closeTitle')}>
-              ×
-            </button>
-          )}
+
+          {/* 新增底部操作区 */}
+          <div className={styles.footerBar}>
+            <div>
+              <button className={styles.saveBtn} onClick={handleSave}>
+                {t('common:save')}
+              </button>
+              <button className={styles.saveBtn} onClick={handleSaveAndreFresh}>
+                {t('common:saveAndRefresh')}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </>

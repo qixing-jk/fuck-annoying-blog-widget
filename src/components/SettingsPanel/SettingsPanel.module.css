@@ -21,9 +21,37 @@
     position: relative;
 }
 
+.headerBar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 32px;
+    margin-bottom: 2px;
+}
+
+.titleRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    position: relative;
+}
+
 .title {
-    margin-bottom: 16px;
     text-align: center;
+    flex: none;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.version {
+    margin-left: 8px;
+    font-size: 12px;
+    color: #888;
+    font-weight: normal;
+    line-height: 1;
+    position: relative;
+    bottom: -2px;
 }
 
 .tabs {
@@ -38,7 +66,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    border-bottom: 2px solid #eee;
+    border-bottom: 1.5px solid #eee;
     font-weight: normal;
     color: #333;
     transition: color 0.2s, border-bottom 0.2s;
@@ -47,7 +75,7 @@
 .tabBtnActive {
     color: #1677ff;
     font-weight: bold;
-    border-bottom: 2px solid #1677ff;
+    border-bottom: 1.5px solid #1677ff;
 }
 
 .tabBtnLeft {
@@ -91,4 +119,24 @@
     outline: none;
     cursor: pointer;
     font-size: 22px;
+}
+
+.footerBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1.5px solid #eee;
+}
+
+.footerBar button {
+    margin-left: 8px;
+    padding: 2px 12px;
+}
+
+.footerBar > div {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
 }

@@ -5,6 +5,7 @@
   "currentSiteConfigTab": "Current Site",
   "globalConfigTab": "Global",
   "save": "Save",
+  "saveAndRefresh": "Save and Refresh",
   "startExecution": "Start Execution",
   "endExecution": "End Execution"
 }

@@ -5,6 +5,7 @@
   "currentSiteConfigTab": "当前站点",
   "globalConfigTab": "全局",
   "save": "保存",
+  "saveAndRefresh": "保存并刷新",
   "startExecution": "开始执行",
   "endExecution": "执行结束"
 }
