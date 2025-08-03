@@ -2,7 +2,7 @@
 // @name               Personal Blog Annoying Features and Pendant Purification
 // @name:zh-CN         个人博客恼人功能和挂件净化
 // @namespace          https://github.com/qixing-jk/fuck-annoying-blog-widget
-// @version            1.4.1
+// @version            1.4.2
 // @description        purify personal blogs by removing or disabling common annoying widgets and effects.
 // @description:zh-CN  净化个人博客，自动移除或禁用常见的烦人挂件和特效。
 // @icon               https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/refs/heads/main/src/assets/logo.jpg
@@ -16,7 +16,7 @@
 // @run-at             document-start
 // ==/UserScript==
 
-(t=>{if(typeof GM_addStyle=="function"){GM_addStyle(t);return}const o=document.createElement("style");o.textContent=t,document.head.append(o)})(" ._mask_12cni_1{position:fixed;top:0;left:0;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#00000026;z-index:9999}._panel_12cni_14{background:#fff;padding:24px;border-radius:8px;width:360px;box-shadow:0 2px 16px #0000002e;font-family:sans-serif;position:relative}._title_12cni_24{margin-bottom:16px;text-align:center}._tabs_12cni_29{display:flex;margin-bottom:20px}._tabBtn_12cni_34{flex:1;padding:8px;background:none;border:none;outline:none;cursor:pointer;border-bottom:2px solid #eee;font-weight:400;color:#333;transition:color .2s,border-bottom .2s}._tabBtnActive_12cni_47{color:#1677ff;font-weight:700;border-bottom:2px solid #1677ff}._tabBtnLeft_12cni_53{border-top-left-radius:6px;border-top-right-radius:0}._tabBtnRight_12cni_58{border-top-left-radius:0;border-top-right-radius:6px}._featureList_12cni_63{min-height:220px}._featureItem_12cni_67{margin-bottom:12px}._saveBtn_12cni_71{width:100%;padding:10px 0;background:#1677ff;color:#fff;border:none;border-radius:4px;font-weight:700;font-size:16px;margin-top:16px;cursor:pointer;letter-spacing:1px}._closeBtn_12cni_85{position:absolute;top:16px;right:16px;background:none;border:none;outline:none;cursor:pointer;font-size:22px} ");
+(t=>{if(typeof GM_addStyle=="function"){GM_addStyle(t);return}const e=document.createElement("style");e.textContent=t,document.head.append(e)})(' ._mask_1tbfd_1{position:fixed;top:0;left:0;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#00000026;z-index:999}._panel_1tbfd_14{background:#fff;padding:24px;border-radius:8px;width:360px;box-shadow:0 2px 16px #0000002e;font-family:sans-serif;position:relative}._headerBar_1tbfd_24{display:flex;justify-content:flex-end;align-items:center;height:32px;margin-bottom:2px}._titleRow_1tbfd_32{display:flex;align-items:center;justify-content:center;margin-bottom:22px;position:relative}._title_1tbfd_32{text-align:center;flex:none;line-height:1.1;margin:0}._version_1tbfd_47{margin-left:8px;font-size:12px;color:#888;font-weight:400;line-height:1;position:relative;bottom:-2px}._tabs_1tbfd_57{display:flex;margin-bottom:20px}._tabBtn_1tbfd_62{flex:1;padding:8px;background:none;border:none;outline:none;cursor:pointer;border-bottom:1.5px solid #eee;font-weight:400;color:#333;transition:color .2s,border-bottom .2s}._tabBtnActive_1tbfd_75{color:#1677ff;font-weight:700;border-bottom:1.5px solid #1677ff}._tabBtnLeft_1tbfd_81{border-top-left-radius:6px;border-top-right-radius:0}._tabBtnRight_1tbfd_86{border-top-left-radius:0;border-top-right-radius:6px}._featureList_1tbfd_91{min-height:220px}._featureItem_1tbfd_95{margin-bottom:12px}._featureItemRow_1tbfd_99{display:flex;align-items:center;justify-content:space-between;padding:2px 0 2px 2px;min-height:36px}._featureItemLabel_1tbfd_107{flex:1;font-size:15px;color:#222;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}._featureItemControl_1tbfd_116{display:flex;align-items:center;gap:12px}._select_1tbfd_122{padding:3px 8px;font-size:14px;border-radius:4px;border:1px solid #d9d9d9;margin-right:8px}._switch_1tbfd_130{position:relative;display:inline-block;width:44px;height:24px}._switch_1tbfd_130 input{opacity:0;width:0;height:0}._slider_1tbfd_143{position:absolute;cursor:pointer;inset:0;background-color:#ccc;border-radius:24px;transition:.2s}._switch_1tbfd_130 input:checked+._slider_1tbfd_143{background-color:#1890ff}._slider_1tbfd_143:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background-color:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px #00000014}._switch_1tbfd_130 input:checked+._slider_1tbfd_143:before{transform:translate(20px)}._saveBtn_1tbfd_176{width:100%;padding:10px 0;background:#1677ff;color:#fff;border:none;border-radius:4px;font-weight:700;font-size:16px;margin-top:16px;cursor:pointer;letter-spacing:1px}._closeBtn_1tbfd_190{position:absolute;top:16px;right:16px;background:none;border:none;outline:none;cursor:pointer;font-size:22px}._footerBar_1tbfd_201{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:12px;border-top:1.5px solid #eee}._footerBar_1tbfd_201 button{margin-left:8px;padding:2px 12px}._footerBar_1tbfd_201>div{display:flex;flex:1;justify-content:flex-end}._overlay_v9hyx_1{position:fixed;inset:0;background:#00000059;display:flex;align-items:center;justify-content:center;z-index:1000}._modal_v9hyx_14{background:#fff;color:#222;border-radius:8px;box-shadow:0 4px 24px #00000021;width:340px;max-width:90vw;padding:24px 20px 16px;animation:_modalIn_v9hyx_1 .2s cubic-bezier(.4,0,.2,1)}@keyframes _modalIn_v9hyx_1{0%{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}._title_v9hyx_36{font-size:18px;font-weight:600;margin-bottom:12px}._content_v9hyx_42{font-size:15px;margin-bottom:20px}._footer_v9hyx_47{display:flex;justify-content:flex-end;gap:12px}._ok_v9hyx_53{background:#1677ff;color:#fff;border:none;border-radius:4px;padding:6px 18px;font-size:15px;cursor:pointer;transition:background .2s}._ok_v9hyx_53:hover{background:#0958d9}._cancel_v9hyx_68{background:#f5f5f5;color:#222;border:none;border-radius:4px;padding:6px 18px;font-size:15px;cursor:pointer;transition:background .2s}._cancel_v9hyx_68:hover{background:#e4e4e4}._banner_1lgb5_1{position:fixed;top:24px;left:50%;transform:translate(-50%);min-width:220px;max-width:90vw;padding:12px 24px;border-radius:6px;font-size:16px;font-weight:500;z-index:1200;box-shadow:0 2px 12px #00000017;animation:_bannerIn_1lgb5_1 .3s cubic-bezier(.4,0,.2,1)}@keyframes _bannerIn_1lgb5_1{0%{opacity:0;transform:translate(-50%) translateY(-20px)}to{opacity:1;transform:translate(-50%) translateY(0)}}._success_1lgb5_28{background:#f6ffed;color:#389e0d;border:1px solid #b7eb8f}._error_1lgb5_34{background:#fff2f0;color:#cf1322;border:1px solid #ffa39e}._info_1lgb5_40{background:#e6f4ff;color:#0958d9;border:1px solid #91caff}._switch_lhu2n_1{position:relative;display:inline-block;width:44px;height:24px}._switch_lhu2n_1 input{opacity:0;width:0;height:0}._slider_lhu2n_14{position:absolute;cursor:pointer;inset:0;background-color:#ccc;border-radius:24px;transition:.2s}._switch_lhu2n_1 input:checked+._slider_lhu2n_14{background-color:#1890ff}._slider_lhu2n_14:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background-color:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px #00000014}._switch_lhu2n_1 input:checked+._slider_lhu2n_14:before{transform:translate(20px)} ');
 
 (function () {
   'use strict';
@@ -79,8 +79,13 @@
   const currentSiteConfigTab$1 = "Current Site";
   const globalConfigTab$1 = "Global";
   const save$1 = "Save";
+  const saveAndRefresh$1 = "Save and Refresh";
   const startExecution$1 = "Start Execution";
   const endExecution$1 = "End Execution";
+  const unsavedTitle$1 = "Unsaved Changes";
+  const unsavedContent$1 = "You have unsaved changes. Do you want to save them before proceeding?";
+  const saveSuccess$1 = "Saved successfully!";
+  const cancel$2 = "Cancel";
   const common$1 = {
     panelTitle: panelTitle$1,
     closeTitle: closeTitle$1,
@@ -88,11 +93,17 @@
     currentSiteConfigTab: currentSiteConfigTab$1,
     globalConfigTab: globalConfigTab$1,
     save: save$1,
+    saveAndRefresh: saveAndRefresh$1,
     startExecution: startExecution$1,
-    endExecution: endExecution$1
+    endExecution: endExecution$1,
+    unsavedTitle: unsavedTitle$1,
+    unsavedContent: unsavedContent$1,
+    saveSuccess: saveSuccess$1,
+    cancel: cancel$2
   };
   const __vite_glob_0_0$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
+    cancel: cancel$2,
     closeTitle: closeTitle$1,
     currentSiteConfigTab: currentSiteConfigTab$1,
     default: common$1,
@@ -101,7 +112,11 @@
     panelTitle: panelTitle$1,
     refreshButton: refreshButton$1,
     save: save$1,
-    startExecution: startExecution$1
+    saveAndRefresh: saveAndRefresh$1,
+    saveSuccess: saveSuccess$1,
+    startExecution: startExecution$1,
+    unsavedContent: unsavedContent$1,
+    unsavedTitle: unsavedTitle$1
   }, Symbol.toStringTag, { value: "Module" }));
   const defaultConfigs$2 = "Default configurations";
   const config$1 = {
@@ -178,8 +193,13 @@
   const currentSiteConfigTab = "当前站点";
   const globalConfigTab = "全局";
   const save = "保存";
+  const saveAndRefresh = "保存并刷新";
   const startExecution = "开始执行";
   const endExecution = "执行结束";
+  const unsavedTitle = "有未保存的更改";
+  const unsavedContent = "你有未保存的更改，是否在继续前保存？";
+  const saveSuccess = "保存成功！";
+  const cancel$1 = "取消";
   const common = {
     panelTitle,
     closeTitle,
@@ -187,11 +207,17 @@
     currentSiteConfigTab,
     globalConfigTab,
     save,
+    saveAndRefresh,
     startExecution,
-    endExecution
+    endExecution,
+    unsavedTitle,
+    unsavedContent,
+    saveSuccess,
+    cancel: cancel$1
   };
   const __vite_glob_0_5$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
+    cancel: cancel$1,
     closeTitle,
     currentSiteConfigTab,
     default: common,
@@ -200,7 +226,11 @@
     panelTitle,
     refreshButton,
     save,
-    startExecution
+    saveAndRefresh,
+    saveSuccess,
+    startExecution,
+    unsavedContent,
+    unsavedTitle
   }, Symbol.toStringTag, { value: "Module" }));
   const defaultConfigs$1 = "默认配置";
   const config = {
@@ -1625,8 +1655,8 @@
               ...options2,
               ...valOptions
             });
-          } catch (error) {
-            this.logger.warn(error);
+          } catch (error2) {
+            this.logger.warn(error2);
           }
           return formatted;
         } else {
@@ -2534,8 +2564,8 @@
             function(fulfilledValue) {
               "pending" === thenable.status && (thenable.status = "fulfilled", thenable.value = fulfilledValue);
             },
-            function(error) {
-              "pending" === thenable.status && (thenable.status = "rejected", thenable.reason = error);
+            function(error2) {
+              "pending" === thenable.status && (thenable.status = "rejected", thenable.reason = error2);
             }
           )), thenable.status) {
             case "fulfilled":
@@ -2637,9 +2667,9 @@
             if (0 === payload._status || -1 === payload._status)
               payload._status = 1, payload._result = moduleObject;
           },
-          function(error) {
+          function(error2) {
             if (0 === payload._status || -1 === payload._status)
-              payload._status = 2, payload._result = error;
+              payload._status = 2, payload._result = error2;
           }
         );
         -1 === payload._status && (payload._status = 0, payload._result = ctor);
@@ -2647,20 +2677,20 @@
       if (1 === payload._status) return payload._result.default;
       throw payload._result;
     }
-    var reportGlobalError = "function" === typeof reportError ? reportError : function(error) {
+    var reportGlobalError = "function" === typeof reportError ? reportError : function(error2) {
       if ("object" === typeof window && "function" === typeof window.ErrorEvent) {
         var event = new window.ErrorEvent("error", {
           bubbles: true,
           cancelable: true,
-          message: "object" === typeof error && null !== error && "string" === typeof error.message ? String(error.message) : String(error),
-          error
+          message: "object" === typeof error2 && null !== error2 && "string" === typeof error2.message ? String(error2.message) : String(error2),
+          error: error2
         });
         if (!window.dispatchEvent(event)) return;
       } else if ("object" === typeof process && "function" === typeof process.emit) {
-        process.emit("uncaughtException", error);
+        process.emit("uncaughtException", error2);
         return;
       }
-      console.error(error);
+      console.error(error2);
     };
     function noop2() {
     }
@@ -2792,8 +2822,8 @@
         var returnValue = scope(), onStartTransitionFinish = ReactSharedInternals.S;
         null !== onStartTransitionFinish && onStartTransitionFinish(currentTransition, returnValue);
         "object" === typeof returnValue && null !== returnValue && "function" === typeof returnValue.then && returnValue.then(noop2, reportGlobalError);
-      } catch (error) {
-        reportGlobalError(error);
+      } catch (error2) {
+        reportGlobalError(error2);
       } finally {
         ReactSharedInternals.T = prevTransition;
       }
@@ -3775,13 +3805,13 @@
   const namespaceSet = /* @__PURE__ */ new Set();
   const resources = {};
   for (const path2 in localeModules) {
-    const content = localeModules[path2].default;
+    const content2 = localeModules[path2].default;
     const pathParts = path2.replace("./", "").replace(".json", "").split("/");
     const lang = pathParts[0];
     const namespace = pathParts[1];
     namespaceSet.add(namespace);
     if (lang && namespace) {
-      resources[lang] = deepmerge(resources[lang] || {}, { [namespace]: content });
+      resources[lang] = deepmerge(resources[lang] || {}, { [namespace]: content2 });
     }
   }
   const NS = [...namespaceSet];
@@ -4983,11 +5013,11 @@
     }
     function getStackByFiberInDevAndProd(workInProgress2) {
       try {
-        var info = "";
+        var info2 = "";
         do
-          info += describeFiber(workInProgress2), workInProgress2 = workInProgress2.return;
+          info2 += describeFiber(workInProgress2), workInProgress2 = workInProgress2.return;
         while (workInProgress2);
-        return info;
+        return info2;
       } catch (x) {
         return "\nError generating stack: " + x.message + "\n" + x.stack;
       }
@@ -6070,10 +6100,10 @@
       elements.lanes = lanes;
       return elements;
     }
-    function createFiberFromText(content, mode, lanes) {
-      content = createFiberImplClass(6, content, null, mode);
-      content.lanes = lanes;
-      return content;
+    function createFiberFromText(content2, mode, lanes) {
+      content2 = createFiberImplClass(6, content2, null, mode);
+      content2.lanes = lanes;
+      return content2;
     }
     function createFiberFromPortal(portal, mode, lanes) {
       mode = createFiberImplClass(
@@ -6129,8 +6159,8 @@
     }
     var hydrationParentFiber = null, nextHydratableInstance = null, isHydrating = false, hydrationErrors = null, rootOrSingletonContext = false, HydrationMismatchException = Error(formatProdErrorMessage(519));
     function throwOnHydrationMismatch(fiber) {
-      var error = Error(formatProdErrorMessage(418, ""));
-      queueHydrationError(createCapturedValueAtFiber(error, fiber));
+      var error2 = Error(formatProdErrorMessage(418, ""));
+      queueHydrationError(createCapturedValueAtFiber(error2, fiber));
       throw HydrationMismatchException;
     }
     function prepareToHydrateHostInstance(fiber) {
@@ -6250,8 +6280,8 @@
       ), hydrationErrors = null);
       return queuedErrors;
     }
-    function queueHydrationError(error) {
-      null === hydrationErrors ? hydrationErrors = [error] : hydrationErrors.push(error);
+    function queueHydrationError(error2) {
+      null === hydrationErrors ? hydrationErrors = [error2] : hydrationErrors.push(error2);
     }
     var valueCursor = createCursor(null), currentlyRenderingFiber$1 = null, lastContextDependency = null;
     function pushProvider(providerFiber, context, nextValue) {
@@ -6465,11 +6495,11 @@
           thenableWithOverride.value = result;
           for (var i = 0; i < listeners.length; i++) (0, listeners[i])(result);
         },
-        function(error) {
+        function(error2) {
           thenableWithOverride.status = "rejected";
-          thenableWithOverride.reason = error;
-          for (error = 0; error < listeners.length; error++)
-            (0, listeners[error])(void 0);
+          thenableWithOverride.reason = error2;
+          for (error2 = 0; error2 < listeners.length; error2++)
+            (0, listeners[error2])(void 0);
         }
       );
       return thenableWithOverride;
@@ -6523,11 +6553,11 @@
                   fulfilledThenable.value = fulfilledValue;
                 }
               },
-              function(error) {
+              function(error2) {
                 if ("pending" === thenable.status) {
                   var rejectedThenable = thenable;
                   rejectedThenable.status = "rejected";
-                  rejectedThenable.reason = error;
+                  rejectedThenable.reason = error2;
                 }
               }
             );
@@ -7072,7 +7102,7 @@
       try {
         var nextValue = latestGetSnapshot();
         return !objectIs(inst, nextValue);
-      } catch (error) {
+      } catch (error2) {
         return true;
       }
     }
@@ -7144,8 +7174,8 @@
           var returnValue = action(prevState, payload), onStartTransitionFinish = ReactSharedInternals.S;
           null !== onStartTransitionFinish && onStartTransitionFinish(currentTransition, returnValue);
           handleActionReturnValue(actionQueue, node, returnValue);
-        } catch (error) {
-          onActionError(actionQueue, node, error);
+        } catch (error2) {
+          onActionError(actionQueue, node, error2);
         } finally {
           ReactSharedInternals.T = prevTransition;
         }
@@ -7161,8 +7191,8 @@
         function(nextState) {
           onActionSuccess(actionQueue, node, nextState);
         },
-        function(error) {
-          return onActionError(actionQueue, node, error);
+        function(error2) {
+          return onActionError(actionQueue, node, error2);
         }
       ) : onActionSuccess(actionQueue, node, returnValue);
     }
@@ -7174,13 +7204,13 @@
       actionNode = actionQueue.pending;
       null !== actionNode && (nextState = actionNode.next, nextState === actionNode ? actionQueue.pending = null : (nextState = nextState.next, actionNode.next = nextState, runActionStateAction(actionQueue, nextState)));
     }
-    function onActionError(actionQueue, actionNode, error) {
+    function onActionError(actionQueue, actionNode, error2) {
       var last = actionQueue.pending;
       actionQueue.pending = null;
       if (null !== last) {
         last = last.next;
         do
-          actionNode.status = "rejected", actionNode.reason = error, notifyActionListeners(actionNode), actionNode = actionNode.next;
+          actionNode.status = "rejected", actionNode.reason = error2, notifyActionListeners(actionNode), actionNode = actionNode.next;
         while (actionNode !== last);
       }
       actionQueue.action = null;
@@ -7459,12 +7489,12 @@
             finishedState,
             requestUpdateLane(fiber)
           );
-      } catch (error) {
+      } catch (error2) {
         dispatchSetStateInternal(
           fiber,
           queue,
           { then: function() {
-          }, status: "rejected", reason: error },
+          }, status: "rejected", reason: error2 },
           requestUpdateLane()
         );
       } finally {
@@ -7586,7 +7616,7 @@
             update.eagerState = eagerState;
             if (objectIs(eagerState, currentState))
               return enqueueUpdate$1(fiber, queue, update, 0), null === workInProgressRoot && finishQueueingConcurrentUpdates(), false;
-          } catch (error) {
+          } catch (error2) {
           } finally {
           }
         action = enqueueConcurrentHookUpdate(fiber, queue, update, lane);
@@ -8495,29 +8525,29 @@
       }
       return newProps;
     }
-    var reportGlobalError = "function" === typeof reportError ? reportError : function(error) {
+    var reportGlobalError = "function" === typeof reportError ? reportError : function(error2) {
       if ("object" === typeof window && "function" === typeof window.ErrorEvent) {
         var event = new window.ErrorEvent("error", {
           bubbles: true,
           cancelable: true,
-          message: "object" === typeof error && null !== error && "string" === typeof error.message ? String(error.message) : String(error),
-          error
+          message: "object" === typeof error2 && null !== error2 && "string" === typeof error2.message ? String(error2.message) : String(error2),
+          error: error2
         });
         if (!window.dispatchEvent(event)) return;
       } else if ("object" === typeof process && "function" === typeof process.emit) {
-        process.emit("uncaughtException", error);
+        process.emit("uncaughtException", error2);
         return;
       }
-      console.error(error);
+      console.error(error2);
     };
-    function defaultOnUncaughtError(error) {
-      reportGlobalError(error);
+    function defaultOnUncaughtError(error2) {
+      reportGlobalError(error2);
     }
-    function defaultOnCaughtError(error) {
-      console.error(error);
+    function defaultOnCaughtError(error2) {
+      console.error(error2);
     }
-    function defaultOnRecoverableError(error) {
-      reportGlobalError(error);
+    function defaultOnRecoverableError(error2) {
+      reportGlobalError(error2);
     }
     function logUncaughtError(root2, errorInfo) {
       try {
@@ -8559,9 +8589,9 @@
     function initializeClassErrorUpdate(update, root2, fiber, errorInfo) {
       var getDerivedStateFromError = fiber.type.getDerivedStateFromError;
       if ("function" === typeof getDerivedStateFromError) {
-        var error = errorInfo.value;
+        var error2 = errorInfo.value;
         update.payload = function() {
-          return getDerivedStateFromError(error);
+          return getDerivedStateFromError(error2);
         };
         update.callback = function() {
           logCaughtError(root2, fiber, errorInfo);
@@ -10102,8 +10132,8 @@
             updateQueue = updateQueue.next;
           } while (updateQueue !== firstEffect);
         }
-      } catch (error) {
-        captureCommitPhaseError(finishedWork, finishedWork.return, error);
+      } catch (error2) {
+        captureCommitPhaseError(finishedWork, finishedWork.return, error2);
       }
     }
     function commitHookEffectListUnmount(flags, finishedWork, nearestMountedAncestor$jscomp$0) {
@@ -10121,11 +10151,11 @@
                 var nearestMountedAncestor = nearestMountedAncestor$jscomp$0, destroy_ = destroy;
                 try {
                   destroy_();
-                } catch (error) {
+                } catch (error2) {
                   captureCommitPhaseError(
                     lastEffect,
                     nearestMountedAncestor,
-                    error
+                    error2
                   );
                 }
               }
@@ -10133,8 +10163,8 @@
             updateQueue = updateQueue.next;
           } while (updateQueue !== firstEffect);
         }
-      } catch (error) {
-        captureCommitPhaseError(finishedWork, finishedWork.return, error);
+      } catch (error2) {
+        captureCommitPhaseError(finishedWork, finishedWork.return, error2);
       }
     }
     function commitClassCallbacks(finishedWork) {
@@ -10143,8 +10173,8 @@
         var instance2 = finishedWork.stateNode;
         try {
           commitCallbacks(updateQueue, instance2);
-        } catch (error) {
-          captureCommitPhaseError(finishedWork, finishedWork.return, error);
+        } catch (error2) {
+          captureCommitPhaseError(finishedWork, finishedWork.return, error2);
         }
       }
     }
@@ -10156,8 +10186,8 @@
       instance2.state = current.memoizedState;
       try {
         instance2.componentWillUnmount();
-      } catch (error) {
-        captureCommitPhaseError(current, nearestMountedAncestor, error);
+      } catch (error2) {
+        captureCommitPhaseError(current, nearestMountedAncestor, error2);
       }
     }
     function safelyAttachRef(current, nearestMountedAncestor) {
@@ -10178,8 +10208,8 @@
           }
           "function" === typeof ref ? current.refCleanup = ref(instanceToUse) : ref.current = instanceToUse;
         }
-      } catch (error) {
-        captureCommitPhaseError(current, nearestMountedAncestor, error);
+      } catch (error2) {
+        captureCommitPhaseError(current, nearestMountedAncestor, error2);
       }
     }
     function safelyDetachRef(current, nearestMountedAncestor) {
@@ -10188,8 +10218,8 @@
         if ("function" === typeof refCleanup)
           try {
             refCleanup();
-          } catch (error) {
-            captureCommitPhaseError(current, nearestMountedAncestor, error);
+          } catch (error2) {
+            captureCommitPhaseError(current, nearestMountedAncestor, error2);
           } finally {
             current.refCleanup = null, current = current.alternate, null != current && (current.refCleanup = null);
           }
@@ -10214,8 +10244,8 @@
           case "img":
             props.src ? instance2.src = props.src : props.srcSet && (instance2.srcset = props.srcSet);
         }
-      } catch (error) {
-        captureCommitPhaseError(finishedWork, finishedWork.return, error);
+      } catch (error2) {
+        captureCommitPhaseError(finishedWork, finishedWork.return, error2);
       }
     }
     function commitHostUpdate(finishedWork, newProps, oldProps) {
@@ -10223,8 +10253,8 @@
         var domElement = finishedWork.stateNode;
         updateProperties(domElement, finishedWork.type, oldProps, newProps);
         domElement[internalPropsKey] = newProps;
-      } catch (error) {
-        captureCommitPhaseError(finishedWork, finishedWork.return, error);
+      } catch (error2) {
+        captureCommitPhaseError(finishedWork, finishedWork.return, error2);
       }
     }
     function isHostParent(fiber) {
@@ -10270,8 +10300,8 @@
         setInitialProperties(singleton, type, props);
         singleton[internalInstanceKey] = finishedWork;
         singleton[internalPropsKey] = props;
-      } catch (error) {
-        captureCommitPhaseError(finishedWork, finishedWork.return, error);
+      } catch (error2) {
+        captureCommitPhaseError(finishedWork, finishedWork.return, error2);
       }
     }
     var offscreenSubtreeIsHidden = false, offscreenSubtreeWasHidden = false, needsFormReset = false, PossiblyWeakSet = "function" === typeof WeakSet ? WeakSet : Set, nextEffect = null;
@@ -10358,11 +10388,11 @@
                       focusNode
                     );
                     selection.__reactInternalSnapshotBeforeUpdate = root2;
-                  } catch (error) {
+                  } catch (error2) {
                     captureCommitPhaseError(
                       JSCompiler_temp,
                       JSCompiler_temp.return,
-                      error
+                      error2
                     );
                   }
                 }
@@ -10417,8 +10447,8 @@
             if (finishedRoot = finishedWork.stateNode, null === current)
               try {
                 finishedRoot.componentDidMount();
-              } catch (error) {
-                captureCommitPhaseError(finishedWork, finishedWork.return, error);
+              } catch (error2) {
+                captureCommitPhaseError(finishedWork, finishedWork.return, error2);
               }
             else {
               var prevProps = resolveClassComponentProps(
@@ -10458,8 +10488,8 @@
               }
             try {
               commitCallbacks(finishedRoot, current);
-            } catch (error) {
-              captureCommitPhaseError(finishedWork, finishedWork.return, error);
+            } catch (error2) {
+              captureCommitPhaseError(finishedWork, finishedWork.return, error2);
             }
           }
           break;
@@ -10571,21 +10601,21 @@
             if (hostParentIsContainer)
               try {
                 (9 === hostParent.nodeType ? hostParent.body : "HTML" === hostParent.nodeName ? hostParent.ownerDocument.body : hostParent).removeChild(deletedFiber.stateNode);
-              } catch (error) {
+              } catch (error2) {
                 captureCommitPhaseError(
                   deletedFiber,
                   nearestMountedAncestor,
-                  error
+                  error2
                 );
               }
             else
               try {
                 hostParent.removeChild(deletedFiber.stateNode);
-              } catch (error) {
+              } catch (error2) {
                 captureCommitPhaseError(
                   deletedFiber,
                   nearestMountedAncestor,
-                  error
+                  error2
                 );
               }
           break;
@@ -10660,8 +10690,8 @@
       if (null === finishedWork.memoizedState && (finishedRoot = finishedWork.alternate, null !== finishedRoot && (finishedRoot = finishedRoot.memoizedState, null !== finishedRoot && (finishedRoot = finishedRoot.dehydrated, null !== finishedRoot))))
         try {
           retryIfBlockedOn(finishedRoot);
-        } catch (error) {
-          captureCommitPhaseError(finishedWork, finishedWork.return, error);
+        } catch (error2) {
+          captureCommitPhaseError(finishedWork, finishedWork.return, error2);
         }
     }
     function getRetryCache(finishedWork) {
@@ -10855,8 +10885,8 @@
             hoistableRoot = finishedWork.stateNode;
             try {
               setTextContent(hoistableRoot, "");
-            } catch (error) {
-              captureCommitPhaseError(finishedWork, finishedWork.return, error);
+            } catch (error2) {
+              captureCommitPhaseError(finishedWork, finishedWork.return, error2);
             }
           }
           flags & 4 && null != finishedWork.stateNode && (hoistableRoot = finishedWork.memoizedProps, commitHostUpdate(
@@ -10876,8 +10906,8 @@
             current = finishedWork.stateNode;
             try {
               current.nodeValue = flags;
-            } catch (error) {
-              captureCommitPhaseError(finishedWork, finishedWork.return, error);
+            } catch (error2) {
+              captureCommitPhaseError(finishedWork, finishedWork.return, error2);
             }
           }
           break;
@@ -10891,8 +10921,8 @@
           if (flags & 4 && null !== current && current.memoizedState.isDehydrated)
             try {
               retryIfBlockedOn(root2.containerInfo);
-            } catch (error) {
-              captureCommitPhaseError(finishedWork, finishedWork.return, error);
+            } catch (error2) {
+              captureCommitPhaseError(finishedWork, finishedWork.return, error2);
             }
           needsFormReset && (needsFormReset = false, recursivelyResetForms(finishedWork));
           break;
@@ -10937,8 +10967,8 @@
                       var styleProp = wasHidden.memoizedProps.style, display = void 0 !== styleProp && null !== styleProp && styleProp.hasOwnProperty("display") ? styleProp.display : null;
                       i.style.display = null == display || "boolean" === typeof display ? "" : ("" + display).trim();
                     }
-                  } catch (error) {
-                    captureCommitPhaseError(wasHidden, wasHidden.return, error);
+                  } catch (error2) {
+                    captureCommitPhaseError(wasHidden, wasHidden.return, error2);
                   }
                 }
               } else if (6 === root2.tag) {
@@ -10946,8 +10976,8 @@
                   wasHidden = root2;
                   try {
                     wasHidden.stateNode.nodeValue = hoistableRoot ? "" : wasHidden.memoizedProps;
-                  } catch (error) {
-                    captureCommitPhaseError(wasHidden, wasHidden.return, error);
+                  } catch (error2) {
+                    captureCommitPhaseError(wasHidden, wasHidden.return, error2);
                   }
                 }
               } else if ((22 !== root2.tag && 23 !== root2.tag || null === root2.memoizedState || root2 === finishedWork) && null !== root2.child) {
@@ -11015,8 +11045,8 @@
             default:
               throw Error(formatProdErrorMessage(161));
           }
-        } catch (error) {
-          captureCommitPhaseError(finishedWork, finishedWork.return, error);
+        } catch (error2) {
+          captureCommitPhaseError(finishedWork, finishedWork.return, error2);
         }
         finishedWork.flags &= -3;
       }
@@ -11102,8 +11132,8 @@
             if ("function" === typeof finishedRoot.componentDidMount)
               try {
                 finishedRoot.componentDidMount();
-              } catch (error) {
-                captureCommitPhaseError(current, current.return, error);
+              } catch (error2) {
+                captureCommitPhaseError(current, current.return, error2);
               }
             current = finishedWork;
             finishedRoot = current.updateQueue;
@@ -11114,8 +11144,8 @@
                 if (null !== hiddenCallbacks)
                   for (finishedRoot.shared.hiddenCallbacks = null, finishedRoot = 0; finishedRoot < hiddenCallbacks.length; finishedRoot++)
                     callCallback(hiddenCallbacks[finishedRoot], instance2);
-              } catch (error) {
-                captureCommitPhaseError(current, current.return, error);
+              } catch (error2) {
+                captureCommitPhaseError(current, current.return, error2);
               }
             }
             includeWorkInProgressEffects && flags & 64 && commitClassCallbacks(finishedWork);
@@ -11239,8 +11269,8 @@
                 finishedRoot.passiveEffectDuration,
                 -0
               );
-            } catch (error) {
-              captureCommitPhaseError(finishedWork, finishedWork.return, error);
+            } catch (error2) {
+              captureCommitPhaseError(finishedWork, finishedWork.return, error2);
             }
           } else
             recursivelyTraversePassiveMountEffects(
@@ -11762,7 +11792,7 @@
             check = check.value;
             try {
               if (!objectIs(getSnapshot(), check)) return false;
-            } catch (error) {
+            } catch (error2) {
               return false;
             }
           }
@@ -12080,8 +12110,8 @@
           workInProgress = null;
           return;
         }
-      } catch (error) {
-        if (null !== returnFiber) throw workInProgress = returnFiber, error;
+      } catch (error2) {
+        if (null !== returnFiber) throw workInProgress = returnFiber, error2;
         workInProgressRootExitStatus = 1;
         logUncaughtError(
           root2,
@@ -12252,9 +12282,9 @@
                 });
               "function" === typeof priorFocusedElem.focus && priorFocusedElem.focus();
               for (priorFocusedElem = 0; priorFocusedElem < doc.length; priorFocusedElem++) {
-                var info = doc[priorFocusedElem];
-                info.element.scrollLeft = info.left;
-                info.element.scrollTop = info.top;
+                var info2 = doc[priorFocusedElem];
+                info2.element.scrollLeft = info2.left;
+                info2.element.scrollTop = info2.top;
               }
             }
             _enabled = !!eventsEnabled;
@@ -12375,32 +12405,32 @@
         ReactDOMSharedInternals.p = previousPriority, ReactSharedInternals.T = prevTransition, releaseRootPooledCache(root2, remainingLanes);
       }
     }
-    function captureCommitPhaseErrorOnRoot(rootFiber, sourceFiber, error) {
-      sourceFiber = createCapturedValueAtFiber(error, sourceFiber);
+    function captureCommitPhaseErrorOnRoot(rootFiber, sourceFiber, error2) {
+      sourceFiber = createCapturedValueAtFiber(error2, sourceFiber);
       sourceFiber = createRootErrorUpdate(rootFiber.stateNode, sourceFiber, 2);
       rootFiber = enqueueUpdate(rootFiber, sourceFiber, 2);
       null !== rootFiber && (markRootUpdated$1(rootFiber, 2), ensureRootIsScheduled(rootFiber));
     }
-    function captureCommitPhaseError(sourceFiber, nearestMountedAncestor, error) {
+    function captureCommitPhaseError(sourceFiber, nearestMountedAncestor, error2) {
       if (3 === sourceFiber.tag)
-        captureCommitPhaseErrorOnRoot(sourceFiber, sourceFiber, error);
+        captureCommitPhaseErrorOnRoot(sourceFiber, sourceFiber, error2);
       else
         for (; null !== nearestMountedAncestor; ) {
           if (3 === nearestMountedAncestor.tag) {
             captureCommitPhaseErrorOnRoot(
               nearestMountedAncestor,
               sourceFiber,
-              error
+              error2
             );
             break;
           } else if (1 === nearestMountedAncestor.tag) {
             var instance2 = nearestMountedAncestor.stateNode;
             if ("function" === typeof nearestMountedAncestor.type.getDerivedStateFromError || "function" === typeof instance2.componentDidCatch && (null === legacyErrorBoundariesThatAlreadyFailed || !legacyErrorBoundariesThatAlreadyFailed.has(instance2))) {
-              sourceFiber = createCapturedValueAtFiber(error, sourceFiber);
-              error = createClassErrorUpdate(2);
-              instance2 = enqueueUpdate(nearestMountedAncestor, error, 2);
+              sourceFiber = createCapturedValueAtFiber(error2, sourceFiber);
+              error2 = createClassErrorUpdate(2);
+              instance2 = enqueueUpdate(nearestMountedAncestor, error2, 2);
               null !== instance2 && (initializeClassErrorUpdate(
-                error,
+                error2,
                 instance2,
                 nearestMountedAncestor,
                 sourceFiber
@@ -12731,8 +12761,8 @@
               event.currentTarget = currentTarget;
               try {
                 previousInstance(event);
-              } catch (error) {
-                reportGlobalError(error);
+              } catch (error2) {
+                reportGlobalError(error2);
               }
               event.currentTarget = null;
               previousInstance = instance2;
@@ -12749,8 +12779,8 @@
               event.currentTarget = currentTarget;
               try {
                 previousInstance(event);
-              } catch (error) {
-                reportGlobalError(error);
+              } catch (error2) {
+                reportGlobalError(error2);
               }
               event.currentTarget = null;
               previousInstance = instance2;
@@ -13983,9 +14013,9 @@
     var scheduleTimeout = "function" === typeof setTimeout ? setTimeout : void 0, cancelTimeout = "function" === typeof clearTimeout ? clearTimeout : void 0, localPromise = "function" === typeof Promise ? Promise : void 0, scheduleMicrotask = "function" === typeof queueMicrotask ? queueMicrotask : "undefined" !== typeof localPromise ? function(callback) {
       return localPromise.resolve(null).then(callback).catch(handleErrorInNextTick);
     } : scheduleTimeout;
-    function handleErrorInNextTick(error) {
+    function handleErrorInNextTick(error2) {
       setTimeout(function() {
-        throw error;
+        throw error2;
       });
     }
     function isSingletonScope(type) {
@@ -15342,8 +15372,10 @@
   var clientExports = requireClient();
   const ReactDOM = /* @__PURE__ */ getDefaultExportFromCjs(clientExports);
   const name = "fuck-annoying-blog-widget";
+  const version$1 = "1.4.2";
   const pkg = {
-    name
+    name,
+    version: version$1
   };
   class Logger2 {
     module;
@@ -15851,33 +15883,212 @@
       }
     }
   }
-  const mask = "_mask_12cni_1";
-  const panel = "_panel_12cni_14";
-  const title = "_title_12cni_24";
-  const tabs = "_tabs_12cni_29";
-  const tabBtn = "_tabBtn_12cni_34";
-  const tabBtnActive = "_tabBtnActive_12cni_47";
-  const tabBtnLeft = "_tabBtnLeft_12cni_53";
-  const tabBtnRight = "_tabBtnRight_12cni_58";
-  const featureList = "_featureList_12cni_63";
-  const featureItem = "_featureItem_12cni_67";
-  const saveBtn = "_saveBtn_12cni_71";
-  const closeBtn = "_closeBtn_12cni_85";
-  const styles = {
+  const mask = "_mask_1tbfd_1";
+  const panel = "_panel_1tbfd_14";
+  const headerBar = "_headerBar_1tbfd_24";
+  const titleRow = "_titleRow_1tbfd_32";
+  const title$1 = "_title_1tbfd_32";
+  const version = "_version_1tbfd_47";
+  const tabs = "_tabs_1tbfd_57";
+  const tabBtn = "_tabBtn_1tbfd_62";
+  const tabBtnActive = "_tabBtnActive_1tbfd_75";
+  const tabBtnLeft = "_tabBtnLeft_1tbfd_81";
+  const tabBtnRight = "_tabBtnRight_1tbfd_86";
+  const featureList = "_featureList_1tbfd_91";
+  const featureItemRow = "_featureItemRow_1tbfd_99";
+  const featureItemLabel = "_featureItemLabel_1tbfd_107";
+  const featureItemControl = "_featureItemControl_1tbfd_116";
+  const saveBtn = "_saveBtn_1tbfd_176";
+  const closeBtn = "_closeBtn_1tbfd_190";
+  const footerBar = "_footerBar_1tbfd_201";
+  const styles$3 = {
     mask,
     panel,
-    title,
+    headerBar,
+    titleRow,
+    title: title$1,
+    version,
     tabs,
     tabBtn,
     tabBtnActive,
     tabBtnLeft,
     tabBtnRight,
     featureList,
-    featureItem,
+    featureItemRow,
+    featureItemLabel,
+    featureItemControl,
     saveBtn,
-    closeBtn
+    closeBtn,
+    footerBar
   };
-  const styleText = "._mask_12cni_1{position:fixed;top:0;left:0;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#00000026;z-index:9999}._panel_12cni_14{background:#fff;padding:24px;border-radius:8px;width:360px;box-shadow:0 2px 16px #0000002e;font-family:sans-serif;position:relative}._title_12cni_24{margin-bottom:16px;text-align:center}._tabs_12cni_29{display:flex;margin-bottom:20px}._tabBtn_12cni_34{flex:1;padding:8px;background:none;border:none;outline:none;cursor:pointer;border-bottom:2px solid #eee;font-weight:400;color:#333;transition:color .2s,border-bottom .2s}._tabBtnActive_12cni_47{color:#1677ff;font-weight:700;border-bottom:2px solid #1677ff}._tabBtnLeft_12cni_53{border-top-left-radius:6px;border-top-right-radius:0}._tabBtnRight_12cni_58{border-top-left-radius:0;border-top-right-radius:6px}._featureList_12cni_63{min-height:220px}._featureItem_12cni_67{margin-bottom:12px}._saveBtn_12cni_71{width:100%;padding:10px 0;background:#1677ff;color:#fff;border:none;border-radius:4px;font-weight:700;font-size:16px;margin-top:16px;cursor:pointer;letter-spacing:1px}._closeBtn_12cni_85{position:absolute;top:16px;right:16px;background:none;border:none;outline:none;cursor:pointer;font-size:22px}";
+  const styleText$3 = '._mask_1tbfd_1{position:fixed;top:0;left:0;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#00000026;z-index:999}._panel_1tbfd_14{background:#fff;padding:24px;border-radius:8px;width:360px;box-shadow:0 2px 16px #0000002e;font-family:sans-serif;position:relative}._headerBar_1tbfd_24{display:flex;justify-content:flex-end;align-items:center;height:32px;margin-bottom:2px}._titleRow_1tbfd_32{display:flex;align-items:center;justify-content:center;margin-bottom:22px;position:relative}._title_1tbfd_32{text-align:center;flex:none;line-height:1.1;margin:0}._version_1tbfd_47{margin-left:8px;font-size:12px;color:#888;font-weight:400;line-height:1;position:relative;bottom:-2px}._tabs_1tbfd_57{display:flex;margin-bottom:20px}._tabBtn_1tbfd_62{flex:1;padding:8px;background:none;border:none;outline:none;cursor:pointer;border-bottom:1.5px solid #eee;font-weight:400;color:#333;transition:color .2s,border-bottom .2s}._tabBtnActive_1tbfd_75{color:#1677ff;font-weight:700;border-bottom:1.5px solid #1677ff}._tabBtnLeft_1tbfd_81{border-top-left-radius:6px;border-top-right-radius:0}._tabBtnRight_1tbfd_86{border-top-left-radius:0;border-top-right-radius:6px}._featureList_1tbfd_91{min-height:220px}._featureItem_1tbfd_95{margin-bottom:12px}._featureItemRow_1tbfd_99{display:flex;align-items:center;justify-content:space-between;padding:2px 0 2px 2px;min-height:36px}._featureItemLabel_1tbfd_107{flex:1;font-size:15px;color:#222;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}._featureItemControl_1tbfd_116{display:flex;align-items:center;gap:12px}._select_1tbfd_122{padding:3px 8px;font-size:14px;border-radius:4px;border:1px solid #d9d9d9;margin-right:8px}._switch_1tbfd_130{position:relative;display:inline-block;width:44px;height:24px}._switch_1tbfd_130 input{opacity:0;width:0;height:0}._slider_1tbfd_143{position:absolute;cursor:pointer;inset:0;background-color:#ccc;border-radius:24px;transition:.2s}._switch_1tbfd_130 input:checked+._slider_1tbfd_143{background-color:#1890ff}._slider_1tbfd_143:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background-color:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px #00000014}._switch_1tbfd_130 input:checked+._slider_1tbfd_143:before{transform:translate(20px)}._saveBtn_1tbfd_176{width:100%;padding:10px 0;background:#1677ff;color:#fff;border:none;border-radius:4px;font-weight:700;font-size:16px;margin-top:16px;cursor:pointer;letter-spacing:1px}._closeBtn_1tbfd_190{position:absolute;top:16px;right:16px;background:none;border:none;outline:none;cursor:pointer;font-size:22px}._footerBar_1tbfd_201{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:12px;border-top:1.5px solid #eee}._footerBar_1tbfd_201 button{margin-left:8px;padding:2px 12px}._footerBar_1tbfd_201>div{display:flex;flex:1;justify-content:flex-end}';
+  const overlay = "_overlay_v9hyx_1";
+  const modal = "_modal_v9hyx_14";
+  const title = "_title_v9hyx_36";
+  const content = "_content_v9hyx_42";
+  const footer = "_footer_v9hyx_47";
+  const ok = "_ok_v9hyx_53";
+  const cancel = "_cancel_v9hyx_68";
+  const styles$2 = {
+    overlay,
+    modal,
+    title,
+    content,
+    footer,
+    ok,
+    cancel
+  };
+  const styleText$2 = "._overlay_v9hyx_1{position:fixed;inset:0;background:#00000059;display:flex;align-items:center;justify-content:center;z-index:1000}._modal_v9hyx_14{background:#fff;color:#222;border-radius:8px;box-shadow:0 4px 24px #00000021;width:340px;max-width:90vw;padding:24px 20px 16px;animation:_modalIn_v9hyx_1 .2s cubic-bezier(.4,0,.2,1)}@keyframes _modalIn_v9hyx_1{0%{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}._title_v9hyx_36{font-size:18px;font-weight:600;margin-bottom:12px}._content_v9hyx_42{font-size:15px;margin-bottom:20px}._footer_v9hyx_47{display:flex;justify-content:flex-end;gap:12px}._ok_v9hyx_53{background:#1677ff;color:#fff;border:none;border-radius:4px;padding:6px 18px;font-size:15px;cursor:pointer;transition:background .2s}._ok_v9hyx_53:hover{background:#0958d9}._cancel_v9hyx_68{background:#f5f5f5;color:#222;border:none;border-radius:4px;padding:6px 18px;font-size:15px;cursor:pointer;transition:background .2s}._cancel_v9hyx_68:hover{background:#e4e4e4}";
+  function injectReactWithShadow(Component, key) {
+    let host = document.getElementById(key);
+    if (!host) {
+      host = document.createElement("div");
+      host.id = key;
+      document.body.appendChild(host);
+    }
+    let shadow = host.shadowRoot;
+    if (!shadow) {
+      shadow = host.attachShadow({ mode: "open" });
+    }
+    let mountPoint = shadow.querySelector("#mount");
+    if (!mountPoint) {
+      mountPoint = document.createElement("div");
+      mountPoint.id = "mount";
+      shadow.appendChild(mountPoint);
+    }
+    const root = clientExports.createRoot(mountPoint);
+    root.render(Component);
+    return { root, host, shadow, mountPoint };
+  }
+  const Modal = ({
+    open,
+    title: title2,
+    content: content2,
+    onOk,
+    onCancel,
+    okText = "确定",
+    cancelText = "取消"
+  }) => {
+    if (!open) return null;
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: styleText$2 }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2.overlay, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2.modal, children: [
+        title2 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2.title, children: title2 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2.content, children: content2 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2.footer, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles$2.cancel, onClick: onCancel, children: cancelText }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles$2.ok, onClick: onOk, children: okText })
+        ] })
+      ] }) })
+    ] });
+  };
+  function showModal({
+    title: title2,
+    content: content2,
+    okText = "确定",
+    cancelText = "取消"
+  }) {
+    return new Promise((resolve) => {
+      const { root, host, mountPoint } = injectReactWithShadow(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Modal,
+          {
+            open: true,
+            title: title2,
+            content: content2,
+            onOk: handleOk,
+            onCancel: handleCancel,
+            okText,
+            cancelText
+          }
+        ),
+        "modal-root"
+      );
+      function handleOk() {
+        root.unmount();
+        if (mountPoint && mountPoint.parentNode) mountPoint.parentNode.removeChild(mountPoint);
+        if (host.shadowRoot && host.shadowRoot.childNodes.length === 0) {
+          host.remove();
+        }
+        resolve(true);
+      }
+      function handleCancel() {
+        root.unmount();
+        if (mountPoint && mountPoint.parentNode) mountPoint.parentNode.removeChild(mountPoint);
+        if (host.shadowRoot && host.shadowRoot.childNodes.length === 0) {
+          host.remove();
+        }
+        resolve(false);
+      }
+    });
+  }
+  const banner = "_banner_1lgb5_1";
+  const bannerIn = "_bannerIn_1lgb5_1";
+  const success = "_success_1lgb5_28";
+  const error = "_error_1lgb5_34";
+  const info = "_info_1lgb5_40";
+  const styles$1 = {
+    banner,
+    bannerIn,
+    success,
+    error,
+    info
+  };
+  const styleText$1 = "._banner_1lgb5_1{position:fixed;top:24px;left:50%;transform:translate(-50%);min-width:220px;max-width:90vw;padding:12px 24px;border-radius:6px;font-size:16px;font-weight:500;z-index:1200;box-shadow:0 2px 12px #00000017;animation:_bannerIn_1lgb5_1 .3s cubic-bezier(.4,0,.2,1)}@keyframes _bannerIn_1lgb5_1{0%{opacity:0;transform:translate(-50%) translateY(-20px)}to{opacity:1;transform:translate(-50%) translateY(0)}}._success_1lgb5_28{background:#f6ffed;color:#389e0d;border:1px solid #b7eb8f}._error_1lgb5_34{background:#fff2f0;color:#cf1322;border:1px solid #ffa39e}._info_1lgb5_40{background:#e6f4ff;color:#0958d9;border:1px solid #91caff}";
+  const Banner = ({ message, type = "success", duration = 2e3 }) => {
+    const [visible, setVisible] = reactExports.useState(true);
+    reactExports.useEffect(() => {
+      const timer = setTimeout(() => setVisible(false), duration);
+      return () => clearTimeout(timer);
+    }, [duration]);
+    if (!visible) return null;
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: styleText$1 }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${styles$1.banner} ${styles$1[type]}`, children: message })
+    ] });
+  };
+  function showBanner(message, type = "success", duration = 2e3) {
+    const { root, host, mountPoint } = injectReactWithShadow(
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Banner, { message, type, duration }),
+      "banner-root"
+    );
+    setTimeout(() => {
+      root.unmount();
+      if (mountPoint && mountPoint.parentNode) mountPoint.parentNode.removeChild(mountPoint);
+      if (host.shadowRoot && host.shadowRoot.childNodes.length === 0) {
+        host.remove();
+      }
+    }, duration + 400);
+  }
+  const slider = "_slider_lhu2n_14";
+  const styles = {
+    "switch": "_switch_lhu2n_1",
+    slider
+  };
+  const styleText = '._switch_lhu2n_1{position:relative;display:inline-block;width:44px;height:24px}._switch_lhu2n_1 input{opacity:0;width:0;height:0}._slider_lhu2n_14{position:absolute;cursor:pointer;inset:0;background-color:#ccc;border-radius:24px;transition:.2s}._switch_lhu2n_1 input:checked+._slider_lhu2n_14{background-color:#1890ff}._slider_lhu2n_14:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background-color:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px #00000014}._switch_lhu2n_1 input:checked+._slider_lhu2n_14:before{transform:translate(20px)}';
+  const Index = ({
+    checked,
+    onChange,
+    disabled,
+    name: name2,
+    style,
+    className
+  }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: styleText }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: className ? className + " " + styles.switch : styles.switch, style, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "input",
+        {
+          type: "checkbox",
+          checked,
+          onChange,
+          disabled,
+          name: name2
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.slider })
+    ] })
+  ] });
   const SettingsPanel = ({ onClose }) => {
     const [tab, setTab] = reactExports.useState("site");
     const [siteConfig, setSiteConfig] = reactExports.useState({});
@@ -15888,6 +16099,11 @@
       const all = getAllConfigs();
       setGlobalConfig(all["global"] || {});
     }, []);
+    const isSiteDirty = () => JSON.stringify(siteConfig) !== JSON.stringify(getConfigForCurrentSite());
+    const isGlobalDirty = () => {
+      const all = getAllConfigs();
+      return JSON.stringify(globalConfig) !== JSON.stringify(all["global"] || {});
+    };
     const handleChange = (key, type) => (e) => {
       if (type === "site") {
         setSiteConfig((prev) => ({ ...prev, [key]: e.target.checked }));
@@ -15895,59 +16111,131 @@
         setGlobalConfig((prev) => ({ ...prev, [key]: e.target.checked }));
       }
     };
+    const confirmAndSaveIfDirty = async (dirtyCheckFn, saveFn, t2) => {
+      if (dirtyCheckFn()) {
+        const ok2 = await showModal({
+          title: t2("common:unsavedTitle"),
+          content: t2("common:unsavedContent"),
+          okText: t2("common:save"),
+          cancelText: t2("common:cancel")
+        });
+        if (ok2) {
+          saveFn();
+          return true;
+        }
+        return false;
+      }
+      return true;
+    };
+    const handleTabSwitch = async (nextTab) => {
+      const dirtyCheck = tab === "site" ? isSiteDirty : isGlobalDirty;
+      const save2 = tab === "site" ? () => saveConfigForCurrentSite(siteConfig) : () => saveGlobalConfig(globalConfig);
+      const proceed = await confirmAndSaveIfDirty(dirtyCheck, save2, t);
+      if (proceed) setTab(nextTab);
+    };
     const handleSave = () => {
       if (tab === "site") {
         saveConfigForCurrentSite(siteConfig);
       } else {
         saveGlobalConfig(globalConfig);
       }
-      if (onClose) onClose();
+      showBanner(t("common:saveSuccess"), "success");
+    };
+    const handleSaveAndreFresh = () => {
+      handleSave();
       window.location.reload();
     };
+    const handlePanelClose = async () => {
+      const dirtyCheck = tab === "site" ? isSiteDirty : isGlobalDirty;
+      const save2 = tab === "site" ? () => saveConfigForCurrentSite(siteConfig) : () => saveGlobalConfig(globalConfig);
+      const proceed = await confirmAndSaveIfDirty(dirtyCheck, save2, t);
+      if (proceed && onClose) onClose();
+    };
+    const HeaderBar = ({
+      onClose: onClose2,
+      closeTitle: closeTitle2
+    }) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.headerBar, children: onClose2 && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles$3.closeBtn, onClick: onClose2, title: closeTitle2, children: "×" }) });
+    const TitleRow = ({ title: title2, version: version2 }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.titleRow, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: styles$3.title, children: title2 }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$3.version, children: [
+        "V",
+        version2
+      ] })
+    ] });
+    const Tabs = ({ tab: tab2, onTabSwitch, siteLabel, globalLabel }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.tabs, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "button",
+        {
+          className: [
+            styles$3.tabBtn,
+            styles$3.tabBtnLeft,
+            tab2 === "site" ? styles$3.tabBtnActive : ""
+          ].join(" "),
+          onClick: () => onTabSwitch("site"),
+          children: siteLabel
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "button",
+        {
+          className: [
+            styles$3.tabBtn,
+            styles$3.tabBtnRight,
+            tab2 === "global" ? styles$3.tabBtnActive : ""
+          ].join(" "),
+          onClick: () => onTabSwitch("global"),
+          children: globalLabel
+        }
+      )
+    ] });
+    const FooterBar = ({ onSave, onSaveAndRefresh, saveText, saveAndRefreshText }) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.footerBar, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles$3.saveBtn, onClick: onSave, children: saveText }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles$3.saveBtn, onClick: onSaveAndRefresh, children: saveAndRefreshText })
+    ] }) });
+    const FeatureItemRow = ({
+      label,
+      description,
+      checked,
+      onChange,
+      ControlComponent
+    }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.featureItemRow, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.featureItemLabel, title: description, children: label }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.featureItemControl, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ControlComponent, { checked, onChange }) })
+    ] });
     return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: styleText }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles.mask, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.panel, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: styles.title, children: t("panelTitle") }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.tabs, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "button",
-            {
-              className: [
-                styles.tabBtn,
-                styles.tabBtnLeft,
-                tab === "site" ? styles.tabBtnActive : ""
-              ].join(" "),
-              onClick: () => setTab("site"),
-              children: t("currentSiteConfigTab", "当前站点配置")
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "button",
-            {
-              className: [
-                styles.tabBtn,
-                styles.tabBtnRight,
-                tab === "global" ? styles.tabBtnActive : ""
-              ].join(" "),
-              onClick: () => setTab("global"),
-              children: t("globalConfigTab", "全局配置")
-            }
-          )
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles.featureList, children: featureKeys.map((key) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles.featureItem, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { title: t(`features:${key}.description`, ""), children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "input",
-            {
-              type: "checkbox",
-              checked: tab === "site" ? !!siteConfig[key] : !!globalConfig[key],
-              onChange: handleChange(key, tab)
-            }
-          ),
-          " ",
-          t(`features:${key}.label`)
-        ] }) }, key)) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles.saveBtn, onClick: handleSave, children: t("save", "保存") }),
-        onClose && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles.closeBtn, onClick: onClose, title: t("closeTitle"), children: "×" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: styleText$3 }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.mask, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.panel, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(HeaderBar, { onClose: handlePanelClose, closeTitle: t("common:closeTitle") }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TitleRow, { title: t("common:panelTitle"), version: pkg.version }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Tabs,
+          {
+            tab,
+            onTabSwitch: handleTabSwitch,
+            siteLabel: t("common:currentSiteConfigTab"),
+            globalLabel: t("common:globalConfigTab")
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.featureList, children: featureKeys.map((key) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+          FeatureItemRow,
+          {
+            label: t(`features:${key}.label`),
+            description: t(`features:${key}.description`),
+            checked: tab === "site" ? !!siteConfig[key] : !!globalConfig[key],
+            onChange: handleChange(key, tab),
+            ControlComponent: Index
+          },
+          key
+        )) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          FooterBar,
+          {
+            onSave: handleSave,
+            onSaveAndRefresh: handleSaveAndreFresh,
+            saveText: t("common:save"),
+            saveAndRefreshText: t("common:saveAndRefresh")
+          }
+        )
       ] }) })
     ] });
   };
@@ -15983,8 +16271,8 @@
         logger.info(instance.t("features:executeFeatures.start", { featureName }));
         featureRegistry[featureName]();
         logger.info(instance.t("features:executeFeatures.end", { featureName }));
-      } catch (error) {
-        logger.error(instance.t("features:executeFeatures.error"), error);
+      } catch (error2) {
+        logger.error(instance.t("features:executeFeatures.error"), error2);
       }
     }
   }
