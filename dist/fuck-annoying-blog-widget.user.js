@@ -2,7 +2,7 @@
 // @name               Personal Blog Annoying Features and Pendant Purification
 // @name:zh-CN         个人博客恼人功能和挂件净化
 // @namespace          https://github.com/qixing-jk/fuck-annoying-blog-widget
-// @version            1.3.0
+// @version            1.4.1
 // @description        purify personal blogs by removing or disabling common annoying widgets and effects.
 // @description:zh-CN  净化个人博客，自动移除或禁用常见的烦人挂件和特效。
 // @icon               https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/refs/heads/main/src/assets/logo.jpg
@@ -15952,7 +15952,7 @@
     ] });
   };
   const App = () => {
-    const [showSettings, setShowSettings] = reactExports.useState(false);
+    const [showSettings, setShowSettings] = reactExports.useState(true);
     reactExports.useEffect(() => {
       window.toggleSettingsPanel = (flag) => {
         setShowSettings((prev) => typeof flag === "boolean" ? flag : !prev);
@@ -15988,23 +15988,24 @@
       }
     }
   }
-  ReactDOM.createRoot(
-    (() => {
-      const app = document.createElement("div");
-      app.id = ROOT_ELEMENT_ID;
-      const shadowRoot = app.attachShadow({ mode: "open" });
-      document.body.append(app);
+  let appRoot = null;
+  _GM_registerMenuCommand(instance.t("common:panelTitle"), () => {
+    if (!appRoot) {
+      const appContainer = document.createElement("div");
+      appContainer.id = ROOT_ELEMENT_ID;
+      document.body.append(appContainer);
+      const shadowRoot = appContainer.attachShadow({ mode: "open" });
       const shadowApp = document.createElement("div");
       shadowApp.id = "shadow-app-root";
       shadowRoot.appendChild(shadowApp);
-      return shadowApp;
-    })()
-  ).render(
-    /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
-  );
-  _GM_registerMenuCommand(instance.t("common:panelTitle"), () => {
-    if (typeof window.toggleSettingsPanel === "function") {
-      window.toggleSettingsPanel();
+      appRoot = ReactDOM.createRoot(shadowApp);
+      appRoot.render(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
+      );
+    } else {
+      if (typeof window.toggleSettingsPanel === "function") {
+        window.toggleSettingsPanel();
+      }
     }
   });
 
