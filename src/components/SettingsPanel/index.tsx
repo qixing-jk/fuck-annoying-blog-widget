@@ -100,77 +100,143 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
     // 取消时不关闭面板
   }
 
+  // HeaderBar 子组件
+  const HeaderBar: React.FC<{ onClose?: () => void; closeTitle: string }> = ({
+    onClose,
+    closeTitle,
+  }) => (
+    <div className={styles.headerBar}>
+      {onClose && (
+        <button className={styles.closeBtn} onClick={onClose} title={closeTitle}>
+          ×
+        </button>
+      )}
+    </div>
+  )
+
+  // TitleRow 子组件
+  const TitleRow: React.FC<{ title: string; version: string }> = ({ title, version }) => (
+    <div className={styles.titleRow}>
+      <h2 className={styles.title}>{title}</h2>
+      <span className={styles.version}>V{version}</span>
+    </div>
+  )
+
+  // Tabs 子组件
+  interface TabsProps {
+    tab: TabType
+    onTabSwitch: (tab: TabType) => void
+    siteLabel: string
+    globalLabel: string
+  }
+
+  const Tabs: React.FC<TabsProps> = ({ tab, onTabSwitch, siteLabel, globalLabel }) => (
+    <div className={styles.tabs}>
+      <button
+        className={[
+          styles.tabBtn,
+          styles.tabBtnLeft,
+          tab === 'site' ? styles.tabBtnActive : '',
+        ].join(' ')}
+        onClick={() => onTabSwitch('site')}
+      >
+        {siteLabel}
+      </button>
+      <button
+        className={[
+          styles.tabBtn,
+          styles.tabBtnRight,
+          tab === 'global' ? styles.tabBtnActive : '',
+        ].join(' ')}
+        onClick={() => onTabSwitch('global')}
+      >
+        {globalLabel}
+      </button>
+    </div>
+  )
+
+  // FooterBar 子组件
+  const FooterBar: React.FC<{
+    onSave: () => void
+    onSaveAndRefresh: () => void
+    saveText: string
+    saveAndRefreshText: string
+  }> = ({ onSave, onSaveAndRefresh, saveText, saveAndRefreshText }) => (
+    <div className={styles.footerBar}>
+      <div>
+        <button className={styles.saveBtn} onClick={onSave}>
+          {saveText}
+        </button>
+        <button className={styles.saveBtn} onClick={onSaveAndRefresh}>
+          {saveAndRefreshText}
+        </button>
+      </div>
+    </div>
+  )
+
+  // FeatureItemRow 子组件，简化主渲染逻辑
+  interface FeatureItemRowProps {
+    label: string
+    description: string
+    checked: boolean
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    ControlComponent: React.FC<{
+      checked: boolean
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    }>
+  }
+
+  const FeatureItemRow: React.FC<FeatureItemRowProps> = ({
+    label,
+    description,
+    checked,
+    onChange,
+    ControlComponent,
+  }) => (
+    <div className={styles.featureItemRow}>
+      <div className={styles.featureItemLabel} title={description}>
+        {label}
+      </div>
+      <div className={styles.featureItemControl}>
+        <ControlComponent checked={checked} onChange={onChange} />
+      </div>
+    </div>
+  )
+
   return (
     <>
       <style>{styleText}</style>
       <div className={styles.mask}>
         <div className={styles.panel}>
           {/* 顶部关闭按钮单独一行 */}
-          <div className={styles.headerBar}>
-            {onClose && (
-              <button
-                className={styles.closeBtn}
-                onClick={handlePanelClose}
-                title={t('common:closeTitle')}
-              >
-                ×
-              </button>
-            )}
-          </div>
+          <HeaderBar onClose={handlePanelClose} closeTitle={t('common:closeTitle')} />
           {/* 标题和版本号一行 */}
-          <div className={styles.titleRow}>
-            <h2 className={styles.title}>{t('common:panelTitle')}</h2>
-            <span className={styles.version}>V{pkg.version}</span>
-          </div>
-          <div className={styles.tabs}>
-            <button
-              className={[
-                styles.tabBtn,
-                styles.tabBtnLeft,
-                tab === 'site' ? styles.tabBtnActive : '',
-              ].join(' ')}
-              onClick={() => handleTabSwitch('site')}
-            >
-              {t('common:currentSiteConfigTab')}
-            </button>
-            <button
-              className={[
-                styles.tabBtn,
-                styles.tabBtnRight,
-                tab === 'global' ? styles.tabBtnActive : '',
-              ].join(' ')}
-              onClick={() => handleTabSwitch('global')}
-            >
-              {t('common:globalConfigTab')}
-            </button>
-          </div>
+          <TitleRow title={t('common:panelTitle')} version={pkg.version} />
+          <Tabs
+            tab={tab}
+            onTabSwitch={handleTabSwitch}
+            siteLabel={t('common:currentSiteConfigTab')}
+            globalLabel={t('common:globalConfigTab')}
+          />
           <div className={styles.featureList}>
             {featureKeys.map((key) => (
-              <div key={key} className={styles.featureItemRow}>
-                <div className={styles.featureItemLabel} title={t(`features:${key}.description`)}>
-                  {t(`features:${key}.label`)}
-                </div>
-                <div className={styles.featureItemControl}>
-                  <Index
-                    checked={tab === 'site' ? !!siteConfig[key] : !!globalConfig[key]}
-                    onChange={handleChange(key, tab)}
-                  />
-                </div>
-              </div>
+              <FeatureItemRow
+                key={key}
+                label={t(`features:${key}.label`)}
+                description={t(`features:${key}.description`)}
+                checked={tab === 'site' ? !!siteConfig[key] : !!globalConfig[key]}
+                onChange={handleChange(key, tab)}
+                ControlComponent={Index}
+              />
             ))}
           </div>
-
           {/* 新增底部操作区 */}
-          <div className={styles.footerBar}>
-            <div>
-              <button className={styles.saveBtn} onClick={handleSave}>
-                {t('common:save')}
-              </button>
-              <button className={styles.saveBtn} onClick={handleSaveAndreFresh}>
-                {t('common:saveAndRefresh')}
-              </button>
-            </div>
-          </div>
+          <FooterBar
+            onSave={handleSave}
+            onSaveAndRefresh={handleSaveAndreFresh}
+            saveText={t('common:save')}
+            saveAndRefreshText={t('common:saveAndRefresh')}
+          />
         </div>
       </div>
     </>
