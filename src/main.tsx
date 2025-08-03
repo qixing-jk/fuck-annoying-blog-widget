@@ -39,26 +39,35 @@ for (const key in activeConfig) {
   }
 }
 
-ReactDOM.createRoot(
-  (() => {
-    const app = document.createElement('div')
-    app.id = ROOT_ELEMENT_ID
-    // 创建 ShadowRoot
-    const shadowRoot = app.attachShadow({ mode: 'open' })
-    document.body.append(app)
-    // 创建 shadow 下的挂载点
+// 创建一个变量来持有 React Root 的引用，初始为 null
+let appRoot: ReactDOM.Root | null = null
+
+// 注册菜单命令
+GM_registerMenuCommand(i18n.t('common:panelTitle'), () => {
+  // 检查 appRoot 是否已经被创建
+  if (!appRoot) {
+    // --- 首次点击，执行挂载逻辑 ---
+    // 1. 创建挂载点和 Shadow DOM
+    const appContainer = document.createElement('div')
+    appContainer.id = ROOT_ELEMENT_ID
+    document.body.append(appContainer)
+
+    const shadowRoot = appContainer.attachShadow({ mode: 'open' })
+
     const shadowApp = document.createElement('div')
     shadowApp.id = 'shadow-app-root'
     shadowRoot.appendChild(shadowApp)
-    return shadowApp
-  })()
-).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
-GM_registerMenuCommand(i18n.t('common:panelTitle'), () => {
-  if (typeof window.toggleSettingsPanel === 'function') {
-    window.toggleSettingsPanel()
+
+    // 2. 创建 React Root 并渲染 App
+    appRoot = ReactDOM.createRoot(shadowApp)
+    appRoot.render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    )
+  } else {
+    if (typeof window.toggleSettingsPanel === 'function') {
+      window.toggleSettingsPanel()
+    }
   }
 })

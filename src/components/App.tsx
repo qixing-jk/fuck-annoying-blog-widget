@@ -4,7 +4,7 @@ import SettingsPanel from './SettingsPanel'
 import '../i18n/config'
 
 const App: React.FC = () => {
-  const [showSettings, setShowSettings] = useState(false)
+  const [showSettings, setShowSettings] = useState(true)
 
   useEffect(() => {
     // 让油猴菜单能通过window方法控制面板显示
