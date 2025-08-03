@@ -46,9 +46,9 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
     }
   }
 
-  const handleTabSwitch = async (nextTab: TabType) => {
-    const dirty = tab === 'site' ? isSiteDirty() : isGlobalDirty()
-    if (dirty) {
+  // 通用的脏数据检测与保存确认流程
+  const confirmAndSaveIfDirty = async (dirtyCheckFn: () => boolean, saveFn: () => void, t: any) => {
+    if (dirtyCheckFn()) {
       const ok = await showModal({
         title: t('common:unsavedTitle'),
         content: t('common:unsavedContent'),
@@ -56,13 +56,23 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
         cancelText: t('common:cancel'),
       })
       if (ok) {
-        handleSave()
-        setTab(nextTab)
+        saveFn()
+        return true
       }
-      // 取消时什么都不做，保持在原tab
-      return
+      return false
     }
-    setTab(nextTab)
+    return true
+  }
+
+  const handleTabSwitch = async (nextTab: TabType) => {
+    const dirtyCheck = tab === 'site' ? isSiteDirty : isGlobalDirty
+    const save =
+      tab === 'site'
+        ? () => saveConfigForCurrentSite(siteConfig)
+        : () => saveGlobalConfig(globalConfig)
+    const proceed = await confirmAndSaveIfDirty(dirtyCheck, save, t)
+    if (proceed) setTab(nextTab)
+    // 取消时什么都不做
   }
 
   const handleSave = () => {
@@ -80,22 +90,14 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
   }
 
   const handlePanelClose = async () => {
-    const dirty = tab === 'site' ? isSiteDirty() : isGlobalDirty()
-    if (dirty) {
-      const ok = await showModal({
-        title: t('common:unsavedTitle'),
-        content: t('common:unsavedContent'),
-        okText: t('common:save'),
-        cancelText: t('common:cancel'),
-      })
-      if (ok) {
-        handleSave()
-        if (onClose) onClose()
-      }
-      // 取消时不关闭面板，保持原状态
-      return
-    }
-    if (onClose) onClose()
+    const dirtyCheck = tab === 'site' ? isSiteDirty : isGlobalDirty
+    const save =
+      tab === 'site'
+        ? () => saveConfigForCurrentSite(siteConfig)
+        : () => saveGlobalConfig(globalConfig)
+    const proceed = await confirmAndSaveIfDirty(dirtyCheck, save, t)
+    if (proceed && onClose) onClose()
+    // 取消时不关闭面板
   }
 
   return (
