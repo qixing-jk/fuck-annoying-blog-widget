@@ -120,7 +120,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
   }
 
   // 通用的脏数据检测与保存确认流程
-  const confirmAndSaveIfDirty = async (dirtyCheckFn: () => boolean, saveFn: () => void, t: any) => {
+  const confirmAndSaveIfDirty = async (dirtyCheckFn: () => boolean, saveFn: () => void) => {
     if (dirtyCheckFn()) {
       const ok = await showModal({
         title: t('common:unsavedTitle'),
@@ -143,7 +143,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
       tab === 'site'
         ? () => saveConfigForCurrentSite(siteConfig)
         : () => saveGlobalConfig(globalConfig)
-    const proceed = await confirmAndSaveIfDirty(dirtyCheck, save, t)
+    const proceed = await confirmAndSaveIfDirty(dirtyCheck, save)
     if (proceed) setTab(nextTab)
     // 取消时什么都不做
   }
@@ -168,9 +168,9 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
       tab === 'site'
         ? () => saveConfigForCurrentSite(siteConfig)
         : () => saveGlobalConfig(globalConfig)
-    const proceed = await confirmAndSaveIfDirty(dirtyCheck, save, t)
-    if (proceed && onClose) onClose()
-    // 取消时不关闭面板
+    await confirmAndSaveIfDirty(dirtyCheck, save)
+    // 取消时也关闭面板
+    onClose && onClose()
   }
 
   return (
