@@ -66,7 +66,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
   }
 
   const handleSelectorsChange = (e: React.ChangeEvent<HTMLTextAreaElement>, type: TabType) => {
-    const selectors = e.target.value.split('\n').filter((line) => line.trim())
+    const selectors = e.target.value.split('\n')
 
     const updater = (prev: any) => {
       const patch = {
