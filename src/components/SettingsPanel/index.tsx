@@ -11,7 +11,6 @@ import styleText from './index.module.css?inline'
 import pkg from '../../../package.json'
 import { showModal } from '../Modal'
 import { showBanner } from '../Banner'
-import { BUTTON_SELECTORS } from '../../constants'
 import FeatureList from './FeatureList'
 import HeaderBar from './HeaderBar'
 import TitleRow from './TitleRow'
@@ -67,27 +66,21 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
   }
 
   const handleSelectorsChange = (e: React.ChangeEvent<HTMLTextAreaElement>, type: TabType) => {
-    const selectors = e.target.value.split('\n')
+    const selectors = e.target.value.split('\n').filter((line) => line.trim())
 
-    const updateFn = (prev: any) => {
-      // Ensure we have a proper autoExpandCodeBlocks object
-      const currentConfig = prev.autoExpandCodeBlocks || {
-        enabled: false,
-        selectors: [...BUTTON_SELECTORS],
-      }
-      return {
-        ...prev,
+    const updater = (prev: any) => {
+      const patch = {
         autoExpandCodeBlocks: {
-          ...currentConfig,
           selectors,
         },
       }
+      return deepmergeNoArray(prev, patch)
     }
 
     if (type === 'site') {
-      setSiteConfig(updateFn)
+      setSiteConfig(updater)
     } else {
-      setGlobalConfig(updateFn)
+      setGlobalConfig(updater)
     }
   }
 
