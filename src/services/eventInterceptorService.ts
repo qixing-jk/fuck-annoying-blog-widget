@@ -1,4 +1,4 @@
-import { SiteConfig } from '../types'
+import { FeatureKey, SiteConfig } from '../types'
 import { isElementInBlacklist } from '../utils'
 import { createLogger } from '../utils/logger'
 import i18n from 'i18next'
@@ -24,7 +24,7 @@ export interface EventInterceptorPayload {
  * 它将功能名 (key) 和拦截器函数绑定在一起。
  */
 export interface EventInterceptorRegistration extends EventInterceptorPayload {
-  featureName: keyof SiteConfig
+  featureName: FeatureKey
 }
 
 // 存储所有注册的拦截器对象

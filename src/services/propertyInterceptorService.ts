@@ -1,4 +1,4 @@
-import { SiteConfig } from '../types'
+import { FeatureKey, SiteConfig } from '../types'
 import { createLogger } from '../utils/logger'
 import i18n from 'i18next'
 
@@ -16,7 +16,7 @@ export interface PropertyInterceptorPayload {
 
 // 定义服务内部存储的完整注册对象结构
 export interface PropertyInterceptorRegistration extends PropertyInterceptorPayload {
-  featureName: keyof SiteConfig
+  featureName: FeatureKey
 }
 
 const registrations: PropertyInterceptorRegistration[] = []

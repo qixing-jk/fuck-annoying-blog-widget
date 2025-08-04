@@ -7,7 +7,7 @@ import { GM_registerMenuCommand } from '$'
 
 import { getConfigForCurrentSite } from './services/configService'
 import { featureRegistry } from './features' // 直接导入注册表
-import { SiteConfig } from './types'
+import { FeatureKey } from './types'
 import { ROOT_ELEMENT_ID } from './constants'
 import { installEventInterceptor } from './services/eventInterceptorService'
 import { installPropertyInterceptor } from './services/propertyInterceptorService'
@@ -23,7 +23,7 @@ installEventInterceptor(activeConfig)
 installPropertyInterceptor(activeConfig)
 // 遍历激活的配置项
 for (const key in activeConfig) {
-  const featureName = key as keyof SiteConfig
+  const featureName = key as FeatureKey
   const isEnabled = activeConfig[featureName]
 
   // 如果配置为 true，并且该功能存在于注册表中

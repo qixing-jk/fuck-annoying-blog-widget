@@ -1,4 +1,4 @@
-import { FeatureFunction, SiteConfig } from '../types'
+import { FeatureFunction, FeatureKey } from '../types'
 import {
   EventInterceptorPayload,
   registerEventInterceptor,
@@ -9,59 +9,36 @@ import {
 } from '../services/propertyInterceptorService'
 import { createLogger } from '../utils/logger'
 import i18n from 'i18next'
+import { defaultGlobalConfig } from './index'
 
-// 定义功能模块应该导出的完整结构
+// 功能模块结构
 interface FeatureModule {
   default: FeatureFunction
   eventInterceptorPayload?: EventInterceptorPayload
   propertyInterceptors?: PropertyInterceptorPayload[]
 }
 
-export const featureKeys: string[] = []
-export const featureRegistry: Record<string, FeatureFunction> = {}
-export const defaultGlobalConfig: Record<string, boolean> = {}
+export const featureKeys = Object.keys(defaultGlobalConfig) as FeatureKey[]
+export const featureRegistry: Partial<Record<FeatureKey, FeatureFunction>> = {}
 
 const logger = createLogger('features')
 
-// 扫描所有功能模块
+// 自动注册功能到 featureRegistry
 const modules = import.meta.glob<true, string, FeatureModule>('../features/*.ts', { eager: true })
-
 for (const path in modules) {
   const module = modules[path]
   const keyMatch = path.match(/\/(\w+)\.ts$/)
-
-  if (keyMatch && keyMatch[1] !== 'index') {
-    // 自动从文件名中获取 featureName，不再有魔法字符串！
-    const featureName = keyMatch[1] as keyof SiteConfig
-
-    // 填充其他注册表和配置
-    featureKeys.push(featureName)
+  if (keyMatch && featureKeys.includes(keyMatch[1] as FeatureKey)) {
+    const featureName = keyMatch[1] as FeatureKey
     featureRegistry[featureName] = module.default
-    defaultGlobalConfig[featureName] = false
-
     if (module.eventInterceptorPayload) {
-      // 检查模块是否导出了一个 'interceptor'
-      logger.info(
-        i18n.t('features:loadFeatures.eventInterceptorFound', { featureName: featureName })
-      )
-      // 代表该模块，使用自动获取的 featureName 进行注册
-      registerEventInterceptor({
-        featureName: featureName,
-        ...module.eventInterceptorPayload,
-      })
+      logger.info(i18n.t('features:loadFeatures.eventInterceptorFound', { featureName }))
+      registerEventInterceptor({ featureName, ...module.eventInterceptorPayload })
     }
-
     if (module.propertyInterceptors) {
-      logger.info(
-        i18n.t('features:loadFeatures.propertyInterceptorsFound', { featureName: featureName })
-      )
-      // 遍历模块提供的所有拦截器载荷
+      logger.info(i18n.t('features:loadFeatures.propertyInterceptorsFound', { featureName }))
       for (const payload of module.propertyInterceptors) {
-        // 代表模块进行注册，并附加上 featureName
-        registerPropertyInterceptor({
-          featureName: featureName,
-          ...payload,
-        })
+        registerPropertyInterceptor({ featureName, ...payload })
       }
     }
   }

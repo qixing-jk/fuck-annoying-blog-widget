@@ -5,7 +5,6 @@ import {
   saveConfigForCurrentSite,
   saveGlobalConfig,
 } from '../../services/configService'
-import { featureKeys } from '../../config/features'
 import { useTranslation } from 'react-i18next'
 import styles from './index.module.css'
 import styleText from './index.module.css?inline'
@@ -13,6 +12,7 @@ import pkg from '../../../package.json'
 import { showModal } from '../Modal'
 import { showBanner } from '../Banner'
 import Index from '../SwitchPill'
+import { featureKeys } from '../../config/features'
 
 interface SettingsPanelProps {
   onClose?: () => void
