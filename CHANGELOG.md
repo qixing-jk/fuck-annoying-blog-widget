@@ -27,6 +27,13 @@
 
 
 
+## [2.0.1](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v2.0.0...v2.0.1) (2025-08-04)
+
+
+### Bug Fixes
+
+* **SettingsPanel:** prevent empty lines filtering in selectors input ([c3a4669](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/c3a4669d61ea32950f3d033e66a20e00b241d29d))
+
 ## [2.0.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.6.0...v2.0.0) (2025-08-04)
 
 
