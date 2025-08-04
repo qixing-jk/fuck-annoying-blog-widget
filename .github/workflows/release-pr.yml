@@ -27,25 +27,25 @@ jobs:
           # for more options
           release-type: node
       - name: Setup pnpm
-        if: ${{ steps.release.outputs.release_created != 'true' && steps.release.outputs.pr != '' }}
+        if: ${{ steps.release.outputs.release_created }}
         uses: pnpm/action-setup@v4
         with:
           run_install: true
 
       - name: Build dist
-        if: ${{ steps.release.outputs.release_created != 'true' && steps.release.outputs.pr != '' }}
+        if: ${{ steps.release.outputs.release_created }}
         run: |
           pnpm run build
 
       - name: Commit dist to release PR
-        if: ${{ steps.release.outputs.release_created != 'true' && steps.release.outputs.pr != '' }}
+        if: ${{ steps.release.outputs.release_created }}
         run: |
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@users.noreply.github.com
           git fetch origin ${{ steps.release.outputs.pr-branch }}
           git checkout ${{ steps.release.outputs.pr-branch }}
       - name: Git commit
-        if: ${{ steps.release.outputs.release_created != 'true' && steps.release.outputs.pr != '' }}
+        if: ${{ steps.release.outputs.release_created }}
         id: commit
         run: |
           git add --all
@@ -53,12 +53,12 @@ jobs:
         continue-on-error: true
       - name: Git push
         uses: ad-m/github-push-action@master
-        if: ${{ steps.commit.outcome == 'success' && steps.release.outputs.release_created != 'true' && steps.release.outputs.pr != '' }}
+        if: ${{ steps.commit.outcome == 'success' && steps.release.outputs.release_created }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
       - name: Upload Release Artifact
-        if: ${{ steps.release.outputs.release_created == 'true' }}
+        if: ${{ steps.release.outputs.release_created }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
