@@ -95,7 +95,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
   }
 
   const handleSelectorsChange = (e: React.ChangeEvent<HTMLTextAreaElement>, type: TabType) => {
-    const selectors = e.target.value.split('\n').filter((s) => s.trim())
+    const selectors = e.target.value.split('\n')
 
     const updateFn = (prev: any) => {
       // Ensure we have a proper autoExpandCodeBlocks object
