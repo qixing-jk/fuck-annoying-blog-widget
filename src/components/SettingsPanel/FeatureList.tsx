@@ -6,8 +6,8 @@ import Index from '../SwitchPill'
 import FeatureItemRow from './FeatureItemRow'
 import { BUTTON_SELECTORS } from '../../constants'
 import styles from './index.module.css'
-import { TabType } from './index'
 import { t } from 'i18next'
+import { TabType } from './Tabs'
 
 interface FeatureListProps {
   config: any
