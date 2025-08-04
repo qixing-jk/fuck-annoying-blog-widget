@@ -16,7 +16,7 @@
 // @run-at             document-start
 // ==/UserScript==
 
-(t=>{if(typeof GM_addStyle=="function"){GM_addStyle(t);return}const e=document.createElement("style");e.textContent=t,document.head.append(e)})(' ._mask_1tbfd_1{position:fixed;top:0;left:0;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#00000026;z-index:999}._panel_1tbfd_14{background:#fff;padding:24px;border-radius:8px;width:360px;box-shadow:0 2px 16px #0000002e;font-family:sans-serif;position:relative}._headerBar_1tbfd_24{display:flex;justify-content:flex-end;align-items:center;height:32px;margin-bottom:2px}._titleRow_1tbfd_32{display:flex;align-items:center;justify-content:center;margin-bottom:22px;position:relative}._title_1tbfd_32{text-align:center;flex:none;line-height:1.1;margin:0}._version_1tbfd_47{margin-left:8px;font-size:12px;color:#888;font-weight:400;line-height:1;position:relative;bottom:-2px}._tabs_1tbfd_57{display:flex;margin-bottom:20px}._tabBtn_1tbfd_62{flex:1;padding:8px;background:none;border:none;outline:none;cursor:pointer;border-bottom:1.5px solid #eee;font-weight:400;color:#333;transition:color .2s,border-bottom .2s}._tabBtnActive_1tbfd_75{color:#1677ff;font-weight:700;border-bottom:1.5px solid #1677ff}._tabBtnLeft_1tbfd_81{border-top-left-radius:6px;border-top-right-radius:0}._tabBtnRight_1tbfd_86{border-top-left-radius:0;border-top-right-radius:6px}._featureList_1tbfd_91{min-height:220px}._featureItem_1tbfd_95{margin-bottom:12px}._featureItemRow_1tbfd_99{display:flex;align-items:center;justify-content:space-between;padding:2px 0 2px 2px;min-height:36px}._featureItemLabel_1tbfd_107{flex:1;font-size:15px;color:#222;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}._featureItemControl_1tbfd_116{display:flex;align-items:center;gap:12px}._select_1tbfd_122{padding:3px 8px;font-size:14px;border-radius:4px;border:1px solid #d9d9d9;margin-right:8px}._switch_1tbfd_130{position:relative;display:inline-block;width:44px;height:24px}._switch_1tbfd_130 input{opacity:0;width:0;height:0}._slider_1tbfd_143{position:absolute;cursor:pointer;inset:0;background-color:#ccc;border-radius:24px;transition:.2s}._switch_1tbfd_130 input:checked+._slider_1tbfd_143{background-color:#1890ff}._slider_1tbfd_143:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background-color:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px #00000014}._switch_1tbfd_130 input:checked+._slider_1tbfd_143:before{transform:translate(20px)}._saveBtn_1tbfd_176{width:100%;padding:10px 0;background:#1677ff;color:#fff;border:none;border-radius:4px;font-weight:700;font-size:16px;margin-top:16px;cursor:pointer;letter-spacing:1px}._closeBtn_1tbfd_190{position:absolute;top:16px;right:16px;background:none;border:none;outline:none;cursor:pointer;font-size:22px}._footerBar_1tbfd_201{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:12px;border-top:1.5px solid #eee}._footerBar_1tbfd_201 button{margin-left:8px;padding:2px 12px}._footerBar_1tbfd_201>div{display:flex;flex:1;justify-content:flex-end}._overlay_v9hyx_1{position:fixed;inset:0;background:#00000059;display:flex;align-items:center;justify-content:center;z-index:1000}._modal_v9hyx_14{background:#fff;color:#222;border-radius:8px;box-shadow:0 4px 24px #00000021;width:340px;max-width:90vw;padding:24px 20px 16px;animation:_modalIn_v9hyx_1 .2s cubic-bezier(.4,0,.2,1)}@keyframes _modalIn_v9hyx_1{0%{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}._title_v9hyx_36{font-size:18px;font-weight:600;margin-bottom:12px}._content_v9hyx_42{font-size:15px;margin-bottom:20px}._footer_v9hyx_47{display:flex;justify-content:flex-end;gap:12px}._ok_v9hyx_53{background:#1677ff;color:#fff;border:none;border-radius:4px;padding:6px 18px;font-size:15px;cursor:pointer;transition:background .2s}._ok_v9hyx_53:hover{background:#0958d9}._cancel_v9hyx_68{background:#f5f5f5;color:#222;border:none;border-radius:4px;padding:6px 18px;font-size:15px;cursor:pointer;transition:background .2s}._cancel_v9hyx_68:hover{background:#e4e4e4}._banner_1lgb5_1{position:fixed;top:24px;left:50%;transform:translate(-50%);min-width:220px;max-width:90vw;padding:12px 24px;border-radius:6px;font-size:16px;font-weight:500;z-index:1200;box-shadow:0 2px 12px #00000017;animation:_bannerIn_1lgb5_1 .3s cubic-bezier(.4,0,.2,1)}@keyframes _bannerIn_1lgb5_1{0%{opacity:0;transform:translate(-50%) translateY(-20px)}to{opacity:1;transform:translate(-50%) translateY(0)}}._success_1lgb5_28{background:#f6ffed;color:#389e0d;border:1px solid #b7eb8f}._error_1lgb5_34{background:#fff2f0;color:#cf1322;border:1px solid #ffa39e}._info_1lgb5_40{background:#e6f4ff;color:#0958d9;border:1px solid #91caff}._switch_lhu2n_1{position:relative;display:inline-block;width:44px;height:24px}._switch_lhu2n_1 input{opacity:0;width:0;height:0}._slider_lhu2n_14{position:absolute;cursor:pointer;inset:0;background-color:#ccc;border-radius:24px;transition:.2s}._switch_lhu2n_1 input:checked+._slider_lhu2n_14{background-color:#1890ff}._slider_lhu2n_14:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background-color:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px #00000014}._switch_lhu2n_1 input:checked+._slider_lhu2n_14:before{transform:translate(20px)} ');
+(e=>{if(typeof GM_addStyle=="function"){GM_addStyle(e);return}const o=document.createElement("style");o.textContent=e,document.head.append(o)})(' ._mask_7wjdf_1{position:fixed;top:0;left:0;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#00000026;z-index:999}._panel_7wjdf_14{background:#fff;padding:24px;border-radius:8px;width:360px;box-shadow:0 2px 16px #0000002e;font-family:sans-serif;position:relative}._headerBar_7wjdf_24{display:flex;justify-content:flex-end;align-items:center;height:32px;margin-bottom:2px}._titleRow_7wjdf_32{display:flex;align-items:center;justify-content:center;margin-bottom:22px;position:relative}._title_7wjdf_32{text-align:center;flex:none;line-height:1.1;margin:0}._version_7wjdf_47{margin-left:8px;font-size:12px;color:#888;font-weight:400;line-height:1;position:relative;bottom:-2px}._tabs_7wjdf_57{display:flex;margin-bottom:20px}._tabBtn_7wjdf_62{flex:1;padding:8px;background:none;border:none;outline:none;cursor:pointer;border-bottom:1.5px solid #eee;font-weight:400;color:#333;transition:color .2s,border-bottom .2s;border-top-left-radius:6px;border-top-right-radius:6px}._tabBtnActive_7wjdf_77{color:#1677ff;font-weight:700;border-bottom:1.5px solid #1677ff}._featureList_7wjdf_83{min-height:220px}._featureItem_7wjdf_87{margin-bottom:12px}._featureItemRow_7wjdf_91{display:flex;align-items:center;justify-content:space-between;padding:2px 0 2px 2px;min-height:36px}._featureItemLabel_7wjdf_99{flex:1;font-size:15px;color:#222;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}._featureItemControl_7wjdf_108{display:flex;align-items:center;gap:12px}._select_7wjdf_114{padding:3px 8px;font-size:14px;border-radius:4px;border:1px solid #d9d9d9;margin-right:8px}._switch_7wjdf_122{position:relative;display:inline-block;width:44px;height:24px}._switch_7wjdf_122 input{opacity:0;width:0;height:0}._slider_7wjdf_135{position:absolute;cursor:pointer;inset:0;background-color:#ccc;border-radius:24px;transition:.2s}._switch_7wjdf_122 input:checked+._slider_7wjdf_135{background-color:#1890ff}._slider_7wjdf_135:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background-color:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px #00000014}._switch_7wjdf_122 input:checked+._slider_7wjdf_135:before{transform:translate(20px)}._saveBtn_7wjdf_168{width:100%;padding:10px 0;background:#1677ff;color:#fff;border:none;border-radius:4px;font-weight:700;font-size:16px;margin-top:16px;cursor:pointer;letter-spacing:1px}._closeBtn_7wjdf_182{position:absolute;top:16px;right:16px;background:none;border:none;outline:none;cursor:pointer;font-size:22px}._footerBar_7wjdf_193{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:12px;border-top:1.5px solid #eee}._selectorContainer_7wjdf_203{margin-top:12px;padding:10px 0 0 4px;border-top:1px dashed #e8e8e8}._selectorLabel_7wjdf_209{display:block;font-size:13px;color:#666;margin-bottom:6px;font-weight:500}._selectorInput_7wjdf_217{width:100%;padding:8px 10px;border:1px solid #d9d9d9;border-radius:4px;font-family:monospace;font-size:13px;line-height:1.5;resize:vertical;min-height:80px;margin-bottom:6px}._selectorInput_7wjdf_217:focus{border-color:#40a9ff;box-shadow:0 0 0 2px #1890ff33;outline:none}._selectorHint_7wjdf_236{font-size:12px;color:#999;line-height:1.4;margin-top:4px}._footerBar_7wjdf_193 button{margin-left:8px;padding:2px 12px}._footerBar_7wjdf_193>div{display:flex;flex:1;justify-content:flex-end}._overlay_v9hyx_1{position:fixed;inset:0;background:#00000059;display:flex;align-items:center;justify-content:center;z-index:1000}._modal_v9hyx_14{background:#fff;color:#222;border-radius:8px;box-shadow:0 4px 24px #00000021;width:340px;max-width:90vw;padding:24px 20px 16px;animation:_modalIn_v9hyx_1 .2s cubic-bezier(.4,0,.2,1)}@keyframes _modalIn_v9hyx_1{0%{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}._title_v9hyx_36{font-size:18px;font-weight:600;margin-bottom:12px}._content_v9hyx_42{font-size:15px;margin-bottom:20px}._footer_v9hyx_47{display:flex;justify-content:flex-end;gap:12px}._ok_v9hyx_53{background:#1677ff;color:#fff;border:none;border-radius:4px;padding:6px 18px;font-size:15px;cursor:pointer;transition:background .2s}._ok_v9hyx_53:hover{background:#0958d9}._cancel_v9hyx_68{background:#f5f5f5;color:#222;border:none;border-radius:4px;padding:6px 18px;font-size:15px;cursor:pointer;transition:background .2s}._cancel_v9hyx_68:hover{background:#e4e4e4}._banner_1lgb5_1{position:fixed;top:24px;left:50%;transform:translate(-50%);min-width:220px;max-width:90vw;padding:12px 24px;border-radius:6px;font-size:16px;font-weight:500;z-index:1200;box-shadow:0 2px 12px #00000017;animation:_bannerIn_1lgb5_1 .3s cubic-bezier(.4,0,.2,1)}@keyframes _bannerIn_1lgb5_1{0%{opacity:0;transform:translate(-50%) translateY(-20px)}to{opacity:1;transform:translate(-50%) translateY(0)}}._success_1lgb5_28{background:#f6ffed;color:#389e0d;border:1px solid #b7eb8f}._error_1lgb5_34{background:#fff2f0;color:#cf1322;border:1px solid #ffa39e}._info_1lgb5_40{background:#e6f4ff;color:#0958d9;border:1px solid #91caff}._switch_lhu2n_1{position:relative;display:inline-block;width:44px;height:24px}._switch_lhu2n_1 input{opacity:0;width:0;height:0}._slider_lhu2n_14{position:absolute;cursor:pointer;inset:0;background-color:#ccc;border-radius:24px;transition:.2s}._switch_lhu2n_1 input:checked+._slider_lhu2n_14{background-color:#1890ff}._slider_lhu2n_14:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background-color:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px #00000014}._switch_lhu2n_1 input:checked+._slider_lhu2n_14:before{transform:translate(20px)} ');
 
 (function () {
   'use strict';
@@ -136,7 +136,7 @@
   const removeLive2D$2 = { "label": "Remove Live2D Widget", "description": "Hides the animated character widget, usually located in the corner of the screen." };
   const removeClickEffects$2 = { "label": "Remove Click Effects", "description": "Disables colorful words, sparkles, or other effects that appear when you click the mouse." };
   const removeCustomContextMenu$2 = { "label": "Remove Custom Context Menu", "description": "Removes site-specific right-click menus, restoring the browser default menu." };
-  const autoExpandCodeBlocks$2 = { "label": "Auto Expand Code Blocks", "description": "Automatically clicks and expands all collapsed code block areas, supporting common blogs, forums, and more.", "expandCodeBlocks": "Expand code blocks automatically" };
+  const autoExpandCodeBlocks$2 = { "label": "Auto Expand Code Blocks", "description": "Automatically clicks and expands all collapsed code block areas, supporting common blogs, forums, and more.", "expandCodeBlocks": "Expand code blocks automatically", "noSelectors": "No selectors configured for auto-expanding code blocks", "selectorError": "Error with selector '{{selector}}': {{error}}", "noElementsFound": "No matching elements found for auto-expand selectors", "selectorsLabel": "CSS Selectors (one per line)", "selectorsHint": "Enter CSS selectors that match 'expand' buttons for code blocks. Each selector should be on a new line.", "selectorsPlaceholder": "e.g., .expand-button\n.code-expand\n[data-expand]" };
   const features$1 = {
     loadFeatures: loadFeatures$1,
     executeFeatures: executeFeatures$1,
@@ -250,7 +250,7 @@
   const removeLive2D$1 = { "label": "移除Live2D看板娘", "description": "隐藏通常位于屏幕角落的动态卡通人物（看板娘）挂件。" };
   const removeClickEffects$1 = { "label": "移除点击特效", "description": "禁用鼠标点击时出现的彩色文字、爱心、烟花或其他浮夸的点击反馈效果。" };
   const removeCustomContextMenu$1 = { "label": "移除自定义右键菜单", "description": "移除网站自定义的右键菜单，还原浏览器默认菜单。" };
-  const autoExpandCodeBlocks$1 = { "label": "自动展开代码块", "description": "自动点击并展开所有折叠的代码块区域，支持常见博客、论坛等页面。", "expandCodeBlocks": "执行自动展开代码块" };
+  const autoExpandCodeBlocks$1 = { "label": "自动展开代码块", "description": "自动点击并展开所有折叠的代码块区域，支持常见博客、论坛等页面。", "expandCodeBlocks": "执行自动展开代码块", "noSelectors": "未配置自动展开代码块的选择器", "selectorError": "选择器 '{{selector}}' 出错: {{error}}", "noElementsFound": "未找到匹配自动展开选择器的元素", "selectorsLabel": "CSS 选择器（每行一个）", "selectorsHint": "输入匹配代码块'展开'按钮的 CSS 选择器，每个选择器占一行。", "selectorsPlaceholder": "例如：.expand-button\n.code-expand\n[data-expand]" };
   const features = {
     loadFeatures,
     executeFeatures,
@@ -317,9 +317,9 @@
     if (object == null) return "";
     return "" + object;
   };
-  const copy = (a, s, t) => {
+  const copy = (a, s, t2) => {
     a.forEach((m) => {
-      if (s[m]) t[m] = s[m];
+      if (s[m]) t2[m] = s[m];
     });
   };
   const lastOfPathSeparatorRegExp = /###/g;
@@ -2096,14 +2096,14 @@
       });
       const deferred = defer();
       const load = () => {
-        const finish = (err, t) => {
+        const finish = (err, t2) => {
           this.isInitializing = false;
           if (this.isInitialized && !this.initializedStoreOnce) this.logger.warn("init: i18next is already initialized. You should call init just once!");
           this.isInitialized = true;
           if (!this.options.isClone) this.logger.log("initialized", this.options);
           this.emit("initialized", this.options);
-          deferred.resolve(t);
-          callback(err, t);
+          deferred.resolve(t2);
+          callback(err, t2);
         };
         if (this.languages && !this.isInitialized) return finish(null, this.t.bind(this));
         this.changeLanguage(this.options.lng, finish);
@@ -2449,7 +2449,7 @@
   instance.use;
   instance.changeLanguage;
   instance.getFixedT;
-  instance.t;
+  const t = instance.t;
   instance.exists;
   instance.setDefaultNamespace;
   instance.hasLoadedNamespace;
@@ -3085,7 +3085,7 @@
     const memoGetT = useMemoizedT(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
     const getT = () => memoGetT;
     const getNewT = () => alwaysNewT(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
-    const [t, setT] = reactExports.useState(getT);
+    const [t2, setT] = reactExports.useState(getT);
     let joinedNS = namespaces.join();
     if (props.lng) joinedNS = `${props.lng}${joinedNS}`;
     const previousJoinedNS = usePrevious(joinedNS);
@@ -3126,8 +3126,8 @@
         setT(getT);
       }
     }, [i18n, keyPrefix, ready]);
-    const ret = [t, i18n, ready];
-    ret.t = t;
+    const ret = [t2, i18n, ready];
+    ret.t = t2;
     ret.i18n = i18n;
     ret.ready = ready;
     if (ready) return ret;
@@ -3801,6 +3801,7 @@
   const ROOT_ELEMENT_ID = "fuck-annoying-blog-widget-script-root";
   const DEFAULT_NS = "common";
   const COMMON_DOM_TARGETS = [window, document];
+  const BUTTON_SELECTORS = [".show-btn"];
   const localeModules = /* @__PURE__ */ Object.assign({ "./en/common.json": __vite_glob_0_0$1, "./en/config.json": __vite_glob_0_1$1, "./en/features.json": __vite_glob_0_2$1, "./en/services.json": __vite_glob_0_3$1, "./en/utils.json": __vite_glob_0_4$1, "./zh-CN/common.json": __vite_glob_0_5$1, "./zh-CN/config.json": __vite_glob_0_6$1, "./zh-CN/features.json": __vite_glob_0_7$1, "./zh-CN/services.json": __vite_glob_0_8$1, "./zh-CN/utils.json": __vite_glob_0_9 });
   const namespaceSet = /* @__PURE__ */ new Set();
   const resources = {};
@@ -15402,6 +15403,31 @@
   function createLogger(module) {
     return new Logger2({ module });
   }
+  const defaultAutoExpandCodeBlocksConfig = { enabled: false, selectors: BUTTON_SELECTORS };
+  const defaultGlobalConfig = {
+    autoExpandCodeBlocks: defaultAutoExpandCodeBlocksConfig,
+    removeClickEffects: false,
+    disableTitleChange: false,
+    removeBackgroundEffects: false,
+    removeMusicPlayer: false,
+    removeCustomCursor: false,
+    removeLive2D: false,
+    removeCustomContextMenu: false
+  };
+  const siteSpecificDefaults = {
+    // "example.com": {
+    //   removeClickEffects: true
+    // }
+  };
+  const defaultConfigs = {
+    global: defaultGlobalConfig,
+    ...siteSpecificDefaults
+  };
+  const logger$9 = createLogger("config");
+  logger$9.info(instance.t("config:defaultConfigs"), defaultConfigs);
+  var _GM_getValue = /* @__PURE__ */ (() => typeof GM_getValue != "undefined" ? GM_getValue : void 0)();
+  var _GM_registerMenuCommand = /* @__PURE__ */ (() => typeof GM_registerMenuCommand != "undefined" ? GM_registerMenuCommand : void 0)();
+  var _GM_setValue = /* @__PURE__ */ (() => typeof GM_setValue != "undefined" ? GM_setValue : void 0)();
   function isElementInBlacklist(target, customBlacklist = COMMON_DOM_TARGETS) {
     return customBlacklist.includes(target);
   }
@@ -15457,253 +15483,7 @@
       document.addEventListener("DOMContentLoaded", run, { once: true });
     }
   }
-  const logger$9 = createLogger("autoExpandCodeBlocks");
-  const BUTTON_SELECTORS = [".show-btn"];
-  function internalAutoExpandCodeBlocks() {
-    for (const sel of BUTTON_SELECTORS) {
-      const elementNodeList = document.querySelectorAll(sel);
-      if (elementNodeList) {
-        logger$9.info(instance.t("features:autoExpandCodeBlocks.expandCodeBlocks"), elementNodeList);
-        elementNodeList.forEach((btn) => {
-          if (btn instanceof HTMLElement) {
-            btn.click();
-          }
-        });
-        break;
-      }
-    }
-  }
-  function autoExpandCodeBlocks() {
-    onDOMReady(() => {
-      internalAutoExpandCodeBlocks();
-    }, 3e3);
-  }
-  const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    default: autoExpandCodeBlocks
-  }, Symbol.toStringTag, { value: "Module" }));
-  const logger$8 = createLogger("disableTitleChange");
-  const propertyInterceptors$3 = [
-    {
-      targetList: document,
-      propertyName: "onvisibilitychange",
-      setter: () => true,
-      // 直接返回 true 来阻止任何赋值
-      getter: () => void 0
-      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
-    }
-  ];
-  const eventInterceptor$1 = (type) => {
-    const blockedEventType = "visibilitychange";
-    if (type === blockedEventType) {
-      logger$8.info(instance.t("services:eventInterceptor.blocked", { blockedEventType }));
-      return true;
-    }
-    return false;
-  };
-  const eventInterceptorPayload$1 = {
-    eventInterceptor: eventInterceptor$1
-  };
-  const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    eventInterceptorPayload: eventInterceptorPayload$1,
-    propertyInterceptors: propertyInterceptors$3
-  }, Symbol.toStringTag, { value: "Module" }));
-  const propertyInterceptors$2 = [
-    {
-      targetList: window,
-      propertyName: "startSakura",
-      setter: () => true,
-      // 直接返回 true 来阻止任何赋值
-      getter: () => void 0
-      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
-    }
-  ];
-  function removeSakuraEffect() {
-    const ELEMENT_ID = "canvas_sakura";
-    watchAndDestroy(`#${ELEMENT_ID}`);
-  }
-  function removeBackgroundEffects() {
-    removeSakuraEffect();
-  }
-  const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    default: removeBackgroundEffects,
-    propertyInterceptors: propertyInterceptors$2
-  }, Symbol.toStringTag, { value: "Module" }));
-  const logger$7 = createLogger("removeClickEffects");
-  const eventInterceptor = (type) => {
-    const blockedEventType = "click";
-    if (type === blockedEventType) {
-      logger$7.info(instance.t("services:eventInterceptor.blocked", { blockedEventType }));
-      return true;
-    }
-    return false;
-  };
-  const propertyInterceptors$1 = [
-    {
-      targetList: COMMON_DOM_TARGETS,
-      propertyName: "onclick",
-      setter: () => true,
-      // 直接返回 true 来阻止任何赋值
-      getter: () => void 0
-      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
-    }
-  ];
-  const eventInterceptorPayload = {
-    eventInterceptorTargetList: COMMON_DOM_TARGETS,
-    eventInterceptor
-  };
-  function removeClickEffects() {
-  }
-  const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    default: removeClickEffects,
-    eventInterceptorPayload,
-    propertyInterceptors: propertyInterceptors$1
-  }, Symbol.toStringTag, { value: "Module" }));
-  const propertyInterceptors = [
-    {
-      targetList: document,
-      propertyName: "oncontextmenu",
-      setter: () => true,
-      // 直接返回 true 来阻止任何赋值
-      getter: () => void 0
-      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
-    },
-    {
-      targetList: window,
-      propertyName: "oncontextmenu",
-      setter: () => true,
-      // 直接返回 true 来阻止任何赋值
-      getter: () => void 0
-      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
-    }
-  ];
-  function removeCustomContextMenu() {
-  }
-  const __vite_glob_0_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    default: removeCustomContextMenu,
-    propertyInterceptors
-  }, Symbol.toStringTag, { value: "Module" }));
-  function removeCustomCursor() {
-    const ELEMENT_ID = "cursor";
-    watchAndDestroy(`#${ELEMENT_ID}`);
-    const style = document.createElement("style");
-    style.textContent = `
-        * {
-            cursor: default !important;
-        }
-    `;
-    document.documentElement.appendChild(style);
-  }
-  const __vite_glob_0_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    default: removeCustomCursor
-  }, Symbol.toStringTag, { value: "Module" }));
-  function removeLive2D() {
-    const ELEMENT_ID = "live2d-widget";
-    watchAndDestroy(`#${ELEMENT_ID}`);
-  }
-  const __vite_glob_0_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    default: removeLive2D
-  }, Symbol.toStringTag, { value: "Module" }));
-  const logger$6 = createLogger("removeMusicPlayer");
-  function pauseMetingMusicPlayer(element) {
-    const metingPlayerPauseButton = element || document.querySelector(".aplayer-pause");
-    logger$6.info("features:removeMusicPlayer.pauseBtn", { btn: !!metingPlayerPauseButton });
-    if (metingPlayerPauseButton) {
-      logger$6.info("features:removeMusicPlayer.paused");
-      metingPlayerPauseButton?.click();
-    }
-  }
-  function removeMetingMusicPlayer() {
-    const ELEMENT_TAG = "meting-js .aplayer-pause";
-    onDOMReady(() => {
-      watchAndDestroy(`${ELEMENT_TAG}`, {
-        beforeFound: (element) => {
-          pauseMetingMusicPlayer(element);
-        },
-        keep: true
-      });
-    });
-  }
-  function removeMusicPlayer() {
-    removeMetingMusicPlayer();
-  }
-  const __vite_glob_0_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    default: removeMusicPlayer
-  }, Symbol.toStringTag, { value: "Module" }));
-  const featureRegistry = {};
-  const featureModules$1 = /* @__PURE__ */ Object.assign({
-    "./autoExpandCodeBlocks.ts": __vite_glob_0_0,
-    "./disableTitleChange.ts": __vite_glob_0_1,
-    "./removeBackgroundEffects.ts": __vite_glob_0_3,
-    "./removeClickEffects.ts": __vite_glob_0_4,
-    "./removeCustomContextMenu.ts": __vite_glob_0_5,
-    "./removeCustomCursor.ts": __vite_glob_0_6,
-    "./removeLive2D.ts": __vite_glob_0_7,
-    "./removeMusicPlayer.ts": __vite_glob_0_8
-  });
-  for (const path2 in featureModules$1) {
-    const match = path2.match(/\/(\w+)\.ts$/);
-    if (match) {
-      const featureName = match[1];
-      if (featureName !== "index") {
-        featureRegistry[featureName] = featureModules$1[path2].default;
-      }
-    }
-  }
-  const logger$5 = createLogger("featureRegistry");
-  logger$5.info(instance.t("services:featureRegistry.load"), Object.keys(featureRegistry));
-  const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    featureRegistry
-  }, Symbol.toStringTag, { value: "Module" }));
-  const featureModules = /* @__PURE__ */ Object.assign({
-    "../features/autoExpandCodeBlocks.ts": __vite_glob_0_0,
-    "../features/disableTitleChange.ts": __vite_glob_0_1,
-    "../features/index.ts": __vite_glob_0_2,
-    "../features/removeBackgroundEffects.ts": __vite_glob_0_3,
-    "../features/removeClickEffects.ts": __vite_glob_0_4,
-    "../features/removeCustomContextMenu.ts": __vite_glob_0_5,
-    "../features/removeCustomCursor.ts": __vite_glob_0_6,
-    "../features/removeLive2D.ts": __vite_glob_0_7,
-    "../features/removeMusicPlayer.ts": __vite_glob_0_8
-  });
-  const defaultGlobalConfig = {};
-  for (const path2 in featureModules) {
-    const match = path2.match(/\/(\w+)\.ts$/);
-    if (match) {
-      const featureName = match[1];
-      if (featureName !== "index") {
-        defaultGlobalConfig[featureName] = false;
-      }
-    }
-  }
-  const siteSpecificDefaults = {
-    // 网站预设
-    // "example.com": {
-    //     disableTitleChange: true,
-    //     removeBackgroundEffects: true,
-    //     removeMusicPlayer: true,
-    //     removeCustomCursor: true,
-    //     removeLive2D: true,
-    //     removeClickEffects: true
-    // }
-  };
-  const defaultConfigs = {
-    global: defaultGlobalConfig,
-    ...siteSpecificDefaults
-  };
-  const logger$4 = createLogger("config");
-  logger$4.info(instance.t("config:defaultConfigs"), defaultConfigs);
-  var _GM_getValue = /* @__PURE__ */ (() => typeof GM_getValue != "undefined" ? GM_getValue : void 0)();
-  var _GM_registerMenuCommand = /* @__PURE__ */ (() => typeof GM_registerMenuCommand != "undefined" ? GM_registerMenuCommand : void 0)();
-  var _GM_setValue = /* @__PURE__ */ (() => typeof GM_setValue != "undefined" ? GM_setValue : void 0)();
+  const deepmergeNoArray = deepmergeCustom({ mergeArrays: false });
   function getAllConfigs() {
     return _GM_getValue(STORAGE_KEY, defaultConfigs);
   }
@@ -15711,196 +15491,40 @@
     const allStoredConfigs = getAllConfigs();
     const globalConfig = allStoredConfigs["global"] || {};
     const hostConfig = allStoredConfigs[window.location.hostname] || {};
-    return { ...defaultConfigs.global, ...globalConfig, ...hostConfig };
+    return deepmergeNoArray(defaultConfigs.global, globalConfig, hostConfig);
   }
   function saveConfigForCurrentSite(newConfig) {
     const allStoredConfigs = getAllConfigs();
-    allStoredConfigs[window.location.hostname] = {
-      ...allStoredConfigs[window.location.hostname],
-      ...newConfig
-    };
+    const oldHostConfig = allStoredConfigs[window.location.hostname] || {};
+    allStoredConfigs[window.location.hostname] = deepmergeNoArray(oldHostConfig, newConfig);
     _GM_setValue(STORAGE_KEY, allStoredConfigs);
   }
   function saveGlobalConfig(newConfig) {
     const allStoredConfigs = getAllConfigs();
-    allStoredConfigs["global"] = {
-      ...allStoredConfigs["global"],
-      ...newConfig
-    };
+    const oldGlobalConfig = allStoredConfigs["global"] || {};
+    allStoredConfigs["global"] = deepmergeNoArray(oldGlobalConfig, newConfig);
     _GM_setValue(STORAGE_KEY, allStoredConfigs);
   }
-  const registrations$1 = [];
-  let isInstalled$1 = false;
-  const logger$3 = createLogger("eventInterceptorService");
-  function registerEventInterceptor(registration) {
-    registrations$1.push(registration);
-  }
-  function installEventInterceptor(activeConfig2) {
-    if (isInstalled$1) {
-      return;
-    }
-    logger$3.info(instance.t("services:eventInterceptor.install"), activeConfig2);
-    const originalAddEventListener = EventTarget.prototype.addEventListener;
-    EventTarget.prototype.addEventListener = function(type, listener, options2) {
-      for (const reg of registrations$1) {
-        if (activeConfig2[reg.featureName]) {
-          if (reg.eventInterceptor && isElementInBlacklist(this, reg.eventInterceptorTargetList) && reg.eventInterceptor(type, listener, options2)) {
-            return;
-          }
-        }
-      }
-      return originalAddEventListener.call(this, type, listener, options2);
-    };
-    isInstalled$1 = true;
-    logger$3.info(instance.t("services:eventInterceptor.installSuccess"));
-  }
-  const registrations = [];
-  let isInstalled = false;
-  const interceptedProperties = /* @__PURE__ */ new WeakMap();
-  const logger$2 = createLogger("propertyInterceptorService");
-  function registerPropertyInterceptor(registration) {
-    registrations.push(registration);
-  }
-  function groupRegistrations(registrations2) {
-    const grouped = /* @__PURE__ */ new Map();
-    for (const reg of registrations2) {
-      const targets = Array.isArray(reg.targetList) ? reg.targetList : [reg.targetList];
-      for (const target of targets) {
-        let propertyMap = grouped.get(target);
-        if (!propertyMap) {
-          propertyMap = /* @__PURE__ */ new Map();
-          grouped.set(target, propertyMap);
-        }
-        let regs = propertyMap.get(reg.propertyName);
-        if (!regs) {
-          regs = [];
-          propertyMap.set(reg.propertyName, regs);
-        }
-        regs.push(reg);
-      }
-    }
-    return grouped;
-  }
-  function createInterceptorSetter(ruleList, originalDescriptor, activeConfig2, propertyName) {
-    return function setter(value) {
-      for (const rule of ruleList) {
-        if (activeConfig2[rule.featureName] && rule.setter) {
-          if (rule.setter.call(this, value)) {
-            logger$2.info(
-              instance.t("services:propertyInterceptor.blocked", {
-                propertyName,
-                featureName: rule.featureName
-              })
-            );
-            return;
-          }
-        }
-      }
-      originalDescriptor?.set?.call(this, value);
-    };
-  }
-  function createInterceptorGetter(ruleList, originalDescriptor, activeConfig2, propertyName) {
-    return function getter() {
-      for (const rule of ruleList) {
-        if (activeConfig2[rule.featureName] && rule.getter) {
-          const result = rule.getter.call(this);
-          if (result !== void 0) {
-            logger$2.info(
-              instance.t("services:propertyInterceptor.getter.blocked", {
-                propertyName,
-                featureName: rule.featureName
-              })
-            );
-            return result;
-          }
-        }
-      }
-      return originalDescriptor?.get?.call(this);
-    };
-  }
-  function installPropertyInterceptor(activeConfig2) {
-    if (isInstalled) return;
-    logger$2.info(instance.t("services:propertyInterceptor.install"));
-    const groupedRegistrations = groupRegistrations(registrations);
-    for (const [target, propertyMap] of groupedRegistrations.entries()) {
-      if (!interceptedProperties.has(target)) {
-        interceptedProperties.set(target, /* @__PURE__ */ new Set());
-      }
-      const interceptedSet = interceptedProperties.get(target);
-      for (const [propertyName, ruleList] of propertyMap.entries()) {
-        if (interceptedSet.has(propertyName)) continue;
-        const originalDescriptor = Object.getOwnPropertyDescriptor(target, propertyName);
-        if (originalDescriptor?.configurable === false) {
-          logger$2.warn(
-            instance.t("services:propertyInterceptor.notConfigurable", {
-              propertyName,
-              targetObject: target
-            })
-          );
-          continue;
-        }
-        Object.defineProperty(target, propertyName, {
-          configurable: true,
-          // 建议为 true，以便于测试或未来的移除操作
-          set: createInterceptorSetter(ruleList, originalDescriptor, activeConfig2, propertyName),
-          get: createInterceptorGetter(ruleList, originalDescriptor, activeConfig2, propertyName)
-        });
-        interceptedSet.add(propertyName);
-      }
-    }
-    isInstalled = true;
-    logger$2.info(instance.t("services:propertyInterceptor.installSuccess"));
-  }
-  const featureKeys = [];
-  const logger$1 = createLogger("features");
-  const modules = /* @__PURE__ */ Object.assign({ "../features/autoExpandCodeBlocks.ts": __vite_glob_0_0, "../features/disableTitleChange.ts": __vite_glob_0_1, "../features/index.ts": __vite_glob_0_2, "../features/removeBackgroundEffects.ts": __vite_glob_0_3, "../features/removeClickEffects.ts": __vite_glob_0_4, "../features/removeCustomContextMenu.ts": __vite_glob_0_5, "../features/removeCustomCursor.ts": __vite_glob_0_6, "../features/removeLive2D.ts": __vite_glob_0_7, "../features/removeMusicPlayer.ts": __vite_glob_0_8 });
-  for (const path2 in modules) {
-    const module = modules[path2];
-    const keyMatch = path2.match(/\/(\w+)\.ts$/);
-    if (keyMatch && keyMatch[1] !== "index") {
-      const featureName = keyMatch[1];
-      featureKeys.push(featureName);
-      module.default;
-      if (module.eventInterceptorPayload) {
-        logger$1.info(
-          instance.t("features:loadFeatures.eventInterceptorFound", { featureName })
-        );
-        registerEventInterceptor({
-          featureName,
-          ...module.eventInterceptorPayload
-        });
-      }
-      if (module.propertyInterceptors) {
-        logger$1.info(
-          instance.t("features:loadFeatures.propertyInterceptorsFound", { featureName })
-        );
-        for (const payload of module.propertyInterceptors) {
-          registerPropertyInterceptor({
-            featureName,
-            ...payload
-          });
-        }
-      }
-    }
-  }
-  const mask = "_mask_1tbfd_1";
-  const panel = "_panel_1tbfd_14";
-  const headerBar = "_headerBar_1tbfd_24";
-  const titleRow = "_titleRow_1tbfd_32";
-  const title$1 = "_title_1tbfd_32";
-  const version = "_version_1tbfd_47";
-  const tabs = "_tabs_1tbfd_57";
-  const tabBtn = "_tabBtn_1tbfd_62";
-  const tabBtnActive = "_tabBtnActive_1tbfd_75";
-  const tabBtnLeft = "_tabBtnLeft_1tbfd_81";
-  const tabBtnRight = "_tabBtnRight_1tbfd_86";
-  const featureList = "_featureList_1tbfd_91";
-  const featureItemRow = "_featureItemRow_1tbfd_99";
-  const featureItemLabel = "_featureItemLabel_1tbfd_107";
-  const featureItemControl = "_featureItemControl_1tbfd_116";
-  const saveBtn = "_saveBtn_1tbfd_176";
-  const closeBtn = "_closeBtn_1tbfd_190";
-  const footerBar = "_footerBar_1tbfd_201";
+  const mask = "_mask_7wjdf_1";
+  const panel = "_panel_7wjdf_14";
+  const headerBar = "_headerBar_7wjdf_24";
+  const titleRow = "_titleRow_7wjdf_32";
+  const title$1 = "_title_7wjdf_32";
+  const version = "_version_7wjdf_47";
+  const tabs = "_tabs_7wjdf_57";
+  const tabBtn = "_tabBtn_7wjdf_62";
+  const tabBtnActive = "_tabBtnActive_7wjdf_77";
+  const featureList = "_featureList_7wjdf_83";
+  const featureItem = "_featureItem_7wjdf_87";
+  const featureItemRow = "_featureItemRow_7wjdf_91";
+  const featureItemLabel = "_featureItemLabel_7wjdf_99";
+  const featureItemControl = "_featureItemControl_7wjdf_108";
+  const saveBtn = "_saveBtn_7wjdf_168";
+  const closeBtn = "_closeBtn_7wjdf_182";
+  const footerBar = "_footerBar_7wjdf_193";
+  const selectorContainer = "_selectorContainer_7wjdf_203";
+  const selectorLabel = "_selectorLabel_7wjdf_209";
+  const selectorInput = "_selectorInput_7wjdf_217";
   const styles$3 = {
     mask,
     panel,
@@ -15911,17 +15535,19 @@
     tabs,
     tabBtn,
     tabBtnActive,
-    tabBtnLeft,
-    tabBtnRight,
     featureList,
+    featureItem,
     featureItemRow,
     featureItemLabel,
     featureItemControl,
     saveBtn,
     closeBtn,
-    footerBar
+    footerBar,
+    selectorContainer,
+    selectorLabel,
+    selectorInput
   };
-  const styleText$3 = '._mask_1tbfd_1{position:fixed;top:0;left:0;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#00000026;z-index:999}._panel_1tbfd_14{background:#fff;padding:24px;border-radius:8px;width:360px;box-shadow:0 2px 16px #0000002e;font-family:sans-serif;position:relative}._headerBar_1tbfd_24{display:flex;justify-content:flex-end;align-items:center;height:32px;margin-bottom:2px}._titleRow_1tbfd_32{display:flex;align-items:center;justify-content:center;margin-bottom:22px;position:relative}._title_1tbfd_32{text-align:center;flex:none;line-height:1.1;margin:0}._version_1tbfd_47{margin-left:8px;font-size:12px;color:#888;font-weight:400;line-height:1;position:relative;bottom:-2px}._tabs_1tbfd_57{display:flex;margin-bottom:20px}._tabBtn_1tbfd_62{flex:1;padding:8px;background:none;border:none;outline:none;cursor:pointer;border-bottom:1.5px solid #eee;font-weight:400;color:#333;transition:color .2s,border-bottom .2s}._tabBtnActive_1tbfd_75{color:#1677ff;font-weight:700;border-bottom:1.5px solid #1677ff}._tabBtnLeft_1tbfd_81{border-top-left-radius:6px;border-top-right-radius:0}._tabBtnRight_1tbfd_86{border-top-left-radius:0;border-top-right-radius:6px}._featureList_1tbfd_91{min-height:220px}._featureItem_1tbfd_95{margin-bottom:12px}._featureItemRow_1tbfd_99{display:flex;align-items:center;justify-content:space-between;padding:2px 0 2px 2px;min-height:36px}._featureItemLabel_1tbfd_107{flex:1;font-size:15px;color:#222;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}._featureItemControl_1tbfd_116{display:flex;align-items:center;gap:12px}._select_1tbfd_122{padding:3px 8px;font-size:14px;border-radius:4px;border:1px solid #d9d9d9;margin-right:8px}._switch_1tbfd_130{position:relative;display:inline-block;width:44px;height:24px}._switch_1tbfd_130 input{opacity:0;width:0;height:0}._slider_1tbfd_143{position:absolute;cursor:pointer;inset:0;background-color:#ccc;border-radius:24px;transition:.2s}._switch_1tbfd_130 input:checked+._slider_1tbfd_143{background-color:#1890ff}._slider_1tbfd_143:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background-color:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px #00000014}._switch_1tbfd_130 input:checked+._slider_1tbfd_143:before{transform:translate(20px)}._saveBtn_1tbfd_176{width:100%;padding:10px 0;background:#1677ff;color:#fff;border:none;border-radius:4px;font-weight:700;font-size:16px;margin-top:16px;cursor:pointer;letter-spacing:1px}._closeBtn_1tbfd_190{position:absolute;top:16px;right:16px;background:none;border:none;outline:none;cursor:pointer;font-size:22px}._footerBar_1tbfd_201{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:12px;border-top:1.5px solid #eee}._footerBar_1tbfd_201 button{margin-left:8px;padding:2px 12px}._footerBar_1tbfd_201>div{display:flex;flex:1;justify-content:flex-end}';
+  const styleText$3 = '._mask_7wjdf_1{position:fixed;top:0;left:0;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#00000026;z-index:999}._panel_7wjdf_14{background:#fff;padding:24px;border-radius:8px;width:360px;box-shadow:0 2px 16px #0000002e;font-family:sans-serif;position:relative}._headerBar_7wjdf_24{display:flex;justify-content:flex-end;align-items:center;height:32px;margin-bottom:2px}._titleRow_7wjdf_32{display:flex;align-items:center;justify-content:center;margin-bottom:22px;position:relative}._title_7wjdf_32{text-align:center;flex:none;line-height:1.1;margin:0}._version_7wjdf_47{margin-left:8px;font-size:12px;color:#888;font-weight:400;line-height:1;position:relative;bottom:-2px}._tabs_7wjdf_57{display:flex;margin-bottom:20px}._tabBtn_7wjdf_62{flex:1;padding:8px;background:none;border:none;outline:none;cursor:pointer;border-bottom:1.5px solid #eee;font-weight:400;color:#333;transition:color .2s,border-bottom .2s;border-top-left-radius:6px;border-top-right-radius:6px}._tabBtnActive_7wjdf_77{color:#1677ff;font-weight:700;border-bottom:1.5px solid #1677ff}._featureList_7wjdf_83{min-height:220px}._featureItem_7wjdf_87{margin-bottom:12px}._featureItemRow_7wjdf_91{display:flex;align-items:center;justify-content:space-between;padding:2px 0 2px 2px;min-height:36px}._featureItemLabel_7wjdf_99{flex:1;font-size:15px;color:#222;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}._featureItemControl_7wjdf_108{display:flex;align-items:center;gap:12px}._select_7wjdf_114{padding:3px 8px;font-size:14px;border-radius:4px;border:1px solid #d9d9d9;margin-right:8px}._switch_7wjdf_122{position:relative;display:inline-block;width:44px;height:24px}._switch_7wjdf_122 input{opacity:0;width:0;height:0}._slider_7wjdf_135{position:absolute;cursor:pointer;inset:0;background-color:#ccc;border-radius:24px;transition:.2s}._switch_7wjdf_122 input:checked+._slider_7wjdf_135{background-color:#1890ff}._slider_7wjdf_135:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background-color:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px #00000014}._switch_7wjdf_122 input:checked+._slider_7wjdf_135:before{transform:translate(20px)}._saveBtn_7wjdf_168{width:100%;padding:10px 0;background:#1677ff;color:#fff;border:none;border-radius:4px;font-weight:700;font-size:16px;margin-top:16px;cursor:pointer;letter-spacing:1px}._closeBtn_7wjdf_182{position:absolute;top:16px;right:16px;background:none;border:none;outline:none;cursor:pointer;font-size:22px}._footerBar_7wjdf_193{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:12px;border-top:1.5px solid #eee}._selectorContainer_7wjdf_203{margin-top:12px;padding:10px 0 0 4px;border-top:1px dashed #e8e8e8}._selectorLabel_7wjdf_209{display:block;font-size:13px;color:#666;margin-bottom:6px;font-weight:500}._selectorInput_7wjdf_217{width:100%;padding:8px 10px;border:1px solid #d9d9d9;border-radius:4px;font-family:monospace;font-size:13px;line-height:1.5;resize:vertical;min-height:80px;margin-bottom:6px}._selectorInput_7wjdf_217:focus{border-color:#40a9ff;box-shadow:0 0 0 2px #1890ff33;outline:none}._selectorHint_7wjdf_236{font-size:12px;color:#999;line-height:1.4;margin-top:4px}._footerBar_7wjdf_193 button{margin-left:8px;padding:2px 12px}._footerBar_7wjdf_193>div{display:flex;flex:1;justify-content:flex-end}';
   const overlay = "_overlay_v9hyx_1";
   const modal = "_modal_v9hyx_14";
   const title = "_title_v9hyx_36";
@@ -16060,6 +15686,380 @@
       }
     }, duration + 400);
   }
+  const logger$8 = createLogger("autoExpandCodeBlocks");
+  const featureName = "autoExpandCodeBlocks";
+  function internalAutoExpandCodeBlocks(config2) {
+    const selectors = config2.selectors || [];
+    if (selectors.length === 0) {
+      logger$8.warn(instance.t("features:autoExpandCodeBlocks.noSelectors"));
+      return;
+    }
+    let hasExpanded = false;
+    for (const sel of selectors) {
+      try {
+        const elements = document.querySelectorAll(sel);
+        if (elements && elements.length > 0) {
+          logger$8.info(instance.t("features:autoExpandCodeBlocks.expandCodeBlocks"), {
+            selector: sel,
+            count: elements.length
+          });
+          elements.forEach((btn) => {
+            if (btn instanceof HTMLElement) {
+              btn.click();
+              hasExpanded = true;
+            }
+          });
+        }
+      } catch (error2) {
+        logger$8.error(
+          instance.t("features:autoExpandCodeBlocks.selectorError", {
+            selector: sel,
+            error: error2
+          })
+        );
+      }
+    }
+    if (!hasExpanded) {
+      logger$8.warn(instance.t("features:autoExpandCodeBlocks.noElementsFound"));
+    }
+  }
+  function autoExpandCodeBlocks(config2) {
+    if (!config2.enabled) {
+      return;
+    }
+    onDOMReady(() => {
+      internalAutoExpandCodeBlocks(config2);
+    }, 3e3);
+  }
+  const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: autoExpandCodeBlocks,
+    featureName
+  }, Symbol.toStringTag, { value: "Module" }));
+  const logger$7 = createLogger("disableTitleChange");
+  const propertyInterceptors$3 = [
+    {
+      targetList: document,
+      propertyName: "onvisibilitychange",
+      setter: () => true,
+      // 直接返回 true 来阻止任何赋值
+      getter: () => void 0
+      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
+    }
+  ];
+  const eventInterceptor$1 = (type) => {
+    const blockedEventType = "visibilitychange";
+    if (type === blockedEventType) {
+      logger$7.info(instance.t("services:eventInterceptor.blocked", { blockedEventType }));
+      return true;
+    }
+    return false;
+  };
+  const eventInterceptorPayload$1 = {
+    eventInterceptor: eventInterceptor$1
+  };
+  const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    eventInterceptorPayload: eventInterceptorPayload$1,
+    propertyInterceptors: propertyInterceptors$3
+  }, Symbol.toStringTag, { value: "Module" }));
+  const propertyInterceptors$2 = [
+    {
+      targetList: window,
+      propertyName: "startSakura",
+      setter: () => true,
+      // 直接返回 true 来阻止任何赋值
+      getter: () => void 0
+      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
+    }
+  ];
+  function removeSakuraEffect() {
+    const ELEMENT_ID = "canvas_sakura";
+    watchAndDestroy(`#${ELEMENT_ID}`);
+  }
+  function removeBackgroundEffects() {
+    removeSakuraEffect();
+  }
+  const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: removeBackgroundEffects,
+    propertyInterceptors: propertyInterceptors$2
+  }, Symbol.toStringTag, { value: "Module" }));
+  const logger$6 = createLogger("removeClickEffects");
+  const eventInterceptor = (type) => {
+    const blockedEventType = "click";
+    if (type === blockedEventType) {
+      logger$6.info(instance.t("services:eventInterceptor.blocked", { blockedEventType }));
+      return true;
+    }
+    return false;
+  };
+  const propertyInterceptors$1 = [
+    {
+      targetList: COMMON_DOM_TARGETS,
+      propertyName: "onclick",
+      setter: () => true,
+      // 直接返回 true 来阻止任何赋值
+      getter: () => void 0
+      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
+    }
+  ];
+  const eventInterceptorPayload = {
+    eventInterceptorTargetList: COMMON_DOM_TARGETS,
+    eventInterceptor
+  };
+  function removeClickEffects() {
+  }
+  const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: removeClickEffects,
+    eventInterceptorPayload,
+    propertyInterceptors: propertyInterceptors$1
+  }, Symbol.toStringTag, { value: "Module" }));
+  const propertyInterceptors = [
+    {
+      targetList: document,
+      propertyName: "oncontextmenu",
+      setter: () => true,
+      // 直接返回 true 来阻止任何赋值
+      getter: () => void 0
+      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
+    },
+    {
+      targetList: window,
+      propertyName: "oncontextmenu",
+      setter: () => true,
+      // 直接返回 true 来阻止任何赋值
+      getter: () => void 0
+      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
+    }
+  ];
+  function removeCustomContextMenu() {
+  }
+  const __vite_glob_0_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: removeCustomContextMenu,
+    propertyInterceptors
+  }, Symbol.toStringTag, { value: "Module" }));
+  function removeCustomCursor() {
+    const ELEMENT_ID = "cursor";
+    watchAndDestroy(`#${ELEMENT_ID}`);
+    const style = document.createElement("style");
+    style.textContent = `
+        * {
+            cursor: default !important;
+        }
+    `;
+    document.documentElement.appendChild(style);
+  }
+  const __vite_glob_0_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: removeCustomCursor
+  }, Symbol.toStringTag, { value: "Module" }));
+  function removeLive2D() {
+    const ELEMENT_ID = "live2d-widget";
+    watchAndDestroy(`#${ELEMENT_ID}`);
+  }
+  const __vite_glob_0_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: removeLive2D
+  }, Symbol.toStringTag, { value: "Module" }));
+  const logger$5 = createLogger("removeMusicPlayer");
+  function pauseMetingMusicPlayer(element) {
+    const metingPlayerPauseButton = element || document.querySelector(".aplayer-pause");
+    logger$5.info("features:removeMusicPlayer.pauseBtn", { btn: !!metingPlayerPauseButton });
+    if (metingPlayerPauseButton) {
+      logger$5.info("features:removeMusicPlayer.paused");
+      metingPlayerPauseButton?.click();
+    }
+  }
+  function removeMetingMusicPlayer() {
+    const ELEMENT_TAG = "meting-js .aplayer-pause";
+    onDOMReady(() => {
+      watchAndDestroy(`${ELEMENT_TAG}`, {
+        beforeFound: (element) => {
+          pauseMetingMusicPlayer(element);
+        },
+        keep: true
+      });
+    });
+  }
+  function removeMusicPlayer() {
+    removeMetingMusicPlayer();
+  }
+  const __vite_glob_0_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: removeMusicPlayer
+  }, Symbol.toStringTag, { value: "Module" }));
+  const featureRegistry = {};
+  const featureModules = /* @__PURE__ */ Object.assign({
+    "./autoExpandCodeBlocks.ts": __vite_glob_0_0,
+    "./disableTitleChange.ts": __vite_glob_0_1,
+    "./removeBackgroundEffects.ts": __vite_glob_0_3,
+    "./removeClickEffects.ts": __vite_glob_0_4,
+    "./removeCustomContextMenu.ts": __vite_glob_0_5,
+    "./removeCustomCursor.ts": __vite_glob_0_6,
+    "./removeLive2D.ts": __vite_glob_0_7,
+    "./removeMusicPlayer.ts": __vite_glob_0_8
+  });
+  for (const path2 in featureModules) {
+    const match = path2.match(/\/(\w+)\.ts$/);
+    if (match) {
+      const featureName2 = match[1];
+      if (featureName2 !== "index") {
+        featureRegistry[featureName2] = featureModules[path2].default;
+      }
+    }
+  }
+  const logger$4 = createLogger("featureRegistry");
+  logger$4.info(instance.t("services:featureRegistry.load"), Object.keys(featureRegistry));
+  const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    featureRegistry
+  }, Symbol.toStringTag, { value: "Module" }));
+  const registrations$1 = [];
+  let isInstalled$1 = false;
+  const logger$3 = createLogger("eventInterceptorService");
+  function registerEventInterceptor(registration) {
+    registrations$1.push(registration);
+  }
+  function installEventInterceptor(activeConfig2) {
+    if (isInstalled$1) {
+      return;
+    }
+    logger$3.info(instance.t("services:eventInterceptor.install"), activeConfig2);
+    const originalAddEventListener = EventTarget.prototype.addEventListener;
+    EventTarget.prototype.addEventListener = function(type, listener, options2) {
+      for (const reg of registrations$1) {
+        if (activeConfig2[reg.featureName]) {
+          if (reg.eventInterceptor && isElementInBlacklist(this, reg.eventInterceptorTargetList) && reg.eventInterceptor(type, listener, options2)) {
+            return;
+          }
+        }
+      }
+      return originalAddEventListener.call(this, type, listener, options2);
+    };
+    isInstalled$1 = true;
+    logger$3.info(instance.t("services:eventInterceptor.installSuccess"));
+  }
+  const registrations = [];
+  let isInstalled = false;
+  const interceptedProperties = /* @__PURE__ */ new WeakMap();
+  const logger$2 = createLogger("propertyInterceptorService");
+  function registerPropertyInterceptor(registration) {
+    registrations.push(registration);
+  }
+  function groupRegistrations(registrations2) {
+    const grouped = /* @__PURE__ */ new Map();
+    for (const reg of registrations2) {
+      const targets = Array.isArray(reg.targetList) ? reg.targetList : [reg.targetList];
+      for (const target of targets) {
+        let propertyMap = grouped.get(target);
+        if (!propertyMap) {
+          propertyMap = /* @__PURE__ */ new Map();
+          grouped.set(target, propertyMap);
+        }
+        let regs = propertyMap.get(reg.propertyName);
+        if (!regs) {
+          regs = [];
+          propertyMap.set(reg.propertyName, regs);
+        }
+        regs.push(reg);
+      }
+    }
+    return grouped;
+  }
+  function createInterceptorSetter(ruleList, originalDescriptor, activeConfig2, propertyName) {
+    return function setter(value) {
+      for (const rule of ruleList) {
+        if (activeConfig2[rule.featureName] && rule.setter) {
+          if (rule.setter.call(this, value)) {
+            logger$2.info(
+              instance.t("services:propertyInterceptor.blocked", {
+                propertyName,
+                featureName: rule.featureName
+              })
+            );
+            return;
+          }
+        }
+      }
+      originalDescriptor?.set?.call(this, value);
+    };
+  }
+  function createInterceptorGetter(ruleList, originalDescriptor, activeConfig2, propertyName) {
+    return function getter() {
+      for (const rule of ruleList) {
+        if (activeConfig2[rule.featureName] && rule.getter) {
+          const result = rule.getter.call(this);
+          if (result !== void 0) {
+            logger$2.info(
+              instance.t("services:propertyInterceptor.getter.blocked", {
+                propertyName,
+                featureName: rule.featureName
+              })
+            );
+            return result;
+          }
+        }
+      }
+      return originalDescriptor?.get?.call(this);
+    };
+  }
+  function installPropertyInterceptor(activeConfig2) {
+    if (isInstalled) return;
+    logger$2.info(instance.t("services:propertyInterceptor.install"));
+    const groupedRegistrations = groupRegistrations(registrations);
+    for (const [target, propertyMap] of groupedRegistrations.entries()) {
+      if (!interceptedProperties.has(target)) {
+        interceptedProperties.set(target, /* @__PURE__ */ new Set());
+      }
+      const interceptedSet = interceptedProperties.get(target);
+      for (const [propertyName, ruleList] of propertyMap.entries()) {
+        if (interceptedSet.has(propertyName)) continue;
+        const originalDescriptor = Object.getOwnPropertyDescriptor(target, propertyName);
+        if (originalDescriptor?.configurable === false) {
+          logger$2.warn(
+            instance.t("services:propertyInterceptor.notConfigurable", {
+              propertyName,
+              targetObject: target
+            })
+          );
+          continue;
+        }
+        Object.defineProperty(target, propertyName, {
+          configurable: true,
+          // 建议为 true，以便于测试或未来的移除操作
+          set: createInterceptorSetter(ruleList, originalDescriptor, activeConfig2, propertyName),
+          get: createInterceptorGetter(ruleList, originalDescriptor, activeConfig2, propertyName)
+        });
+        interceptedSet.add(propertyName);
+      }
+    }
+    isInstalled = true;
+    logger$2.info(instance.t("services:propertyInterceptor.installSuccess"));
+  }
+  const featureKeys = Object.keys(defaultGlobalConfig);
+  const logger$1 = createLogger("features");
+  const modules = /* @__PURE__ */ Object.assign({ "../features/autoExpandCodeBlocks.ts": __vite_glob_0_0, "../features/disableTitleChange.ts": __vite_glob_0_1, "../features/index.ts": __vite_glob_0_2, "../features/removeBackgroundEffects.ts": __vite_glob_0_3, "../features/removeClickEffects.ts": __vite_glob_0_4, "../features/removeCustomContextMenu.ts": __vite_glob_0_5, "../features/removeCustomCursor.ts": __vite_glob_0_6, "../features/removeLive2D.ts": __vite_glob_0_7, "../features/removeMusicPlayer.ts": __vite_glob_0_8 });
+  for (const path2 in modules) {
+    const module = modules[path2];
+    const keyMatch = path2.match(/\/(\w+)\.ts$/);
+    if (keyMatch && featureKeys.includes(keyMatch[1])) {
+      const featureName2 = keyMatch[1];
+      module.default;
+      if (module.eventInterceptorPayload) {
+        logger$1.info(instance.t("features:loadFeatures.eventInterceptorFound", { featureName: featureName2 }));
+        registerEventInterceptor({ featureName: featureName2, ...module.eventInterceptorPayload });
+      }
+      if (module.propertyInterceptors) {
+        logger$1.info(instance.t("features:loadFeatures.propertyInterceptorsFound", { featureName: featureName2 }));
+        for (const payload of module.propertyInterceptors) {
+          registerPropertyInterceptor({ featureName: featureName2, ...payload });
+        }
+      }
+    }
+  }
   const slider = "_slider_lhu2n_14";
   const styles = {
     "switch": "_switch_lhu2n_1",
@@ -16089,15 +16089,123 @@
       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.slider })
     ] })
   ] });
+  const FeatureItemRow = ({
+    label,
+    description,
+    checked,
+    onChange,
+    ControlComponent,
+    children
+  }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.featureItem, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.featureItemRow, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.featureItemLabel, title: description, children: label }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.featureItemControl, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ControlComponent, { checked, onChange }) })
+    ] }),
+    children
+  ] });
+  const FeatureList = ({
+    config: config2,
+    type,
+    onFeatureChange,
+    onSelectorsChange
+  }) => {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: featureKeys.map((key) => {
+      const label = t(`features:${key}.label`);
+      const description = t(`features:${key}.description`);
+      if (key === "autoExpandCodeBlocks") {
+        const value = config2[key] || defaultAutoExpandCodeBlocksConfig;
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(
+          FeatureItemRow,
+          {
+            label,
+            description,
+            checked: value.enabled,
+            onChange: onFeatureChange(key, type),
+            ControlComponent: Index,
+            children: value.enabled && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.selectorContainer, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "label",
+                {
+                  className: styles$3.selectorLabel,
+                  title: t("features:autoExpandCodeBlocks.selectorsHint"),
+                  children: t("features:autoExpandCodeBlocks.selectorsLabel")
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "textarea",
+                {
+                  className: styles$3.selectorInput,
+                  value: value.selectors?.join("\n") || "",
+                  onChange: (e) => onSelectorsChange(e, type),
+                  placeholder: BUTTON_SELECTORS.join("\n"),
+                  rows: 4
+                }
+              )
+            ] })
+          },
+          key
+        );
+      }
+      const isEnabled = config2[key];
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(
+        FeatureItemRow,
+        {
+          label,
+          description,
+          checked: !!isEnabled,
+          onChange: onFeatureChange(key, type),
+          ControlComponent: Index
+        },
+        key
+      );
+    }) });
+  };
+  const HeaderBar = ({ onClose, closeTitle: closeTitle2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.headerBar, children: onClose && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles$3.closeBtn, onClick: onClose, title: closeTitle2, children: "×" }) });
+  const TitleRow = ({ title: title2, version: version2 }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.titleRow, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: styles$3.title, children: title2 }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$3.version, children: [
+      "V",
+      version2
+    ] })
+  ] });
+  const Tabs = ({ tab, onTabSwitch, siteLabel, globalLabel }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.tabs, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "button",
+      {
+        className: `${styles$3.tabBtn} ${tab === "site" ? styles$3.tabBtnActive : ""}`,
+        onClick: () => onTabSwitch("site"),
+        children: siteLabel
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "button",
+      {
+        className: `${styles$3.tabBtn} ${tab === "global" ? styles$3.tabBtnActive : ""}`,
+        onClick: () => onTabSwitch("global"),
+        children: globalLabel
+      }
+    )
+  ] });
+  const FooterBar = ({
+    onSave,
+    onSaveAndRefresh,
+    saveText,
+    saveAndRefreshText
+  }) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.footerBar, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles$3.saveBtn, onClick: onSave, children: saveText }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles$3.saveBtn, onClick: onSaveAndRefresh, children: saveAndRefreshText })
+  ] }) });
   const SettingsPanel = ({ onClose }) => {
     const [tab, setTab] = reactExports.useState("site");
     const [siteConfig, setSiteConfig] = reactExports.useState({});
     const [globalConfig, setGlobalConfig] = reactExports.useState({});
-    const { t } = useTranslation();
+    const { t: t2 } = useTranslation();
     reactExports.useEffect(() => {
-      setSiteConfig(getConfigForCurrentSite());
-      const all = getAllConfigs();
-      setGlobalConfig(all["global"] || {});
+      const siteConfig2 = getConfigForCurrentSite();
+      setSiteConfig(siteConfig2);
+      const allConfigs = getAllConfigs();
+      const globalConfig2 = allConfigs["global"];
+      setGlobalConfig(globalConfig2);
     }, []);
     const isSiteDirty = () => JSON.stringify(siteConfig) !== JSON.stringify(getConfigForCurrentSite());
     const isGlobalDirty = () => {
@@ -16105,13 +16213,34 @@
       return JSON.stringify(globalConfig) !== JSON.stringify(all["global"] || {});
     };
     const handleChange = (key, type) => (e) => {
+      const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+      const updater = (prev) => {
+        const patch = key === "autoExpandCodeBlocks" ? { [key]: { enabled: value } } : { [key]: value };
+        return deepmergeNoArray(prev, patch);
+      };
       if (type === "site") {
-        setSiteConfig((prev) => ({ ...prev, [key]: e.target.checked }));
+        setSiteConfig(updater);
       } else {
-        setGlobalConfig((prev) => ({ ...prev, [key]: e.target.checked }));
+        setGlobalConfig(updater);
       }
     };
-    const confirmAndSaveIfDirty = async (dirtyCheckFn, saveFn, t2) => {
+    const handleSelectorsChange = (e, type) => {
+      const selectors = e.target.value.split("\n").filter((line) => line.trim());
+      const updater = (prev) => {
+        const patch = {
+          autoExpandCodeBlocks: {
+            selectors
+          }
+        };
+        return deepmergeNoArray(prev, patch);
+      };
+      if (type === "site") {
+        setSiteConfig(updater);
+      } else {
+        setGlobalConfig(updater);
+      }
+    };
+    const confirmAndSaveIfDirty = async (dirtyCheckFn, saveFn) => {
       if (dirtyCheckFn()) {
         const ok2 = await showModal({
           title: t2("common:unsavedTitle"),
@@ -16130,7 +16259,7 @@
     const handleTabSwitch = async (nextTab) => {
       const dirtyCheck = tab === "site" ? isSiteDirty : isGlobalDirty;
       const save2 = tab === "site" ? () => saveConfigForCurrentSite(siteConfig) : () => saveGlobalConfig(globalConfig);
-      const proceed = await confirmAndSaveIfDirty(dirtyCheck, save2, t);
+      const proceed = await confirmAndSaveIfDirty(dirtyCheck, save2);
       if (proceed) setTab(nextTab);
     };
     const handleSave = () => {
@@ -16139,7 +16268,7 @@
       } else {
         saveGlobalConfig(globalConfig);
       }
-      showBanner(t("common:saveSuccess"), "success");
+      showBanner(t2("common:saveSuccess"), "success");
     };
     const handleSaveAndreFresh = () => {
       handleSave();
@@ -16148,92 +16277,47 @@
     const handlePanelClose = async () => {
       const dirtyCheck = tab === "site" ? isSiteDirty : isGlobalDirty;
       const save2 = tab === "site" ? () => saveConfigForCurrentSite(siteConfig) : () => saveGlobalConfig(globalConfig);
-      const proceed = await confirmAndSaveIfDirty(dirtyCheck, save2, t);
-      if (proceed && onClose) onClose();
+      await confirmAndSaveIfDirty(dirtyCheck, save2);
+      onClose && onClose();
     };
-    const HeaderBar = ({
-      onClose: onClose2,
-      closeTitle: closeTitle2
-    }) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.headerBar, children: onClose2 && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles$3.closeBtn, onClick: onClose2, title: closeTitle2, children: "×" }) });
-    const TitleRow = ({ title: title2, version: version2 }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.titleRow, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: styles$3.title, children: title2 }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$3.version, children: [
-        "V",
-        version2
-      ] })
-    ] });
-    const Tabs = ({ tab: tab2, onTabSwitch, siteLabel, globalLabel }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.tabs, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "button",
-        {
-          className: [
-            styles$3.tabBtn,
-            styles$3.tabBtnLeft,
-            tab2 === "site" ? styles$3.tabBtnActive : ""
-          ].join(" "),
-          onClick: () => onTabSwitch("site"),
-          children: siteLabel
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "button",
-        {
-          className: [
-            styles$3.tabBtn,
-            styles$3.tabBtnRight,
-            tab2 === "global" ? styles$3.tabBtnActive : ""
-          ].join(" "),
-          onClick: () => onTabSwitch("global"),
-          children: globalLabel
-        }
-      )
-    ] });
-    const FooterBar = ({ onSave, onSaveAndRefresh, saveText, saveAndRefreshText }) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.footerBar, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles$3.saveBtn, onClick: onSave, children: saveText }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles$3.saveBtn, onClick: onSaveAndRefresh, children: saveAndRefreshText })
-    ] }) });
-    const FeatureItemRow = ({
-      label,
-      description,
-      checked,
-      onChange,
-      ControlComponent
-    }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.featureItemRow, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.featureItemLabel, title: description, children: label }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.featureItemControl, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ControlComponent, { checked, onChange }) })
-    ] });
     return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: styleText$3 }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.mask, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.panel, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(HeaderBar, { onClose: handlePanelClose, closeTitle: t("common:closeTitle") }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(TitleRow, { title: t("common:panelTitle"), version: pkg.version }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(HeaderBar, { onClose: handlePanelClose, closeTitle: t2("common:closeTitle") }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TitleRow, { title: t2("common:panelTitle"), version: pkg.version }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           Tabs,
           {
             tab,
             onTabSwitch: handleTabSwitch,
-            siteLabel: t("common:currentSiteConfigTab"),
-            globalLabel: t("common:globalConfigTab")
+            siteLabel: t2("common:currentSiteConfigTab"),
+            globalLabel: t2("common:globalConfigTab")
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.featureList, children: featureKeys.map((key) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-          FeatureItemRow,
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.featureList, children: tab === "site" ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+          FeatureList,
           {
-            label: t(`features:${key}.label`),
-            description: t(`features:${key}.description`),
-            checked: tab === "site" ? !!siteConfig[key] : !!globalConfig[key],
-            onChange: handleChange(key, tab),
-            ControlComponent: Index
-          },
-          key
-        )) }),
+            config: siteConfig,
+            type: "site",
+            onFeatureChange: handleChange,
+            onSelectorsChange: handleSelectorsChange
+          }
+        ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+          FeatureList,
+          {
+            config: globalConfig,
+            type: "global",
+            onFeatureChange: handleChange,
+            onSelectorsChange: handleSelectorsChange
+          }
+        ) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           FooterBar,
           {
             onSave: handleSave,
             onSaveAndRefresh: handleSaveAndreFresh,
-            saveText: t("common:save"),
-            saveAndRefreshText: t("common:saveAndRefresh")
+            saveText: t2("common:save"),
+            saveAndRefreshText: t2("common:saveAndRefresh")
           }
         )
       ] }) })
@@ -16263,13 +16347,13 @@
   installEventInterceptor(activeConfig);
   installPropertyInterceptor(activeConfig);
   for (const key in activeConfig) {
-    const featureName = key;
-    const isEnabled = activeConfig[featureName];
-    if (isEnabled && featureRegistry[featureName]) {
+    const featureName2 = key;
+    const featureConfig = activeConfig[featureName2];
+    if (featureConfig && featureRegistry[featureName2]) {
       try {
-        logger.info(instance.t("features:executeFeatures.start", { featureName }));
-        featureRegistry[featureName]();
-        logger.info(instance.t("features:executeFeatures.end", { featureName }));
+        logger.info(instance.t("features:executeFeatures.start", { featureName: featureName2 }));
+        featureRegistry[featureName2](featureConfig);
+        logger.info(instance.t("features:executeFeatures.end", { featureName: featureName2 }));
       } catch (error2) {
         logger.error(instance.t("features:executeFeatures.error"), error2);
       }
