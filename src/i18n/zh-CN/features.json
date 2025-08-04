@@ -42,6 +42,9 @@
     "expandCodeBlocks": "执行自动展开代码块",
     "noSelectors": "未配置自动展开代码块的选择器",
     "selectorError": "选择器 '{{selector}}' 出错: {{error}}",
-    "noElementsFound": "未找到匹配自动展开选择器的元素"
+    "noElementsFound": "未找到匹配自动展开选择器的元素",
+    "selectorsLabel": "CSS 选择器（每行一个）",
+    "selectorsHint": "输入匹配代码块'展开'按钮的 CSS 选择器，每个选择器占一行。",
+    "selectorsPlaceholder": "例如：.expand-button\n.code-expand\n[data-expand]"
   }
 }

@@ -42,6 +42,9 @@
     "expandCodeBlocks": "Expand code blocks automatically",
     "noSelectors": "No selectors configured for auto-expanding code blocks",
     "selectorError": "Error with selector '{{selector}}': {{error}}",
-    "noElementsFound": "No matching elements found for auto-expand selectors"
+    "noElementsFound": "No matching elements found for auto-expand selectors",
+    "selectorsLabel": "CSS Selectors (one per line)",
+    "selectorsHint": "Enter CSS selectors that match 'expand' buttons for code blocks. Each selector should be on a new line.",
+    "selectorsPlaceholder": "e.g., .expand-button\n.code-expand\n[data-expand]"
   }
 }

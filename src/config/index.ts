@@ -4,13 +4,10 @@ import { createLogger } from '../utils/logger'
 import { BUTTON_SELECTORS } from '../constants'
 
 // 只负责配置类型和默认配置
-
+export const defaultAutoExpandCodeBlocksConfig = { enabled: false, selectors: BUTTON_SELECTORS }
 // 默认全局配置（所有功能都关闭/默认）
 export const defaultGlobalConfig: SiteConfig = {
-  autoExpandCodeBlocks: {
-    enabled: false,
-    selectors: BUTTON_SELECTORS,
-  },
+  autoExpandCodeBlocks: defaultAutoExpandCodeBlocksConfig,
   removeClickEffects: false,
   disableTitleChange: false,
   removeBackgroundEffects: false,
