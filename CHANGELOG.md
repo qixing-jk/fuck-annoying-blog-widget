@@ -27,6 +27,32 @@
 
 
 
+## [2.0.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.6.0...v2.0.0) (2025-08-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **autoExpandCodeBlocks:** autoExpandCodeBlocks config changes from boolean to object
+
+### Features
+
+* add deepmergeNoArray utility function ([13ed0fd](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/13ed0fdaa022d73e37fc51eef084e1b7f784fe9c))
+* **autoExpandCodeBlocks:** enhance feature with configurable selectors and error handling ([9a1e544](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/9a1e5445fdeb48ce9a1433473e9fd1823e4b9ca2))
+* **config:** reorganize type definitions and feature registration ([ffd7323](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/ffd7323b4256126968c822852335ca1cc0dcdb99))
+* **SettingsPanel:** add CSS selectors configuration for auto-expand code blocks feature ([45a562a](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/45a562a01f35ef9d7a87e9b0d8eec1e3e87c5f8a))
+* **SettingsPanel:** improve selectors handling and cleanup ([60e7cc1](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/60e7cc1919ca930ec3fa35f63c8b11da11c7463a))
+* **SettingsPanel:** remove unused 't' parameter and adjust close behavior ([0d45522](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/0d455222029853f86ca04ace9ba3ca722d9c7bc9))
+
+
+### Bug Fixes
+
+* add missing issues write permission to release workflow ([e108755](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/e1087553cfdc078c45a052eba3885753e12cf755))
+* **ci:** add missing checkout step in release workflow ([2ba8541](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/2ba854106de348b90d6a87910d2f275238c96b06))
+* **ci:** correct condition for release workflow steps ([7e9f429](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/7e9f42971ad1a68dd0a0d410ee19b7ee941018d6))
+* **ci:** update release-pr workflow for proper commit and push handling ([e0a7a64](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/e0a7a64cb99138b64cdf0c4af1e272d1e3613231))
+* **SettingsPanel:** handle empty lines in textarea input ([b27a7dc](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/b27a7dcc47c4b6e50fa94e1d8de4cc5c59416512))
+* **SettingsPanel:** update FeatureList import path for TabType ([25db5a9](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/25db5a99ee90fa8af2239a71030ab251e6226814))
+
 ## [1.4.2](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v1.4.1...v1.4.2) (2025-08-03)
 
 
@@ -51,6 +77,3 @@
 ### Features
 
 * **ci:** move release workflow into build.yml and update changelog action ([db461c3](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/db461c3eca58973f87d7d5d44ef1be4b5dd185ed))
-
-
-
