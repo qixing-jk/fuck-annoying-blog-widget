@@ -13,6 +13,9 @@ import { showModal } from '../Modal'
 import { showBanner } from '../Banner'
 import Index from '../SwitchPill'
 import { featureKeys } from '../../config/features'
+import { BUTTON_SELECTORS } from '../../constants'
+import { FeatureKey } from '../../types'
+import { defaultAutoExpandCodeBlocksConfig } from '../../config'
 
 interface SettingsPanelProps {
   onClose?: () => void
@@ -27,9 +30,30 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
   const { t } = useTranslation()
 
   useEffect(() => {
-    setSiteConfig(getConfigForCurrentSite())
+    // Ensure autoExpandCodeBlocks has proper structure when initializing
+    const siteConfig = getConfigForCurrentSite()
+    if (
+      siteConfig.autoExpandCodeBlocks &&
+      !Array.isArray(siteConfig.autoExpandCodeBlocks.selectors)
+    ) {
+      siteConfig.autoExpandCodeBlocks.selectors = BUTTON_SELECTORS
+    }
+    siteConfig.autoExpandCodeBlocks = {
+      ...(siteConfig.autoExpandCodeBlocks || {}),
+      ...defaultAutoExpandCodeBlocksConfig,
+    }
+    setSiteConfig(siteConfig)
+
     const all = getAllConfigs()
-    setGlobalConfig(all['global'] || {})
+    const globalConfig = all['global'] || {}
+    if (
+      globalConfig.autoExpandCodeBlocks &&
+      !Array.isArray(globalConfig.autoExpandCodeBlocks.selectors)
+    ) {
+      globalConfig.autoExpandCodeBlocks.selectors = BUTTON_SELECTORS
+    }
+    setGlobalConfig(globalConfig)
+    console.log(siteConfig, globalConfig)
   }, [])
 
   const isSiteDirty = () => JSON.stringify(siteConfig) !== JSON.stringify(getConfigForCurrentSite())
@@ -39,10 +63,60 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
   }
 
   const handleChange = (key: string, type: TabType) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
     if (type === 'site') {
-      setSiteConfig((prev: any) => ({ ...prev, [key]: e.target.checked }))
+      setSiteConfig((prev: any) => {
+        // For autoExpandCodeBlocks, we need to preserve the existing config and just update the enabled state
+        if (key === 'autoExpandCodeBlocks') {
+          return {
+            ...prev,
+            [key]: {
+              ...(prev[key] || { selectors: BUTTON_SELECTORS }),
+              enabled: value,
+            },
+          }
+        }
+        // For other features, just update the value directly
+        return { ...prev, [key]: value }
+      })
     } else {
-      setGlobalConfig((prev: any) => ({ ...prev, [key]: e.target.checked }))
+      setGlobalConfig((prev: any) => {
+        if (key === 'autoExpandCodeBlocks') {
+          return {
+            ...prev,
+            [key]: {
+              ...(prev[key] || { selectors: BUTTON_SELECTORS }),
+              enabled: value,
+            },
+          }
+        }
+        return { ...prev, [key]: value }
+      })
+    }
+  }
+
+  const handleSelectorsChange = (e: React.ChangeEvent<HTMLTextAreaElement>, type: TabType) => {
+    const selectors = e.target.value.split('\n').filter((s) => s.trim())
+
+    const updateFn = (prev: any) => {
+      // Ensure we have a proper autoExpandCodeBlocks object
+      const currentConfig = prev.autoExpandCodeBlocks || {
+        enabled: false,
+        selectors: [...BUTTON_SELECTORS],
+      }
+      return {
+        ...prev,
+        autoExpandCodeBlocks: {
+          ...currentConfig,
+          selectors,
+        },
+      }
+    }
+
+    if (type === 'site') {
+      setSiteConfig(updateFn)
+    } else {
+      setGlobalConfig(updateFn)
     }
   }
 
@@ -174,6 +248,62 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
     </div>
   )
 
+  // Render feature list for the current tab
+  const renderFeatureList = (config: any, type: TabType) => {
+    return featureKeys.map((key: FeatureKey) => {
+      // Special handling for autoExpandCodeBlocks
+      const label = t(`features:${key}.label`)
+      const description = t(`features:${key}.description`)
+
+      if (key === 'autoExpandCodeBlocks') {
+        // Ensure we have a valid config with selectors array
+        const value = config[key] || defaultAutoExpandCodeBlocksConfig
+        return (
+          <FeatureItemRow
+            key={key}
+            label={label}
+            description={description}
+            checked={value.enabled}
+            onChange={handleChange(key, type)}
+            ControlComponent={Index}
+          >
+            {value.enabled && (
+              <div className={styles.selectorContainer}>
+                <label
+                  className={styles.selectorLabel}
+                  title={t('features:autoExpandCodeBlocks.selectorsHint')}
+                >
+                  {t('features:autoExpandCodeBlocks.selectorsLabel')}
+                </label>
+                <textarea
+                  className={styles.selectorInput}
+                  value={value.selectors?.join('\n') || ''}
+                  onChange={(e) => handleSelectorsChange(e, type)}
+                  placeholder={BUTTON_SELECTORS.join('\n')}
+                  rows={4}
+                />
+              </div>
+            )}
+          </FeatureItemRow>
+        )
+      }
+
+      // Default handling for other features
+      const isEnabled = config[key]
+
+      return (
+        <FeatureItemRow
+          key={key}
+          label={label}
+          description={description}
+          checked={!!isEnabled}
+          onChange={handleChange(key, type)}
+          ControlComponent={Index}
+        />
+      )
+    })
+  }
+
   // FeatureItemRow 子组件，简化主渲染逻辑
   interface FeatureItemRowProps {
     label: string
@@ -184,6 +314,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
       checked: boolean
       onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
     }>
+    children?: React.ReactNode
   }
 
   const FeatureItemRow: React.FC<FeatureItemRowProps> = ({
@@ -192,14 +323,18 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
     checked,
     onChange,
     ControlComponent,
+    children,
   }) => (
-    <div className={styles.featureItemRow}>
-      <div className={styles.featureItemLabel} title={description}>
-        {label}
+    <div className={styles.featureItem}>
+      <div className={styles.featureItemRow}>
+        <div className={styles.featureItemLabel} title={description}>
+          {label}
+        </div>
+        <div className={styles.featureItemControl}>
+          <ControlComponent checked={checked} onChange={onChange} />
+        </div>
       </div>
-      <div className={styles.featureItemControl}>
-        <ControlComponent checked={checked} onChange={onChange} />
-      </div>
+      {children}
     </div>
   )
 
@@ -219,16 +354,9 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
             globalLabel={t('common:globalConfigTab')}
           />
           <div className={styles.featureList}>
-            {featureKeys.map((key) => (
-              <FeatureItemRow
-                key={key}
-                label={t(`features:${key}.label`)}
-                description={t(`features:${key}.description`)}
-                checked={tab === 'site' ? !!siteConfig[key] : !!globalConfig[key]}
-                onChange={handleChange(key, tab)}
-                ControlComponent={Index}
-              />
-            ))}
+            {tab === 'site'
+              ? renderFeatureList(siteConfig, 'site')
+              : renderFeatureList(globalConfig, 'global')}
           </div>
           {/* 新增底部操作区 */}
           <FooterBar

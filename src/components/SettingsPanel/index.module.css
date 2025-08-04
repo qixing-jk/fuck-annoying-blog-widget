@@ -207,6 +207,47 @@
     border-top: 1.5px solid #eee;
 }
 
+/* Auto Expand Code Blocks specific styles */
+.selectorContainer {
+    margin-top: 12px;
+    padding: 10px 0 0 4px;
+    border-top: 1px dashed #e8e8e8;
+}
+
+.selectorLabel {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.selectorInput {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    resize: vertical;
+    min-height: 80px;
+    margin-bottom: 6px;
+}
+
+.selectorInput:focus {
+    border-color: #40a9ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+    outline: none;
+}
+
+.selectorHint {
+    font-size: 12px;
+    color: #999;
+    line-height: 1.4;
+    margin-top: 4px;
+}
+
 .footerBar button {
     margin-left: 8px;
     padding: 2px 12px;
