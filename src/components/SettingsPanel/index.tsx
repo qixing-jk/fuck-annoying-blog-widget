@@ -14,12 +14,15 @@ import { showBanner } from '../Banner'
 import { BUTTON_SELECTORS } from '../../constants'
 import { defaultAutoExpandCodeBlocksConfig } from '../../config'
 import FeatureList from './FeatureList'
+import HeaderBar from './HeaderBar'
+import TitleRow from './TitleRow'
+import Tabs, { TabType } from './Tabs'
+import FooterBar from './FooterBar'
 
 interface SettingsPanelProps {
   onClose?: () => void
 }
 
-export type TabType = 'site' | 'global'
 const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
   const [tab, setTab] = useState<TabType>('site')
   const [siteConfig, setSiteConfig] = useState<any>({})
@@ -169,80 +172,6 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
     if (proceed && onClose) onClose()
     // 取消时不关闭面板
   }
-
-  // HeaderBar 子组件
-  const HeaderBar: React.FC<{ onClose?: () => void; closeTitle: string }> = ({
-    onClose,
-    closeTitle,
-  }) => (
-    <div className={styles.headerBar}>
-      {onClose && (
-        <button className={styles.closeBtn} onClick={onClose} title={closeTitle}>
-          ×
-        </button>
-      )}
-    </div>
-  )
-
-  // TitleRow 子组件
-  const TitleRow: React.FC<{ title: string; version: string }> = ({ title, version }) => (
-    <div className={styles.titleRow}>
-      <h2 className={styles.title}>{title}</h2>
-      <span className={styles.version}>V{version}</span>
-    </div>
-  )
-
-  // Tabs 子组件
-  interface TabsProps {
-    tab: TabType
-    onTabSwitch: (tab: TabType) => void
-    siteLabel: string
-    globalLabel: string
-  }
-
-  const Tabs: React.FC<TabsProps> = ({ tab, onTabSwitch, siteLabel, globalLabel }) => (
-    <div className={styles.tabs}>
-      <button
-        className={[
-          styles.tabBtn,
-          styles.tabBtnLeft,
-          tab === 'site' ? styles.tabBtnActive : '',
-        ].join(' ')}
-        onClick={() => onTabSwitch('site')}
-      >
-        {siteLabel}
-      </button>
-      <button
-        className={[
-          styles.tabBtn,
-          styles.tabBtnRight,
-          tab === 'global' ? styles.tabBtnActive : '',
-        ].join(' ')}
-        onClick={() => onTabSwitch('global')}
-      >
-        {globalLabel}
-      </button>
-    </div>
-  )
-
-  // FooterBar 子组件
-  const FooterBar: React.FC<{
-    onSave: () => void
-    onSaveAndRefresh: () => void
-    saveText: string
-    saveAndRefreshText: string
-  }> = ({ onSave, onSaveAndRefresh, saveText, saveAndRefreshText }) => (
-    <div className={styles.footerBar}>
-      <div>
-        <button className={styles.saveBtn} onClick={onSave}>
-          {saveText}
-        </button>
-        <button className={styles.saveBtn} onClick={onSaveAndRefresh}>
-          {saveAndRefreshText}
-        </button>
-      </div>
-    </div>
-  )
 
   return (
     <>

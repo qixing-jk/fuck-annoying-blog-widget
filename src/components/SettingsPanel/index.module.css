@@ -70,22 +70,14 @@
     font-weight: normal;
     color: #333;
     transition: color 0.2s, border-bottom 0.2s;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 .tabBtnActive {
     color: #1677ff;
     font-weight: bold;
     border-bottom: 1.5px solid #1677ff;
-}
-
-.tabBtnLeft {
-    border-top-left-radius: 6px;
-    border-top-right-radius: 0;
-}
-
-.tabBtnRight {
-    border-top-left-radius: 0;
-    border-top-right-radius: 6px;
 }
 
 .featureList {
