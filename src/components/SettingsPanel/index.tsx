@@ -12,12 +12,12 @@ import pkg from '../../../package.json'
 import { showModal } from '../Modal'
 import { showBanner } from '../Banner'
 import { BUTTON_SELECTORS } from '../../constants'
-import { defaultAutoExpandCodeBlocksConfig } from '../../config'
 import FeatureList from './FeatureList'
 import HeaderBar from './HeaderBar'
 import TitleRow from './TitleRow'
 import Tabs, { TabType } from './Tabs'
 import FooterBar from './FooterBar'
+import { deepmergeNoArray } from '../../utils'
 
 interface SettingsPanelProps {
   onClose?: () => void
@@ -30,28 +30,14 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
   const { t } = useTranslation()
 
   useEffect(() => {
-    // Ensure autoExpandCodeBlocks has proper structure when initializing
+    // 初始化站点配置
     const siteConfig = getConfigForCurrentSite()
-    if (
-      siteConfig.autoExpandCodeBlocks &&
-      !Array.isArray(siteConfig.autoExpandCodeBlocks.selectors)
-    ) {
-      siteConfig.autoExpandCodeBlocks.selectors = BUTTON_SELECTORS
-    }
-    siteConfig.autoExpandCodeBlocks = {
-      ...(siteConfig.autoExpandCodeBlocks || {}),
-      ...defaultAutoExpandCodeBlocksConfig,
-    }
     setSiteConfig(siteConfig)
 
-    const all = getAllConfigs()
-    const globalConfig = all['global'] || {}
-    if (
-      globalConfig.autoExpandCodeBlocks &&
-      !Array.isArray(globalConfig.autoExpandCodeBlocks.selectors)
-    ) {
-      globalConfig.autoExpandCodeBlocks.selectors = BUTTON_SELECTORS
-    }
+    // 初始化全局配置
+    const allConfigs = getAllConfigs()
+    const globalConfig = allConfigs['global']
+
     setGlobalConfig(globalConfig)
   }, [])
 
@@ -63,34 +49,20 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
 
   const handleChange = (key: string, type: TabType) => (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
+
+    const updater = (prev: any) => {
+      const patch =
+        key === 'autoExpandCodeBlocks'
+          ? { [key]: { enabled: value } } // deepmerge 会合并原 selectors
+          : { [key]: value }
+
+      return deepmergeNoArray(prev, patch)
+    }
+
     if (type === 'site') {
-      setSiteConfig((prev: any) => {
-        // For autoExpandCodeBlocks, we need to preserve the existing config and just update the enabled state
-        if (key === 'autoExpandCodeBlocks') {
-          return {
-            ...prev,
-            [key]: {
-              ...(prev[key] || { selectors: BUTTON_SELECTORS }),
-              enabled: value,
-            },
-          }
-        }
-        // For other features, just update the value directly
-        return { ...prev, [key]: value }
-      })
+      setSiteConfig(updater)
     } else {
-      setGlobalConfig((prev: any) => {
-        if (key === 'autoExpandCodeBlocks') {
-          return {
-            ...prev,
-            [key]: {
-              ...(prev[key] || { selectors: BUTTON_SELECTORS }),
-              enabled: value,
-            },
-          }
-        }
-        return { ...prev, [key]: value }
-      })
+      setGlobalConfig(updater)
     }
   }
 
