@@ -39,6 +39,9 @@
   "autoExpandCodeBlocks": {
     "label": "自动展开代码块",
     "description": "自动点击并展开所有折叠的代码块区域，支持常见博客、论坛等页面。",
-    "expandCodeBlocks": "执行自动展开代码块"
+    "expandCodeBlocks": "执行自动展开代码块",
+    "noSelectors": "未配置自动展开代码块的选择器",
+    "selectorError": "选择器 '{{selector}}' 出错: {{error}}",
+    "noElementsFound": "未找到匹配自动展开选择器的元素"
   }
 }

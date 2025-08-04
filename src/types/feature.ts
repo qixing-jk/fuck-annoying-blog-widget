@@ -1,7 +1,10 @@
 // 功能相关类型
 
 export interface FeatureConfigMap {
-  autoExpandCodeBlocks: boolean
+  autoExpandCodeBlocks: {
+    enabled: boolean
+    selectors: string[]
+  }
   removeClickEffects: boolean
   disableTitleChange: boolean
   removeBackgroundEffects: boolean
@@ -12,4 +15,4 @@ export interface FeatureConfigMap {
 }
 
 export type FeatureKey = keyof FeatureConfigMap
-export type FeatureFunction = () => void
+export type FeatureFunction<T = any> = (featureConfig: T) => void

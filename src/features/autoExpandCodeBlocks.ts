@@ -5,30 +5,60 @@
 import { onDOMReady } from '../utils'
 import { createLogger } from '../utils/logger'
 import i18n from 'i18next'
+import { SiteConfig } from '../types'
 
 const logger = createLogger('autoExpandCodeBlocks')
 
-const BUTTON_SELECTORS = ['.show-btn']
+export const featureName = 'autoExpandCodeBlocks'
 
-function internalAutoExpandCodeBlocks() {
+type AutoExpandCodeBlocksConfig = SiteConfig[typeof featureName]
+
+function internalAutoExpandCodeBlocks(config: AutoExpandCodeBlocksConfig) {
+  const selectors = config.selectors || []
+
+  if (selectors.length === 0) {
+    logger.warn(i18n.t('features:autoExpandCodeBlocks.noSelectors'))
+    return
+  }
+
   // 自动点击“展开”按钮（如有）
-  for (const sel of BUTTON_SELECTORS) {
-    const elementNodeList = document.querySelectorAll(sel)
-    if (elementNodeList) {
-      logger.info(i18n.t('features:autoExpandCodeBlocks.expandCodeBlocks'), elementNodeList)
-      elementNodeList.forEach((btn) => {
-        if (btn instanceof HTMLElement) {
-          btn.click()
-        }
-      })
-      break
+  let hasExpanded = false
+  for (const sel of selectors) {
+    try {
+      const elements = document.querySelectorAll(sel)
+      if (elements && elements.length > 0) {
+        logger.info(i18n.t('features:autoExpandCodeBlocks.expandCodeBlocks'), {
+          selector: sel,
+          count: elements.length,
+        })
+        elements.forEach((btn) => {
+          if (btn instanceof HTMLElement) {
+            btn.click()
+            hasExpanded = true
+          }
+        })
+      }
+    } catch (error) {
+      logger.error(
+        i18n.t('features:autoExpandCodeBlocks.selectorError', {
+          selector: sel,
+          error: error,
+        })
+      )
     }
+  }
+
+  if (!hasExpanded) {
+    logger.warn(i18n.t('features:autoExpandCodeBlocks.noElementsFound'))
   }
 }
 
-function autoExpandCodeBlocks() {
+function autoExpandCodeBlocks(config: AutoExpandCodeBlocksConfig) {
+  if (!config.enabled) {
+    return
+  }
   onDOMReady(() => {
-    internalAutoExpandCodeBlocks()
+    internalAutoExpandCodeBlocks(config)
   }, 3000)
 }
 

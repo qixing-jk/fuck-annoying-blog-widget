@@ -1,12 +1,16 @@
 import { AllConfigs, SiteConfig } from '../types'
 import i18n from 'i18next'
 import { createLogger } from '../utils/logger'
+import { BUTTON_SELECTORS } from '../constants'
 
 // 只负责配置类型和默认配置
 
 // 默认全局配置（所有功能都关闭/默认）
 export const defaultGlobalConfig: SiteConfig = {
-  autoExpandCodeBlocks: false,
+  autoExpandCodeBlocks: {
+    enabled: false,
+    selectors: BUTTON_SELECTORS,
+  },
   removeClickEffects: false,
   disableTitleChange: false,
   removeBackgroundEffects: false,
