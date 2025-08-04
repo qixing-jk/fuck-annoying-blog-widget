@@ -39,6 +39,9 @@
   "autoExpandCodeBlocks": {
     "label": "Auto Expand Code Blocks",
     "description": "Automatically clicks and expands all collapsed code block areas, supporting common blogs, forums, and more.",
-    "expandCodeBlocks": "Expand code blocks automatically"
+    "expandCodeBlocks": "Expand code blocks automatically",
+    "noSelectors": "No selectors configured for auto-expanding code blocks",
+    "selectorError": "Error with selector '{{selector}}': {{error}}",
+    "noElementsFound": "No matching elements found for auto-expand selectors"
   }
 }

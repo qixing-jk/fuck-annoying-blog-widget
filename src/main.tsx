@@ -24,14 +24,14 @@ installPropertyInterceptor(activeConfig)
 // 遍历激活的配置项
 for (const key in activeConfig) {
   const featureName = key as FeatureKey
-  const isEnabled = activeConfig[featureName]
+  const featureConfig = activeConfig[featureName]
 
   // 如果配置为 true，并且该功能存在于注册表中
-  if (isEnabled && featureRegistry[featureName]) {
+  if (featureConfig && featureRegistry[featureName]) {
     try {
       // 动态调用执行函数
       logger.info(i18n.t('features:executeFeatures.start', { featureName: featureName }))
-      featureRegistry[featureName]()
+      featureRegistry[featureName](featureConfig)
       logger.info(i18n.t('features:executeFeatures.end', { featureName: featureName }))
     } catch (error) {
       logger.error(i18n.t('features:executeFeatures.error'), error)
