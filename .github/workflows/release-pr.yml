@@ -1,0 +1,55 @@
+name: release-please
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          # this assumes that you have created a personal access token
+          # (PAT) and configured it as a GitHub action secret named
+          # `MY_RELEASE_PLEASE_TOKEN` (this secret name is not important).
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # this is a built-in strategy in release-please, see "Action Inputs"
+          # for more options
+          release-type: node
+      - name: Setup pnpm
+        if: ${{ steps.release.outputs.release_created != 'true' && steps.release.outputs.pr != '' }}
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: true
+
+      - name: Build dist
+        if: ${{ steps.release.outputs.release_created != 'true' && steps.release.outputs.pr != '' }}
+        run: |
+          pnpm run build
+
+      - name: Commit dist to release PR
+        if: ${{ steps.release.outputs.release_created != 'true' && steps.release.outputs.pr != '' }}
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
+          git fetch origin ${{ steps.release.outputs.pr-branch }}
+          git checkout ${{ steps.release.outputs.pr-branch }}
+          
+          git add dist
+          git commit -m "chore: build dist for release ${{ steps.release.outputs.tag_name }}" || echo "No changes"
+          git push origin HEAD:${{ steps.release.outputs.pr-branch }}
+
+      # 3正式 release 时可选上传 release 资产
+      - name: Upload Release Artifact
+        if: ${{ steps.release.outputs.release_created == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload ${{ steps.release.outputs.tag_name }} dist/*.user.js
