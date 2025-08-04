@@ -2,6 +2,7 @@
 import { COMMON_DOM_TARGETS } from '../constants'
 import { createLogger } from './logger'
 import i18n from 'i18next'
+import { deepmergeCustom } from 'deepmerge-ts'
 
 export function isElementInBlacklist(
   target: EventTarget,
@@ -95,3 +96,5 @@ export function onDOMReady(callback: () => void, delay = 0) {
     document.addEventListener('DOMContentLoaded', run, { once: true })
   }
 }
+
+export const deepmergeNoArray = deepmergeCustom({ mergeArrays: false })
