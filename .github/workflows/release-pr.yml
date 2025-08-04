@@ -44,12 +44,19 @@ jobs:
           git config user.email github-actions[bot]@users.noreply.github.com
           git fetch origin ${{ steps.release.outputs.pr-branch }}
           git checkout ${{ steps.release.outputs.pr-branch }}
-          
-          git add dist
+      - name: Git commit
+        if: ${{ steps.release.outputs.release_created != 'true' && steps.release.outputs.pr != '' }}
+        id: commit
+        run: |
+          git add --all
           git commit -m "chore: build dist for release ${{ steps.release.outputs.tag_name }}" || echo "No changes"
-          git push origin HEAD:${{ steps.release.outputs.pr-branch }}
-
-      # 3正式 release 时可选上传 release 资产
+        continue-on-error: true
+      - name: Git push
+        uses: ad-m/github-push-action@master
+        if: ${{ steps.commit.outcome == 'success' && steps.release.outputs.release_created != 'true' && steps.release.outputs.pr != '' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
       - name: Upload Release Artifact
         if: ${{ steps.release.outputs.release_created == 'true' }}
         env:
