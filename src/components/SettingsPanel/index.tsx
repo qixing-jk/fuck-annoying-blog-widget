@@ -11,18 +11,15 @@ import styleText from './index.module.css?inline'
 import pkg from '../../../package.json'
 import { showModal } from '../Modal'
 import { showBanner } from '../Banner'
-import Index from '../SwitchPill'
-import { featureKeys } from '../../config/features'
 import { BUTTON_SELECTORS } from '../../constants'
-import { FeatureKey } from '../../types'
 import { defaultAutoExpandCodeBlocksConfig } from '../../config'
+import FeatureList from './FeatureList'
 
 interface SettingsPanelProps {
   onClose?: () => void
 }
 
-type TabType = 'site' | 'global'
-
+export type TabType = 'site' | 'global'
 const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
   const [tab, setTab] = useState<TabType>('site')
   const [siteConfig, setSiteConfig] = useState<any>({})
@@ -53,7 +50,6 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
       globalConfig.autoExpandCodeBlocks.selectors = BUTTON_SELECTORS
     }
     setGlobalConfig(globalConfig)
-    console.log(siteConfig, globalConfig)
   }, [])
 
   const isSiteDirty = () => JSON.stringify(siteConfig) !== JSON.stringify(getConfigForCurrentSite())
@@ -248,96 +244,6 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
     </div>
   )
 
-  // Render feature list for the current tab
-  const renderFeatureList = (config: any, type: TabType) => {
-    return featureKeys.map((key: FeatureKey) => {
-      // Special handling for autoExpandCodeBlocks
-      const label = t(`features:${key}.label`)
-      const description = t(`features:${key}.description`)
-
-      if (key === 'autoExpandCodeBlocks') {
-        // Ensure we have a valid config with selectors array
-        const value = config[key] || defaultAutoExpandCodeBlocksConfig
-        return (
-          <FeatureItemRow
-            key={key}
-            label={label}
-            description={description}
-            checked={value.enabled}
-            onChange={handleChange(key, type)}
-            ControlComponent={Index}
-          >
-            {value.enabled && (
-              <div className={styles.selectorContainer}>
-                <label
-                  className={styles.selectorLabel}
-                  title={t('features:autoExpandCodeBlocks.selectorsHint')}
-                >
-                  {t('features:autoExpandCodeBlocks.selectorsLabel')}
-                </label>
-                <textarea
-                  className={styles.selectorInput}
-                  value={value.selectors?.join('\n') || ''}
-                  onChange={(e) => handleSelectorsChange(e, type)}
-                  placeholder={BUTTON_SELECTORS.join('\n')}
-                  rows={4}
-                />
-              </div>
-            )}
-          </FeatureItemRow>
-        )
-      }
-
-      // Default handling for other features
-      const isEnabled = config[key]
-
-      return (
-        <FeatureItemRow
-          key={key}
-          label={label}
-          description={description}
-          checked={!!isEnabled}
-          onChange={handleChange(key, type)}
-          ControlComponent={Index}
-        />
-      )
-    })
-  }
-
-  // FeatureItemRow 子组件，简化主渲染逻辑
-  interface FeatureItemRowProps {
-    label: string
-    description: string
-    checked: boolean
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-    ControlComponent: React.FC<{
-      checked: boolean
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-    }>
-    children?: React.ReactNode
-  }
-
-  const FeatureItemRow: React.FC<FeatureItemRowProps> = ({
-    label,
-    description,
-    checked,
-    onChange,
-    ControlComponent,
-    children,
-  }) => (
-    <div className={styles.featureItem}>
-      <div className={styles.featureItemRow}>
-        <div className={styles.featureItemLabel} title={description}>
-          {label}
-        </div>
-        <div className={styles.featureItemControl}>
-          <ControlComponent checked={checked} onChange={onChange} />
-        </div>
-      </div>
-      {children}
-    </div>
-  )
-
   return (
     <>
       <style>{styleText}</style>
@@ -354,9 +260,21 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose }) => {
             globalLabel={t('common:globalConfigTab')}
           />
           <div className={styles.featureList}>
-            {tab === 'site'
-              ? renderFeatureList(siteConfig, 'site')
-              : renderFeatureList(globalConfig, 'global')}
+            {tab === 'site' ? (
+              <FeatureList
+                config={siteConfig}
+                type="site"
+                onFeatureChange={handleChange}
+                onSelectorsChange={handleSelectorsChange}
+              />
+            ) : (
+              <FeatureList
+                config={globalConfig}
+                type="global"
+                onFeatureChange={handleChange}
+                onSelectorsChange={handleSelectorsChange}
+              />
+            )}
           </div>
           {/* 新增底部操作区 */}
           <FooterBar
