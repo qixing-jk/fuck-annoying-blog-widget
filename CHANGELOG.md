@@ -27,6 +27,13 @@
 
 
 
+## [2.1.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v2.0.1...v2.1.0) (2025-08-20)
+
+
+### Features
+
+* **removeLive2D:** extend removal to support additional waifu widget selectors ([faf5044](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/faf504493c863fc85c9584f5ad131a796dc96917))
+
 ## [2.0.1](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v2.0.0...v2.0.1) (2025-08-04)
 
 
