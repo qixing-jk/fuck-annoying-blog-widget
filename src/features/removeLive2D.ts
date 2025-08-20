@@ -1,6 +1,8 @@
 import { watchAndDestroy } from '../utils'
 
 export default function removeLive2D() {
-  const ELEMENT_ID = 'live2d-widget'
-  watchAndDestroy(`#${ELEMENT_ID}`)
+  const elementSelectorList = ['#live2d-widget', '#waifu']
+  for (const selector of elementSelectorList) {
+    watchAndDestroy(selector)
+  }
 }
