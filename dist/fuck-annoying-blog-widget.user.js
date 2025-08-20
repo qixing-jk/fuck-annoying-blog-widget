@@ -2,7 +2,7 @@
 // @name               Personal Blog Annoying Features and Pendant Purification
 // @name:zh-CN         个人博客恼人功能和挂件净化
 // @namespace          https://github.com/qixing-jk/fuck-annoying-blog-widget
-// @version            2.0.1
+// @version            2.1.0
 // @description        purify personal blogs by removing or disabling common annoying widgets and effects.
 // @description:zh-CN  净化个人博客，自动移除或禁用常见的烦人挂件和特效。
 // @icon               https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/refs/heads/main/src/assets/logo.jpg
@@ -15373,7 +15373,7 @@
   var clientExports = requireClient();
   const ReactDOM = /* @__PURE__ */ getDefaultExportFromCjs(clientExports);
   const name = "fuck-annoying-blog-widget";
-  const version$1 = "2.0.1";
+  const version$1 = "2.1.0";
   const pkg = {
     name,
     version: version$1
@@ -15857,8 +15857,10 @@
     default: removeCustomCursor
   }, Symbol.toStringTag, { value: "Module" }));
   function removeLive2D() {
-    const ELEMENT_ID = "live2d-widget";
-    watchAndDestroy(`#${ELEMENT_ID}`);
+    const elementSelectorList = ["#live2d-widget", "#waifu"];
+    for (const selector of elementSelectorList) {
+      watchAndDestroy(selector);
+    }
   }
   const __vite_glob_0_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
