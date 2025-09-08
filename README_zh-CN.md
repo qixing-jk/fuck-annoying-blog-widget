@@ -1,6 +1,6 @@
 # Fuck Annoying Blog Widget
 
-[README](README.md) | [中文文档](README_zh-CN.md)
+[English Readme](README.md) | [中文Readme](README_zh-CN.md)
 
 ------
 
