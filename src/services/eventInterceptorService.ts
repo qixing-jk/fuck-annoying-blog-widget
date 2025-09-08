@@ -2,6 +2,7 @@ import { FeatureKey, SiteConfig } from '../types'
 import { isElementInBlacklist } from '../utils'
 import { createLogger } from '../utils/logger'
 import i18n from 'i18next'
+import { blockedEventType } from '../features/removeCursorTrailEffect'
 
 /**
  * 定义一个拦截器的函数签名，保持不变。
@@ -17,6 +18,7 @@ export type EventInterceptor = (
 export interface EventInterceptorPayload {
   eventInterceptorTargetList?: EventTarget[]
   eventInterceptor: EventInterceptor
+  blockedEventType?: string[]
 }
 
 /**
@@ -51,9 +53,38 @@ export function installEventInterceptor(activeConfig: Partial<SiteConfig>) {
   }
   logger.info(i18n.t('services:eventInterceptor.install'), activeConfig)
 
+  // 预先阻止已知的阻断事件类型，避免它们触发任何监听器
+  for (const reg of registrations) {
+    if (
+      !activeConfig[reg.featureName] ||
+      !reg.eventInterceptorTargetList ||
+      blockedEventType.length === 0
+    ) {
+      continue
+    }
+    for (const eventTarget of reg.eventInterceptorTargetList) {
+      blockedEventType.forEach((eventType) => {
+        eventTarget.addEventListener(
+          eventType,
+          (e) => {
+            e.stopImmediatePropagation()
+          },
+          true
+        )
+      })
+    }
+  }
+
+  // 保存原始的 addEventListener 方法
   const originalAddEventListener = EventTarget.prototype.addEventListener
 
+  // 重写 addEventListener 方法，拦截事件监听器的注册
   EventTarget.prototype.addEventListener = function (type, listener, options) {
+    logger.info(i18n.t('services:eventInterceptor.run'), {
+      type,
+      target: this,
+    })
+
     // 遍历所有已注册的规则
     for (const reg of registrations) {
       // 核心检查：只有当这条规则所属的功能在配置中被启用

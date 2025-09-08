@@ -5,6 +5,7 @@
   "eventInterceptor": {
     "install": "正在安装事件拦截服务",
     "installSuccess": "事件拦截服务安装成功。",
+    "run": "事件拦截服务正在运行。",
     "blocked": "事件拦截服务已成功拦截{{blockedEventType}}事件，事件已被阻止。"
   },
   "propertyInterceptor": {

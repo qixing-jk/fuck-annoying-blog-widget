@@ -5,6 +5,7 @@
   "eventInterceptor": {
     "install": "Installing Event Interceptor Service",
     "installSuccess": "Event Interceptor Service installed successfully.",
+    "run": "Event Interceptor Service is running.",
     "blocked": "Event Interceptor successfully intercepted the {{blockedEventType}} event, the event has been blocked."
   },
   "propertyInterceptor": {
