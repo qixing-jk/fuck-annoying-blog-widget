@@ -2,7 +2,7 @@
 // @name               Personal Blog Annoying Features and Pendant Purification
 // @name:zh-CN         个人博客恼人功能和挂件净化
 // @namespace          https://github.com/qixing-jk/fuck-annoying-blog-widget
-// @version            2.1.0
+// @version            2.2.0
 // @description        purify personal blogs by removing or disabling common annoying widgets and effects.
 // @description:zh-CN  净化个人博客，自动移除或禁用常见的烦人挂件和特效。
 // @icon               https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/refs/heads/main/src/assets/logo.jpg
@@ -134,9 +134,10 @@
   const removeMusicPlayer$2 = { "label": "Remove Music Player", "description": "Hides the auto-playing background music player often found on personal blogs." };
   const removeCustomCursor$2 = { "label": "Remove Custom Cursor", "description": "Restores the default system mouse pointer, disabling any custom cursors or pointer trail effects." };
   const removeLive2D$2 = { "label": "Remove Live2D Widget", "description": "Hides the animated character widget, usually located in the corner of the screen." };
-  const removeClickEffects$2 = { "label": "Remove Click Effects", "description": "Disables colorful words, sparkles, or other effects that appear when you click the mouse." };
+  const removeClickEffects$3 = { "label": "Remove Click Effects", "description": "Disables colorful words, sparkles, or other effects that appear when you click the mouse." };
   const removeCustomContextMenu$2 = { "label": "Remove Custom Context Menu", "description": "Removes site-specific right-click menus, restoring the browser default menu." };
   const autoExpandCodeBlocks$2 = { "label": "Auto Expand Code Blocks", "description": "Automatically clicks and expands all collapsed code block areas, supporting common blogs, forums, and more.", "expandCodeBlocks": "Expand code blocks automatically", "noSelectors": "No selectors configured for auto-expanding code blocks", "selectorError": "Error with selector '{{selector}}': {{error}}", "noElementsFound": "No matching elements found for auto-expand selectors", "selectorsLabel": "CSS Selectors (one per line)", "selectorsHint": "Enter CSS selectors that match 'expand' buttons for code blocks. Each selector should be on a new line.", "selectorsPlaceholder": "e.g., .expand-button\n.code-expand\n[data-expand]" };
+  const removeCursorTrailEffect$1 = { "label": "Remove Cursor Trail Effects", "description": "Disables trailing effects that appear when moving the mouse, such as stars, hearts, or sparkles." };
   const features$1 = {
     loadFeatures: loadFeatures$1,
     executeFeatures: executeFeatures$1,
@@ -145,9 +146,10 @@
     removeMusicPlayer: removeMusicPlayer$2,
     removeCustomCursor: removeCustomCursor$2,
     removeLive2D: removeLive2D$2,
-    removeClickEffects: removeClickEffects$2,
+    removeClickEffects: removeClickEffects$3,
     removeCustomContextMenu: removeCustomContextMenu$2,
-    autoExpandCodeBlocks: autoExpandCodeBlocks$2
+    autoExpandCodeBlocks: autoExpandCodeBlocks$2,
+    removeCursorTrailEffect: removeCursorTrailEffect$1
   };
   const __vite_glob_0_2$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
@@ -157,24 +159,25 @@
     executeFeatures: executeFeatures$1,
     loadFeatures: loadFeatures$1,
     removeBackgroundEffects: removeBackgroundEffects$2,
-    removeClickEffects: removeClickEffects$2,
+    removeClickEffects: removeClickEffects$3,
+    removeCursorTrailEffect: removeCursorTrailEffect$1,
     removeCustomContextMenu: removeCustomContextMenu$2,
     removeCustomCursor: removeCustomCursor$2,
     removeLive2D: removeLive2D$2,
     removeMusicPlayer: removeMusicPlayer$2
   }, Symbol.toStringTag, { value: "Module" }));
   const featureRegistry$2 = { "load": "Load feature registry" };
-  const eventInterceptor$3 = { "install": "Installing Event Interceptor Service", "installSuccess": "Event Interceptor Service installed successfully.", "blocked": "Event Interceptor successfully intercepted the {{blockedEventType}} event, the event has been blocked." };
+  const eventInterceptor$4 = { "install": "Installing Event Interceptor Service", "installSuccess": "Event Interceptor Service installed successfully.", "run": "Event Interceptor Service is running.", "blocked": "Event Interceptor successfully intercepted the {{blockedEventType}} event, the event has been blocked." };
   const propertyInterceptor$1 = { "install": "installing Property Interceptor Service", "installSuccess": "Property Interceptor Service installed successfully.", "blocked": "Property Interceptor of {{featureName}} successfully intercepted the {{propertyName}} property, the property has been blocked.", "getter": { "blocked": "Property Interceptor of {{featureName}} successfully intercepted the {{propertyName}} property getter, the getter has been blocked." }, "notConfigurable": "Property Interceptor failed to intercept the {{propertyName}} property of {{targetObject}}, the property is not configurable." };
   const services$1 = {
     featureRegistry: featureRegistry$2,
-    eventInterceptor: eventInterceptor$3,
+    eventInterceptor: eventInterceptor$4,
     propertyInterceptor: propertyInterceptor$1
   };
   const __vite_glob_0_3$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: services$1,
-    eventInterceptor: eventInterceptor$3,
+    eventInterceptor: eventInterceptor$4,
     featureRegistry: featureRegistry$2,
     propertyInterceptor: propertyInterceptor$1
   }, Symbol.toStringTag, { value: "Module" }));
@@ -248,9 +251,10 @@
   const removeMusicPlayer$1 = { "label": "移除音乐播放器", "description": "隐藏在部分个人博客上会自动播放的背景音乐播放器。" };
   const removeCustomCursor$1 = { "label": "移除自定义鼠标指针", "description": "恢复系统默认的鼠标指针样式，禁用网站设置的特殊图标指针或鼠标拖尾特效。" };
   const removeLive2D$1 = { "label": "移除Live2D看板娘", "description": "隐藏通常位于屏幕角落的动态卡通人物（看板娘）挂件。" };
-  const removeClickEffects$1 = { "label": "移除点击特效", "description": "禁用鼠标点击时出现的彩色文字、爱心、烟花或其他浮夸的点击反馈效果。" };
+  const removeClickEffects$2 = { "label": "移除点击特效", "description": "禁用鼠标点击时出现的彩色文字、爱心、烟花或其他浮夸的点击反馈效果。" };
   const removeCustomContextMenu$1 = { "label": "移除自定义右键菜单", "description": "移除网站自定义的右键菜单，还原浏览器默认菜单。" };
   const autoExpandCodeBlocks$1 = { "label": "自动展开代码块", "description": "自动点击并展开所有折叠的代码块区域，支持常见博客、论坛等页面。", "expandCodeBlocks": "执行自动展开代码块", "noSelectors": "未配置自动展开代码块的选择器", "selectorError": "选择器 '{{selector}}' 出错: {{error}}", "noElementsFound": "未找到匹配自动展开选择器的元素", "selectorsLabel": "CSS 选择器（每行一个）", "selectorsHint": "输入匹配代码块'展开'按钮的 CSS 选择器，每个选择器占一行。", "selectorsPlaceholder": "例如：.expand-button\n.code-expand\n[data-expand]" };
+  const removeCursorTrailEffect = { "label": "移除鼠标拖尾特效", "description": "禁用鼠标移动时出现的拖尾特效，例如星星、爱心、光点等。" };
   const features = {
     loadFeatures,
     executeFeatures,
@@ -259,9 +263,10 @@
     removeMusicPlayer: removeMusicPlayer$1,
     removeCustomCursor: removeCustomCursor$1,
     removeLive2D: removeLive2D$1,
-    removeClickEffects: removeClickEffects$1,
+    removeClickEffects: removeClickEffects$2,
     removeCustomContextMenu: removeCustomContextMenu$1,
-    autoExpandCodeBlocks: autoExpandCodeBlocks$1
+    autoExpandCodeBlocks: autoExpandCodeBlocks$1,
+    removeCursorTrailEffect
   };
   const __vite_glob_0_7$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
@@ -271,24 +276,25 @@
     executeFeatures,
     loadFeatures,
     removeBackgroundEffects: removeBackgroundEffects$1,
-    removeClickEffects: removeClickEffects$1,
+    removeClickEffects: removeClickEffects$2,
+    removeCursorTrailEffect,
     removeCustomContextMenu: removeCustomContextMenu$1,
     removeCustomCursor: removeCustomCursor$1,
     removeLive2D: removeLive2D$1,
     removeMusicPlayer: removeMusicPlayer$1
   }, Symbol.toStringTag, { value: "Module" }));
   const featureRegistry$1 = { "load": "加载功能注册表" };
-  const eventInterceptor$2 = { "install": "正在安装事件拦截服务", "installSuccess": "事件拦截服务安装成功。", "blocked": "事件拦截服务已成功拦截{{blockedEventType}}事件，事件已被阻止。" };
+  const eventInterceptor$3 = { "install": "正在安装事件拦截服务", "installSuccess": "事件拦截服务安装成功。", "run": "事件拦截服务正在运行。", "blocked": "事件拦截服务已成功拦截{{blockedEventType}}事件，事件已被阻止。" };
   const propertyInterceptor = { "install": "正在安装属性拦截服务", "installSuccess": "属性拦截服务安装成功。", "blocked": "{{featureName}}的属性拦截器已成功拦截{{propertyName}}属性，属性已被阻止。", "getter": { "blocked": "{{featureName}}的属性拦截器已成功拦截{{propertyName}}属性的getter，getter已被阻止。" }, "notConfigurable": "属性拦截器拦截{{targetObject}}的{{propertyName}}属性失败，该属性不可配置。" };
   const services = {
     featureRegistry: featureRegistry$1,
-    eventInterceptor: eventInterceptor$2,
+    eventInterceptor: eventInterceptor$3,
     propertyInterceptor
   };
   const __vite_glob_0_8$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: services,
-    eventInterceptor: eventInterceptor$2,
+    eventInterceptor: eventInterceptor$3,
     featureRegistry: featureRegistry$1,
     propertyInterceptor
   }, Symbol.toStringTag, { value: "Module" }));
@@ -296,7 +302,7 @@
   const utils = {
     watchAndDestroy: watchAndDestroy$1
   };
-  const __vite_glob_0_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_9$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: utils,
     watchAndDestroy: watchAndDestroy$1
@@ -3800,9 +3806,10 @@
   const STORAGE_KEY = "site_configs";
   const ROOT_ELEMENT_ID = "fuck-annoying-blog-widget-script-root";
   const DEFAULT_NS = "common";
+  const ALL_DOM_TARGETS = [window, document, document.body];
   const COMMON_DOM_TARGETS = [window, document];
   const BUTTON_SELECTORS = [".show-btn"];
-  const localeModules = /* @__PURE__ */ Object.assign({ "./en/common.json": __vite_glob_0_0$1, "./en/config.json": __vite_glob_0_1$1, "./en/features.json": __vite_glob_0_2$1, "./en/services.json": __vite_glob_0_3$1, "./en/utils.json": __vite_glob_0_4$1, "./zh-CN/common.json": __vite_glob_0_5$1, "./zh-CN/config.json": __vite_glob_0_6$1, "./zh-CN/features.json": __vite_glob_0_7$1, "./zh-CN/services.json": __vite_glob_0_8$1, "./zh-CN/utils.json": __vite_glob_0_9 });
+  const localeModules = /* @__PURE__ */ Object.assign({ "./en/common.json": __vite_glob_0_0$1, "./en/config.json": __vite_glob_0_1$1, "./en/features.json": __vite_glob_0_2$1, "./en/services.json": __vite_glob_0_3$1, "./en/utils.json": __vite_glob_0_4$1, "./zh-CN/common.json": __vite_glob_0_5$1, "./zh-CN/config.json": __vite_glob_0_6$1, "./zh-CN/features.json": __vite_glob_0_7$1, "./zh-CN/services.json": __vite_glob_0_8$1, "./zh-CN/utils.json": __vite_glob_0_9$1 });
   const namespaceSet = /* @__PURE__ */ new Set();
   const resources = {};
   for (const path2 in localeModules) {
@@ -15373,7 +15380,7 @@
   var clientExports = requireClient();
   const ReactDOM = /* @__PURE__ */ getDefaultExportFromCjs(clientExports);
   const name = "fuck-annoying-blog-widget";
-  const version$1 = "2.1.0";
+  const version$1 = "2.2.0";
   const pkg = {
     name,
     version: version$1
@@ -15412,7 +15419,8 @@
     removeMusicPlayer: false,
     removeCustomCursor: false,
     removeLive2D: false,
-    removeCustomContextMenu: false
+    removeCustomContextMenu: false,
+    removeCursorTrailEffect: false
   };
   const siteSpecificDefaults = {
     // "example.com": {
@@ -15423,8 +15431,8 @@
     global: defaultGlobalConfig,
     ...siteSpecificDefaults
   };
-  const logger$9 = createLogger("config");
-  logger$9.info(instance.t("config:defaultConfigs"), defaultConfigs);
+  const logger$a = createLogger("config");
+  logger$a.info(instance.t("config:defaultConfigs"), defaultConfigs);
   var _GM_getValue = /* @__PURE__ */ (() => typeof GM_getValue != "undefined" ? GM_getValue : void 0)();
   var _GM_registerMenuCommand = /* @__PURE__ */ (() => typeof GM_registerMenuCommand != "undefined" ? GM_registerMenuCommand : void 0)();
   var _GM_setValue = /* @__PURE__ */ (() => typeof GM_setValue != "undefined" ? GM_setValue : void 0)();
@@ -15686,12 +15694,12 @@
       }
     }, duration + 400);
   }
-  const logger$8 = createLogger("autoExpandCodeBlocks");
+  const logger$9 = createLogger("autoExpandCodeBlocks");
   const featureName = "autoExpandCodeBlocks";
   function internalAutoExpandCodeBlocks(config2) {
     const selectors = config2.selectors || [];
     if (selectors.length === 0) {
-      logger$8.warn(instance.t("features:autoExpandCodeBlocks.noSelectors"));
+      logger$9.warn(instance.t("features:autoExpandCodeBlocks.noSelectors"));
       return;
     }
     let hasExpanded = false;
@@ -15699,7 +15707,7 @@
       try {
         const elements = document.querySelectorAll(sel);
         if (elements && elements.length > 0) {
-          logger$8.info(instance.t("features:autoExpandCodeBlocks.expandCodeBlocks"), {
+          logger$9.info(instance.t("features:autoExpandCodeBlocks.expandCodeBlocks"), {
             selector: sel,
             count: elements.length
           });
@@ -15711,7 +15719,7 @@
           });
         }
       } catch (error2) {
-        logger$8.error(
+        logger$9.error(
           instance.t("features:autoExpandCodeBlocks.selectorError", {
             selector: sel,
             error: error2
@@ -15720,7 +15728,7 @@
       }
     }
     if (!hasExpanded) {
-      logger$8.warn(instance.t("features:autoExpandCodeBlocks.noElementsFound"));
+      logger$9.warn(instance.t("features:autoExpandCodeBlocks.noElementsFound"));
     }
   }
   function autoExpandCodeBlocks(config2) {
@@ -15736,8 +15744,9 @@
     default: autoExpandCodeBlocks,
     featureName
   }, Symbol.toStringTag, { value: "Module" }));
-  const logger$7 = createLogger("disableTitleChange");
-  const propertyInterceptors$3 = [
+  const logger$8 = createLogger("disableTitleChange");
+  const blockedEventType$2 = ["visibilitychange"];
+  const propertyInterceptors$4 = [
     {
       targetList: document,
       propertyName: "onvisibilitychange",
@@ -15747,23 +15756,23 @@
       // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
     }
   ];
-  const eventInterceptor$1 = (type) => {
-    const blockedEventType = "visibilitychange";
-    if (type === blockedEventType) {
-      logger$7.info(instance.t("services:eventInterceptor.blocked", { blockedEventType }));
+  const eventInterceptor$2 = (type) => {
+    if (blockedEventType$2.includes(type)) {
+      logger$8.info(instance.t("services:eventInterceptor.blocked", { blockedEventType: blockedEventType$2 }));
       return true;
     }
     return false;
   };
-  const eventInterceptorPayload$1 = {
-    eventInterceptor: eventInterceptor$1
+  const eventInterceptorPayload$2 = {
+    eventInterceptor: eventInterceptor$2
   };
   const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    eventInterceptorPayload: eventInterceptorPayload$1,
-    propertyInterceptors: propertyInterceptors$3
+    blockedEventType: blockedEventType$2,
+    eventInterceptorPayload: eventInterceptorPayload$2,
+    propertyInterceptors: propertyInterceptors$4
   }, Symbol.toStringTag, { value: "Module" }));
-  const propertyInterceptors$2 = [
+  const propertyInterceptors$3 = [
     {
       targetList: window,
       propertyName: "startSakura",
@@ -15783,18 +15792,18 @@
   const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: removeBackgroundEffects,
-    propertyInterceptors: propertyInterceptors$2
+    propertyInterceptors: propertyInterceptors$3
   }, Symbol.toStringTag, { value: "Module" }));
-  const logger$6 = createLogger("removeClickEffects");
-  const eventInterceptor = (type) => {
-    const blockedEventType = "click";
-    if (type === blockedEventType) {
-      logger$6.info(instance.t("services:eventInterceptor.blocked", { blockedEventType }));
+  const logger$7 = createLogger("removeClickEffects");
+  const blockedEventType$1 = ["click"];
+  const eventInterceptor$1 = (type) => {
+    if (blockedEventType$1.includes(type)) {
+      logger$7.info(instance.t("services:eventInterceptor.blocked", { blockedEventType: blockedEventType$1 }));
       return true;
     }
     return false;
   };
-  const propertyInterceptors$1 = [
+  const propertyInterceptors$2 = [
     {
       targetList: COMMON_DOM_TARGETS,
       propertyName: "onclick",
@@ -15804,29 +15813,53 @@
       // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
     }
   ];
-  const eventInterceptorPayload = {
+  const eventInterceptorPayload$1 = {
     eventInterceptorTargetList: COMMON_DOM_TARGETS,
+    eventInterceptor: eventInterceptor$1
+  };
+  function removeClickEffects$1() {
+  }
+  const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: removeClickEffects$1,
+    eventInterceptorPayload: eventInterceptorPayload$1,
+    propertyInterceptors: propertyInterceptors$2
+  }, Symbol.toStringTag, { value: "Module" }));
+  const logger$6 = createLogger("removeCursorTrailEffect");
+  const blockedEventType = ["mousemove"];
+  const eventInterceptor = (type) => {
+    if (blockedEventType.includes(type)) {
+      logger$6.info(instance.t("services:eventInterceptor.blocked", { blockedEventType }));
+      return true;
+    }
+    return false;
+  };
+  const propertyInterceptors$1 = [
+    {
+      targetList: ALL_DOM_TARGETS,
+      propertyName: "onmousemove",
+      setter: () => true,
+      // 直接返回 true 来阻止任何赋值
+      getter: () => void 0
+      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
+    }
+  ];
+  const eventInterceptorPayload = {
+    eventInterceptorTargetList: ALL_DOM_TARGETS,
     eventInterceptor
   };
   function removeClickEffects() {
   }
-  const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
+    blockedEventType,
     default: removeClickEffects,
     eventInterceptorPayload,
     propertyInterceptors: propertyInterceptors$1
   }, Symbol.toStringTag, { value: "Module" }));
   const propertyInterceptors = [
     {
-      targetList: document,
-      propertyName: "oncontextmenu",
-      setter: () => true,
-      // 直接返回 true 来阻止任何赋值
-      getter: () => void 0
-      // 返回 undefined 表示我们不关心谁来读取它，但这个 getter 必须存在才能覆盖
-    },
-    {
-      targetList: window,
+      targetList: COMMON_DOM_TARGETS,
       propertyName: "oncontextmenu",
       setter: () => true,
       // 直接返回 true 来阻止任何赋值
@@ -15836,7 +15869,7 @@
   ];
   function removeCustomContextMenu() {
   }
-  const __vite_glob_0_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: removeCustomContextMenu,
     propertyInterceptors
@@ -15852,7 +15885,7 @@
     `;
     document.documentElement.appendChild(style);
   }
-  const __vite_glob_0_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: removeCustomCursor
   }, Symbol.toStringTag, { value: "Module" }));
@@ -15862,7 +15895,7 @@
       watchAndDestroy(selector);
     }
   }
-  const __vite_glob_0_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: removeLive2D
   }, Symbol.toStringTag, { value: "Module" }));
@@ -15889,7 +15922,7 @@
   function removeMusicPlayer() {
     removeMetingMusicPlayer();
   }
-  const __vite_glob_0_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const __vite_glob_0_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     default: removeMusicPlayer
   }, Symbol.toStringTag, { value: "Module" }));
@@ -15899,10 +15932,11 @@
     "./disableTitleChange.ts": __vite_glob_0_1,
     "./removeBackgroundEffects.ts": __vite_glob_0_3,
     "./removeClickEffects.ts": __vite_glob_0_4,
-    "./removeCustomContextMenu.ts": __vite_glob_0_5,
-    "./removeCustomCursor.ts": __vite_glob_0_6,
-    "./removeLive2D.ts": __vite_glob_0_7,
-    "./removeMusicPlayer.ts": __vite_glob_0_8
+    "./removeCursorTrailEffect.ts": __vite_glob_0_5,
+    "./removeCustomContextMenu.ts": __vite_glob_0_6,
+    "./removeCustomCursor.ts": __vite_glob_0_7,
+    "./removeLive2D.ts": __vite_glob_0_8,
+    "./removeMusicPlayer.ts": __vite_glob_0_9
   });
   for (const path2 in featureModules) {
     const match = path2.match(/\/(\w+)\.ts$/);
@@ -15930,8 +15964,28 @@
       return;
     }
     logger$3.info(instance.t("services:eventInterceptor.install"), activeConfig2);
+    for (const reg of registrations$1) {
+      if (!activeConfig2[reg.featureName] || !reg.eventInterceptorTargetList || blockedEventType.length === 0) {
+        continue;
+      }
+      for (const eventTarget of reg.eventInterceptorTargetList) {
+        blockedEventType.forEach((eventType) => {
+          eventTarget.addEventListener(
+            eventType,
+            (e) => {
+              e.stopImmediatePropagation();
+            },
+            true
+          );
+        });
+      }
+    }
     const originalAddEventListener = EventTarget.prototype.addEventListener;
     EventTarget.prototype.addEventListener = function(type, listener, options2) {
+      logger$3.info(instance.t("services:eventInterceptor.run"), {
+        type,
+        target: this
+      });
       for (const reg of registrations$1) {
         if (activeConfig2[reg.featureName]) {
           if (reg.eventInterceptor && isElementInBlacklist(this, reg.eventInterceptorTargetList) && reg.eventInterceptor(type, listener, options2)) {
@@ -16043,7 +16097,7 @@
   }
   const featureKeys = Object.keys(defaultGlobalConfig);
   const logger$1 = createLogger("features");
-  const modules = /* @__PURE__ */ Object.assign({ "../features/autoExpandCodeBlocks.ts": __vite_glob_0_0, "../features/disableTitleChange.ts": __vite_glob_0_1, "../features/index.ts": __vite_glob_0_2, "../features/removeBackgroundEffects.ts": __vite_glob_0_3, "../features/removeClickEffects.ts": __vite_glob_0_4, "../features/removeCustomContextMenu.ts": __vite_glob_0_5, "../features/removeCustomCursor.ts": __vite_glob_0_6, "../features/removeLive2D.ts": __vite_glob_0_7, "../features/removeMusicPlayer.ts": __vite_glob_0_8 });
+  const modules = /* @__PURE__ */ Object.assign({ "../features/autoExpandCodeBlocks.ts": __vite_glob_0_0, "../features/disableTitleChange.ts": __vite_glob_0_1, "../features/index.ts": __vite_glob_0_2, "../features/removeBackgroundEffects.ts": __vite_glob_0_3, "../features/removeClickEffects.ts": __vite_glob_0_4, "../features/removeCursorTrailEffect.ts": __vite_glob_0_5, "../features/removeCustomContextMenu.ts": __vite_glob_0_6, "../features/removeCustomCursor.ts": __vite_glob_0_7, "../features/removeLive2D.ts": __vite_glob_0_8, "../features/removeMusicPlayer.ts": __vite_glob_0_9 });
   for (const path2 in modules) {
     const module = modules[path2];
     const keyMatch = path2.match(/\/(\w+)\.ts$/);
