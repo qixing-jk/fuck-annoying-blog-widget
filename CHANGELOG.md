@@ -27,6 +27,15 @@
 
 
 
+## [2.2.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v2.1.0...v2.2.0) (2025-09-08)
+
+
+### Features
+
+* add cursor trail effect removal feature ([954b28f](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/954b28fae9407704f0f426ea7ba546535693390d))
+* **event-interceptor:** add running state logging and pre-blocking logic ([1b2c039](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/1b2c039bc7baa3e9744f05778ac72112d835a6d2))
+* export blockedEventType and refactor event type checks ([6b88c72](https://github.com/qixing-jk/fuck-annoying-blog-widget/commit/6b88c72aee39a21771a2369faae53620f8b0ed6a))
+
 ## [2.1.0](https://github.com/qixing-jk/fuck-annoying-blog-widget/compare/v2.0.1...v2.1.0) (2025-08-20)
 
 
