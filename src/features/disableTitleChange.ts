@@ -5,6 +5,8 @@ import i18n from 'i18next'
 
 const logger = createLogger('disableTitleChange')
 
+export const blockedEventType = ['visibilitychange']
+
 export const propertyInterceptors: PropertyInterceptorPayload[] = [
   {
     targetList: document,
@@ -14,8 +16,7 @@ export const propertyInterceptors: PropertyInterceptorPayload[] = [
   },
 ]
 const eventInterceptor: EventInterceptor = (type) => {
-  const blockedEventType = 'visibilitychange'
-  if (type === blockedEventType) {
+  if (blockedEventType.includes(type)) {
     logger.info(i18n.t('services:eventInterceptor.blocked', { blockedEventType }))
     return true
   }
