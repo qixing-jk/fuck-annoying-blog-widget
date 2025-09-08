@@ -14,38 +14,46 @@ A browser userscript (Tampermonkey) project to purify personal blogs by removing
 and effects. Built with React + Vite, supports per-site and global configuration, and includes an in-page settings
 panel.
 
-## Features
+## ✨ Features
 
-- Block custom right-click menus
-- Block background effects (e.g., sakura, snow, canvas animations)
-- Block auto-playing music players
-- Block Live2D mascots
-- Block custom cursors
-- Block click effects (e.g., floating text, hearts, fireworks)
-- Block title change tricks
-- Auto-expand code blocks
-- Remove Cursor Trail Effects
-- Easy per-site/global config with a React panel
-- Multi-language support (i18next)
+- **Annoyance Blocking**:
+    - Block title change tricks
+    - Block autoplaying music players
+    - Block background effects (e.g., sakura, snow, canvas animations)
+    - Block Live2D mascots
+    - Cursor
+        - Block custom cursors
+        - Block click effects (e.g., floating text, hearts, fireworks)
+        - Remove Cursor Trail Effects
+- **Quality of Life**:
+    - Block custom right-click menus and recover browser right-click menus
+    - Auto-expand code blocks
+- **Configuration**:
+    - Easy per-site/global config with a React panel
+    - Multi-language support (i18next)
 
-## Quick Start
+## 🚀 Quick Start
 
-- Install the generated userscript in your browser
+### 1. Installation
 
-| GitHub Source (Recommended, minified)                                                                                                  | Greasy Fork (Not recommended, forced unminified, worse performance) |
-|----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|
-| [Install](https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/main/dist/fuck-annoying-blog-widget.optimized.user.js) | [Install](https://greasyfork.org/scripts/543963)                    |
-- Click the Tampermonkey menu to open the settings panel
-- Configure features per site or globally (By default, no features are enabled, and they only take effect when enabled
-  in the settings panel.)
+| GitHub Source (Recommended, minified)                                                                                                  | Greasy Fork (Not recommended, unminified, worse performance) |
+|:---------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------|
+| [Install](https://raw.githubusercontent.com/qixing-jk/fuck-annoying-blog-widget/main/dist/fuck-annoying-blog-widget.optimized.user.js) | [Install](https://greasyfork.org/scripts/543963)             |
 
-## Local Development
+### 2. Configuration
 
-1. Clone this repo
-2. run `pnpm install`
-3. run`pnpm dev` for development, `pnpm build` for production
+1. Click the Tampermonkey menu to open the settings panel.
+2. Configure features per site or globally.
+   > By default, no features are enabled. They only take effect when enabled in the settings panel.
 
-## Tech Stack
+## 🛠️ Local Development
+
+1. **Clone this repo**: `git clone https://github.com/qixing-jk/fuck-annoying-blog-widget.git`
+2. **Install dependencies**: `pnpm install`
+3. **Run for development**: `pnpm dev`
+4. **Build for production**: `pnpm build`
+
+## 💻 Tech Stack
 
 - React 19
 - Vite 7
