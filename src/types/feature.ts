@@ -12,6 +12,7 @@ export interface FeatureConfigMap {
   removeCustomCursor: boolean
   removeLive2D: boolean
   removeCustomContextMenu: boolean
+  removeCursorTrailEffect: boolean
 }
 
 export type FeatureKey = keyof FeatureConfigMap

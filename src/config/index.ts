@@ -15,6 +15,7 @@ export const defaultGlobalConfig: SiteConfig = {
   removeCustomCursor: false,
   removeLive2D: false,
   removeCustomContextMenu: false,
+  removeCursorTrailEffect: false,
 }
 
 // 站点级预设（如有）

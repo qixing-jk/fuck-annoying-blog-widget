@@ -24,6 +24,7 @@ panel.
 - Block click effects (e.g., floating text, hearts, fireworks)
 - Block title change tricks
 - Auto-expand code blocks
+- Remove Cursor Trail Effects
 - Easy per-site/global config with a React panel
 - Multi-language support (i18next)
 

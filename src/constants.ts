@@ -11,7 +11,7 @@ export const ROOT_ELEMENT_ID = 'fuck-annoying-blog-widget-script-root'
 
 export const DEFAULT_NS = 'common'
 
-export const ALL_DOM_TARGETS = [EventTarget.prototype, window, document, document.body]
+export const ALL_DOM_TARGETS = [window, document, document.body]
 
 export const COMMON_DOM_TARGETS = [window, document]
 

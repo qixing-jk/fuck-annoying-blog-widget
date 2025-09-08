@@ -46,5 +46,9 @@
     "selectorsLabel": "CSS 选择器（每行一个）",
     "selectorsHint": "输入匹配代码块'展开'按钮的 CSS 选择器，每个选择器占一行。",
     "selectorsPlaceholder": "例如：.expand-button\n.code-expand\n[data-expand]"
+  },
+  "removeCursorTrailEffect": {
+    "label": "移除鼠标拖尾特效",
+    "description": "禁用鼠标移动时出现的拖尾特效，例如星星、爱心、光点等。"
   }
 }

@@ -46,5 +46,9 @@
     "selectorsLabel": "CSS Selectors (one per line)",
     "selectorsHint": "Enter CSS selectors that match 'expand' buttons for code blocks. Each selector should be on a new line.",
     "selectorsPlaceholder": "e.g., .expand-button\n.code-expand\n[data-expand]"
+  },
+  "removeCursorTrailEffect": {
+    "label": "Remove Cursor Trail Effects",
+    "description": "Disables trailing effects that appear when moving the mouse, such as stars, hearts, or sparkles."
   }
 }
